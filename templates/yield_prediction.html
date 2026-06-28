@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Crop Yield Prediction - AgriPredict{% endblock %}
+{% block title %}Crop Yield Prediction - AgroSense{% endblock %}
 
 {% block content %}
 <section class="prediction-container">
@@ -73,4 +73,73 @@
         </div>
     </div>
 </section>
+                    <!-- Result container -->
+                    <div id="yield-result" class="mt-4" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.getElementById('yield-prediction-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const crop = document.getElementById('crop').value;
+    const rainfall = document.getElementById('rainfall').value;
+    const pesticide = document.getElementById('pesticide').value;
+    const temperature = document.getElementById('temperature').value;
+
+    const loading = document.getElementById('yield-loading');
+    const result = document.getElementById('yield-result');
+
+    loading.style.display = 'block';
+    result.style.display = 'none';
+
+    try {
+        const response = await fetch('/api/predict-yield', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                crop,
+                rainfall,
+                pesticide,
+                temperature
+            })
+        });
+
+        const data = await response.json();
+        loading.style.display = 'none';
+
+        if (!data.success) {
+            result.innerHTML = `
+                <div class="alert alert-danger">
+                    Unable to generate yield prediction.
+                </div>
+            `;
+            result.style.display = 'block';
+            return;
+        }
+
+        result.innerHTML = `
+            <div class="alert alert-success">
+                <h5><strong>Yield Prediction Results</strong></h5>
+                <p><strong>Crop:</strong> ${data.crop}</p>
+                <p><strong>Predicted Yield:</strong> ${data.prediction} hg/ha</p>
+                <p><strong>Recommendation:</strong> ${data.recommendation}</p>
+            </div>
+        `;
+        result.style.display = 'block';
+
+    } catch (error) {
+        loading.style.display = 'none';
+        result.innerHTML = `
+            <div class="alert alert-danger">
+                Something went wrong. Please try again.
+            </div>
+        `;
+        result.style.display = 'block';
+    }
+});
+</script>
 {% endblock %}

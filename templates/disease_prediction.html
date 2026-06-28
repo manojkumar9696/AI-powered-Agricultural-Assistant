@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Disease Prediction - AgriPredict{% endblock %}
+{% block title %}Disease Prediction - AgroSense{% endblock %}
 
 {% block content %}
 <section class="prediction-container">
@@ -142,4 +142,65 @@
         </div>
     </div>
 </section>
+<script>
+document.getElementById('disease-prediction-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const crop = document.getElementById('crop').value;
+    const rainfall = document.getElementById('rainfall').value;
+    const temperature = document.getElementById('temperature').value;
+    const humidity = document.getElementById('humidity').value;
+    const pesticide = document.getElementById('pesticide').value;
+
+    const loading = document.getElementById('disease-loading');
+    const result = document.getElementById('disease-result');
+
+    loading.style.display = 'block';
+    result.style.display = 'none';
+
+    try {
+        const response = await fetch('/api/predict-disease', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                rainfall,
+                temperature,
+                humidity,
+                pesticide
+            })
+        });
+
+        const data = await response.json();
+        loading.style.display = 'none';
+
+        if (!data.success) {
+            result.innerHTML = `
+                <div class="alert alert-danger">
+                    Unable to assess disease risk.
+                </div>
+            `;
+            result.style.display = 'block';
+            return;
+        }
+
+        result.innerHTML = `
+            <div class="alert alert-warning">
+                <h5><strong>Disease Risk Assessment</strong></h5>
+                <p><strong>Risk Level:</strong> ${data.risk_level}</p>
+                <p><strong>Recommendation:</strong> ${data.recommendation}</p>
+            </div>
+        `;
+        result.style.display = 'block';
+
+    } catch (error) {
+        loading.style.display = 'none';
+        result.innerHTML = `
+            <div class="alert alert-danger">
+                Something went wrong. Please try again.
+            </div>
+        `;
+        result.style.display = 'block';
+    }
+});
+</script>
 {% endblock %}

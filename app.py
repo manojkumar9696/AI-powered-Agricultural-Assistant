@@ -43,75 +43,131 @@ def weather_prediction():
 @app.route('/api/predict-yield', methods=['POST'])
 def api_predict_yield():
     try:
-        data = request.json
-        rainfall = float(data['rainfall'])
-        pesticide = float(data['pesticide'])
-        temperature = float(data['temperature'])
+        data = request.json or {}
+
+        rainfall = float(data.get('rainfall', 800))
+        pesticide = float(data.get('pesticide', 100))
+        temperature = float(data.get('temperature', 25))
         crop = data.get('crop', 'Maize')
-        
+
+        yield_pred = None
+
+        # Try ML model safely
         if models_loaded:
-            yield_pred = prediction_models.predict_yield(rainfall, pesticide, temperature)
-            return jsonify({
-                'success': True,
-                'prediction': yield_pred,
-                'crop': crop,
-                'message': f'Predicted yield for {crop}: {yield_pred} hg/ha'
-            })
-        else:
-            # Fallback calculation
+            try:
+                yield_pred = prediction_models.predict_yield(
+                    rainfall, pesticide, temperature
+                )
+            except Exception as err:
+                print("Yield model error:", err)
+
+        # ✅ FALLBACK if model fails or returns None
+        if yield_pred is None:
             base_yield = 30000
             rain_factor = min(rainfall / 1000, 1.5)
             pest_factor = min(pesticide / 200, 1.2)
             temp_factor = max(0.5, 1 - abs(temperature - 25) / 25)
-            yield_pred = round(base_yield * rain_factor * pest_factor * temp_factor)
-            
-            return jsonify({
-                'success': True,
-                'prediction': yield_pred,
-                'crop': crop,
-                'message': f'Estimated yield for {crop}: {yield_pred} hg/ha'
-            })
+
+            yield_pred = round(
+                base_yield * rain_factor * pest_factor * temp_factor
+            )
+
+        # Recommendation logic
+        if yield_pred < 20000:
+            recommendation = (
+                "Below average yield predicted. Consult agricultural experts."
+            )
+        elif yield_pred < 40000:
+            recommendation = (
+                "Average yield expected. Maintain good crop management."
+            )
+        else:
+            recommendation = (
+                "Good yield expected. Continue best practices."
+            )
+
+        return jsonify({
+            'success': True,
+            'prediction': yield_pred,
+            'crop': crop,
+            'recommendation': recommendation,
+            'message': f'Predicted yield for {crop}: {yield_pred} hg/ha'
+        })
+
     except Exception as e:
-        return jsonify({'success': False, 'error': str(e)})
+        print("Yield API error:", e)
+        return jsonify({
+            'success': False,
+            'error': 'Unable to generate yield prediction'
+        })
 
 @app.route('/api/predict-disease', methods=['POST'])
 def api_predict_disease():
     try:
-        data = request.json
-        rainfall = float(data['rainfall'])
-        temperature = float(data['temperature'])
+        data = request.json or {}
+
+        rainfall = float(data.get('rainfall', 500))
+        temperature = float(data.get('temperature', 25))
         humidity = float(data.get('humidity', 70))
-        pesticide = float(data.get('pesticide', 100))
-        
-        if models_loaded:
-            disease_risk = prediction_models.predict_disease_risk(rainfall, temperature, pesticide)
+
+        # Convert pesticide days → numeric risk factor
+        pesticide_days = data.get('pesticide', '0-7 days')
+
+        if '0-7' in pesticide_days:
+            pesticide_factor = 0
+        elif '8-14' in pesticide_days:
+            pesticide_factor = 1
         else:
-            # Fallback logic
+            pesticide_factor = 2
+
+        disease_risk = None
+
+        # Try model safely
+        if models_loaded:
+            try:
+                disease_risk = prediction_models.predict_disease_risk(
+                    rainfall, temperature, pesticide_factor
+                )
+            except Exception as err:
+                print("Disease model error:", err)
+
+        # ✅ FALLBACK LOGIC (CRITICAL)
+        if disease_risk is None:
             risk_score = 0
-            if rainfall > 1000: risk_score += 2
-            elif rainfall > 500: risk_score += 1
-            if 15 <= temperature <= 25: risk_score += 2
-            if humidity > 80: risk_score += 1
-            if pesticide < 100: risk_score += 1
-            
-            if risk_score >= 4: disease_risk = 'High'
-            elif risk_score >= 2: disease_risk = 'Medium'
-            else: disease_risk = 'Low'
-        
+
+            if rainfall > 150: risk_score += 2
+            elif rainfall > 75: risk_score += 1
+
+            if 20 <= temperature <= 30: risk_score += 2
+            if humidity > 75: risk_score += 2
+            if pesticide_factor > 0: risk_score += 1
+
+            if risk_score >= 5:
+                disease_risk = 'High'
+            elif risk_score >= 3:
+                disease_risk = 'Medium'
+            else:
+                disease_risk = 'Low'
+
         recommendations = {
-            'High': 'Apply fungicide, improve drainage, reduce plant density',
-            'Medium': 'Monitor crops closely, ensure proper ventilation',
-            'Low': 'Continue regular monitoring, maintain good practices'
+            'High': 'Apply fungicide immediately and improve drainage.',
+            'Medium': 'Monitor closely and apply preventive measures.',
+            'Low': 'Low risk. Continue regular monitoring.'
         }
-        
+
         return jsonify({
             'success': True,
             'risk_level': disease_risk,
-            'recommendation': recommendations.get(disease_risk, 'Monitor regularly'),
+            'recommendation': recommendations[disease_risk],
             'message': f'Disease risk level: {disease_risk}'
         })
+
     except Exception as e:
-        return jsonify({'success': False, 'error': str(e)})
+        print("Disease API error:", e)
+        return jsonify({
+            'success': False,
+            'error': 'Unable to assess disease risk'
+        })
 
 # @app.route('/api/recommend-fertilizer', methods=['POST'])
 # def api_recommend_fertilizer():
@@ -397,36 +453,60 @@ def calculate_fertilizer_cost(n, p, k, field_size):
 @app.route('/api/predict-weather', methods=['POST'])
 def api_predict_weather():
     try:
-        data = request.json
+        data = request.json or {}
+
         year = int(data.get('year', 2025))
         location = data.get('location', 'General')
-        
+
+        rainfall_pred = None
+
+        # Try ML model
         if models_loaded:
-            rainfall_pred = prediction_models.predict_weather(year)
-        else:
-            # Simple trend calculation
+            try:
+                rainfall_pred = prediction_models.predict_weather(year)
+            except Exception as model_error:
+                print("Weather model error:", model_error)
+
+        # ✅ SAFETY FALLBACK (MOST IMPORTANT PART)
+        if rainfall_pred is None:
             base_rainfall = 800
-            year_factor = (year - 2020) * 5  # 5mm change per year
-            rainfall_pred = round(base_rainfall + year_factor + np.random.randint(-50, 50))
-        
-        # Weather recommendations based on prediction
+            year_factor = (year - 2020) * 5
+            rainfall_pred = round(
+                base_rainfall + year_factor + np.random.randint(-50, 50)
+            )
+
+        # Weather advice
         if rainfall_pred < 400:
-            weather_advice = "Low rainfall expected. Consider drought-resistant crops and irrigation planning."
+            weather_advice = (
+                "Low rainfall expected. Consider drought-resistant crops "
+                "and irrigation planning."
+            )
         elif rainfall_pred > 1500:
-            weather_advice = "High rainfall expected. Ensure proper drainage and flood management."
+            weather_advice = (
+                "High rainfall expected. Ensure proper drainage "
+                "and flood management."
+            )
         else:
-            weather_advice = "Normal rainfall expected. Good conditions for most crops."
-        
+            weather_advice = (
+                "Normal rainfall expected. Good conditions for most crops."
+            )
+
         return jsonify({
             'success': True,
             'year': year,
             'location': location,
             'predicted_rainfall': rainfall_pred,
             'advice': weather_advice,
-            'message': f'Weather prediction for {year}: {rainfall_pred}mm rainfall'
+            'message': f'Weather prediction for {year}: {rainfall_pred} mm rainfall'
         })
+
     except Exception as e:
-        return jsonify({'success': False, 'error': str(e)})
+        print("Weather API error:", e)
+        return jsonify({
+            'success': False,
+            'error': 'Unable to generate weather prediction'
+        })
+
     
 
 @app.route('/crop-recommendation')
@@ -1123,10 +1203,6 @@ def generate_nearby_farmers(location, crop_interest):
         farmers = [f for f in farmers if crop_interest in f['crops']]
     
     return random.sample(farmers, min(len(farmers), 6))
-
-
-
-
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
