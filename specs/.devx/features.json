@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "generatedAt": "2026-08-10T15:01:39.132Z",
+  "enableTdd": false,
+  "totalFeatures": 1,
+  "features": [
+    {
+      "id": 754061741,
+      "taskId": "FEATURE-754061741",
+      "title": "As Admin, I want to export report data so that I can perform external analysis; Customer Management Interface",
+      "slug": "admin-data-management-tools",
+      "state": "planned",
+      "status": "not-started",
+      "openQuestions": [],
+      "storyCount": 2,
+      "totalStoryPoints": 0,
+      "files": {
+        "specs": "specs/admin-data-management-tools/specs.md",
+        "requirements": "specs/admin-data-management-tools/requirements.md",
+        "prompt": "specs/admin-data-management-tools/prompt.md"
+      },
+      "userStories": [
+        {
+          "id": 15570,
+          "title": "As Admin, I want to export report data so that I can perform external analysis",
+          "state": "New",
+          "storyPoints": null
+        },
+        {
+          "id": 15526,
+          "title": "Customer Management Interface",
+          "state": "New",
+          "storyPoints": null
+        }
+      ]
+    }
+  ]
+}

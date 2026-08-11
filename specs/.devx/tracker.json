@@ -1,0 +1,13 @@
+{
+  "trackerVersion": 1,
+  "updatedAt": "2026-08-10T15:01:39.132Z",
+  "tasks": {
+    "FEATURE-754061741": {
+      "status": "PENDING",
+      "title": "As Admin, I want to export report data so that I can perform external analysis; Customer Management Interface",
+      "featureId": 754061741,
+      "slug": "admin-data-management-tools",
+      "updatedAt": "2026-08-10T15:01:39.132Z"
+    }
+  }
+}
