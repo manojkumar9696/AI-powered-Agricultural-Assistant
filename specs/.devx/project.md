@@ -1,9 +1,13 @@
-# abcd123
+# Alpine
 
 > Auto-generated project context for AI-assisted development.
-> Last updated: 2026-08-10
+> Last updated: 2026-08-13
 
-**Organization:** https://nousteamdevx.atlassian.net
+**Organization:** QS001
+
+## Overview
+
+Migration of existing angular UI 7 to latest verstion.
 
 ## Development Methodology
 
@@ -16,7 +20,7 @@ Every feature has:
 
 ## Features (1)
 
-- **As Admin, I want to export report data so that I can perform external analysis; Customer Management Interface** (2 user stories)
+- **Portfolio Visibility Enhancement** (4 user stories)
 
 ## Getting Started
 

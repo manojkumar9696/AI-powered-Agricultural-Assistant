@@ -1,36 +1,48 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-08-10T15:01:39.132Z",
+  "generatedAt": "2026-08-13T11:37:24.075Z",
   "enableTdd": false,
   "totalFeatures": 1,
   "features": [
     {
-      "id": 754061741,
-      "taskId": "FEATURE-754061741",
-      "title": "As Admin, I want to export report data so that I can perform external analysis; Customer Management Interface",
-      "slug": "admin-data-management-tools",
+      "id": 19743,
+      "taskId": "FEATURE-19743",
+      "title": "Portfolio Visibility Enhancement",
+      "slug": "portfolio-insights-and-monitoring",
       "state": "planned",
       "status": "not-started",
       "openQuestions": [],
-      "storyCount": 2,
-      "totalStoryPoints": 0,
+      "storyCount": 4,
+      "totalStoryPoints": 26,
       "files": {
-        "specs": "specs/admin-data-management-tools/specs.md",
-        "requirements": "specs/admin-data-management-tools/requirements.md",
-        "prompt": "specs/admin-data-management-tools/prompt.md"
+        "specs": "specs/portfolio-insights-and-monitoring/specs.md",
+        "requirements": "specs/portfolio-insights-and-monitoring/requirements.md",
+        "prompt": "specs/portfolio-insights-and-monitoring/prompt.md"
       },
       "userStories": [
         {
-          "id": 15570,
-          "title": "As Admin, I want to export report data so that I can perform external analysis",
+          "id": 19821,
+          "title": "As Wealth Manager, I want to perform real-time data retrieval of portfolio holdings to achieve up-to-date insights for my clients",
           "state": "New",
-          "storyPoints": null
+          "storyPoints": 8
         },
         {
-          "id": 15526,
-          "title": "Customer Management Interface",
+          "id": 19832,
+          "title": "As Wealth Manager, I want to perform portfolio overview analysis to achieve insights into asset allocation",
           "state": "New",
-          "storyPoints": null
+          "storyPoints": 5
+        },
+        {
+          "id": 19842,
+          "title": "As Wealth Manager, I want to perform alerts setup for portfolio changes to achieve timely notifications",
+          "state": "New",
+          "storyPoints": 5
+        },
+        {
+          "id": 19852,
+          "title": "As Wealth Manager, I want to perform historical performance analysis to achieve insights into past portfolio performance",
+          "state": "New",
+          "storyPoints": 8
         }
       ]
     }

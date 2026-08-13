@@ -1,12 +1,12 @@
-# Architecture — abcd123
+# Architecture — Alpine
 
 > Auto-generated architecture overview. Update this file as the system evolves.
 
 ## Feature Map
 
-### As Admin, I want to export report data so that I can perform external analysis; Customer Management Interface
-- 2 user stories
-- Stories: As Admin, I want to export report data so that I can perform external analysis, Customer Management Interface
+### Portfolio Visibility Enhancement
+- 4 user stories
+- Stories: As Wealth Manager, I want to perform real-time data retrieval of portfolio holdings to achieve up-to-date insights for my clients, As Wealth Manager, I want to perform portfolio overview analysis to achieve insights into asset allocation, As Wealth Manager, I want to perform alerts setup for portfolio changes to achieve timely notifications, As Wealth Manager, I want to perform historical performance analysis to achieve insights into past portfolio performance
 
 ## Guidelines
 

@@ -5,7 +5,7 @@
 
 ## Project
 
-- Name: abcd123
+- Name: Alpine
 - Architecture mode: monolith
 - Context status: Pending workspace discovery
 

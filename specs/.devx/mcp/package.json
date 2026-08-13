@@ -1,7 +1,7 @@
 {
-  "name": "abcd123-mcp-server",
+  "name": "alpine-mcp-server",
   "version": "1.0.0",
-  "description": "Astra MCP server for abcd123 specs",
+  "description": "Astra MCP server for Alpine specs",
   "type": "module",
   "main": "server.js",
   "scripts": {

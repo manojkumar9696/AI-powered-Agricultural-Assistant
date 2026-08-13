@@ -1,13 +1,13 @@
 {
   "trackerVersion": 1,
-  "updatedAt": "2026-08-10T15:01:39.132Z",
+  "updatedAt": "2026-08-13T11:37:24.076Z",
   "tasks": {
-    "FEATURE-754061741": {
+    "FEATURE-19743": {
       "status": "PENDING",
-      "title": "As Admin, I want to export report data so that I can perform external analysis; Customer Management Interface",
-      "featureId": 754061741,
-      "slug": "admin-data-management-tools",
-      "updatedAt": "2026-08-10T15:01:39.132Z"
+      "title": "Portfolio Visibility Enhancement",
+      "featureId": 19743,
+      "slug": "portfolio-insights-and-monitoring",
+      "updatedAt": "2026-08-13T09:05:59.722Z"
     }
   }
 }
