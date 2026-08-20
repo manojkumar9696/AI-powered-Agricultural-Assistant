@@ -1,13 +1,9 @@
-# Alpine
+# hhaaa
 
 > Auto-generated project context for AI-assisted development.
-> Last updated: 2026-08-13
+> Last updated: 2026-08-20
 
-**Organization:** QS001
-
-## Overview
-
-Migration of existing angular UI 7 to latest verstion.
+**Organization:** few
 
 ## Development Methodology
 
@@ -20,7 +16,7 @@ Every feature has:
 
 ## Features (1)
 
-- **Portfolio Visibility Enhancement** (4 user stories)
+- **RESTful API Integration Framework** (2 user stories)
 
 ## Getting Started
 

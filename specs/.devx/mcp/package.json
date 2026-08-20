@@ -1,7 +1,7 @@
 {
-  "name": "alpine-mcp-server",
+  "name": "hhaaa-mcp-server",
   "version": "1.0.0",
-  "description": "Astra MCP server for Alpine specs",
+  "description": "Astra MCP server for hhaaa specs",
   "type": "module",
   "main": "server.js",
   "scripts": {

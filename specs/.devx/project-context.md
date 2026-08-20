@@ -5,7 +5,7 @@
 
 ## Project
 
-- Name: Alpine
+- Name: hhaaa
 - Architecture mode: monolith
 - Context status: Pending workspace discovery
 

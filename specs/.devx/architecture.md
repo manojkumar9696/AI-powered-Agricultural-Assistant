@@ -1,12 +1,12 @@
-# Architecture — Alpine
+# Architecture — hhaaa
 
 > Auto-generated architecture overview. Update this file as the system evolves.
 
 ## Feature Map
 
-### Portfolio Visibility Enhancement
-- 4 user stories
-- Stories: As Wealth Manager, I want to perform real-time data retrieval of portfolio holdings to achieve up-to-date insights for my clients, As Wealth Manager, I want to perform portfolio overview analysis to achieve insights into asset allocation, As Wealth Manager, I want to perform alerts setup for portfolio changes to achieve timely notifications, As Wealth Manager, I want to perform historical performance analysis to achieve insights into past portfolio performance
+### RESTful API Integration Framework
+- 2 user stories
+- Stories: As an API Developer, I want to configure API gateway authentication so that only authorized clients access our services, As an API Developer, I want to configure API gateway authentication so that only authorized clients access our services
 
 ## Guidelines
 

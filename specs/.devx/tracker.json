@@ -1,13 +1,13 @@
 {
   "trackerVersion": 1,
-  "updatedAt": "2026-08-13T11:37:24.076Z",
+  "updatedAt": "2026-08-20T10:30:32.983Z",
   "tasks": {
-    "FEATURE-19743": {
-      "status": "PENDING",
-      "title": "Portfolio Visibility Enhancement",
-      "featureId": 19743,
-      "slug": "portfolio-insights-and-monitoring",
-      "updatedAt": "2026-08-13T09:05:59.722Z"
+    "FEATURE-65663": {
+      "status": "NEEDS_CLARIFICATION",
+      "title": "RESTful API Integration Framework",
+      "featureId": 65663,
+      "slug": "api-gateway-authentication",
+      "updatedAt": "2026-08-20T10:30:32.983Z"
     }
   }
 }
