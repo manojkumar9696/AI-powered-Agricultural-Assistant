@@ -4,10 +4,6 @@
 
 ## Feature Map
 
-### RESTful API Integration Framework
-- 2 user stories
-- Stories: As an API Developer, I want to configure API gateway authentication so that only authorized clients access our services, As an API Developer, I want to configure API gateway authentication so that only authorized clients access our services
-
 ## Guidelines
 
 - Follow the specs in each feature folder for implementation details

@@ -1,13 +1,5 @@
 {
   "trackerVersion": 1,
-  "updatedAt": "2026-08-20T10:30:32.983Z",
-  "tasks": {
-    "FEATURE-65663": {
-      "status": "NEEDS_CLARIFICATION",
-      "title": "RESTful API Integration Framework",
-      "featureId": 65663,
-      "slug": "api-gateway-authentication",
-      "updatedAt": "2026-08-20T10:30:32.983Z"
-    }
-  }
+  "updatedAt": "2026-08-20T10:59:57.558Z",
+  "tasks": {}
 }

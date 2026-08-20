@@ -14,9 +14,8 @@ Every feature has:
 - `requirements.md` — Implementation acceptance checklist
 - `prompt.md` — Ready-to-use implementation prompt
 
-## Features (1)
+## Features (0)
 
-- **RESTful API Integration Framework** (2 user stories)
 
 ## Getting Started
 
