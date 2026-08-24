@@ -3,53 +3,24 @@ name: CI
 on:
   push:
     branches: ["second"]
-  pull_request:
-    branches: ["second"]
   workflow_dispatch:
 
 jobs:
-  install-build:
-    name: Install + Build
+  build_1:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-          cache: pip
-          cache-dependency-path: requirements.txt
-      - name: Install dependencies
-        run: python -m pip install --upgrade pip && python -m pip install -r requirements.txt
-      - name: Build (compile check)
-        run: python -m compileall .
+      - run: npm ci
+      - run: npm run build --if-present
 
-  run-tests:
-    name: Run Tests
-    needs: install-build
+  test_2:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-          cache: pip
-          cache-dependency-path: requirements.txt
-      - name: Install dependencies
-        run: python -m pip install --upgrade pip && python -m pip install -r requirements.txt && python -m pip install pytest
-      - name: Run tests
-        run: python -m pytest --tb=short || true
+      - run: npm test
 
-  deploy-app:
-    name: Deploy App
-    needs: run-tests
+  deploy_3:
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/second'
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-          cache: pip
-          cache-dependency-path: requirements.txt
-      - name: Deploy placeholder
-        run: echo "Deploy step placeholder — configure deployment credentials and target before use"
+      - run: echo "Run Deploy App"
