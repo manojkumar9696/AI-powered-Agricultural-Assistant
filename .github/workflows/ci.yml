@@ -13,7 +13,9 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
-      - run: "python -m pip install --upgrade pip && if [ -f requirements.txt ]; then python -m pip install -r requirements.txt; else python -m pip install .; fi"
+          cache: pip
+          cache-dependency-path: "requirements.txt"
+      - run: "python -m pip install --upgrade pip && python -m pip install -r requirements.txt"
       - run: "python -m compileall ."
 
   test_2:
@@ -24,6 +26,9 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
+          cache: pip
+          cache-dependency-path: "requirements.txt"
+      - run: "python -m pip install --upgrade pip && python -m pip install -r requirements.txt"
       - run: "python -m pytest"
 
   deploy_3:
@@ -34,4 +39,6 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
+          cache: pip
+          cache-dependency-path: "requirements.txt"
       - run: "echo \"Deploy App Service (configure credentials/secrets before use)\""
