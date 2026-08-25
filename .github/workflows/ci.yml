@@ -1,26 +1,40 @@
-name: CI
+name: Astra CI
 
 on:
   push:
-    branches: ["second"]
+    branches:
+      - "second"
+  pull_request:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
-  build_1:
+  build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: "."
     steps:
       - uses: actions/checkout@v4
-      - run: npm ci
-      - run: npm run build --if-present
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip && pip install -r requirements.txt
 
-  test_2:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: npm test
+      - name: Build
+        run: |
+          python -m compileall .
 
-  deploy_3:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: echo "Run Deploy App"
+      - name: Test
+        run: |
+          python -m pytest
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: astra-build
+          path: "dist/**"
+          if-no-files-found: ignore
