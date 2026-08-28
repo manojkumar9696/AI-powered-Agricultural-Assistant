@@ -1,5 +1,20 @@
 {
   "trackerVersion": 1,
-  "updatedAt": "2026-08-28T06:31:06.876Z",
-  "tasks": {}
+  "updatedAt": "2026-08-28T08:13:35.009Z",
+  "tasks": {
+    "FEATURE-71742": {
+      "status": "NEEDS_CLARIFICATION",
+      "title": "Secure and Compliant Order Access",
+      "featureId": 71742,
+      "slug": "secure-auditable-order-access",
+      "updatedAt": "2026-08-28T08:13:35.009Z"
+    },
+    "FEATURE-71741": {
+      "status": "NEEDS_CLARIFICATION",
+      "title": "Order Placement and Processing",
+      "featureId": 71741,
+      "slug": "online-food-order-tracking",
+      "updatedAt": "2026-08-28T08:13:35.009Z"
+    }
+  }
 }

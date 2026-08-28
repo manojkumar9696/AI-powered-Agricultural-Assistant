@@ -2,81 +2,338 @@
 
 These excerpts were copied from the vectorized Golden Repository cache during specs generation.
 
-Repository: AgentFactory
+Repository: Retail Standard-365Retail
 Selection mode: all vectorized files
-Source excerpts: 47
+Source excerpts: 210
 
-## 1. Assignment_Management_User_Story_Coding_Standards.txt #0
-
-Score: 1.000
-
-````text
-Assignment Management User Story & Coding Standards Sample Engineering Standards | AI-Ready Reference Version 1.0 | August 2026 This document provides a sample set of standards that can be used as a baseline for an Assignment Management product team. It is designed to support consistent user-story creation, acceptance criteria, software development, code review, testing and AI-assisted engineering. These are generic engineering standards and templates. They should be adapted to the actual technology stack, architecture, security requirements and organizational development standards before being adopted. Story ID: AM-XXX Title: [Short, business-focused title] Business Capability: [e.g., Assignment Management / Cost Estimate / Employee Management] As a: [User role] I want to: [Capability or action] So that: [Business value or outcome] Description: Provide the business context and explain the expected behaviour. Pre-conditions: User is authenticated; user has appropriate role/permission; required data exists. Dependencies: APIs, databases, external services or other stories required for completion. Non-functional requirements: Performance, security, auditability, accessibility, logging and monitoring as applicable. Definition of Done: Development complete; code reviewed; tests completed; acceptance criteria met; documentation updated; no critical/high defects outstanding. Use Given / When / Then format wherever practical. AC1 - Successful scenario Given [pre-condition] When [user action] Then [expected result] AC2 - Validation Given [invalid or missing data] When [user submits] Then [system displays appropriate validation] AC3 - Authorization Given [user without required permission] When [user attempts the action] Then [system prevents the action] AC4 - Error handling Given [system or integration failure] When [transaction is attempted] Then [system handles the error and provides an appropriate message] As a Mobility Manager, I want to create a new employee assignment by providing the required assignment details, so that the assignment can be tracked and managed through its lifecycle. Acceptance Criteria * AC1 - Given the user has permission to create an assignment, when all mandatory information is provided and submitted, then the system creates the assignment successfully and generates a unique assignment reference. * AC2 - Given mandatory information is missing, when the user submits the assignment, then the system identifies the missing information and prevents submission. * AC3 - Given the user does not have the required permission, when the user attempts to create an assignment, then the system prevents the action. * AC4 - Given an assignment is successfully created, when the transaction is completed, then the system records appropriate audit information such as creator and date/time. Note: This is an illustrative engineering example and is not a customer-specific requirement. * Readable over clever - code should be easy for another developer to understand and maintain. * Single Responsibility - a class/function should have one clear responsibility. * DRY - avoid unnecessary duplication. * KISS - prefer simple solutions unless complexity to create an assignment, then the system prevents the action. * AC4 - Given an assignment is successfully created, when the transaction is completed, then the system records appropriate audit information such as creator and date/time. Note: This is an illustrative engineering example and is not a customer-specific requirement. * Readable over clever - code should be easy for another developer to understand and maintain. * Single Responsibility - a class/function should have one clear responsibility. * DRY - avoid unnecessary duplication. * KISS - prefer simple solutions unless complexity provides measurable value. * Separation of concerns - appropriately separate UI, business logic, data access and integration logic. * Fail safely - handle expected failures explicitly and avoid exposing sensitive information. * Validate at system boundaries - validate user and API input before processing. * Avoid hard-coded business rules - rules that may change should preferably be configuration-driven. * Prefer small, focused functions and components. * Use meaningful comments only where they add context; do not comment obvious code. Object Recommended convention Example Class PascalCase AssignmentService Method camelCase createAssignment() Variable camelCase assignmentStartDate Constant UPPER_SNAKE_CASE MAX_ASSIGNMENT_DAYS Boolean Question/condition oriented isActive, hasApproval API resource Plural noun /assignments Avoid vague names such as data, temp, obj, value1, abc or test. Prefer names that describe the business meaning. Recommended REST resource pattern: * GET /assignments * GET /assignments/{id} * POST /assignments * PUT /assignments/{id} * PATCH /assignments/{id} * DELETE /assignments/{id} * Use appropriate HTTP status codes. * Validate request payloads. * Return consistent response structures. * Use pagination for large collections. * Support correlation/request IDs. * Never expose passwords, tokens or sensitive information. * Document APIs using OpenAPI/Swagger where applicable. * Maintain backward compatibility where possible. Example response: { "assignmentId": "AM-10025", "status": "ACTIVE", "message": "Assignment retrieved successfully" } * Errors should be meaningful, consistent, actionable and appropriately logged. * Do not expose stack traces, database errors, credentials or internal implementation details to end users. * Use standardized error codes where practical. * Include a correlation ID for support and troubleshooting. * Differentiate validation, authorization, business-rule, integration and system errors. Example: { "errorCode": "ASSIGNMENT_VALIDATION_ERROR", "message": "Host country is required.", "correlationId": "abc-123" } * Log application events and important business transactions. * Log integration failures and exceptions. * Include correlation IDs where applicable. * Log security-relevant events appropriately. * Do not log passwords, authentication tokens or unnecessary sensitive personal information. * Use structured logging wherever practical. * Ensure log retention follows organizational and regulatory requirements. Business-critical functions should have appropriate automated unit tests. * Positive scenarios - valid "message": "Host country is required.", "correlationId": "abc-123" } * Log application events and important business transactions. * Log integration failures and exceptions. * Include correlation IDs where applicable. * Log security-relevant events appropriately. * Do not log passwords, authentication tokens or unnecessary sensitive personal information. * Use structured logging wherever practical. * Ensure log retention follows organizational and regulatory requirements. Business-critical functions should have appropriate automated unit tests. * Positive scenarios - valid input produces the expected result. * Negative scenarios - invalid input produces the expected validation/error. * Boundary scenarios - minimum, maximum, empty and null values where applicable. * Exception scenarios - external service failure, database failure and unexpected responses. * Regression scenarios - changes do not break existing behaviour. Assignment examples: valid assignment creation; missing host country; invalid dates; end date before start date; duplicate assignment; unauthorized user; integration failure; assignment extension. ☐ Acceptance criteria addressed ☐ Code follows agreed coding standards ☐ No unnecessary duplication ☐ Error handling implemented ☐ Security considerations addressed ☐ Unit tests included ☐ Existing tests still pass ☐ Logging is appropriate ☐ No secrets or hard-coded credentials ☐ API/database changes reviewed ☐ Performance impact considered ☐ Documentation updated where required AI-generated code must not be merged directly into a production branch without human developer review. The developer remains accountable for correctness, security, maintainability, licensing considerations and test coverage. * AI-generated code must follow the same coding standards as human-written code. * Developers must understand and review generated code before approving it. * Do not provide secrets, credentials or restricted data to an AI coding tool. * Validate generated code with automated tests and appropriate static/security analysis. * Do not assume AI-generated code is correct simply because it compiles or passes a single test. * Document material AI-assisted changes where organizational policy requires it. ☐ User story and acceptance criteria reviewed and understood ☐ Development completed ☐ Code review completed ☐ Unit tests completed ☐ Integration/API tests completed where applicable ☐ Acceptance criteria satisfied ☐ Security checks completed where applicable ☐ Logging and monitoring requirements addressed ☐ Documentation updated ☐ QA validation completed ☐ No critical/high defects outstanding unless explicitly accepted ☐ Deployment/configuration requirements completed * 01 Business Overview * 02 Business Glossary * 03 Personas & Roles * 04 Business Processes * 05 Assignment Lifecycle * 06 User Story Standards * 07 Acceptance Criteria Standards * 08 Coding Standards * 09 API Standards * 10 Database Standards * 11 Security Standards * 12 Testing Standards * 13 UI Standards * 14 Error Handling * 15 Logging & Monitoring * 16 Integration Standards * 17 Definition of Done * 18 AI Development Guidelines * 19 Golden Examples For an AI-enabled ☐ No critical/high defects outstanding unless explicitly accepted ☐ Deployment/configuration requirements completed * 01 Business Overview * 02 Business Glossary * 03 Personas & Roles * 04 Business Processes * 05 Assignment Lifecycle * 06 User Story Standards * 07 Acceptance Criteria Standards * 08 Coding Standards * 09 API Standards * 10 Database Standards * 11 Security Standards * 12 Testing Standards * 13
-````
-
-## 2. Assignment_Management_User_Story_Coding_Standards.txt #1
+## 1. 365 Retail Compliance, regulatory and Governance guidelines.txt #0
 
 Score: 1.000
 
 ````text
-where applicable ☐ Acceptance criteria satisfied ☐ Security checks completed where applicable ☐ Logging and monitoring requirements addressed ☐ Documentation updated ☐ QA validation completed ☐ No critical/high defects outstanding unless explicitly accepted ☐ Deployment/configuration requirements completed * 01 Business Overview * 02 Business Glossary * 03 Personas & Roles * 04 Business Processes * 05 Assignment Lifecycle * 06 User Story Standards * 07 Acceptance Criteria Standards * 08 Coding Standards * 09 API Standards * 10 Database Standards * 11 Security Standards * 12 Testing Standards * 13 UI Standards * 14 Error Handling * 15 Logging & Monitoring * 16 Integration Standards * 17 Definition of Done * 18 AI Development Guidelines * 19 Golden Examples For an AI-enabled ☐ No critical/high defects outstanding unless explicitly accepted ☐ Deployment/configuration requirements completed * 01 Business Overview * 02 Business Glossary * 03 Personas & Roles * 04 Business Processes * 05 Assignment Lifecycle * 06 User Story Standards * 07 Acceptance Criteria Standards * 08 Coding Standards * 09 API Standards * 10 Database Standards * 11 Security Standards * 12 Testing Standards * 13 UI Standards * 14 Error Handling * 15 Logging & Monitoring * 16 Integration Standards * 17 Definition of Done * 18 AI Development Guidelines * 19 Golden Examples For an AI-enabled engineering repository, standards should be supplemented with high-quality examples. A recommended example chain is: A set of 10-20 validated examples is recommended so that the AI can learn the expected structure, level of detail, terminology and engineering quality rather than relying only on written rules. Before using this document as an organizational standard, the engineering team should align it with the actual technology stack, architecture standards, secure coding requirements, CI/CD process, testing strategy, API standards, database standards and applicable compliance requirements. Assignment Management - User Story & Coding Standards | v1.0
+1.1 365 Information Security Policy (master reference)
+* Document: 365 Information Security Policy 02072025.pdf
+https://365retailmarkets.atlassian.net/wiki/pages/viewpageattachments.action?pageId=3652386874&preview=%2F3652386874%2F5583405070%2F365+Information+Security+Policy+02072025.pdf
+Key principles:
+* Scope
+o Applies to all 365 entities, platforms, subsidiaries, employees, contractors, and systems.
+o Covers all sensitive data: PHI, PII, PCI, Confidential Information (CI), Cardholder Data (CHD), etc.
+* Policy baseline
+o All information (written, spoken, electronic, printed) must be protected against unauthorized modification, destruction, or disclosure throughout its life cycle.
+o Policies and procedures must be:
+* Documented
+* Available to responsible individuals
+* Retained for at least 5 years
+* Periodically reviewed and updated
+* Roles & responsibilities
+o Information Security Team (IST):
+* Maintains policies, supports systems, educates users, performs audits.
+* Ensures compliance with laws including GDPR, CCPA, CPRA, FCRA, HIPAA, BIPA, GLBA, etc.
+o Information Owners, Custodians, Users: clear duties around classification, access, correct use, and reporting incidents.
+* Information classification
+o Data must be classified by sensitivity (e.g., PHI, PII, PCI, CI, Internal).
+o Same classification applies across all formats (source, DB, report, export).
+* Data integrity & secure transmission
+o Integrity controls: audits, RAID, ECC, checksums, encryption, digital signatures.
+o Transmission:
+* Sensitive data must use secure protocols (TLS, SSL, IPsec, SFTP).
+* Prohibits sending sensitive data via unencrypted email/SMS/IM.
+* Requires secure external file sharing (encrypted links, password protected files, etc.).
+* Audit and lifecycle governance
+o Systems audit – IST performs yearly audits of systems that store/process PHI, PII, PCI, CI or internal info. Non compliance is tracked via change management.
+o Policy audit – policy itself is reviewed yearly; changes tracked in Document Revisions.
+There is also a Confluence rendering of this titled “Security policy (from 365)”:
+Security policy (from 365)
 ````
 
-## 3. Equus_Assignment_Management_Public_Basics.txt #0
+## 2. 365 Retail Compliance, regulatory and Governance guidelines.txt #1
 
 Score: 1.000
 
 ````text
-Equus Assignment Management - Public Information Basics Standalone AI Knowledge Document | Public sources only August 2026 This document provides a foundational, public-source description of Equus Software's assignment management capabilities. It is intended to be used as a knowledge reference for an internal AI tool. It is based only on publicly accessible information published by Equus Software and Vialto Partners. No information from previous conversations, internal project discussions, internal application documentation, private client information, or non-public implementation details has been used. Note on terminology: the public Vialto/Equus materials refer to the company as Equus Software and the product as the Equus Platform. Older public material refers to AssignmentPro; Equus states that AssignmentPro was renamed as the Equus Platform as its functionality expanded. Vialto Partners and Equus Software publicly announced a strategic alliance in April 2023 around technology and services for delivering assignment and mobility types to the global workforce mobility industry. Vialto describes the combination as bringing together Equus assignment-management technology and Vialto's global service capabilities, with goals including better reporting, transparency and end-to-end productivity for employees and program managers. Source: Vialto Partners - Equus Software and Vialto Partners strategic agreement. citeturn0search2 Equus describes its Assignment solution as a centralized platform for planning, tracking and managing employee assignments. It supports the assignment lifecycle from initiation through repatriation and brings assignment information, workflows, costs, compensation, compliance, documents and stakeholder collaboration into a connected environment. Sources: Equus Assignment Management and Platform pages. citeturn1search2turn1search1 * Centralize assignment and mobility information. * Plan and track employee assignments. * Automate repeatable mobility processes and workflows. * Improve visibility for HR, business stakeholders, mobility teams and employees. * Estimate and manage assignment costs. * Support compensation and payroll processes. * Support immigration and tax compliance activities. * Manage documents, tasks, deadlines and communications. * Connect HR systems and mobility service providers. * Provide reporting, dashboards and real-time insights. * Improve employee experience during the mobility journey. Based on Equus's public description, the high-level lifecycle can be represented as: The exact workflow, statuses and approval rules depend on the customer's configured program and should not be inferred from this document. Equus publicly describes cost-estimate capabilities that allow organizations to forecast assignment costs and model scenarios. Its platform supports real or hypothetical estimates for one or multiple moves and enables teams to create estimates. * Cost estimate templates * Scenario modelling * Real or hypothetical assignment estimates * Compensation calculations * Policy-based cost considerations * Budget visibility and reporting Source: Equus Platform / Assignment Management. statuses and approval rules depend on the customer's configured program and should not be inferred from this document. Equus publicly describes cost-estimate capabilities that allow organizations to forecast assignment costs and model scenarios. Its platform supports real or hypothetical estimates for one or multiple moves and enables teams to create estimates. * Cost estimate templates * Scenario modelling * Real or hypothetical assignment estimates * Compensation calculations * Policy-based cost considerations * Budget visibility and reporting Source: Equus Platform / Assignment Management. citeturn1search1turn1search2 Equus states that its platform can be customized to an organization's mobility policies. Public descriptions include policies covering compensation, benefits, immigration and tax, while the platform uses configured policies to support consistent mobility processes. * Assignment policy configuration * Compensation and benefit policy considerations * Immigration and tax policy considerations * Policy-driven workflows * Policy-based employee benefit options Source: Equus Mobility Management and Assignments pages. citeturn1search5turn1search0 Equus publicly describes built-in workflows and checklists that help mobility teams monitor and manage business processes. Workflows can support task management, reminders, communications and process automation. * Workflow automation * Checklists * Task tracking * Reminders * Date/event-driven activities * Communications and alerts * Status visibility Source: Equus Platform and AssignmentPro product material. citeturn1search1turn1search24 Equus publicly describes document management capabilities that allow assignment documentation to be generated and stored centrally. Its platform also provides a role-based document library for move-related documents. * Assignment documentation * Central document storage * Role-based document access * Document retrieval * Integration of documents into the assignment workflow Source: Equus Platform. citeturn1search1turn1search6 Equus publicly describes compensation automation and global payroll capabilities as part of its mobility platform. The platform can calculate compensation and provide payroll-related instructions, with support for multi-currency, split pay and custom calculations/instructions. * Global compensation management * Compensation calculations * Payroll instructions * Multi-currency support * Split-pay scenarios * Custom calculations and instructions * Integration with payroll systems Sources: Equus Mobility Management and Assignment Management pages. citeturn1search5turn1search2 Equus positions assignment management as supporting compliance obligations associated with global mobility. Public materials reference immigration and tax considerations, local regulatory compliance, and compliance engines/tools. * Immigration considerations * Tax considerations * Local regulatory compliance * Global compliance monitoring * Payroll and compensation compliance * Reporting related to global compensation Sources: Equus Assignments and Platform pages. citeturn1search0turn1search23 Equus publicly describes an employee experience pages. citeturn1search5turn1search2 Equus positions assignment management as supporting compliance obligations associated with global mobility. Public materials reference immigration and tax considerations, local regulatory compliance, and compliance engines/tools. * Immigration considerations * Tax considerations * Local regulatory compliance * Global compliance monitoring * Payroll and compensation compliance * Reporting related to global compensation Sources: Equus Assignments and Platform pages. citeturn1search0turn1search23 Equus publicly describes an employee experience that gives assignees access to information and tools through a user-friendly experience. * Assignment timeline management * Key dates, tasks and deadlines * Automatic alerts and notifications * Destination information * Cultural learning resources * Benefit elections * Expense reporting * Compensation / earning statement visibility * Pulse checks / employee feedback * Access to assignment-related information Source: Equus Assignment Management and Platform pages. citeturn1search2turn1search6 Equus describes dedicated HR and business experiences that support management of employee moves. Public capabilities include initiating moves, creating packages, modelling scenarios, viewing move details and reporting. * Initiate employee moves * Extend or manage moves * Approve assignments * View assignment information * Create and model packages * Run cost estimates * Access configured reports * Use self-service request forms Source: Equus HR / Business Landing Experience. citeturn1search4 Equus describes real-time dashboards, self-service reporting and analytics that provide visibility into the global workforce and mobility program. * Assignment status reporting * Real-time dashboards * Mobility trends * Budget and cost insights * Key performance indicators * Program analytics * Data-driven decision support Sources: Equus Assignment Management and Platform pages. citeturn1search2turn1search1 Equus describes an ecosystem approach that connects HR systems, payroll systems, global mobility service providers and other systems. The stated objective is to reduce manual data entry, improve data accuracy and provide a connected view of mobility information. * HRIS / HR systems * Payroll systems * Global mobility vendors * Relocation service providers * Third-party tools * Data synchronization * Secure system-to-system integration Sources: Equus Ecosystem and Platform. citeturn1search3turn1search5turn1search25 Equus publicly describes vendor-management capabilities intended to improve consistency and transparency across vendors involved in a mobility ecosystem. * Vendor relationship management * Performance visibility * Communication * Vendor selection support * Integration with mobility providers Source: Equus Platform. citeturn1search0 The following are conceptual data areas derived from Equus's public feature descriptions. They are not claimed to be the exact database schema or fields of the product. * Employee / assignee * Assignment / move * Home and host locations * Assignment dates * Assignment policy * Compensation and benefits * Cost estimates * Tasks to improve consistency and transparency across vendors involved in a mobility ecosystem. * Vendor relationship management * Performance visibility * Communication * Vendor selection support * Integration with mobility providers Source: Equus Platform. citeturn1search0 The following are conceptual data areas derived from Equus's public feature descriptions. They are not claimed to be the exact database schema or
+* Page: SOS 47951 – International and US Privacy Law Governance Program (GDPR)
+SOS-47951 International and US Privacy Law Governance Program (GDPR)
+Scope & expectations:
+* Build a formal privacy law governance program across:
+o Phase 1 – GDPR: 365pay, V5 kiosks, MM6, PicoCooler, PicoMarket, Stockwell, ADM.
+o Phase 2 – LATAM (Parlevel products).
+o Phase 3 – CCPA/CPRA/other US laws.
+* Activities:
+o Review existing data privacy practices and Privacy Notice for compliance.
+o Complete Data Protection Impact Assessments (DPIAs) for EU sold products.
+o Implement:
+* Data Protection by Design (DPbD)
+* Privacy by Default
+in the product development lifecycle.
+Implications for your work:
+* New or changed features on in scope products may require:
+o DPIA review/updates if they change data flows, data types, or risk.
+o Evidence of DPbD/Privacy by Default in requirements and design (data minimization, access controls, retention, etc.).
 ````
 
-## 4. Equus_Assignment_Management_Public_Basics.txt #1
+## 3. 365 Retail Compliance, regulatory and Governance guidelines.txt #2
 
 Score: 1.000
 
 ````text
-system-to-system integration Sources: Equus Ecosystem and Platform. citeturn1search3turn1search5turn1search25 Equus publicly describes vendor-management capabilities intended to improve consistency and transparency across vendors involved in a mobility ecosystem. * Vendor relationship management * Performance visibility * Communication * Vendor selection support * Integration with mobility providers Source: Equus Platform. citeturn1search0 The following are conceptual data areas derived from Equus's public feature descriptions. They are not claimed to be the exact database schema or fields of the product. * Employee / assignee * Assignment / move * Home and host locations * Assignment dates * Assignment policy * Compensation and benefits * Cost estimates * Tasks to improve consistency and transparency across vendors involved in a mobility ecosystem. * Vendor relationship management * Performance visibility * Communication * Vendor selection support * Integration with mobility providers Source: Equus Platform. citeturn1search0 The following are conceptual data areas derived from Equus's public feature descriptions. They are not claimed to be the exact database schema or fields of the product. * Employee / assignee * Assignment / move * Home and host locations * Assignment dates * Assignment policy * Compensation and benefits * Cost estimates * Tasks and checklists * Documents * Services and vendors * Immigration and tax information * Payroll information * Expenses * Approvals * Notifications * Reports and dashboards Assignment initiation As an HR or mobility user, I want to initiate an employee move so that the assignment can be managed through a centralized mobility process. Cost estimate As a mobility professional, I want to create a cost estimate for an assignment so that I can understand expected program costs before proceeding. Assignment tracking As a mobility professional, I want to track assignment dates, tasks and deadlines so that important mobility activities are completed on time. Document management As an authorized stakeholder, I want assignment documents stored centrally so that I can access the information required for the move. Employee experience As an assignee, I want visibility into my assignment timeline, tasks and relevant information so that I can manage my mobility journey. Reporting As a mobility manager, I want dashboards and reports on assignments so that I can monitor trends, costs and program performance. Integration As a mobility program administrator, I want the platform to exchange data with HR and service-provider systems so that information remains synchronized and manual re-entry is reduced. These are AI-generated examples based only on publicly described capabilities; they are not Equus customer requirements. * Do not represent these public capabilities as a customer's configured implementation. * Do not infer exact screen names, field names, APIs, database structures, roles or approval workflows. * Do not assume that every feature is enabled for every Equus customer. * Do not infer country-specific tax or immigration rules from the product description. * Separate public product capability from customer-specific configuration. * When asked about an unknown feature, state that it is not confirmed by the public source set. * Use the official Equus and Vialto sources as the preferred references. * Vialto - Equus strategic alliance: https://vialtopartners.com/news/equus-software-and-vialto-partners-launch-new-strategic-agreement-to-drive-global-mobility-transformation * Vialto - Business Alliances: https://vialtopartners.com/about-us/business-alliances * Equus - Assignment Management: https://www.equusoft.com/solutions/assignments/ * Equus - Solutions / Assignments: https://www.equusoft.com/solutions/ * Equus - AssignmentPro / Equus Platform: https://www.equusoft.com/platform/assignmentpro/ * Equus - Mobility Management: official Equus and Vialto sources as the preferred references. * Vialto - Equus strategic alliance: https://vialtopartners.com/news/equus-software-and-vialto-partners-launch-new-strategic-agreement-to-drive-global-mobility-transformation * Vialto - Business Alliances: https://vialtopartners.com/about-us/business-alliances * Equus - Assignment Management: https://www.equusoft.com/solutions/assignments/ * Equus - Solutions / Assignments: https://www.equusoft.com/solutions/ * Equus - AssignmentPro / Equus Platform: https://www.equusoft.com/platform/assignmentpro/ * Equus - Mobility Management: https://www.equusoft.com/platform/mobility-management/ * Equus - HR / Business Landing Experience: https://www.equusoft.com/platform/landing-experience/ * Equus - Platform: https://www.equusoft.com/platform/ * Equus - Resource Library: https://www.equusoft.com/resource-library/ This document intentionally provides a high-level knowledge base. Public websites describe product capabilities but do not expose every implementation detail. Any internal AI trained or grounded on this document should treat customer-specific configuration, internal workflows, proprietary business rules and non-public product details as unknown unless separately supplied through an authorized source. Equus Assignment Management - Public Information Basics | v1.0
+* Page: 365 Secure Development Lifecycle
 ````
 
-## 5. README.md #0
+## 4. 365 Retail Compliance, regulatory and Governance guidelines.txt #3
 
 Score: 1.000
 
 ````text
-This service is the privacy firewall used by the Chrome extension. It receives prompt text, scans it for secrets and personal data, and returns a safer version that preserves as much prompt quality as possible.
+The SDLC page (and the Information Security Policy) jointly require:
+* Embedding security and privacy controls at:
+o Requirements ? Design ? Implementation ? Verification ? Release ? Response.
+* Using change management:
+o Significant changes are tracked as Epics.
+o Audit, pen tests, vulnerability remediation integrate into the lifecycle.
+When you document a project or feature, you should be able to show:
+* Where security/privacy requirements are defined.
+* How they are tested/verified (functional tests, pen tests, privacy tests).
+* How changes are approved (CAB) and released.
 ````
 
-## 6. README.md #1
+## 5. 365 Retail Compliance, regulatory and Governance guidelines.txt #4
 
 Score: 1.000
 
 ````text
-- powers the `POST /api/scan` endpoint used by the extension
-- runs multi-layer privacy detection
-- combines regex, heuristic, Presidio, and spaCy analysis
-- classifies risk as `low`, `medium`, `high`, or `critical`
-- returns quality-preserving anonymized text
-- supports large prompt scanning with chunk overlap
+From the security policy (Confluence view):
+Security policy (from 365)
+* Systems Audit (annual) – checks:
+o Systems processing PHI/PII/PCI/CI against the 365 policy.
+o Non compliant items ? documented, tracked, remediated via change management.
+* Policy Audit (annual) – ensures:
+o Policy remains aligned with best practices and regulatory changes.
 ````
 
-## 7. README.md #2
+## 6. 365 Retail Compliance, regulatory and Governance guidelines.txt #5
 
 Score: 1.000
 
 ````text
-Returns a simple health payload:
+* Jira: Compass Vendor Security Audit (ISEC 711)
+ISEC-711: Compass Vendor Security AuditDone
+Focus areas (typical large client audit expectations):
+* IT security policies, risk management, user privilege management.
+* Change management, secure configuration, malware protection, monitoring.
+* Incident management, business continuity & disaster recovery.
+* Data protection, privacy, and POS operations (including valid PCI DSS Attestations of Compliance, SOC reports, etc.).
+Use this as a reference for what enterprise customers expect you to demonstrate.
 ````
 
-## 8. README.md #3
+## 7. 365 Retail Compliance, regulatory and Governance guidelines.txt #6
 
 Score: 1.000
 
 ````text
-```json
-{"status":"ok"}
+Depending on what you’re doing, here’s how to use these guidelines:
 ````
 
-## 9. README.md #4
+## 8. 365 Retail Compliance, regulatory and Governance guidelines.txt #7
+
+Score: 1.000
+
+````text
+o Add a “Compliance & Governance” section with bullets like:
+* “Subject to 365 Information Security Policy and SDLC.”
+* “Check if change requires DPIA update under SOS 47951.”
+* “Ensure PCI/PII handling follows encryption and transmission requirements.”
+````
+
+## 9. 365 Retail Compliance, regulatory and Governance guidelines.txt #8
+
+Score: 1.000
+
+````text
+o Explicitly call out:
+* Data collected, stored, transmitted, and classification (PII, PCI, etc.).
+* Where encryption at rest/in transit applies.
+* Retention and access control model.
+````
+
+## 10. 365 Retail Compliance, regulatory and Governance guidelines.txt #9
+
+Score: 1.000
+
+````text
+o For any new integration or process, ensure:
+* There’s a clear owner (Information Owner).
+* Auditability: logs, reports, and documentation kept at least 5 years.
+* Alignment with privacy governance (GDPR/US) if it touches end user data.
+````
+
+## 11. 365_Retail_Architecture_with_mermaid.md #0
+
+Score: 1.000
+
+````text
+(Images from original PDF not embedded in text extraction.)
+````
+
+## 12. 365_Retail_Architecture_with_mermaid.md #1
+
+Score: 1.000
+
+````text
+- **ADM**: reportapi, backgroundapi, schedulerapi, compile-price-api, platformapi
+- **V5/RT**: kskapi, cafeapi, printapi, payapi, dashapi, g2api, msgapi, salesapi
+- **365Pay**: sssapi, platformapi
+- **MMA (nano, pico, micro)**: sssapi
+- **SOSLoad**: —
+- **Dining**: —
+````
+
+## 13. 365_Retail_Architecture_with_mermaid.md #2
+
+Score: 1.000
+
+````text
+- **365Pay**: Interface for global market account. Hosted in S3 & CloudFront.
+- **smtmail**: Email notification server for ADM.
+- **smtnotify**: Notification gateway for Slack, email, SMS.
+- **dashweb**: Kiosk monitoring web app.
+- **g2api**: Migrates data from Gen2 to sosdb.
+- **heatwave**: Filters barcode scanner events on V5 kiosk.
+- **g2convert**: Gen2 to sosdb conversion.
+- **capadm**: Operator admin portal.
+- **capsvr**: Processes sales, transactions & sync.
+- **sosload**: Tool for loading products & accounts.
+- **dashapi**: Backend for dashweb.
+- **sssapi**: Backend for nano tablets.
+- **receiptapi**: Sends receipts via email/SMS.
+- **eftbatchapi**: EFT & GMA reporting service.
+- **payapi**: Payment gateway.
+- **printapi**: Receipt printing.
+- **cafeapi**: CKDS ticket creation for dining.
+- **kskapi**: Backend for kiosks.
+- **scheduleapi**: Scheduling tasks.
+- **reportapi**: Reporting.
+- **backgroundapi**: Long-running tasks.
+- **vdiapi**: 3rd party product update integration.
+- **msgapi**: Messaging layer.
+- **aviapi**: AVI product sync.
+- **lsaapi**: Lightspeed Inventory API.
+- **difapi**: Multi-market sync.
+- **salesapi**: Order service backend.
+- **httpd**: Proxy server.
+- **AmazonMQ**: Broker endpoint.
+- **swarmcmd**: Async proxy to kiosks.
+- **compile-prices-api**: Pricing compilation.
+- **monnitapi**: —
+- **pricing-inquiry-api**: Real-time pricing search.
+- **alertapi**: Offline/no-sale alerts.
+````
+
+## 14. 365_Retail_Architecture_with_mermaid.md #3
+
+Score: 1.000
+
+````text
+- User schedules report in ADM.
+- capadm stores schedule → converts cron → CloudWatch rule.
+- CloudWatch triggers Lambda.
+- Lambda calls Report Builder microservice.
+````
+
+## 15. 365_Retail_Architecture_with_mermaid.md #4
+
+Score: 1.000
+
+````text
+- Used by Finance for operator payments.
+- Performs variance checks (>10% deviation).
+- UI: Super > Finance > EFT Disbursement.
+(Additional pages contained diagrams only.)
+---
+````
+
+## 16. 365_Retail_Architecture_with_mermaid.md #5
+
+Score: 1.000
+
+````text
+> These diagrams are written in [Mermaid](https://mermaid.js.org/). GitHub, Azure DevOps, and many docs sites render Mermaid blocks automatically.
+````
+
+## 17. 365_Retail_Architecture_with_mermaid.md #6
+
+Score: 1.000
+
+````text
+```mermaid
+flowchart LR
+  %% Subsystems
+  subgraph Devices
+    V5RT["V5/RT Kiosks"]
+    MM6["MM6 / Nano / Pico"]
+  end
+
+  subgraph Mobile
+    APP365["365Pay (Web/Mobile)"]
+  end
+
+  subgraph BackOffice["Back Office Services"]
+    ADM["capadm (ADM)"]
+    KSKAPI["kskapi"]
+    SSSAPI["sssapi"]
+    CAPSVR["capsvr"]
+    PAYAPI["payapi"]
+    CAFEAPI["cafeapi"]
+    PRINTAPI["printapi"]
+    DASHAPI["dashapi"]
+    REPORTAPI["reportapi"]
+    BKGAPI["backgroundapi"]
+    SCHEDAPI["schedulerapi"]
+    COMPILEPRICE["compile-prices-api"]
+    PRICEINQ["pricing-inquiry-api"]
+    RECEIPTAPI["receiptapi"]
+    EFTBATCH["eftbatchapi"]
+    MSGAPI["msgapi"]
+    SWARM["swarmcmd"]
+  end
+
+  subgraph Infra["Platform/Infra"]
+    MQ["AmazonMQ"]
+    CW["AWS CloudWatch Events"]
+    LAMBDA["Build Report Lambda"]
+  end
+
+  subgraph Data["Data Stores"]
+    SOSDB[("SOSDB")]
+    PRICINGREC[("pricingrec")]
+  end
+
+  %% Device flows
+  V5RT --> MSGAPI --> KSKAPI
+  MM6 --> SSSAPI
+  SWARM --> KSKAPI
+  SWARM --> SSSAPI
+  KSKAPI --> CAPSVR
+  SSSAPI --> CAPSVR
+  CAPSVR --> SOSDB
+  CAPSVR --> PAYAPI
+  CAPSVR --> RECEIPTAPI
+
+  %% ADM & reporting
+  ADM --> REPORTAPI
+  ADM --> SCHEDAPI --> BKGAPI
+  SCHEDAPI --> CW --> LAMBDA --> REPORTAPI
+  REPORTAPI --> SOSDB
+  BKGAPI --> SOSDB
+
+  %% Pricing
+  COMPILEPRICE --> PRICINGREC
+  PRICEINQ --> PRICINGREC
+
+  %% Finance/EFT
+  EFTBATCH --> SOSDB
+````
+
+## 18. 365_Retail_Architecture_with_mermaid.md #7
 
 Score: 1.000
 
@@ -84,87 +341,3280 @@ Score: 1.000
 ```
 ````
 
-## 10. README.md #5
+## 19. 365_Retail_Architecture_with_mermaid.md #8
 
 Score: 1.000
 
 ````text
-Request body:
+```mermaid
+graph LR
+  subgraph Apps
+    ADM_APP[ADM]
+    V5RT_APP[V5/RT]
+    PAY_APP[365Pay]
+    MMA_APP[MMA (nano/pico/micro)]
+  end
+
+  REPORTAPI[reportapi]
+  BKG[backgroundapi]
+  SCHED[schedulerapi]
+  COMPILE[compile-price-api]
+  PLATFORM[platformapi]
+
+  KSK[kskapi]
+  CAFE[cafeapi]
+  PRINT[printapi]
+  PAY[payapi]
+  DASH[dashapi]
+  G2[g2api]
+  MSG[msgapi]
+  SALES[salesapi]
+  SSS[sssapi]
+
+  ADM_APP --> REPORTAPI
+  ADM_APP --> BKG
+  ADM_APP --> SCHED
+  ADM_APP --> COMPILE
+  ADM_APP --> PLATFORM
+
+  V5RT_APP --> KSK
+  V5RT_APP --> CAFE
+  V5RT_APP --> PRINT
+  V5RT_APP --> PAY
+  V5RT_APP --> DASH
+  V5RT_APP --> G2
+  V5RT_APP --> MSG
+  V5RT_APP --> SALES
+
+  PAY_APP --> SSS
+  PAY_APP --> PLATFORM
+
+  MMA_APP --> SSS
 ````
 
-## 11. README.md #6
+## 20. 365_Retail_Architecture_with_mermaid.md #9
 
 Score: 1.000
 
 ````text
-```json
-{
-  "text": "my email is user@example.com and key is sk-1234567890abcdef"
+```
+````
+
+## 21. 365_Retail_Architecture_with_mermaid.md #10
+
+Score: 1.000
+
+````text
+```mermaid
+sequenceDiagram
+  actor User as Operator
+  participant ADM as ADM (capadm)
+  participant SCHED as schedulerapi
+  participant CW as AWS CloudWatch
+  participant L as Build Report Lambda
+  participant RB as Report Builder svc
+  participant RPT as reportapi
+
+  User->>ADM: Create & schedule report
+  ADM->>SCHED: Persist schedule & cron
+  SCHED->>CW: Create rule + target (input JSON)
+  CW-->>L: Trigger on schedule
+  L->>RB: Call with scheduleId + tz
+  RB->>RPT: Build/assemble report
+  RPT-->>User: Deliver/notify
+````
+
+## 22. 365_Retail_Architecture_with_mermaid.md #11
+
+Score: 1.000
+
+````text
+```
+````
+
+## 23. 365_Retail_Architecture_with_mermaid.md #12
+
+Score: 1.000
+
+````text
+```mermaid
+sequenceDiagram
+  participant Kiosk as V5/RT Kiosk
+  participant MSG as msgapi
+  participant KSK as kskapi
+  participant CAP as capsvr
+  database SOS as SOSDB
+  participant RCP as receiptapi
+
+  Kiosk->>MSG: Scan items / checkout
+  MSG->>KSK: Forward events/requests
+  KSK->>CAP: Submit order/payment
+  CAP->>CAP: Price/Tax/Validate
+  CAP->>SOS: Persist sale (hdr/detail/payment)
+  CAP->>RCP: Send receipt (email/SMS)
+````
+
+## 24. 365_Retail_Architecture_with_mermaid.md #13
+
+Score: 1.000
+
+````text
+```
+````
+
+## 25. 365_Retail_Architecture_with_mermaid.md #14
+
+Score: 1.000
+
+````text
+```mermaid
+sequenceDiagram
+  actor Finance as Finance User
+  participant ADM as ADM (EFT UI)
+  participant EFT as eftbatchapi
+  database HIST as SOSDB (historical)
+
+  Finance->>ADM: Open Disbursement for Date D
+  ADM->>EFT: Request variance for D
+  EFT->>HIST: Fetch current batch D
+  EFT->>HIST: Fetch historical batches
+  EFT-->>ADM: Variance results (flag >10%)
+  ADM-->>Finance: Display variance table
+````
+
+## 26. 365_Retail_Architecture_with_mermaid.md #15
+
+Score: 1.000
+
+````text
+```
+````
+
+## 27. Compliance/365 Retail Compliance, regulatory and Governance guidelines.txt #0
+
+Score: 1.000
+
+````text
+365 Retail compliance, regulatory, or governance guidelines
+````
+
+## 28. Compliance/365 Retail Compliance, regulatory and Governance guidelines.txt #1
+
+Score: 1.000
+
+````text
+1.1 365 Information Security Policy (master reference)
+* Document: 365 Information Security Policy 02072025.pdf
+https://365retailmarkets.atlassian.net/wiki/pages/viewpageattachments.action?pageId=3652386874&preview=%2F3652386874%2F5583405070%2F365+Information+Security+Policy+02072025.pdf
+Key principles:
+* Scope
+o Applies to all 365 entities, platforms, subsidiaries, employees, contractors, and systems.
+o Covers all sensitive data: PHI, PII, PCI, Confidential Information (CI), Cardholder Data (CHD), etc.
+* Policy baseline
+o All information (written, spoken, electronic, printed) must be protected against unauthorized modification, destruction, or disclosure throughout its life cycle.
+o Policies and procedures must be:
+* Documented
+* Available to responsible individuals
+* Retained for at least 5 years
+* Periodically reviewed and updated
+* Roles & responsibilities
+o Information Security Team (IST):
+* Maintains policies, supports systems, educates users, performs audits.
+* Ensures compliance with laws including GDPR, CCPA, CPRA, FCRA, HIPAA, BIPA, GLBA, etc.
+o Information Owners, Custodians, Users: clear duties around classification, access, correct use, and reporting incidents.
+* Information classification
+o Data must be classified by sensitivity (e.g., PHI, PII, PCI, CI, Internal).
+o Same classification applies across all formats (source, DB, report, export).
+* Data integrity & secure transmission
+o Integrity controls: audits, RAID, ECC, checksums, encryption, digital signatures.
+o Transmission:
+* Sensitive data must use secure protocols (TLS, SSL, IPsec, SFTP).
+* Prohibits sending sensitive data via unencrypted email/SMS/IM.
+* Requires secure external file sharing (encrypted links, password protected files, etc.).
+* Audit and lifecycle governance
+o Systems audit   IST performs yearly audits of systems that store/process PHI, PII, PCI, CI or internal info. Non compliance is tracked via change management.
+o Policy audit   policy itself is reviewed yearly; changes tracked in Document Revisions.
+There is also a Confluence rendering of this titled  Security policy (from 365) :
+Security policy (from 365)
+````
+
+## 29. Compliance/365 Retail Compliance, regulatory and Governance guidelines.txt #2
+
+Score: 1.000
+
+````text
+2.1 Privacy governance program (GDPR & beyond)
+* Page: SOS 47951   International and US Privacy Law Governance Program (GDPR)
+SOS-47951 International and US Privacy Law Governance Program (GDPR)
+Scope & expectations:
+* Build a formal privacy law governance program across:
+o Phase 1   GDPR: 365pay, V5 kiosks, MM6, PicoCooler, PicoMarket, Stockwell, ADM.
+o Phase 2   LATAM (Parlevel products).
+o Phase 3   CCPA/CPRA/other US laws.
+* Activities:
+o Review existing data privacy practices and Privacy Notice for compliance.
+o Complete Data Protection Impact Assessments (DPIAs) for EU sold products.
+o Implement:
+* Data Protection by Design (DPbD)
+* Privacy by Default
+in the product development lifecycle.
+Implications for your work:
+* New or changed features on in scope products may require:
+o DPIA review/updates if they change data flows, data types, or risk.
+o Evidence of DPbD/Privacy by Default in requirements and design (data minimization, access controls, retention, etc.).
+````
+
+## 30. Compliance/365 Retail Compliance, regulatory and Governance guidelines.txt #3
+
+Score: 1.000
+
+````text
+3.1 Secure Development Lifecycle
+* Page: 365 Secure Development Lifecycle
+365 Secure Development Lifecycle
+The SDLC page (and the Information Security Policy) jointly require:
+* Embedding security and privacy controls at:
+o Requirements ? Design ? Implementation ? Verification ? Release ? Response.
+* Using change management:
+o Significant changes are tracked as Epics.
+o Audit, pen tests, vulnerability remediation integrate into the lifecycle.
+When you document a project or feature, you should be able to show:
+* Where security/privacy requirements are defined.
+* How they are tested/verified (functional tests, pen tests, privacy tests).
+* How changes are approved (CAB) and released.
+````
+
+## 31. Compliance/365 Retail Compliance, regulatory and Governance guidelines.txt #4
+
+Score: 1.000
+
+````text
+4.1 Internal systems & policy audits
+From the security policy (Confluence view):
+Security policy (from 365)
+* Systems Audit (annual)   checks:
+o Systems processing PHI/PII/PCI/CI against the 365 policy.
+o Non compliant items ? documented, tracked, remediated via change management.
+* Policy Audit (annual)   ensures:
+o Policy remains aligned with best practices and regulatory changes.
+4.2 Customer / vendor audits (example)
+* Jira: Compass Vendor Security Audit (ISEC 711)
+ISEC-711: Compass Vendor Security AuditDone
+Focus areas (typical large client audit expectations):
+* IT security policies, risk management, user privilege management.
+* Change management, secure configuration, malware protection, monitoring.
+* Incident management, business continuity & disaster recovery.
+* Data protection, privacy, and POS operations (including valid PCI DSS Attestations of Compliance, SOC reports, etc.).
+Use this as a reference for what enterprise customers expect you to demonstrate.
+````
+
+## 32. Compliance/365 Retail Compliance, regulatory and Governance guidelines.txt #5
+
+Score: 1.000
+
+````text
+Depending on what you re doing, here s how to use these guidelines:
+````
+
+## 33. Compliance/365 Retail Compliance, regulatory and Governance guidelines.txt #6
+
+Score: 1.000
+
+````text
+o Add a  Compliance & Governance  section with bullets like:
+*  Subject to 365 Information Security Policy and SDLC. 
+*  Check if change requires DPIA update under SOS 47951. 
+*  Ensure PCI/PII handling follows encryption and transmission requirements.
+````
+
+## 34. Compliance/365 Retail Compliance, regulatory and Governance guidelines.txt #7
+
+Score: 1.000
+
+````text
+o Explicitly call out:
+* Data collected, stored, transmitted, and classification (PII, PCI, etc.).
+* Where encryption at rest/in transit applies.
+* Retention and access control model.
+````
+
+## 35. Compliance/365 Retail Compliance, regulatory and Governance guidelines.txt #8
+
+Score: 1.000
+
+````text
+o For any new integration or process, ensure:
+* There s a clear owner (Information Owner).
+* Auditability: logs, reports, and documentation kept at least 5 years.
+* Alignment with privacy governance (GDPR/US) if it touches end user data.
+````
+
+## 36. Compliance/365_Information_Security_Policy_02072025.md #0
+
+Score: 1.000
+
+````text
+> Converted from PDF to Markdown. - I. Policy - II. Scope - III. Information Security Responsibilities - IV. Information Classifications - A. Protected Health Information (PHI) - B. Personally Identifiable Information (PII) - C. PCI - D. Confidential Information (CI) - E. Internal Information - F. Public Information - V. Risk Management - A. Existing Systems - B. New Systems - C. Annual Risk Assessment - VI. Computer and Information Control - A. Ownership of Software - B. Installed Software - C. Patch Management - D. Malware Protection - E. Access Controls - 1. Authorization - 2. Identification/Authentication - 3. Password Policy - 4. Expiration - F. Remote Access Tool Policy - G. Data Integrity - H. Data Storage and Transmission - 1. Secure Transmission - 2. Storage Guidelines - I. Physical Access - 1. Building Security - J. Equipment and Media Controls - K. Removable Media - L. POS/Workstation Decommission and Reuse Policy - M. Other Media Controls - VII. Training and Awareness - VIII. Network Security Policy - IX. Communication Policy - X. Clean Desk Policy - XI. Vendor Management - XII. PCI Policy - XIII. PHI Policy - XIV. Change Management - A. Roles and Responsibilities - B. Change Management Steps - XV. Remote Employee Policy - XVI. Application Security Architecture Policy - XVII. Encryption Management - XVIII. Contingency Plan - XIX. IT Asset End of Life Disposal Policy - XX. Systems Audit - XXI. Policy Audit - XXII. Document Revisions - XXIII. Definitions and Acronyms --- It is the policy of 365 RETAIL MARKETS that information, in all its forms—written, spoken, recorded electronically or printed—will be protected from accidental or intentional unauthorized modification, destruction or disclosure throughout its life cycle. This protection includes an appropriate level of security over the equipment and software used to process, store, and transmit that information. All policies and procedures must be documented and made available to individuals responsible for their implementation and compliance. All activities identified by the policies and procedures must also be documented. All the documentation, which may be in electronic form, must be retained for at least **5 (five) years** after initial creation, or, pertaining to policies and procedures, after changes are made, unless otherwise required by law. All documentation must be periodically reviewed for appropriateness and currency, a period to be determined by each entity within 365 RETAIL MARKETS. At each entity and/or department level, additional policies, standards, and procedures will be developed detailing the implementation of this policy and addressing any additional information systems in such entity and/or department. All departmental policies must be consistent with this policy. All systems implemented after the effective date of these policies are expected to comply with the provisions of this policy where possible. Existing systems are expected to be brought into compliance where possible and as soon as practical. The scope of information security includes the protection of confidentiality, integrity and availability of information. The framework for managing information
+````
+
+## 37. Compliance/365_Information_Security_Policy_02072025.md #1
+
+Score: 1.000
+
+````text
+detailing the implementation of this policy and addressing any additional information systems in such entity and/or department. All departmental policies must be consistent with this policy. All systems implemented after the effective date of these policies are expected to comply with the provisions of this policy where possible. Existing systems are expected to be brought into compliance where possible and as soon as practical. The scope of information security includes the protection of confidentiality, integrity and availability of information. The framework for managing information detailing the implementation of this policy and addressing any additional information systems in such entity and/or department. All departmental policies must be consistent with this policy. All systems implemented after the effective date of these policies are expected to comply with the provisions of this policy where possible. Existing systems are expected to be brought into compliance where possible and as soon as practical. The scope of information security includes the protection of confidentiality, integrity and availability of information. The framework for managing information security in this policy applies to all 365 RETAIL MARKETS entities, subsidiaries, employees, contractors, and other involved persons, and all involved systems throughout 365 RETAIL MARKETS. This policy and all standards apply to all protected health information and other classes of protected information in any form as defined below in **Information Classification**. **Information Security Team (IST):** Responsible for policies, controls, education, audits, and compliance with applicable laws (e.g., **GDPR, CCPA, CPRA, FCRA, HIPAA, BIPA, GLBA**). Responsibilities include advising on classification, embedding controls from design to production, employee education, performing audits, and reporting to management. **Information Owner:** Manager responsible for creation/primary use of information. Sets retention, ensures protection, authorizes access, specifies controls, reports loss/misuse, and initiates corrective actions. **Custodian:** Operates storage/processing of information and administers controls set by the owner. Provides safeguards, administers access, maintains policies, promotes awareness, reports incidents, and responds to them. **User Management:** Supervises users and oversees appropriate access, initiates changes, terminates/updates access on role changes, provides training, and reports incidents. **User:** Any authorized person accessing information. Must access only as needed, comply with policies and controls, protect authentication secrets, report incidents, and log off/secure systems when away. Information must be classified by sensitivity. The same classification applies across all formats. Definition aligns to healthcare data created/received by covered entities, relating to health condition, care, or payment, including identifiable demographics. Unauthorized disclosure may violate law and cause harm. Information that identifies or is linkable to a consumer/household (e.g., names, addresses, IDs, IPs, biometrics, geolocation, employment/education data,
+````
+
+## 38. Compliance/365_Information_Security_Policy_02072025.md #2
+
+Score: 1.000
+
+````text
+needed, comply with policies and controls, protect authentication secrets, report incidents, and log off/secure systems when away. Information must be classified by sensitivity. The same classification applies across all formats. Definition aligns to healthcare data created/received by covered entities, relating to health condition, care, or payment, including identifiable demographics. Unauthorized disclosure may violate law and cause harm. Information that identifies or is linkable to a consumer/household (e.g., names, addresses, IDs, IPs, biometrics, geolocation, employment/education data, profiles, etc.). Applies to organizations storing/processing/transmitting **cardholder data (CHD)** and/or **sensitive authentication data (SAD)**. Highly sensitive non‑PHI/PII/PCI information (e.g., ACH, bank numbers, proprietary info, passwords, encryption keys). Unauthorized disclosure may violate laws and/or cause significant harm. Intended for unrestricted internal use; may be shared within 365 or partners. Examples include directories and internal policies. Default classification if not otherwise specified. Approved for public release by designated authority (e.g., marketing brochures, profiles, etc.). Applies to organizations storing/processing/transmitting **cardholder data (CHD)** and/or **sensitive authentication data (SAD)**. Highly sensitive non‑PHI/PII/PCI information (e.g., ACH, bank numbers, proprietary info, passwords, encryption keys). Unauthorized disclosure may violate laws and/or cause significant harm. Intended for unrestricted internal use; may be shared within 365 or partners. Examples include directories and internal policies. Default classification if not otherwise specified. Approved for public release by designated authority (e.g., marketing brochures, website content). Periodic analysis of threats, vulnerabilities, and asset values to determine risks to confidentiality, integrity, and availability. Subject to regular assessments (e.g., **ASV scans – quarterly; Pen Test – yearly; External/Internal vulnerability scans – quarterly**). Risks are rated (Critical, High, Medium, Low, Best Practice) and remediated via Change Management and SDLC. Evaluated through Change Management; secure configurations applied by default. Initiated by IST using 365’s baseline drawn from **PCI DSS, SOC 2, NIST CSF, ISO‑27001**. Risk register maintained with probability/likelihood. Systems and information are company assets and must be protected. Software developed/licensed for 365 remains 365 property and must respect licenses. Must comply with licenses and be formally approved by IST. Unapproved software handling PHI/PII/PCI/CI/Internal is prohibited. All systems storing Information must receive regular security patches. IST‑approved multi‑layered protection; users may not disable protections; definitions auto‑update. Access to sensitive information is controlled. Need‑to‑know; context‑, role‑, or user‑based access models. Unique IDs; strong authentication (passwords/biometrics/tokens). **MFA** and **location‑based restrictions** where feasible; **SSO** recommended. Auto timeouts (≤15 min) and session security. - Minimum length: **9** - Require
+````
+
+## 39. Compliance/365_Information_Security_Policy_02072025.md #3
+
+Score: 1.000
+
+````text
+be formally approved by IST. Unapproved software handling PHI/PII/PCI/CI/Internal is prohibited. All systems storing Information must receive regular security patches. IST‑approved multi‑layered protection; users may not disable protections; definitions auto‑update. Access to sensitive information is controlled. Need‑to‑know; context‑, role‑, or user‑based access models. Unique IDs; strong authentication (passwords/biometrics/tokens). **MFA** and **location‑based restrictions** where feasible; **SSO** recommended. Auto timeouts (≤15 min) and session security. - Minimum length: **9** - Require symbols, numbers, upper & lower case - Expire after **90 days**; prevent reuse of **7** previous - Lockout after **5** failed attempts Quarterly audits; disable inactive accounts (>90 days). Least privilege, **MFA**, location restrictions, posture checks, logging, timeouts, and SSO are mandatory. Use audits, RAID, ECC, checksums, encryption, and digital signatures to ensure integrity. Use **TLS/SSL/IPsec**, encrypted email (PGP/S/MIME), SFTP, and secure file sharing. Avoid unencrypted channels (email/SMS/IM). Use encrypted links/password protected archives when sharing externally. Store sensitive data only in secure, encrypted, approved systems; protect backups; prohibit storage in email, personal devices, or unapproved cloud; follow retention and secure disposal. Restrict access to processing areas; secure workstations; use auto‑logout; implement building security with badges, cameras (≥30‑day retention), visitor logs (≥1 year), and controlled server rooms. Maintain accountability records; back up before moves; define disposal & reuse procedures. Do not store sensitive data on removable media unless explicitly approved and controlled. Wipe and destroy or reimage appropriately; data only in secure, encrypted, approved systems; protect backups; prohibit storage in email, personal devices, or unapproved cloud; follow retention and secure disposal. Restrict access to processing areas; secure workstations; use auto‑logout; implement building security with badges, cameras (≥30‑day retention), visitor logs (≥1 year), and controlled server rooms. Maintain accountability records; back up before moves; define disposal & reuse procedures. Do not store sensitive data on removable media unless explicitly approved and controlled. Wipe and destroy or reimage appropriately; reformat alone is insufficient. Mobile devices must have passwords, auto‑lock, and encryption; never leave unattended; strictly control mass data transfers and printing; avoid discussing sensitive info in public. Provide regular (≥ quarterly) training and simulations; run activities during National Cyber Security Awareness month. Firewalls, segmentation, IDS/IPS with central logging, disable unnecessary services, patch network devices, prohibit internet/email on CHD systems, use strong Wi‑Fi encryption, and control third‑party/unauthorized devices on sensitive networks. Employees represent the company online; rules prohibit spam, harassment, forged headers, chain letters, newsgroup spam, PAN sharing via messaging, and forwarding to personal email. Lock workstations, shut down daily, secure
+````
+
+## 40. Compliance/365_Information_Security_Policy_02072025.md #4
+
+Score: 1.000
+
+````text
+in public. Provide regular (≥ quarterly) training and simulations; run activities during National Cyber Security Awareness month. Firewalls, segmentation, IDS/IPS with central logging, disable unnecessary services, patch network devices, prohibit internet/email on CHD systems, use strong Wi‑Fi encryption, and control third‑party/unauthorized devices on sensitive networks. Employees represent the company online; rules prohibit spam, harassment, forged headers, chain letters, newsgroup spam, PAN sharing via messaging, and forwarding to personal email. Lock workstations, shut down daily, secure cabinets/keys, avoid sticky‑note passwords, promptly pick printouts, shred/dispose securely, erase whiteboards, secure portable devices and media. All vendors must go through the Vendor Management Program with defined security controls. Never store **SAD**; never store full **PAN**. Use **E2EE/P2PE** for POS, tokenization for internet systems, and store only encrypted SAD for offline store‑and‑forward. Annual **PCI‑DSS** assessment by independent QSA. Individuals handling CHD must follow strict rules. Systems and individuals handling PHI must follow FullCount & 365 HIPAA Privacy/Security policies and procedures. Documented process with Change Manager, Initiator, CAB, Roadmap Committee, and Implementation Team. Steps include request, evaluation, planning, CAB approval, implementation via Impact Analysis & roadmap, and closure. Remote workers must use VPN with IP whitelisting and MFA to access Information systems. Applies to systems and individuals planning/designing/developing/testing/deploying. Covers security architecture, deployment, input validation, authN/Z, session & config management, crypto, parameter handling, exceptions, auditing, logging, frameworks, static/dynamic analysis, encryption in transit/at rest, patching, retiring deprecated services, secure APIs, and fraud prevention. Encrypt sensitive data at rest and in transit; separate key and data access; log key usage; use **AES‑256**; use **HSM/KMS** (FIPS 140‑2 validated); define key lifecycles based on sensitivity and exposure. Define and maintain data backup, disaster recovery, and emergency operations plans; periodically test and revise; assess application/data criticality. All IT assets (kiosks, POS, readers, workstations, servers, network gear, printers, etc.) must follow formal disposal policy. IST performs in transit/at rest, patching, retiring deprecated services, secure APIs, and fraud prevention. Encrypt sensitive data at rest and in transit; separate key and data access; log key usage; use **AES‑256**; use **HSM/KMS** (FIPS 140‑2 validated); define key lifecycles based on sensitivity and exposure. Define and maintain data backup, disaster recovery, and emergency operations plans; periodically test and revise; assess application/data criticality. All IT assets (kiosks, POS, readers, workstations, servers, network gear, printers, etc.) must follow formal disposal policy. IST performs yearly audits of systems that store/process sensitive data; track remediation via Change Management. IST performs yearly review of this policy; changes tracked via Change Management and documented in
+````
+
+## 41. Compliance/365_Information_Security_Policy_02072025.md #5
+
+Score: 1.000
+
+````text
+**AES‑256**; use **HSM/KMS** (FIPS 140‑2 validated); define key lifecycles based on sensitivity and exposure. Define and maintain data backup, disaster recovery, and emergency operations plans; periodically test and revise; assess application/data criticality. All IT assets (kiosks, POS, readers, workstations, servers, network gear, printers, etc.) must follow formal disposal policy. IST performs yearly audits of systems that store/process sensitive data; track remediation via Change Management. IST performs yearly review of this policy; changes tracked via Change Management and documented in Document Revisions.
+````
+
+## 42. Compliance/365_Information_Security_Policy_02072025.md #6
+
+Score: 1.000
+
+````text
+| Version | Change Log |
+|---|---|
+| 021016 | Original policy |
+| 072418 | Updates to Title Page and document footer |
+| 021419 | Updated: Risk Management, Information Classification, Information Security Definitions, Computer and Information Control, Scope. Added: ToC, Document Revisions, Remote Employee, Change Management, PCI, Network Security, Secure Coding, POS Decommission/Reuse, Systems Audit, Policy Audit |
+| 02032021 | Updated: Policy, Responsibilities, PII, Transmission Security, Equipment Media Controls, Network Security, PCI, Change Management. Added: Patch Management |
+| 10082021 | Added: Password Policy |
+| 11132021 | Renamed/updated: Application Security Architecture Policy |
+| 12202021 | Renamed/updated: Application Security Architecture Policy |
+| 09262022 | Minor grammar; Updated: VI. Controls; Added: Training & Awareness, Communication, Clean Desk, Vendor Management |
+| 10242023 | Minor grammar; Updated: V. Risk, VI. Controls, XV. AppSec Arch; Added: XII. PHI Policy, XVIII. IT Asset EoL |
+| 02072025 | Minor grammar; Updated: IV. Classification, V. Risk, VI. Controls, XVI. AppSec Arch; Added: ToC |
+````
+
+## 43. Compliance/365_Information_Security_Policy_02072025.md #7
+
+Score: 1.000
+
+````text
+IST, ASV, QSA, Pen (Penetration Test), CVSS, SDLC, CAB, PCI, PHI, PII, CI, CHD, SAD, PAN, PCI‑DSS, Epic, Affiliated Covered Entities, Availability, HIPAA, Entity, 365 Platforms.
+````
+
+## 44. Core domain Knowledge and business rules.txt #0
+
+Score: 1.000
+
+````text
+Core domain knowledge and business rules
+````
+
+## 45. Core domain Knowledge and business rules.txt #1
+
+Score: 1.000
+
+````text
+o Micro markets, dining kiosks, vending, coolers, hotel pantries, senior living, campus.
+o Mix of self service kiosks (V5, RT, MM6) and mobile/web (365Pay, MMA).
+````
+
+## 46. Core domain Knowledge and business rules.txt #2
+
+Score: 1.000
+
+````text
+o V5 / RT / MM6 / Nano / Pico / Dining / 365Pay etc. Each device type has a  main project  and multiple dependent services (CAPSVR, GMAv2, PAYAPI, KSKAPI, CAPADM, etc.).
+o Reference:  List of Projects consumed & to be considered while deployment for individual Devices 
+https://365retailmarkets.atlassian.net/wiki/spaces/PS/pages/2894069832/List+of+Projects+consumed+to+be+considered+while+deployment+for+individual+Devices
+````
+
+## 47. Core domain Knowledge and business rules.txt #3
+
+Score: 1.000
+
+````text
+o Central web portal for:
+* Markets, locations, devices
+* Products, menus, pricing, tax
+* Reporting, inventory, risk controls
+o CAPADM and related projects (ReportAPI, ReceiptAPI, EFTBATCHAPI, etc.) are core.
+````
+
+## 48. Core domain Knowledge and business rules.txt #4
+
+Score: 1.000
+
+````text
+o SOSDB   sales, devices, configs for V5/RT/ADM side.
+o KSKDB   sales & kiosk data for certain deployments.
+o Other platform specific DBs (DashDB, etc.) referenced in impact analysis pages.
+````
+
+## 49. Core domain Knowledge and business rules.txt #5
+
+Score: 1.000
+
+````text
+From  ArchiveProject Lifecycle vs Release Lifecycle :
+https://365retailmarkets.atlassian.net/wiki/spaces/PS/pages/4036624846/ArchiveProject+Lifecycle+vs+Release+Lifecycle
+* Project Lifecycle (big Epics)
+o Impacts multiple departments (Ops, Support, Sales, Training, Finance, etc.).
+o Must include:
+* Intake, sizing, risk & dependency analysis
+* In House Alpha ? Field Trial ? GA
+* Internal documentation, training, SOP updates.
+* Release Lifecycle (smaller Epics / features)
+o Limited cross department impact.
+o Communicated primarily with Release Notes.
+o Shorter Alpha/Beta; lighter process overhead.
+You can treat this as a core rule when deciding whether a new Epic is a  Project  or just a  Release.
+````
+
+## 50. Core domain Knowledge and business rules.txt #6
+
+Score: 1.000
+
+````text
+Common patterns across integrations (FullCount, CBORDDirect, etc.):
+````
+
+## 51. Core domain Knowledge and business rules.txt #7
+
+Score: 1.000
+
+````text
+o If a premium payment or account system is present:
+* Check external account first (full/partial coverage).
+* If active + sufficient balance ? approve and debit.
+* If active + insufficient balance ? decline or allow split to other tenders.
+* If disabled / invalid account ? do not allow; route to other tenders.
+o Example from CBORDDirect solution design:
+https://365retailmarkets.atlassian.net/wiki/spaces/PS/pages/4060151829/Solution+Design+CBORDDirect+Integration
+````
+
+## 52. Core domain Knowledge and business rules.txt #8
+
+Score: 1.000
+
+````text
+o Rule in multiple docs: external premium payment integrations must not break GMA (365 s own accounts & wallets).
+````
+
+## 53. Core domain Knowledge and business rules.txt #9
+
+Score: 1.000
+
+````text
+o When network is impaired:
+* Card transactions may be queued (store and forward) and later sent via EFTBATCH.
+* Risk thresholds (time, amount) define when to stop accepting offline cards.
+o EFT Disbursement must still pick up and categorize those payments correctly.
+````
+
+## 54. Core domain Knowledge and business rules.txt #10
+
+Score: 1.000
+
+````text
+o All payment types (card, mobile wallet, external accounts, PMS, etc.) must:
+* Appear in sales and disbursement reports.
+* Preserve payment type (e.g.,  CBOARDDirect ) for reconciliation and audit.
+````
+
+## 55. Core domain Knowledge and business rules.txt #11
+
+Score: 1.000
+
+````text
+From FTI Audit & Privacy Governance items (ISEC 3025, SOS 47951):
+````
+
+## 56. Core domain Knowledge and business rules.txt #12
+
+Score: 1.000
+
+````text
+o Systems must support:
+* Transaction level history (header, detail, payment).
+* Access logs, configuration changes.
+o Audit requires architecture, access control, SDLC, IR, DR, and vulnerability mgmt.
+````
+
+## 57. Core domain Knowledge and business rules.txt #13
+
+Score: 1.000
+
+````text
+o For EU and other privacy regimes, core rules:
+* Data collection must be purpose limited and minimized.
+* New or high risk processing (e.g., new consumer data flows, cross border changes) should trigger a DPIA.
+o Product list in scope (V5, MM6, Pico, 365Pay, ADM) is defined in:
+https://365retailmarkets.atlassian.net/browse/SOS-47951
+````
+
+## 58. Core domain Knowledge and business rules.txt #14
+
+Score: 1.000
+
+````text
+o All initiatives should follow 365 SDLC phases: requirements, design, implementation, verification, release, response.
+o 365 Secure Development Lifecycle page:
+https://365retailmarkets.atlassian.net/wiki/spaces/3PP/pages/2929229838/365+Secure+Development+Lifecycle
+````
+
+## 59. Core domain Knowledge and business rules.txt #15
+
+Score: 1.000
+
+````text
+From  Impact Analysis   ADM   Add OS version to Device Dashboard :
+https://365retailmarkets.atlassian.net/wiki/spaces/PS/pages/3271458817/Impact+Analysis+-+ADM+-+Add+OS+version+to+Device+Dashboard
+Core rules:
+* ADM must display OS version for devices where it is tracked (V5 kiosks, RT, etc.).
+* Devices where OS is not tracked (Nanomarket, Picomarket, Beacon) intentionally show no OS.
+* Operators use this view to:
+o Identify devices on EoS operating systems (e.g., CentOS7, Ubuntu 14.04).
+o Plan upgrades at scale (tens of thousands of kiosks).
+This is a good example of a domain rule: ADM is the operator facing truth for device OS status where data exists; lack of OS info is an explicit, known exception, not an error.
+````
+
+## 60. Core domain Knowledge and business rules.txt #16
+
+Score: 1.000
+
+````text
+From  Impact Analysis   ADM > Dining > Self Service Redesign > Add settings :
+https://365retailmarkets.atlassian.net/wiki/spaces/PS/pages/3439853569/Impact+Analysis+-+ADM+Dining+Self-Service+Redesign+Add+settings
+Rules:
+* Operators can configure Pickup Locations as:
+o Text only, or
+o Text + image.
+* Settings in ADM control what appears on RT/MM6 Dining kiosks.
+* Dining flows run through CAPUI / KSKAPI / CAPJAVA / CAPSVR, with SOSDB & KSKDB as backend.
+Domain knowledge: Dining configurations are centrally owned by ADM and pushed to multiple kiosk types; consistency and backwards compatibility are critical.
+````
+
+## 61. Core domain Knowledge and business rules.txt #17
+
+Score: 1.000
+
+````text
+Common rules (see CBORDDirect example):
+https://365retailmarkets.atlassian.net/wiki/spaces/PS/pages/4060151829/Solution+Design+CBORDDirect+Integration
+* Account status & balance drive the UX:
+o Active + sufficient balance ? allow purchase.
+o Active + insufficient ? clearly indicate and route to other tenders.
+o Disabled ? block and route to other tenders.
+* Sales records:
+o All salesheader / detail / payment tables in SOSDB/KSKDB must:
+* Store the correct tender type.
+* Preserve item and payment detail for downstream reports and EFT.
+* EFT Disbursement:
+o Must pick CBORDDirect (or FullCount, etc.) as distinct payment types.
+* Multiple media types:
+o Readers can be barcode, RFID, magstripe; Quick Pay may be disabled to prevent mis association when multiple media forms exist.
+This pattern repeats for almost every  premium payment  project.
+````
+
+## 62. Core domain Knowledge and business rules.txt #18
+
+Score: 1.000
+
+````text
+From  Advana Skykit Internal User Guide :
+https://365retailmarkets.atlassian.net/wiki/spaces/PS/pages/4733468682/Advana+Skykit+Internal+User+Guide
+* For any new product/feature:
+o There should be an Internal User Guide explaining impacts on each department s standard operating processes.
+o Document revisions must be tracked as the project moves from Alpha ? Beta ? GA.
+* Even when a solution has no direct integration with ADM or kiosks (e.g., Skykit signage), internal processes (Sales, Finance, Support) still need:
+o SKUs and pricing (Sage line items),
+o Service model and responsibilities,
+o Basic troubleshooting and ownership.
+Domain rule: Every significant feature/project must have department facing process documentation, not just external docs.
+````
+
+## 63. Core domain Knowledge and business rules.txt #19
+
+Score: 1.000
+
+````text
+If you re building a  Core Domain Knowledge & Business Rules  section for the 365 Project Lifecycle page:
+https://365retailmarkets.atlassian.net/wiki/spaces/PS/pages/3364519940/365+Project+Lifecycle
+You can include:
+````
+
+## 64. Core domain Knowledge and business rules.txt #20
+
+Score: 1.000
+
+````text
+o Unattended retail (devices), ADM, databases, integrations.
+````
+
+## 65. Core domain Knowledge and business rules.txt #21
+
+Score: 1.000
+
+````text
+o When an Epic uses Project Lifecycle vs Release Lifecycle, with links to:
+* ArchiveProject Lifecycle vs Release Lifecycle:
+ArchiveProject Lifecycle vs Release Lifecycle
+* Secure Development Lifecycle:
+````
+
+## 66. Core domain Knowledge and business rules.txt #22
+
+Score: 1.000
+
+````text
+o Standard behavior for external account checks, tender priority, EFT, and reporting.
+````
+
+## 67. Core domain Knowledge and business rules.txt #23
+
+Score: 1.000
+
+````text
+o SDLC, auditability, DPIA triggers, and which products fall under privacy assessments.
+````
+
+## 68. Core domain Knowledge and business rules.txt #24
+
+Score: 1.000
+
+````text
+o ADM as the system of record for markets, devices, menus, OS versions (where available), and Dining configuration.
+````
+
+## 69. Core_Domain_Knowledge_with_mermaid.md #0
+
+Score: 1.000
+
+````text
+- Unattended Retail & Foodservice
+- Devices & Software (V5, RT, MM6, Nano, Pico, Dining)
+- ADM Back Office
+- Databases (SOSDB, KSKDB)
+---
+````
+
+## 70. Core_Domain_Knowledge_with_mermaid.md #1
+
+Score: 1.000
+
+````text
+```mermaid
+flowchart LR
+  A[Idea / Intake] --> B[Sizing & Analysis]
+  B --> C[In-House Alpha]
+  C --> D[Field Trial]
+  D --> E[GA Release]
+````
+
+## 71. Core_Domain_Knowledge_with_mermaid.md #2
+
+Score: 1.000
+
+````text
+```
+````
+
+## 72. Core_Domain_Knowledge_with_mermaid.md #3
+
+Score: 1.000
+
+````text
+```mermaid
+flowchart TD
+  Start([Start Payment]) --> CheckExtAccount{External Account Active?}
+  CheckExtAccount -->|Yes| BalCheck{Sufficient Balance?}
+  CheckExtAccount -->|No| RouteOther[Tender Routing]
+  BalCheck -->|Yes| Approve[Approve & Debit]
+  BalCheck -->|No| SplitOrDecline[Split Tender or Decline]
+````
+
+## 73. Core_Domain_Knowledge_with_mermaid.md #4
+
+Score: 1.000
+
+````text
+```
+````
+
+## 74. Core_Domain_Knowledge_with_mermaid.md #5
+
+Score: 1.000
+
+````text
+```mermaid
+sequenceDiagram
+  participant Kiosk
+  participant Queue as Offline Queue
+  participant EFT as EFTBatch
+
+  Kiosk->>Queue: Store transaction offline
+  Queue-->>EFT: Sync when network returns
+  EFT->>EFT: Validate & Process
+````
+
+## 75. Core_Domain_Knowledge_with_mermaid.md #6
+
+Score: 1.000
+
+````text
+```
+````
+
+## 76. Design/Coding+Best+Practices.txt #0
+
+Score: 1.000
+
+````text
+Coding Best Practices What is consider refactoring that need to move to Tech Debts card? * Making changes to existing code base significantly (more that a few hours of work) What is not consider refactoring that need a new Tech Debuts card? * Changing newly written code to follow the Coding Best Practices below is not consider refactoring. * PR review will include refactor request for new code written so that the new code written are readable and maintainable (understandable and produce less bugs when modified in the future) High Level Coding Best Practices * Ensures the code change is comprehensible to other engineers o Check whether a given change is understandable to a broader audience o Code that you write will be depended on, and eventually maintained, by someone else. Code might be written only once, but it will be read dozens, hundreds, or even thousands of times. * Enforces consistency across the codebase * It is best to create separate branch for each feature or fix. o This way, the changes related to a topic can be reviewed and discussed in specific the pull request. * Checking for code correctness generally ensures that a change works, but more importance is attached to ensuring that a code change is understandable and makes sense over time and as the codebase itself scales. Also see: GitHub: Pull Request & Code Review Best Practices ADM Specific Coding Best Practices These are some of the best practices based on the PR reviews done in the past. These are general good software design and development practices. We will add more under this section as we find points that would be helpful to developers in writing code. Make use of IntelliJ IDEA features * Check for warnings (yellow bar on the right side scrollbar of editor) as well beside errors in the IntelliJ IDEA editor and fix them intelligently o Fix all the warnings that are safe to change o Some warnings can be ignored (ask other developers if you are not sure) * Install SonarLint plugin in IntelliJ IDEA and enable it * Commit using IntelliJ IDEA so that SonarLint can analyze your Java code and give your warnings and errors and fix them intelligently sosio s domaincontext * No new groovy services or business logic code in capadm and they should go under sosio s domaincontext package * Top level package is domaincontext/<domain> o Similar to package by component described here. o Item 13 - Minimize the accessibility of classes and members o All classes go under the <domain> package except for public model classes o Repository class need to be package-default  visibility * Don t expose Repository classes as public. Design the Service and ServiceImpl classes and expose the Service classes as public under a <domain> package. * We don't need to create interface for Repository and it's RepositoryImpl because they are not exposed as public interface and usually we only have one implementation of talking to one kind of Database. * It is easier to refactor later because Repository classes are not exposed as public if we need to support multiple implementation classes of Repository interface. * Annotate with @NotNull and @Nullalbe for all parameters and return value of the public
+````
+
+## 77. Design/Coding+Best+Practices.txt #1
+
+Score: 1.000
+
+````text
+Repository classes as public. Design the Service and ServiceImpl classes and expose the Service classes as public under a <domain> package. * We don't need to create interface for Repository and it's RepositoryImpl because they are not exposed as public interface and usually we only have one implementation of talking to one kind of Database. * It is easier to refactor later because Repository classes are not exposed as public if we need to support multiple implementation classes of Repository interface. * Annotate with @NotNull and @Nullalbe for all parameters and return value of the public Repository classes as public. Design the Service and ServiceImpl classes and expose the Service classes as public under a <domain> package. * We don't need to create interface for Repository and it's RepositoryImpl because they are not exposed as public interface and usually we only have one implementation of talking to one kind of Database. * It is easier to refactor later because Repository classes are not exposed as public if we need to support multiple implementation classes of Repository interface. * Annotate with @NotNull and @Nullalbe for all parameters and return value of the public interface's methods * Must have integration test for all public methods * Public Model/DTO/POJO/Enum Classes o Only put public Model/DTO/POJO/Enum classes go under domaincontext/<domain>/model package o Some model/DTO classes used internal within the package should be package-private level and should go under domaincontext/<domain> package o Consider a builder when faced with many constructor parameters * Don t need to create builder-pattern model class with only one or two instance variables unless it improve code readability by using a model class name that are meaningful or describe the intent better than just passing in one or two arguments to method. * Make use of ServiceResponse class for return value of public methods of Service interface and ServiceImpl class when the methods are implemented to talk to 365-api-client in general. Variables and Methods Naming * Item 56 - Adhere to generally accepted naming conventions * Variable and method names should be name correctly o Should use plural noun for list or array object * e.g. getAccount should not return List<Account> (the method name should be getAccounts) o boolean variable and method name should start with is, should or has etc. (follow standard Java Code Naming Convention) * Use primitive boolean, int, long etc. instead of Boolean, Integer, Long etc. object when null is not necessary o Sometime, 365-api-client method will return Boolean when it is not necessary. In that case, we can convert null to false when null is not a valid use case or when null is not expected o Because Boolean and Integer will cause null pointer exception * Boolean isOk; * * if (isOk) { // will throw null pointer exception here because of isOk is casted to `boolean` * // do something * } Read Effective Java Book Read the whole book Effective Java (3rd Edition).pd to become a better Java Developer. Some of the chapters from the books that are useful for ADM development: * Item 01 - Consider static factory methods instead of constructors
+````
+
+## 78. Design/Coding+Best+Practices.txt #2
+
+Score: 1.000
+
+````text
+return Boolean when it is not necessary. In that case, we can convert null to false when null is not a valid use case or when null is not expected o Because Boolean and Integer will cause null pointer exception * Boolean isOk; * * if (isOk) { // will throw null pointer exception here because of isOk is casted to `boolean` * // do something * } Read Effective Java Book Read the whole book Effective Java (3rd Edition).pd to become a better Java Developer. Some of the chapters from the books that are useful for ADM development: * Item 01 - Consider static factory methods instead of constructors * Item 02 - Consider a builder when faced with many constructor parameters * Item 13 - Minimize the accessibility of classes and members * Item 15 - Minimize mutability * Item 16 - Favor composition over inheritance * Item 22 - Favor static member classes over nonstatic * Item 24 - Eliminate unchecked warnings * Item 30 - Use enums instead of int constants * Item 38 - Check parameters for validity * Item 39 - Make defensive copies when needed * Item 40 - Design method signatures carefully * Item 45 - Minimize the scope of local variables * Item 47 - Know and use the libraries * Item 48 - * Item 02 - Consider a builder when faced with many constructor parameters * Item 13 - Minimize the accessibility of classes and members * Item 15 - Minimize mutability * Item 16 - Favor composition over inheritance * Item 22 - Favor static member classes over nonstatic * Item 24 - Eliminate unchecked warnings * Item 30 - Use enums instead of int constants * Item 38 - Check parameters for validity * Item 39 - Make defensive copies when needed * Item 40 - Design method signatures carefully * Item 45 - Minimize the scope of local variables * Item 47 - Know and use the libraries * Item 48 - Avoid float and double if exact answers are required * Item 49 - Prefer primitive types to boxed primitives * Item 50 - Avoid strings where other types are more appropriate * Item 51 - Beware the performance of string concatenation * Item 56 - Adhere to generally accepted naming conventions * Item 60 - Favor the use of standard exceptions Above notes are based on: https://thefinestartist.com/effective-java Read the book Effective Java (3rd Edition).pd from more details explanation Unit Test Code Coverage * Tests should NOT be written for the sake of writing the tests to complete the checklist or to get the code coverage. * The main business logic (methods, classes) need to have unit test cases for all scenarios include the edge cases with various input parameters Related: ADM Java Repo: Source Code Structure & Unit/Integration Tests Integration Tests Integration tests are for testing classes that make use of API backends, Database. They are also different from unit tests in that they not part of gradle build or they don t get run during the build process. Currently they are run manually against local/test3 database server or local/test3 api services during the development. * All public methods of Service Impl classes need to have integration tests * And the test cases need to include all the edge cases for input parameters and return values o That should help to minimize doing end to end
+````
+
+## 79. Design/Coding+Best+Practices.txt #3
+
+Score: 1.000
+
+````text
+Structure & Unit/Integration Tests Integration Tests Integration tests are for testing classes that make use of API backends, Database. They are also different from unit tests in that they not part of gradle build or they don t get run during the build process. Currently they are run manually against local/test3 database server or local/test3 api services during the development. * All public methods of Service Impl classes need to have integration tests * And the test cases need to include all the edge cases for input parameters and return values o That should help to minimize doing end to end or manual testing * Manual testing take time and hard to redo the test consistently because of clicking through he UI for all scenario again and again take times and hard to get it right for other developers. * Note: Manual testing is still needed for end to end verification and minimize the integration issues. Java Development * Java DateTimeFormatter Notes * Logging with SLF4J * Using Java @Deprecated annotation and @deprecated Javadoc tag * JavaDoc Basics * Log levels and SOPs -> (WIP) * Reading: Java classes/code organization
+````
+
+## 80. Design/Coding+Checklists.txt #0
+
+Score: 1.000
+
+````text
+Coding Checklists
+Also see, Screen-shared Recording that goes through the checklists.
+Checklists before Pull Request Creation
+Java Development Checklist
+* Use JavaDoc when necessary
+* Avoid using boolean parameters in method 
+* Minimize the accessibility of classes and member 
+* Understand logging with SLF4J [Use parameterized messages]
+* Check for the usage of String concatenation in log output statement (Java) 
+o security logging (don t log credentials or mask credential in output)
+o unnecessary logging (don t log object lists or dev debugging log output as info level)
+Git Commit Checklist
+* Follow development checklist
+* SpotBugs for Java/Kotlin, ESLint for JavaScript/TypeScript
+* Reformat code (at least match the surrounding code style)
+* Check database query performance
+* Test and verify your changes
+o Write unit/integration tests and use ./gradlew build for Java/Kotlin
+* View commit diff: review changes to not include extra changes, fix typos, improve comments etc.
+* Write meaningful commit message in this format
+Dev Complete Checklist
+* Build works locally (e.g. ./gradlew build) 
+* Write tests and test your changes (locally or in test environment) 
+* Create [Dev Test Result] page
+* Update Jira Status 
+* Log development time in Tempo under Epic card
+* Follow Create PR Checklist below
+Pull Request Creation Checklist
+Draft Pull Request
+* Create Draft PR first 
+Proper title and description
+* The title should have Jira Card so the PR will link back in the Jira  Development  section 
+* Include brief description of the code changes to help reviewer understand the reason
+* Also include  Related PRs  link(s) in the description if there are multiple PRs for the same feature/fix
+* Include validation info: include screenshots or link to [Dev Test Result] page
+Review your own changes carefully
+* Make sure only your changes are in the PR you created
+o If extra changes that are not your changes showed up in the PR, please talk to the code author who made those changes and find out why and explain that in the PR description
+* Check if there are conflicts (don t resolve dev branch PR first if there is PR for release branch)
+* Check for typos in method names, variable names etc.
+* Check if unit tests, integration tests, Postman tests can be written
+* Check for code styles and white space formatting (Reformat code at least match the surrounding code style and do manually code style fixes if necessary when the editor code formatter is not doing the necessary formatting) 
+o Make sure to have some line spacing when needed (e.g. between two methods)
+o Make sure NOT to have line spacing when NOT needed (e.g. no extra line spacing after return statement)
+Ready for review
+Click  Ready for review  button and assign reviewer(s) if needed
+* Also see GitHub PRs: FAQs and Common Issues 
+PR Reviewer Checklist
+* Understand and check if code author follow Coding Checklists 
+* Check to see if the code has unit/integration tests
+* Check to have [Dev Test Result] page for Postman/API, UI and end-to-end tests
+* Look at Jira and find related cards from Jira 
+o Check Acceptance Criteria on the Jira 
+o Check Jira requirements matches the code in the PR
+Impact Analysis Checklist
+* EFT Impact (sale transactions)
+o VDI
+o Mobile devices (Pico/Nano, 365pay etc.)
+o V5/RT devices
+o Stockwell
+o Other integrations
+* Database Impact
+o DB Schema 365schema Guide 
+* Application Performance
+* Security (document existing security flaws if found and consider for security for technical implementation)
+Note: Impact Analysis process can be skipped for simple change
+Jira: User Story Checklist
+* Understand the requirements: make sure that Jira has  Acceptance Criteria  in correct format and accounted for all scenarios including edge cases and error cases
+o Developer should write the acceptance criteria for technical or production support related user stories and tasks
+o For business use cases, ask product owner or Jira/ticket creator (PM, Epic owner etc.) to provide acceptance criteria and check if the provided acceptance criteria make sense.
+````
+
+## 81. Design/Solution+Document+Template.txt #0
+
+Score: 1.000
+
+````text
+Solution Document Template
+* 1 Document History
+* 2 Purpose 
+o 2.1 General Scope
+o 2.2 Description
+* 3 Open Questions
+* 4. Project Success
+* 5. Risk Level
+* 6. Dependencies 
+o 6.1 ADM
+o 6.2 365pay/365Ops/Revolve App/Connect & Pay App
+o 6.3 Pico/Mobile
+o 6.4 V5/MM6/MM6 Mini
+o 6.5 RT/MM6/MM6 Mini/CK for Dining
+o 6.6 Avanti
+o 6.7 Parlevel
+o 6.8 Fullcount
+o 6.9 Database
+o 6.10 SOSLoad
+o 6.11 Dashweb
+o 6.12 API
+o 6.13 Email API
+o 6.14 AWS services
+* 7 Design flow diagrams 
+o 7.1 ADM > Section > Sub-section
+o 7.2 UI/UX Flow diagram sub-section
+o 7.3 Sequence Diagrams
+* Compliance 
+o PCI Impacts
+o Personal Information Impacts
+* 9 Data Sources
+* 9 Database Requirements
+* 10 Mobile App requirements
+* 11 DevOps requirements
+* 12 Special Notes
+````
+
+## 82. Design/Solution+Document+Template.txt #1
+
+Score: 1.000
+
+````text
+VersionDatePrepared/Revised ByDescriptionMM/DD/YYYY Initial Draft            2 Purpose
+2.1 General Scope
+This will be the MVP product features on a high level.
+
+2.2 Description
+This text will outline the general flow of the MVP for delivery. Plus any issues that would limit or hinder development or deployment of the new feature or service.
+
+3 Open Questions
+
+QuestionAnswerResolution            
+4. Project Success
+This will be text which describes the key measurements of success for the project. Can be text accompanied by images.
+This is where the level of risk is detailed.
+Please break down risks by major systems and configurations that could be adversely effected.
+6. Dependencies
+6.1 ADM
+This will be details of ADM dependencies and effects if applicable. Can be text accompanied by images.
+6.2 365pay/365Ops/Revolve App/Connect & Pay App
+This will be details of 365pay/365Ops/Revolve App/Connect & Pay App dependencies and effects if applicable. Can be text accompanied by images. Separate out into separate sections as needed.
+6.3 Pico/Mobile
+This will be details of Pico/Mobile impacts and effects if applicable. Can be text accompanied by images.
+6.4 V5/MM6/MM6 Mini
+This will be details of V5 impacts and effects if applicable. Can be text accompanied by images.
+6.5 RT/MM6/MM6 Mini/CK for Dining
+This will be details of RT impacts and effects if applicable. Can be text accompanied by images.
+6.6 Avanti
+This will be details of Avanti impacts and effects if applicable. Can be text accompanied by images.
+6.7 Parlevel
+This will be details of Avanti impacts and effects if applicable. Can be text accompanied by images.
+6.8 Fullcount
+This will be details of Avanti impacts and effects if applicable. Can be text accompanied by images.
+6.9 Database
+This will be details of Database dependencies and effects if applicable. Can be text accompanied by images.
+6.10 SOSLoad
+This will be details of SOSLoad impacts and effects if applicable. Can be text accompanied by images.
+6.11 Dashweb
+This will be details of Dashweb impacts and effects if applicable. Can be text accompanied by images.
+6.12 API
+This will be details of API impacts and effects if applicable. Can be text accompanied by images.
+6.13 Email API
+This will be details of Email API dependencies and effects if applicable. Can be text accompanied by images.
+6.14 AWS services
+This will be details of AWS service dependencies and effects if applicable. Can be text accompanied by images.
+
+7 Design flow diagrams
+7.1 ADM > Section > Sub-section
+This can be written details and mocked-up interface changes.
+7.2 UI/UX Flow diagram sub-section
+This is how a sub-section should be displayed. This can include text and images as needed.
+7.3 Sequence Diagrams
+This is the flow of data documented. This can include text and images as needed.
+Compliance
+PCI Impacts
+Personal Information Impacts
+9 Data Sources
+Table NameTable TypeLinked toLinked ColumnRemarks
+9 Database Requirements
+Field NameDescriptionDirect/
+ComputedSource TableSource ColumnData TypeCalculation LogicDisplay Format10 Mobile App requirements
+Include all necessary updates to 365pay/365Ops/Revolve App/Connect & Pay App including updated screens.
+11 DevOps requirements
+Include all necessary updates to environments.
+12 Special Notes
+This section is for special callouts and is optional based on need.
+````
+
+## 83. Manufacturing Standard/iso27001-mapping.md #0
+
+Score: 1.000
+
+````text
+- AI system security policies
+- Regular policy reviews
+- Data handling procedures
+- Model security guidelines
+- AI governance structure
+- Security roles and responsibilities
+- Project security requirements
+- Risk assessment procedures
+- AI ethics training
+- Security awareness
+- Role-specific training
+- Confidentiality agreements
+- Model inventory
+- Data asset classification
+- Training data management
+- Model versioning
+- Role-based access control
+- User authentication
+- Privileged access management
+- Access reviews
+- Data encryption standards
+- Key management
+- Model protection
+- Secure communication
+- Server security
+- Infrastructure protection
+- Environmental controls
+- Physical access controls
+- Change management
+- Capacity management
+- Development standards
+- Monitoring procedures
+- Network controls
+- API security
+- Data transfer
+- Service segregation
+- Security by design
+- Development standards
+- Testing requirements
+- Validation procedures
+- Third-party assessment
+- Contract requirements
+- Service monitoring
+- Risk management
+- Incident response
+- Reporting procedures
+- Investigation process
+- Improvement actions
+- Continuity planning
+- Redundancy
+- Recovery procedures
+- Testing requirements
+- Regulatory compliance
+- Privacy requirements
+- Audit procedures
+- Documentation maintenance
+````
+
+## 84. Manufacturing Standard/starterCode/Angular_starter_code/src/app/app.component.ts #0
+
+Score: 1.000
+
+````text
+import { Component } from '@angular/core';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet, RouterLink, RouterLinkActive],
+  template: `
+    <nav>
+      <div class="inner">
+        <div style="display:flex;align-items:center;gap:12px">
+          <span style="font-weight:700">? Insurance Portal</span>
+          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
+          <a routerLink="/policies" routerLinkActive="active">Policies</a>
+          <a routerLink="/claims" routerLinkActive="active">Claims</a>
+          <a routerLink="/customers" routerLinkActive="active">Customers</a>
+          <a routerLink="/underwriting" routerLinkActive="active">Underwriting</a>
+          <a routerLink="/reports" routerLinkActive="active">Reports</a>
+        </div>
+      </div>
+    </nav>
+    <main class="container">
+      <router-outlet />
+    </main>
+  `
+})
+export class AppComponent {}
+````
+
+## 85. Manufacturing Standard/starterCode/Angular_starter_code/src/app/app.routes.ts #0
+
+Score: 1.000
+
+````text
+import { Routes } from '@angular/router';
+import { canActivateRole } from './core/auth/auth.guard';
+import { DashboardComponent } from './core/dashboard/dashboard.component';
+export const appRoutes: Routes = [
+  { path: '', component: DashboardComponent },
+  {
+    path: 'policies',
+    loadChildren: () => import('./features/policies/policies.routes').then(m => m.policiesRoutes)
+  },
+  {
+    path: 'claims',
+    loadChildren: () => import('./features/claims/claims.routes').then(m => m.claimsRoutes)
+  },
+  {
+    path: 'customers',
+    loadChildren: () => import('./features/customers/customers.routes').then(m => m.customersRoutes)
+  },
+  {
+    path: 'underwriting',
+    canActivate: [canActivateRole(['underwriter', 'admin'])],
+    loadChildren: () => import('./features/underwriting/underwriting.routes').then(m => m.underwritingRoutes)
+  },
+  {
+    path: 'reports',
+    loadChildren: () => import('./features/reports/reports.routes').then(m => m.reportsRoutes)
+  },
+  { path: '**', redirectTo: '' }
+];
+````
+
+## 86. Manufacturing Standard/starterCode/Angular_starter_code/src/app/core/auth/auth.service.ts #0
+
+Score: 1.000
+
+````text
+import { Injectable, signal } from '@angular/core';
+// Minimal auth state with role; replace with real auth integration
+@Injectable({ providedIn: 'root' })
+export class AuthService {
+  private role = signal<string>(this.defaultRole());
+  private authed = signal<boolean>(true);
+  private defaultRole(): string {
+    return (globalThis as any).env?.DEFAULT_ROLE || 'agent';
+  }
+  isAuthenticated(): boolean { return this.authed(); }
+  userRole(): string { return this.role(); }
+  login(role: string) { this.role.set(role); this.authed.set(true); }
+  logout() { this.authed.set(false); this.role.set('guest'); }
 }
 ````
 
-## 12. README.md #7
+## 87. Manufacturing Standard/starterCode/Angular_starter_code/src/app/core/dashboard/dashboard.component.ts #0
+
+Score: 1.000
+
+````text
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+@Component({
+  standalone: true,
+  selector: 'app-dashboard',
+  imports: [RouterLink],
+  template: `
+    <div class="grid cols-2">
+      <div class="card">
+        <div style="font-weight:700;margin-bottom:8px">Quick Links</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <a class="btn" routerLink="/policies">Policies</a>
+          <a class="btn" routerLink="/claims">Claims</a>
+          <a class="btn" routerLink="/customers">Customers</a>
+          <a class="btn" routerLink="/underwriting">Underwriting</a>
+          <a class="btn" routerLink="/reports">Reports</a>
+        </div>
+      </div>
+      <div class="card">
+        <div style="font-weight:700;margin-bottom:8px">Welcome</div>
+        <p style="color:#9aa3b2">Starter template for an Insurance portal built with Angular.</p>
+      </div>
+    </div>
+  `
+})
+export class DashboardComponent {}
+````
+
+## 88. Manufacturing Standard/starterCode/Angular_starter_code/src/app/features/claims/claims.routes.ts #0
+
+Score: 1.000
+
+````text
+import { Routes } from '@angular/router';
+import { ClaimsPageComponent } from './claims.page';
+export const claimsRoutes: Routes = [
+  { path: '', component: ClaimsPageComponent }
+];
+````
+
+## 89. Manufacturing Standard/starterCode/Angular_starter_code/src/app/features/reports/reports.page.ts #0
+
+Score: 1.000
+
+````text
+import { Component } from '@angular/core';
+@Component({
+  standalone: true,
+  template: `
+    <div class="grid cols-2">
+      <div class="card">
+        <div style="font-weight:700;margin-bottom:8px">Analytics</div>
+        <p style="color:#9aa3b2">Integrate your charts library (e.g., ngx-charts) here.</p>
+      </div>
+      <div class="card">
+        <div style="font-weight:700;margin-bottom:8px">Compliance Notes</div>
+        <p style="color:#9aa3b2">Placeholder for regulatory reporting notes and exports.</p>
+      </div>
+    </div>
+  `
+})
+export class ReportsPageComponent {}
+````
+
+## 90. Manufacturing Standard/starterCode/Angular_starter_code/src/app/features/reports/reports.routes.ts #0
+
+Score: 1.000
+
+````text
+import { Routes } from '@angular/router';
+import { ReportsPageComponent } from './reports.page';
+export const reportsRoutes: Routes = [
+  { path: '', component: ReportsPageComponent }
+];
+````
+
+## 91. Manufacturing Standard/starterCode/Angular_starter_code/src/app/features/underwriting/underwriting.page.ts #0
+
+Score: 1.000
+
+````text
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+@Component({
+  standalone: true,
+  imports: [FormsModule],
+  template: `
+    <div class="grid cols-2">
+      <div class="card">
+        <div style="font-weight:700;margin-bottom:8px">Risk Evaluation</div>
+        <div class="grid" style="gap:12px">
+          <div>
+            <label>Age</label>
+            <input type="number" [(ngModel)]="age" />
+          </div>
+          <div>
+            <label>Product</label>
+            <select [(ngModel)]="product">
+              <option value="auto">Auto</option>
+              <option value="home">Home</option>
+              <option value="life">Life</option>
+            </select>
+          </div>
+          <div>
+            <label>Prior Claims</label>
+            <input type="number" [(ngModel)]="priorClaims" />
+          </div>
+          <div>
+            <button class="btn" (click)="evaluate()">Evaluate</button>
+          </div>
+        </div>
+        <div *ngIf="result" style="margin-top:12px">
+          <div>Risk Score: <b>{{result.riskScore}}</b></div>
+          <div>Decision: <b>{{result.decision}}</b></div>
+        </div>
+      </div>
+      <div class="card">
+        <div style="font-weight:700;margin-bottom:8px">Guidelines</div>
+        <ul>
+          <li>Auto: higher prior claims increases risk</li>
+          <li>Home: property age and location are key</li>
+          <li>Life: age is primary factor for base risk</li>
+        </ul>
+      </div>
+    </div>
+  `
+})
+export class UnderwritingPageComponent {
+  age = 35;
+  product: 'auto'|'home'|'life' = 'auto';
+  priorClaims = 0;
+  result: { riskScore: number; decision: 'approve'|'review'|'decline' } | null = null;
+  evaluate() {
+    let risk = this.age / 10 + this.priorClaims * 5;
+    if (this.product === 'life') risk += 10;
+    if (this.product === 'home') risk += 5;
+    const decision = risk < 10 ? 'approve' : risk < 20 ? 'review' : 'decline';
+    this.result = { riskScore: Math.round(risk), decision };
+  }
+}
+````
+
+## 92. Manufacturing Standard/starterCode/Angular_starter_code/src/main.ts #0
+
+Score: 1.000
+
+````text
+import { bootstrapApplication } from '@angular/platform-browser';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { provideRouter } from '@angular/router';
+import { AppComponent } from './app/app.component';
+import { appRoutes } from './app/app.routes';
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideHttpClient(withInterceptors([])),
+    provideRouter(appRoutes)
+  ]
+}).catch(err => console.error(err));
+````
+
+## 93. Manufacturing Standard/starterCode/Django_starter_code/customers/apps.py #0
+
+Score: 1.000
+
+````text
+from django.apps import AppConfig
+class CustomersConfig(AppConfig):
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'customers'
+````
+
+## 94. Manufacturing Standard/starterCode/Django_starter_code/customers/urls.py #0
+
+Score: 1.000
+
+````text
+from django.urls import path
+from policies import views as policy_views
+urlpatterns = [
+    path('', policy_views.customers),
+]
+````
+
+## 95. Manufacturing Standard/starterCode/Django_starter_code/insurance_project/settings.py #0
+
+Score: 1.000
+
+````text
+import os
+from pathlib import Path
+BASE_DIR = Path(__file__).resolve().parent.parent
+SECRET_KEY = os.getenv('SECRET_KEY', 'dev-secret-key')
+DEBUG = os.getenv('DEBUG', '1') == '1'
+ALLOWED_HOSTS = ['*']
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'rest_framework',
+    'policies',
+    'claims',
+    'customers',
+    'underwriting',
+    'reports',
+]
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+ROOT_URLCONF = 'insurance_project.urls'
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+WSGI_APPLICATION = 'insurance_project.wsgi.application'
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql' if os.getenv('DATABASE_URL') else 'django.db.backends.sqlite3',
+        'NAME': os.getenv('POSTGRES_DB', BASE_DIR / 'db.sqlite3') if not os.getenv('DATABASE_URL') else os.getenv('POSTGRES_DB', 'insurance'),
+        'USER': os.getenv('POSTGRES_USER', ''),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', ''),
+        'HOST': os.getenv('POSTGRES_HOST', ''),
+        'PORT': os.getenv('POSTGRES_PORT', ''),
+    }
+}
+LANGUAGE_CODE = 'en-us'
+TIME_ZONE = 'UTC'
+USE_I18N = True
+USE_TZ = True
+STATIC_URL = 'static/'
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+````
+
+## 96. Manufacturing Standard/starterCode/Django_starter_code/insurance_project/wsgi.py #0
+
+Score: 1.000
+
+````text
+import os
+from django.core.wsgi import get_wsgi_application
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'insurance_project.settings')
+application = get_wsgi_application()
+````
+
+## 97. Manufacturing Standard/starterCode/Django_starter_code/policies/serializers.py #0
+
+Score: 1.000
+
+````text
+from rest_framework import serializers
+from .models import Customer, Policy, Claim
+class CustomerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Customer
+        fields = ['id','email','name','phone']
+class PolicySerializer(serializers.ModelSerializer):
+    policyNumber = serializers.CharField(source='policy_number')
+    customerId = serializers.CharField(source='customer_id')
+    class Meta:
+        model = Policy
+        fields = ['id','policyNumber','type','premium','coverage','start_date','end_date','status','customerId']
+class ClaimSerializer(serializers.ModelSerializer):
+    policyId = serializers.CharField(source='policy_id')
+    createdAt = serializers.DateTimeField(source='created_at', read_only=True)
+    class Meta:
+        model = Claim
+        fields = ['id','policyId','amount','description','status','createdAt']
+````
+
+## 98. Manufacturing Standard/starterCode/Dotnet_starter_code/Insurance.Api/Controllers/CustomersController.cs #0
+
+Score: 1.000
+
+````text
+using Insurance.Api.Data;
+using Insurance.Api.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+namespace Insurance.Api.Controllers;
+[ApiController]
+[Route("api/[controller]")]
+public class CustomersController : ControllerBase
+{
+    private readonly InsuranceDbContext _db;
+    public CustomersController(InsuranceDbContext db) { _db = db; }
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<Customer>>> GetAll()
+        => Ok(await _db.Customers.Include(c => c.Policies).ToListAsync());
+    public record RegisterCustomer(string Email, string Name, string? Phone);
+    [HttpPost]
+    public async Task<ActionResult<Customer>> Register([FromBody] RegisterCustomer body)
+    {
+        var c = new Customer { Email = body.Email, Name = body.Name, Phone = body.Phone };
+        _db.Customers.Add(c);
+        await _db.SaveChangesAsync();
+        return Created($"/api/customers/{c.Id}", c);
+    }
+}
+````
+
+## 99. Manufacturing Standard/starterCode/Dotnet_starter_code/Insurance.Api/Controllers/ReportsController.cs #0
+
+Score: 1.000
+
+````text
+using Insurance.Api.Data;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+namespace Insurance.Api.Controllers;
+[ApiController]
+[Route("api/reports")]
+public class ReportsController : ControllerBase
+{
+    private readonly InsuranceDbContext _db;
+    public ReportsController(InsuranceDbContext db) { _db = db; }
+    [HttpGet("summary")]
+    public async Task<ActionResult<object>> Summary()
+    {
+        var policyCount = await _db.Policies.CountAsync();
+        var claimCount = await _db.Claims.CountAsync();
+        return Ok(new { policyCount, claimCount });
+    }
+}
+````
+
+## 100. Manufacturing Standard/starterCode/Dotnet_starter_code/Insurance.Api/Data/InsuranceDbContext.cs #0
+
+Score: 1.000
+
+````text
+using Insurance.Api.Models;
+using Microsoft.EntityFrameworkCore;
+namespace Insurance.Api.Data;
+public class InsuranceDbContext : DbContext
+{
+    public InsuranceDbContext(DbContextOptions<InsuranceDbContext> options) : base(options) { }
+    public DbSet<Customer> Customers => Set<Customer>();
+    public DbSet<Policy> Policies => Set<Policy>();
+    public DbSet<Claim> Claims => Set<Claim>();
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Customer>().HasIndex(x => x.Email).IsUnique();
+        modelBuilder.Entity<Policy>().HasIndex(x => x.PolicyNumber).IsUnique();
+    }
+}
+````
+
+## 101. Manufacturing Standard/starterCode/Dotnet_starter_code/Insurance.Api/Models/Customer.cs #0
+
+Score: 1.000
+
+````text
+namespace Insurance.Api.Models;
+public class Customer
+{
+    public string Id { get; set; } = Guid.NewGuid().ToString();
+    public string Email { get; set; } = default!;
+    public string Name { get; set; } = default!;
+    public string? Phone { get; set; }
+    public List<Policy> Policies { get; set; } = new();
+}
+````
+
+## 102. Manufacturing Standard/starterCode/Dotnet_starter_code/Insurance.Api/Models/Policy.cs #0
+
+Score: 1.000
+
+````text
+namespace Insurance.Api.Models;
+public class Policy
+{
+    public string Id { get; set; } = Guid.NewGuid().ToString();
+    public string PolicyNumber { get; set; } = default!;
+    public string Type { get; set; } = default!; // auto | home | life
+    public double Premium { get; set; }
+    public double Coverage { get; set; }
+    public DateOnly StartDate { get; set; }
+    public DateOnly EndDate { get; set; }
+    public string Status { get; set; } = "pending"; // active | pending | lapsed
+    public string CustomerId { get; set; } = default!;
+    public Customer Customer { get; set; } = default!;
+    public List<Claim> Claims { get; set; } = new();
+}
+````
+
+## 103. Manufacturing Standard/starterCode/FastAPI_starter_code/app/routers/claims.py #0
+
+Score: 1.000
+
+````text
+from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy.orm import Session
+from uuid import uuid4
+from ..core.db import get_db
+from .. import models
+from ..schemas import ClaimCreate, ClaimOut
+router = APIRouter(prefix="/api/claims", tags=["claims"])
+@router.get("/{id}", response_model=ClaimOut)
+def get_claim(id: str, db: Session = Depends(get_db)):
+    c = db.query(models.Claim).get(id)
+    if not c:
+        raise HTTPException(status_code=404, detail="not found")
+    return ClaimOut(id=c.id, policyId=c.policy_id, amount=c.amount, description=c.description, status=c.status, createdAt=c.created_at)
+@router.post("", response_model=ClaimOut, status_code=201)
+def submit_claim(payload: ClaimCreate, db: Session = Depends(get_db)):
+    p = db.query(models.Policy).filter(models.Policy.policy_number == payload.policyNumber).first()
+    if not p:
+        raise HTTPException(status_code=400, detail="policy not found")
+    c = models.Claim(id=str(uuid4()), policy_id=p.id, amount=payload.amount, description=payload.description or '', status='pending')
+    db.add(c); db.commit(); db.refresh(c)
+    return ClaimOut(id=c.id, policyId=c.policy_id, amount=c.amount, description=c.description, status=c.status, createdAt=c.created_at)
+````
+
+## 104. Manufacturing Standard/starterCode/FastAPI_starter_code/app/routers/policies.py #0
+
+Score: 1.000
+
+````text
+from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy.orm import Session
+from uuid import uuid4
+from ..core.db import get_db
+from .. import models
+from ..schemas import PolicyCreate, PolicyOut
+router = APIRouter(prefix="/api/policies", tags=["policies"])
+@router.get("", response_model=list[PolicyOut])
+def list_policies(db: Session = Depends(get_db)):
+    items = db.query(models.Policy).all()
+    out: list[PolicyOut] = []
+    for p in items:
+        out.append(PolicyOut(
+            id=p.id, policyNumber=p.policy_number, type=p.type, premium=p.premium, coverage=p.coverage,
+            startDate=p.start_date, endDate=p.end_date, status=p.status, customerId=p.customer_id
+        ))
+    return out
+@router.post("", response_model=PolicyOut, status_code=201)
+def create_policy(payload: PolicyCreate, db: Session = Depends(get_db)):
+    customer = db.query(models.Customer).get(payload.customerId)
+    if not customer:
+        raise HTTPException(status_code=400, detail="customer not found")
+    p = models.Policy(
+        id=str(uuid4()), policy_number=payload.policyNumber, type=payload.type, premium=payload.premium,
+        coverage=payload.coverage, start_date=payload.startDate, end_date=payload.endDate,
+        status=payload.status, customer_id=payload.customerId
+    )
+    db.add(p); db.commit(); db.refresh(p)
+    return PolicyOut(id=p.id, policyNumber=p.policy_number, type=p.type, premium=p.premium, coverage=p.coverage,
+                     startDate=p.start_date, endDate=p.end_date, status=p.status, customerId=p.customer_id)
+````
+
+## 105. Manufacturing Standard/starterCode/FastAPI_starter_code/app/routers/underwriting.py #0
+
+Score: 1.000
+
+````text
+from fastapi import APIRouter
+from ..schemas import UnderwritingRequest, UnderwritingResult
+from ..services.underwriting import evaluate_risk
+router = APIRouter(prefix="/api/underwriting", tags=["underwriting"])
+@router.post("/evaluate", response_model=UnderwritingResult)
+def evaluate(req: UnderwritingRequest):
+    return evaluate_risk(req.age, req.product, req.priorClaims)
+````
+
+## 106. Manufacturing Standard/starterCode/Flask_starter_code/app/routes/customers.py #0
+
+Score: 1.000
+
+````text
+from flask import Blueprint, request, jsonify
+from uuid import uuid4
+from .. import db
+from ..models import Customer
+bp = Blueprint('customers', __name__)
+@bp.get('')
+def list_customers():
+    cs = Customer.query.all()
+    return jsonify([{'id': c.id, 'name': c.name, 'email': c.email, 'phone': c.phone} for c in cs])
+@bp.post('')
+def register_customer():
+    data = request.get_json() or {}
+    c = Customer(id=str(uuid4()), email=data.get('email'), name=data.get('name'), phone=data.get('phone'))
+    db.session.add(c); db.session.commit()
+    return jsonify(id=c.id, email=c.email), 201
+````
+
+## 107. Manufacturing Standard/starterCode/Flask_starter_code/app/routes/policies.py #0
+
+Score: 1.000
+
+````text
+from flask import Blueprint, request, jsonify
+from uuid import uuid4
+from .. import db
+from ..models import Policy, Customer
+from datetime import date
+bp = Blueprint('policies', __name__)
+@bp.get('')
+def list_policies():
+    policies = Policy.query.all()
+    def to_json(p: Policy):
+        return {
+            'id': p.id, 'policyNumber': p.policy_number, 'type': p.type,
+            'premium': p.premium, 'coverage': p.coverage,
+            'startDate': p.start_date.isoformat() if p.start_date else None,
+            'endDate': p.end_date.isoformat() if p.end_date else None,
+            'status': p.status,
+            'customerId': p.customer_id
+        }
+    return jsonify([to_json(p) for p in policies])
+@bp.post('')
+def create_policy():
+    data = request.get_json() or {}
+    customer_id = data.get('customerId')
+    if not customer_id:
+        return jsonify(message='customerId is required'), 400
+    if not Customer.query.get(customer_id):
+        return jsonify(message='customer not found'), 400
+    p = Policy(
+        id=str(uuid4()),
+        policy_number=data.get('policyNumber') or f"POL-{str(uuid4())[:8]}",
+        type=data.get('type','auto'),
+        premium=float(data.get('premium',0)),
+        coverage=float(data.get('coverage',0)),
+        start_date=date.fromisoformat(data.get('startDate','2025-01-01')),
+        end_date=date.fromisoformat(data.get('endDate','2026-01-01')),
+        status=data.get('status','pending'),
+        customer_id=customer_id
+    )
+    db.session.add(p); db.session.commit()
+    return jsonify(id=p.id, policyNumber=p.policy_number), 201
+````
+
+## 108. Manufacturing Standard/starterCode/Flutter_starter_code/lib/src/routes.dart #0
+
+Score: 1.000
+
+````text
+import 'package:flutter/material.dart';
+import 'views/dashboard_page.dart';
+import 'views/policies_page.dart';
+import 'views/claims_page.dart';
+import 'views/customers_page.dart';
+import 'views/underwriting_page.dart';
+import 'views/reports_page.dart';
+class Routes {
+  static const dashboard = '/';
+  static const policies = '/policies';
+  static const claims = '/claims';
+  static const customers = '/customers';
+  static const underwriting = '/underwriting';
+  static const reports = '/reports';
+}
+final Map<String, WidgetBuilder> appRoutes = {
+  Routes.dashboard: (_) => const DashboardPage(),
+  Routes.policies: (_) => const PoliciesPage(),
+  Routes.claims: (_) => const ClaimsPage(),
+  Routes.customers: (_) => const CustomersPage(),
+  Routes.underwriting: (_) => const UnderwritingPage(),
+  Routes.reports: (_) => const ReportsPage(),
+};
+````
+
+## 109. Manufacturing Standard/starterCode/Flutter_starter_code/lib/src/services/api_service.dart #0
+
+Score: 1.000
+
+````text
+import 'dart:convert';
+import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:http/http.dart' as http;
+class ApiService {
+  final String baseUrl = dotenv.env['API_BASE_URL'] ?? '';
+  // Example: GET /api/policies (falls back to local assets for demo)
+  Future<List<dynamic>> listPolicies() async {
+    if (baseUrl.isEmpty) {
+      final s = await rootBundle.loadString('assets/data/insurancePolicies.json');
+      return jsonDecode(s) as List<dynamic>;
+    }
+    final res = await http.get(Uri.parse('$baseUrl/api/policies'));
+    return jsonDecode(res.body) as List<dynamic>;
+  }
+  // Example: POST /api/claims
+  Future<Map<String, dynamic>> submitClaim(Map<String, dynamic> payload) async {
+    if (baseUrl.isEmpty) {
+      // echo demo
+      return { 'id': 'cl-${DateTime.now().millisecondsSinceEpoch}', 'status': 'pending', ...payload };
+    }
+    final res = await http.post(Uri.parse('$baseUrl/api/claims'), headers: { 'Content-Type': 'application/json' }, body: jsonEncode(payload));
+    return jsonDecode(res.body) as Map<String, dynamic>;
+  }
+  // Example: POST /api/underwriting/evaluate
+  Future<Map<String, dynamic>> evaluateRisk(Map<String, dynamic> payload) async {
+    if (baseUrl.isEmpty) {
+      // simple local calc
+      final age = (payload['age'] ?? 0) as int;
+      final product = (payload['product'] ?? 'auto') as String;
+      final prior = (payload['priorClaims'] ?? 0) as int;
+      var risk = (age / 10.0) + (prior * 5.0);
+      if (product == 'life') risk += 10; if (product == 'home') risk += 5;
+      final decision = risk < 10 ? 'approve' : risk < 20 ? 'review' : 'decline';
+      return { 'riskScore': risk.round(), 'decision': decision };
+    }
+    final res = await http.post(Uri.parse('$baseUrl/api/underwriting/evaluate'), headers: { 'Content-Type': 'application/json' }, body: jsonEncode(payload));
+    return jsonDecode(res.body) as Map<String, dynamic>;
+  }
+}
+````
+
+## 110. Manufacturing Standard/starterCode/Flutter_starter_code/lib/src/views/claims_page.dart #0
+
+Score: 1.000
+
+````text
+import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show rootBundle;
+import '../services/api_service.dart';
+class ClaimsPage extends StatefulWidget {
+  const ClaimsPage({super.key});
+  @override State<ClaimsPage> createState() => _ClaimsPageState();
+}
+class _ClaimsPageState extends State<ClaimsPage> {
+  final api = ApiService();
+  List<Map<String, dynamic>> claims = [];
+  final policyCtrl = TextEditingController();
+  final descCtrl = TextEditingController();
+  final amountCtrl = TextEditingController();
+  @override
+  void initState() {
+    super.initState();
+    _load();
+  }
+  Future<void> _load() async {
+    final s = await rootBundle.loadString('assets/data/claims.json');
+    setState(() { claims = (jsonDecode(s) as List).cast<Map<String,dynamic>>(); });
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Claims')),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Expanded(child: Card(color: const Color(0xFF121A2E), child: Padding(padding: const EdgeInsets.all(16), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            const Text('Submit a Claim', style: TextStyle(fontWeight: FontWeight.w700)),
+            const SizedBox(height: 12),
+            TextField(controller: policyCtrl, decoration: const InputDecoration(labelText: 'Policy Number')),
+            const SizedBox(height: 8),
+            TextField(controller: descCtrl, decoration: const InputDecoration(labelText: 'Description'), maxLines: 3),
+            const SizedBox(height: 8),
+            TextField(controller: amountCtrl, decoration: const InputDecoration(labelText: 'Amount'), keyboardType: TextInputType.number),
+            const SizedBox(height: 12),
+            ElevatedButton(onPressed: () async {
+              final payload = { 'policyNumber': policyCtrl.text, 'description': descCtrl.text, 'amount': double.tryParse(amountCtrl.text) ?? 0 };
+              final created = await api.submitClaim(payload);
+              setState(() { claims = [created, ...claims]; });
+              policyCtrl.clear(); descCtrl.clear(); amountCtrl.clear();
+            }, child: const Text('Submit Claim'))
+          ]))),),
+          const SizedBox(width: 16),
+          Expanded(child: Card(color: const Color(0xFF121A2E), child: Padding(padding: const EdgeInsets.all(16), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            const Text('Recent Claims', style: TextStyle(fontWeight: FontWeight.w700)),
+            const SizedBox(height: 12),
+            Expanded(child: ListView.separated(
+              itemCount: claims.length,
+              separatorBuilder: (_, __) => const Divider(height: 1),
+              itemBuilder: (_, i) => ListTile(
+                title: Text('${claims[i]['policyNumber']} • ${claims[i]['amount']}'),
+                trailing: Container(padding: const EdgeInsets.symmetric(horizontal:8, vertical:2), decoration: BoxDecoration(color: const Color(0xFF3A2D12), borderRadius: BorderRadius.circular(999)), child: Text('${claims[i]['status']}', style: const TextStyle(color: Color(0xFFF59E0B), fontSize: 12))),
+                subtitle: Text('${claims[i]['description']}'),
+              ),
+            ))
+          ]))))
+        ]),
+      ),
+    );
+  }
+}
+````
+
+## 111. Manufacturing Standard/starterCode/Flutter_starter_code/lib/src/views/dashboard_page.dart #0
+
+Score: 1.000
+
+````text
+import 'package:flutter/material.dart';
+import '../routes.dart';
+class DashboardPage extends StatelessWidget {
+  const DashboardPage({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('? Insurance Portal')),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: GridView.count(
+          crossAxisCount: MediaQuery.of(context).size.width > 900 ? 2 : 1,
+          crossAxisSpacing: 16,
+          mainAxisSpacing: 16,
+          children: [
+            Card(
+              color: const Color(0xFF121A2E),
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  const Text('Quick Links', style: TextStyle(fontWeight: FontWeight.w700)),
+                  const SizedBox(height: 8),
+                  Wrap(spacing: 8, runSpacing: 8, children: [
+                    ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, Routes.policies), child: const Text('Policies')),
+                    ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, Routes.claims), child: const Text('Claims')),
+                    ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, Routes.customers), child: const Text('Customers')),
+                    ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, Routes.underwriting), child: const Text('Underwriting')),
+                    ElevatedButton(onPressed: ()=>Navigator.pushNamed(context, Routes.reports), child: const Text('Reports')),
+                  ])
+                ]),
+              ),
+            ),
+            Card(
+              color: const Color(0xFF121A2E),
+              child: const Padding(
+                padding: EdgeInsets.all(16),
+                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  Text('Welcome', style: TextStyle(fontWeight: FontWeight.w700)),
+                  SizedBox(height: 8),
+                  Text('Starter template for an Insurance portal built with Flutter.', style: TextStyle(color: Color(0xFF9AA3B2)))
+                ]),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+````
+
+## 112. Manufacturing Standard/starterCode/Flutter_starter_code/lib/src/views/reports_page.dart #0
+
+Score: 1.000
+
+````text
+import 'package:flutter/material.dart';
+class ReportsPage extends StatelessWidget {
+  const ReportsPage({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Reports')),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Row(children: [
+          Expanded(child: Card(color: const Color(0xFF121A2E), child: const Padding(padding: EdgeInsets.all(16), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text('Analytics', style: TextStyle(fontWeight: FontWeight.w700)),
+            SizedBox(height: 8),
+            Text('Integrate charts (fl_chart, charts_flutter) here.', style: TextStyle(color: Color(0xFF9AA3B2)))
+          ])))),
+          const SizedBox(width: 16),
+          Expanded(child: Card(color: const Color(0xFF121A2E), child: const Padding(padding: EdgeInsets.all(16), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text('Compliance Notes', style: TextStyle(fontWeight: FontWeight.w700)),
+            SizedBox(height: 8),
+            Text('Placeholder for regulatory reporting or exports.', style: TextStyle(color: Color(0xFF9AA3B2)))
+          ]))))
+        ]),
+      ),
+    );
+  }
+}
+````
+
+## 113. Manufacturing Standard/starterCode/Flutter_starter_code/lib/src/views/underwriting_page.dart #0
+
+Score: 1.000
+
+````text
+import 'package:flutter/material.dart';
+import '../services/api_service.dart';
+class UnderwritingPage extends StatefulWidget {
+  const UnderwritingPage({super.key});
+  @override State<UnderwritingPage> createState() => _UnderwritingPageState();
+}
+class _UnderwritingPageState extends State<UnderwritingPage> {
+  final api = ApiService();
+  int age = 35; String product = 'auto'; int priorClaims = 0;
+  Map<String, dynamic>? result;
+  bool loading = false;
+  Future<void> _eval() async {
+    setState(() { loading = true; });
+    final r = await api.evaluateRisk({ 'age': age, 'product': product, 'priorClaims': priorClaims });
+    setState(() { result = r; loading = false; });
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Underwriting')),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Row(children: [
+          Expanded(child: Card(color: const Color(0xFF121A2E), child: Padding(padding: const EdgeInsets.all(16), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            const Text('Risk Evaluation', style: TextStyle(fontWeight: FontWeight.w700)),
+            const SizedBox(height: 12),
+            TextField(decoration: const InputDecoration(labelText: 'Age'), keyboardType: TextInputType.number, onChanged: (v)=>age = int.tryParse(v) ?? 0),
+            const SizedBox(height: 8),
+            DropdownButtonFormField(value: product, items: const [
+              DropdownMenuItem(value: 'auto', child: Text('Auto')),
+              DropdownMenuItem(value: 'home', child: Text('Home')),
+              DropdownMenuItem(value: 'life', child: Text('Life')),
+            ], onChanged: (v)=>setState(()=>product = (v ?? 'auto') as String), decoration: const InputDecoration(labelText: 'Product')),
+            const SizedBox(height: 8),
+            TextField(decoration: const InputDecoration(labelText: 'Prior Claims'), keyboardType: TextInputType.number, onChanged: (v)=>priorClaims = int.tryParse(v) ?? 0),
+            const SizedBox(height: 12),
+            ElevatedButton(onPressed: loading ? null : _eval, child: Text(loading ? 'Evaluating...' : 'Evaluate')),
+            const SizedBox(height: 12),
+            if (result != null) ...[
+              Text('Risk Score: ${result!['riskScore']}'),
+              Text('Decision: ${result!['decision']}'),
+            ]
+          ]))),
+          const SizedBox(width: 16),
+          Expanded(child: Card(color: const Color(0xFF121A2E), child: const Padding(padding: EdgeInsets.all(16), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text('Guidelines', style: TextStyle(fontWeight: FontWeight.w700)), SizedBox(height: 8),
+            Text('• Auto: higher prior claims increases risk'),
+            Text('• Home: property age and location are key factors'),
+            Text('• Life: age is primary factor for base risk'),
+          ]))))
+        ]),
+      ),
+    );
+  }
+}
+````
+
+## 114. Manufacturing Standard/starterCode/Flutter_starter_code/test/policy_card_test.dart #0
+
+Score: 1.000
+
+````text
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:insurance_portal_flutter/src/models/policy.dart';
+import 'package:insurance_portal_flutter/src/widgets/policy_card.dart';
+void main() {
+  testWidgets('PolicyCard renders policy number and status', (tester) async {
+    await tester.pumpWidget(MaterialApp(
+      home: Scaffold(
+        body: PolicyCard(policy: Policy(
+          id: 'p1', policyNumber: 'POL-1', type: 'auto', customerName: 'A', premium: 1, coverage: 1, startDate: '2025-01-01', endDate: '2026-01-01', status: 'active'
+        )),
+      ),
+    ));
+    expect(find.text('POL-1'), findsOneWidget);
+    expect(find.text('active'), findsOneWidget);
+  });
+}
+````
+
+## 115. Manufacturing Standard/starterCode/Java_starter_code/README.md #0
+
+Score: 1.000
+
+````text
+Production-ready Spring Boot starter for Insurance domain. Includes domain endpoints (Policies, Claims, Customers, Underwriting, Reports), JPA entities, repositories, Flyway baseline, tests, and Docker + Postgres.
+- Spring Boot 3 (Web, Data JPA, Validation)
+- PostgreSQL + Flyway
+- JUnit + MockMvc
+- Docker + docker-compose
+````
+
+## 116. Manufacturing Standard/starterCode/Java_starter_code/README.md #1
+
+Score: 1.000
+
+````text
+```
+Java_starter_code/
+  src/main/java/com/example/insurance/
+    InsuranceApiApplication.java
+    domain/ (Customer, Policy, Claim)
+    repository/ (CustomerRepository, PolicyRepository, ClaimRepository)
+    service/ (UnderwritingService)
+    controller/ (PolicyController, ClaimController, CustomerController, UnderwritingController, ReportController)
+    config/DataInitializer.java
+  src/main/resources/
+    application.yml
+    db/migration/V1__init.sql
+  src/test/java/com/example/insurance/PolicyControllerTest.java
+  pom.xml, Dockerfile, docker-compose.yml, .gitignore
+````
+
+## 117. Manufacturing Standard/starterCode/Java_starter_code/README.md #2
 
 Score: 1.000
 
 ````text
 ```
 
-Response includes:
-
-- `masked_text`
-- `risk`
-- `detections`
-- `detection_count`
-- `action`
-- `latency_ms`
-- `layers`
+- GET `/api/policies`, POST `/api/policies`
+- GET `/api/claims/{id}`, POST `/api/claims`
+- GET `/api/customers`, POST `/api/customers`
+- POST `/api/underwriting/evaluate`
+- GET `/api/reports/summary`
 ````
 
-## 13. README.md #8
+## 118. Manufacturing Standard/starterCode/Java_starter_code/README.md #3
 
 Score: 1.000
 
 ````text
-Fast detector aligned with the extension behavior for:
-- API keys
-- passwords
-- JWTs
-- bearer tokens
-- cloud credentials
-- credit cards
-- street addresses
-- email addresses
-- phone numbers
-- IP addresses
-- URLs
-- ID-like values
+```bash
+docker compose up -d db
+./mvnw spring-boot:run
+mvn spring-boot:run
 ````
 
-## 14. README.md #9
+## 119. Manufacturing Standard/starterCode/Java_starter_code/README.md #4
 
 Score: 1.000
 
 ````text
-Entity-aware detection for:
-- person names
-- phone numbers
-- emails
-- credit cards
-- other supported Presidio entities
-The default NLP model is:
+```
+App on http://localhost:8080
 ````
 
-## 15. README.md #10
+## 120. Manufacturing Standard/starterCode/Java_starter_code/README.md #5
 
 Score: 1.000
 
 ````text
-```text
-en_core_web_sm
+```bash
+mvn -DskipTests package
+docker build -t insurance-api .
+docker compose up --build
 ````
 
-## 16. README.md #11
+## 121. Manufacturing Standard/starterCode/Java_starter_code/README.md #6
+
+Score: 1.000
+
+````text
+```
+
+- `DATABASE_URL` (jdbc url)
+- `DB_USER`, `DB_PASSWORD`
+- `PORT` (default 8080)
+- `DEFAULT_ROLE` (demo only)
+- Config via env in `application.yml`
+- Stateless app; DB as backing service
+- Dependencies managed in `pom.xml`
+MIT
+````
+
+## 122. Manufacturing Standard/starterCode/Java_starter_code/src/main/java/com/example/insurance/controller/ClaimController.java #0
+
+Score: 1.000
+
+````text
+package com.example.insurance.controller;
+import com.example.insurance.domain.Claim;
+import com.example.insurance.domain.Policy;
+import com.example.insurance.repository.ClaimRepository;
+import com.example.insurance.repository.PolicyRepository;
+import jakarta.validation.constraints.NotBlank;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import java.util.Optional;
+@RestController
+@RequestMapping("/api/claims")
+public class ClaimController {
+    private final ClaimRepository claims; private final PolicyRepository policies;
+    public ClaimController(ClaimRepository claims, PolicyRepository policies) { this.claims = claims; this.policies = policies; }
+    @GetMapping("/{id}")
+    public ResponseEntity<Claim> get(@PathVariable String id) {
+        return claims.findById(id).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
+    }
+    record SubmitClaim(@NotBlank String policyNumber, double amount, String description) {}
+    @PostMapping
+    public ResponseEntity<Claim> submit(@RequestBody SubmitClaim body) {
+        Optional<Policy> p = policies.findByPolicyNumber(body.policyNumber());
+        if (p.isEmpty()) return ResponseEntity.badRequest().build();
+        Claim c = new Claim();
+        c.setPolicy(p.get());
+        c.setAmount(body.amount());
+        c.setDescription(body.description());
+        c.setStatus("pending");
+        return ResponseEntity.status(201).body(claims.save(c));
+    }
+}
+````
+
+## 123. Manufacturing Standard/starterCode/Java_starter_code/src/main/java/com/example/insurance/controller/UnderwritingController.java #0
+
+Score: 1.000
+
+````text
+package com.example.insurance.controller;
+import com.example.insurance.service.UnderwritingService;
+import org.springframework.web.bind.annotation.*;
+record EvaluateRequest(int age, String product, int priorClaims) {}
+@RestController
+@RequestMapping("/api/underwriting")
+public class UnderwritingController {
+    private final UnderwritingService service;
+    public UnderwritingController(UnderwritingService service) { this.service = service; }
+    @PostMapping("/evaluate")
+    public UnderwritingService.Result evaluate(@RequestBody EvaluateRequest req) {
+        return service.evaluate(req.age(), req.product(), req.priorClaims());
+    }
+}
+````
+
+## 124. Manufacturing Standard/starterCode/Java_starter_code/src/main/java/com/example/insurance/domain/Claim.java #0
+
+Score: 1.000
+
+````text
+package com.example.insurance.domain;
+import jakarta.persistence.*;
+import java.time.LocalDateTime;
+@Entity
+public class Claim {
+    @Id @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
+    @ManyToOne(optional = false)
+    private Policy policy;
+    private double amount;
+    private String description;
+    private String status = "pending";
+    private LocalDateTime createdAt = LocalDateTime.now();
+    public String getId() { return id; }
+    public Policy getPolicy() { return policy; }
+    public void setPolicy(Policy policy) { this.policy = policy; }
+    public double getAmount() { return amount; }
+    public void setAmount(double amount) { this.amount = amount; }
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
+    public LocalDateTime getCreatedAt() { return createdAt; }
+}
+````
+
+## 125. Manufacturing Standard/starterCode/Java_starter_code/src/main/java/com/example/insurance/domain/Policy.java #0
+
+Score: 1.000
+
+````text
+package com.example.insurance.domain;
+import jakarta.persistence.*;
+import java.time.LocalDate;
+import java.util.*;
+@Entity
+public class Policy {
+    @Id @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
+    @Column(nullable = false, unique = true)
+    private String policyNumber;
+    @Column(nullable = false)
+    private String type;
+    private double premium;
+    private double coverage;
+    private LocalDate startDate;
+    private LocalDate endDate;
+    private String status;
+    @ManyToOne(optional = false)
+    private Customer customer;
+    @OneToMany(mappedBy = "policy")
+    private List<Claim> claims = new ArrayList<>();
+    public String getId() { return id; }
+    public String getPolicyNumber() { return policyNumber; }
+    public void setPolicyNumber(String policyNumber) { this.policyNumber = policyNumber; }
+    public String getType() { return type; }
+    public void setType(String type) { this.type = type; }
+    public double getPremium() { return premium; }
+    public void setPremium(double premium) { this.premium = premium; }
+    public double getCoverage() { return coverage; }
+    public void setCoverage(double coverage) { this.coverage = coverage; }
+    public LocalDate getStartDate() { return startDate; }
+    public void setStartDate(LocalDate startDate) { this.startDate = startDate; }
+    public LocalDate getEndDate() { return endDate; }
+    public void setEndDate(LocalDate endDate) { this.endDate = endDate; }
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
+    public Customer getCustomer() { return customer; }
+    public void setCustomer(Customer customer) { this.customer = customer; }
+    public List<Claim> getClaims() { return claims; }
+}
+````
+
+## 126. Manufacturing Standard/starterCode/Java_starter_code/src/main/java/com/example/insurance/InsuranceApiApplication.java #0
+
+Score: 1.000
+
+````text
+package com.example.insurance;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+@SpringBootApplication
+public class InsuranceApiApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(InsuranceApiApplication.class, args);
+    }
+}
+````
+
+## 127. Manufacturing Standard/starterCode/Java_starter_code/src/main/java/com/example/insurance/repository/CustomerRepository.java #0
+
+Score: 1.000
+
+````text
+package com.example.insurance.repository;
+import com.example.insurance.domain.Customer;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.Optional;
+public interface CustomerRepository extends JpaRepository<Customer, String> {
+    Optional<Customer> findByEmail(String email);
+}
+````
+
+## 128. Manufacturing Standard/starterCode/Java_starter_code/src/main/java/com/example/insurance/repository/PolicyRepository.java #0
+
+Score: 1.000
+
+````text
+package com.example.insurance.repository;
+import com.example.insurance.domain.Policy;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.Optional;
+public interface PolicyRepository extends JpaRepository<Policy, String> {
+    Optional<Policy> findByPolicyNumber(String policyNumber);
+}
+````
+
+## 129. Manufacturing Standard/starterCode/Java_starter_code/src/main/java/com/example/insurance/service/UnderwritingService.java #0
+
+Score: 1.000
+
+````text
+package com.example.insurance.service;
+import org.springframework.stereotype.Service;
+@Service
+public class UnderwritingService {
+    public Result evaluate(int age, String product, int priorClaims) {
+        double risk = (age / 10.0) + (priorClaims * 5.0);
+        if ("life".equalsIgnoreCase(product)) risk += 10;
+        if ("home".equalsIgnoreCase(product)) risk += 5;
+        String decision = risk < 10 ? "approve" : risk < 20 ? "review" : "decline";
+        return new Result(Math.round(risk), decision);
+    }
+    public record Result(long riskScore, String decision) {}
+}
+````
+
+## 130. Manufacturing Standard/starterCode/NextJs_starter_code/src/app/api/claims/[id]/route.ts #0
+
+Score: 1.000
+
+````text
+import { NextResponse } from 'next/server';
+export async function GET(_: Request, { params }: { params: { id: string } }) {
+  return NextResponse.json({ id: params.id, policyNumber: 'POL-10001', amount: 100, status: 'pending' });
+}
+````
+
+## 131. Manufacturing Standard/starterCode/NextJs_starter_code/src/app/api/policies/route.ts #0
+
+Score: 1.000
+
+````text
+import { NextResponse } from 'next/server';
+import seed from '@/data/insurancePolicies.json';
+export async function GET() {
+  return NextResponse.json(seed);
+}
+export async function POST(request: Request) {
+  const body = await request.json();
+  // Echo back as created policy (demo)
+  return NextResponse.json({ id: Date.now().toString(), ...body }, { status: 201 });
+}
+````
+
+## 132. Manufacturing Standard/starterCode/NextJs_starter_code/src/app/api/reports/summary/route.ts #0
+
+Score: 1.000
+
+````text
+import { NextResponse } from 'next/server';
+export async function GET() {
+  // Demo summary values
+  return NextResponse.json({ policyCount: 2, claimCount: 2 });
+}
+````
+
+## 133. Manufacturing Standard/starterCode/NextJs_starter_code/src/app/api/underwriting/evaluate/route.ts #0
+
+Score: 1.000
+
+````text
+import { NextResponse } from 'next/server';
+export async function POST(request: Request) {
+  const { age, product, priorClaims } = await request.json();
+  let risk = (Number(age) || 0) / 10 + (Number(priorClaims) || 0) * 5;
+  if (product === 'life') risk += 10;
+  if (product === 'home') risk += 5;
+  const decision = risk < 10 ? 'approve' : risk < 20 ? 'review' : 'decline';
+  return NextResponse.json({ riskScore: Math.round(risk), decision });
+}
+````
+
+## 134. Manufacturing Standard/starterCode/NextJs_starter_code/src/app/page.tsx #0
+
+Score: 1.000
+
+````text
+import Link from 'next/link';
+export default function DashboardPage() {
+  return (
+    <div className="grid cols-2">
+      <div className="card">
+        <div style={{ fontWeight: 700, marginBottom: 8 }}>Quick Links</div>
+        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+          <Link className="btn" href="/policies">Policies</Link>
+          <Link className="btn" href="/claims">Claims</Link>
+          <Link className="btn" href="/customers">Customers</Link>
+          <Link className="btn" href="/underwriting">Underwriting</Link>
+          <Link className="btn" href="/reports">Reports</Link>
+        </div>
+      </div>
+      <div className="card">
+        <div style={{ fontWeight: 700, marginBottom: 8 }}>Welcome</div>
+        <p style={{ color: '#9aa3b2' }}>Starter template for an Insurance portal built with Next.js App Router.</p>
+      </div>
+    </div>
+  );
+}
+````
+
+## 135. Manufacturing Standard/starterCode/NextJs_starter_code/src/components/Navbar.tsx #0
+
+Score: 1.000
+
+````text
+'use client';
+import Link from 'next/link';
+import { useAuth } from '@/context/AuthContext';
+export default function Navbar() {
+  const { user, isAuthenticated, login, logout } = useAuth();
+  return (
+    <nav>
+      <div className="inner">
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <span style={{ fontWeight: 700 }}>? Insurance Portal</span>
+          <Link href="/">Dashboard</Link>
+          <Link href="/policies">Policies</Link>
+          <Link href="/claims">Claims</Link>
+          <Link href="/customers">Customers</Link>
+          <Link href="/underwriting">Underwriting</Link>
+          <Link href="/reports">Reports</Link>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <span style={{ color: '#9aa3b2', fontSize: 12 }}>Role: {user.role}</span>
+          {isAuthenticated ? (
+            <button className="btn secondary" onClick={logout}>Logout</button>
+          ) : (
+            <button className="btn" onClick={() => login('agent')}>Login</button>
+          )}
+        </div>
+      </div>
+    </nav>
+  );
+}
+````
+
+## 136. Manufacturing Standard/starterCode/NextJs_starter_code/src/components/UnderwritingWidget.tsx #0
+
+Score: 1.000
+
+````text
+'use client';
+import { useState } from 'react';
+import { underwritingApi } from '@/services/api';
+export default function UnderwritingWidget() {
+  const [input, setInput] = useState({ age: 35, product: 'auto', priorClaims: 0 });
+  const [result, setResult] = useState<any>(null);
+  const [loading, setLoading] = useState(false);
+  async function evaluate() {
+    setLoading(true);
+    try {
+      const res = await underwritingApi.evaluate(input);
+      setResult(res);
+    } finally {
+      setLoading(false);
+    }
+  }
+  return (
+    <div className="card">
+      <div style={{ fontWeight: 700, marginBottom: 8 }}>Risk Evaluation</div>
+      <div className="grid" style={{ gap: 12 }}>
+        <div>
+          <label>Age</label>
+          <input type="number" value={input.age} onChange={(e)=>setInput(v=>({ ...v, age: Number((e.target as HTMLInputElement).value) }))} />
+        </div>
+        <div>
+          <label>Product</label>
+          <select value={input.product} onChange={(e)=>setInput(v=>({ ...v, product: (e.target as HTMLSelectElement).value }))}>
+            <option value="auto">Auto</option>
+            <option value="home">Home</option>
+            <option value="life">Life</option>
+          </select>
+        </div>
+        <div>
+          <label>Prior Claims</label>
+          <input type="number" value={input.priorClaims} onChange={(e)=>setInput(v=>({ ...v, priorClaims: Number((e.target as HTMLInputElement).value) }))} />
+        </div>
+        <div>
+          <button className="btn" onClick={evaluate} disabled={loading}>{loading ? 'Evaluating...' : 'Evaluate'}</button>
+        </div>
+      </div>
+      {result && (
+        <div style={{ marginTop: 12 }}>
+          <div>Risk Score: <b>{result.riskScore}</b></div>
+          <div>Decision: <b>{result.decision}</b></div>
+        </div>
+      )}
+    </div>
+  );
+}
+````
+
+## 137. Manufacturing Standard/starterCode/NextJs_starter_code/src/services/api.ts #0
+
+Score: 1.000
+
+````text
+// Simple fetch-based client targeting Next API routes
+async function http<T>(url: string, options?: RequestInit): Promise<T> {
+  const res = await fetch(url, { headers: { 'Content-Type': 'application/json' }, cache: 'no-store', ...options });
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+export const policyApi = {
+  list: () => http<any[]>('/api/policies'),
+  create: (payload: any) => http<any>('/api/policies', { method: 'POST', body: JSON.stringify(payload) })
+};
+export const claimApi = {
+  getById: (id: string) => http<any>(`/api/claims/${id}`),
+  submit: (payload: any) => http<any>('/api/claims', { method: 'POST', body: JSON.stringify(payload) })
+};
+export const customerApi = {
+  register: (payload: any) => http<any>('/api/customers', { method: 'POST', body: JSON.stringify(payload) })
+};
+export const underwritingApi = {
+  evaluate: (payload: any) => http<any>('/api/underwriting/evaluate', { method: 'POST', body: JSON.stringify(payload) })
+};
+````
+
+## 138. Manufacturing Standard/starterCode/Nodejs_starter_code/prisma/seed.js #0
+
+Score: 1.000
+
+````text
+import { PrismaClient } from '@prisma/client';
+const prisma = new PrismaClient();
+async function main() {
+  const alice = await prisma.customer.upsert({
+    where: { email: 'alice@example.com' },
+    update: {},
+    create: { email: 'alice@example.com', name: 'Alice Johnson', phone: '+1-555-1111' }
+  });
+  const policy = await prisma.policy.upsert({
+    where: { policyNumber: 'POL-10001' },
+    update: {},
+    create: {
+      policyNumber: 'POL-10001', type: 'auto', premium: 89.5, coverage: 20000,
+      startDate: new Date('2025-01-01'), endDate: new Date('2026-01-01'), status: 'active', customerId: alice.id
+    }
+  });
+  await prisma.claim.create({
+    data: { policyId: policy.id, amount: 1200.5, description: 'Rear bumper damage', status: 'approved' }
+  });
+  console.log('Seeded sample data');
+}
+main().catch((e) => { console.error(e); process.exit(1); }).finally(async () => { await prisma.$disconnect(); });
+````
+
+## 139. Manufacturing Standard/starterCode/Nodejs_starter_code/src/controllers/claimController.js #0
+
+Score: 1.000
+
+````text
+import { prisma } from '../config/db.js';
+export async function getClaimById(req, res, next) {
+  try {
+    const claim = await prisma.claim.findUnique({ where: { id: req.params.id }, include: { policy: true } });
+    if (!claim) return res.status(404).json({ message: 'Not found' });
+    res.json(claim);
+  } catch (e) { next(e); }
+}
+export async function submitClaim(req, res, next) {
+  try {
+    const { policyId, amount, description } = req.body;
+    const claim = await prisma.claim.create({ data: { policyId, amount, description, status: 'pending' } });
+    res.status(201).json(claim);
+  } catch (e) { next(e); }
+}
+````
+
+## 140. Manufacturing Standard/starterCode/Nodejs_starter_code/src/controllers/customerController.js #0
+
+Score: 1.000
+
+````text
+import { prisma } from '../config/db.js';
+export async function registerCustomer(req, res, next) {
+  try {
+    const { email, name, phone } = req.body;
+    const customer = await prisma.customer.create({ data: { email, name, phone } });
+    res.status(201).json(customer);
+  } catch (e) { next(e); }
+}
+export async function listCustomers(req, res, next) {
+  try {
+    const customers = await prisma.customer.findMany({ include: { policies: true } });
+    res.json(customers);
+  } catch (e) { next(e); }
+}
+````
+
+## 141. Manufacturing Standard/starterCode/Nodejs_starter_code/src/routes/policyRoutes.js #0
+
+Score: 1.000
+
+````text
+import { Router } from 'express';
+import { listPolicies, createPolicy } from '../controllers/policyController.js';
+import { requireAuth } from '../middleware/authMiddleware.js';
+const router = Router();
+router.get('/', listPolicies); // GET /api/policies
+router.post('/', requireAuth, createPolicy); // POST /api/policies
+export default router;
+````
+
+## 142. Manufacturing Standard/starterCode/Nodejs_starter_code/tests/health.test.js #0
+
+Score: 1.000
+
+````text
+import request from 'supertest';
+import app from '../src/app.js';
+test('GET /health returns ok (without DB assert)', async () => {
+  const res = await request(app).get('/health');
+  expect(res.status).toBeLessThan(500);
+});
+````
+
+## 143. Manufacturing Standard/starterCode/React_native_starter_code/index.js #0
+
+Score: 1.000
+
+````text
+import { AppRegistry } from 'react-native';
+import App from './src/App';
+import { name as appName } from './app.json';
+AppRegistry.registerComponent(appName, () => App);
+````
+
+## 144. Manufacturing Standard/starterCode/React_native_starter_code/src/App.tsx #0
+
+Score: 1.000
+
+````text
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Dashboard from '@/screens/Dashboard';
+import Policies from '@/screens/Policies';
+import Claims from '@/screens/Claims';
+import Customers from '@/screens/Customers';
+import Underwriting from '@/screens/Underwriting';
+import Reports from '@/screens/Reports';
+import { AuthProvider } from '@/context/AuthContext';
+const Stack = createNativeStackNavigator();
+export default function App() {
+  return (
+    <AuthProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Dashboard" component={Dashboard} />
+          <Stack.Screen name="Policies" component={Policies} />
+          <Stack.Screen name="Claims" component={Claims} />
+          <Stack.Screen name="Customers" component={Customers} />
+          <Stack.Screen name="Underwriting" component={Underwriting} />
+          <Stack.Screen name="Reports" component={Reports} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </AuthProvider>
+  );
+}
+````
+
+## 145. Manufacturing Standard/starterCode/React_native_starter_code/src/services/api.ts #0
+
+Score: 1.000
+
+````text
+async function http<T>(url: string, options?: RequestInit): Promise<T> {
+  const res = await fetch(url, { headers: { 'Content-Type': 'application/json' }, ...options });
+  if (!res.ok) throw new Error(await res.text());
+  return res.json();
+}
+export const policyApi = {
+  list: () => http<any[]>('https://example.com/api/policies'),
+  create: (payload: any) => http<any>('https://example.com/api/policies', { method: 'POST', body: JSON.stringify(payload) })
+};
+export const claimApi = {
+  getById: (id: string) => http<any>(`https://example.com/api/claims/${id}`),
+  submit: (payload: any) => http<any>('https://example.com/api/claims', { method: 'POST', body: JSON.stringify(payload) })
+};
+export const customerApi = {
+  register: (payload: any) => http<any>('https://example.com/api/customers', { method: 'POST', body: JSON.stringify(payload) })
+};
+export const underwritingApi = {
+  evaluate: (payload: any) => http<any>('https://example.com/api/underwriting/evaluate', { method: 'POST', body: JSON.stringify(payload) })
+};
+````
+
+## 146. Manufacturing Standard/starterCode/React_starter_code/src/context/AuthContext.jsx #0
+
+Score: 1.000
+
+````text
+import React, { createContext, useContext, useMemo, useState } from 'react';
+// Minimal role-based Auth context for demo
+// Roles: guest, agent, underwriter, admin
+const AuthContext = createContext(null);
+export function AuthProvider({ children }) {
+  const defaultRole = import.meta.env.VITE_DEFAULT_ROLE || 'agent';
+  const [user, setUser] = useState({ id: 'u1', name: 'Demo User', role: defaultRole });
+  const [isAuthenticated, setAuthenticated] = useState(true);
+  const login = (role = 'agent') => {
+    setUser({ id: 'u1', name: 'Demo User', role });
+    setAuthenticated(true);
+  };
+  const logout = () => {
+    setAuthenticated(false);
+    setUser({ id: null, name: 'Guest', role: 'guest' });
+  };
+  const value = useMemo(() => ({ user, isAuthenticated, login, logout }), [user, isAuthenticated]);
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+}
+export function useAuth() {
+  const ctx = useContext(AuthContext);
+  if (!ctx) throw new Error('useAuth must be used within AuthProvider');
+  return ctx;
+}
+````
+
+## 147. Manufacturing Standard/starterCode/React_starter_code/src/pages/Reports.jsx #0
+
+Score: 1.000
+
+````text
+import ReportChart from '../components/ReportChart.jsx';
+const data = [
+  { month: 'Jan', claims: 12, premiums: 40 },
+  { month: 'Feb', claims: 16, premiums: 42 },
+  { month: 'Mar', claims: 10, premiums: 45 },
+  { month: 'Apr', claims: 20, premiums: 44 },
+  { month: 'May', claims: 18, premiums: 47 },
+  { month: 'Jun', claims: 14, premiums: 50 }
+];
+export default function Reports() {
+  return (
+    <div className="grid cols-2">
+      <ReportChart data={data} />
+      <div className="card">
+        <div style={{ fontWeight: 700, marginBottom: 8 }}>Compliance Notes</div>
+        <p style={{ color: '#9aa3b2' }}>
+          This is a demo report view. Integrate with your analytics backend for real data
+          (e.g., exports for solvency reporting or claims loss ratios).
+        </p>
+      </div>
+    </div>
+  );
+}
+````
+
+## 148. Manufacturing Standard/starterCode/React_starter_code/src/services/api.js #0
+
+Score: 1.000
+
+````text
+import axios from 'axios';
+// Axios instance configured from Vite env
+export const api = axios.create({
+  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:4000',
+  timeout: 8000
+});
+// Example API calls for insurance domain
+export const policyApi = {
+  // GET /api/policies -> list all
+  async list() {
+    const res = await api.get('/api/policies');
+    return res.data;
+  },
+  // POST /api/policies -> create new
+  async create(payload) {
+    const res = await api.post('/api/policies', payload);
+    return res.data;
+  }
+};
+export const claimApi = {
+  // GET /api/claims/:id -> get claim by id
+  async getById(id) {
+    const res = await api.get(`/api/claims/${id}`);
+    return res.data;
+  },
+  // POST /api/claims -> submit claim
+  async submit(payload) {
+    const res = await api.post('/api/claims', payload);
+    return res.data;
+  }
+};
+export const customerApi = {
+  async register(payload) {
+    const res = await api.post('/api/customers', payload);
+    return res.data;
+  }
+};
+export const underwritingApi = {
+  // POST /api/underwriting/evaluate -> risk evaluation
+  async evaluate(payload) {
+    const res = await api.post('/api/underwriting/evaluate', payload);
+    return res.data; // { riskScore: number, decision: 'approve'|'review'|'decline' }
+  }
+};
+````
+
+## 149. Retail Standard-365Retail/Compliance/365 Retail Compliance, regulatory and Governance guidelines.txt #0
+
+Score: 1.000
+
+````text
+1.1 365 Information Security Policy (master reference) * Document: 365 Information Security Policy 02072025.pdf https://365retailmarkets.atlassian.net/wiki/pages/viewpageattachments.action?pageId=3652386874&preview=%2F3652386874%2F5583405070%2F365+Information+Security+Policy+02072025.pdf Key principles: * Scope o Applies to all 365 entities, platforms, subsidiaries, employees, contractors, and systems. o Covers all sensitive data: PHI, PII, PCI, Confidential Information (CI), Cardholder Data (CHD), etc. * Policy baseline o All information (written, spoken, electronic, printed) must be protected against unauthorized modification, destruction, or disclosure throughout its life cycle. o Policies and procedures must be: * Documented * Available to responsible individuals * Retained for at least 5 years * Periodically reviewed and updated * Roles & responsibilities o Information Security Team (IST): * Maintains policies, supports systems, educates users, performs audits. * Ensures compliance with laws including GDPR, CCPA, CPRA, FCRA, HIPAA, BIPA, GLBA, etc. o Information Owners, Custodians, Users: clear duties around classification, access, correct use, and reporting incidents. * Information classification o Data must be classified by sensitivity (e.g., PHI, PII, PCI, CI, Internal). o Same classification applies across all formats (source, DB, report, export). * Data integrity & secure transmission o Integrity controls: audits, RAID, ECC, checksums, encryption, digital signatures. o Transmission: * Sensitive data must use secure protocols (TLS, SSL, IPsec, SFTP). * Prohibits sending sensitive data via unencrypted email/SMS/IM. * Requires secure external file sharing (encrypted links, password protected files, etc.). * Audit and lifecycle governance o Systems audit   IST performs yearly audits of systems that store/process PHI, PII, PCI, CI or internal info. Non compliance is tracked via change management. o Policy audit   policy itself is reviewed yearly; changes tracked in Document Revisions. There is also a Confluence rendering of this titled  Security policy (from 365) : Security policy (from 365) * Page: SOS 47951   International and US Privacy Law Governance Program (GDPR) SOS-47951 International and US Privacy Law Governance Program (GDPR) Scope & expectations: * Build a formal privacy law governance program across: o Phase 1   GDPR: 365pay, V5 kiosks, MM6, PicoCooler, PicoMarket, Stockwell, ADM. o Phase 2   LATAM (Parlevel products). o Phase 3   CCPA/CPRA/other US laws. * Activities: o Review existing data privacy practices and Privacy Notice for compliance. o Complete Data Protection Impact Assessments (DPIAs) for EU sold products. o Implement: * Data Protection by Design (DPbD) * Privacy by Default in the product development lifecycle. Implications for your work: * New or changed features on in scope products may require: o DPIA review/updates if they change data flows, data types, or risk. o Evidence of DPbD/Privacy by Default in requirements and design (data minimization, access controls, retention, etc.). * Page: 365 Secure Development Lifecycle The SDLC page (and the Information Security Policy) jointly require: * Embedding security
+````
+
+## 150. Retail Standard-365Retail/Compliance/365 Retail Compliance, regulatory and Governance guidelines.txt #1
+
+Score: 1.000
+
+````text
+o Complete Data Protection Impact Assessments (DPIAs) for EU sold products. o Implement: * Data Protection by Design (DPbD) * Privacy by Default in the product development lifecycle. Implications for your work: * New or changed features on in scope products may require: o DPIA review/updates if they change data flows, data types, or risk. o Evidence of DPbD/Privacy by Default in requirements and design (data minimization, access controls, retention, etc.). * Page: 365 Secure Development Lifecycle The SDLC page (and the Information Security Policy) jointly require: * Embedding security o Complete Data Protection Impact Assessments (DPIAs) for EU sold products. o Implement: * Data Protection by Design (DPbD) * Privacy by Default in the product development lifecycle. Implications for your work: * New or changed features on in scope products may require: o DPIA review/updates if they change data flows, data types, or risk. o Evidence of DPbD/Privacy by Default in requirements and design (data minimization, access controls, retention, etc.). * Page: 365 Secure Development Lifecycle The SDLC page (and the Information Security Policy) jointly require: * Embedding security o Complete Data Protection Impact Assessments (DPIAs) for EU sold products. o Implement: * Data Protection by Design (DPbD) * Privacy by Default in the product development lifecycle. Implications for your work: * New or changed features on in scope products may require: o DPIA review/updates if they change data flows, data types, or risk. o Evidence of DPbD/Privacy by Default in requirements and design (data minimization, access controls, retention, etc.). * Page: 365 Secure Development Lifecycle The SDLC page (and the Information Security Policy) jointly require: * Embedding security and privacy controls at: o Requirements ? Design ? Implementation ? Verification ? Release ? Response. * Using change management: o Significant changes are tracked as Epics. o Audit, pen tests, vulnerability remediation integrate into the lifecycle. When you document a project or feature, you should be able to show: * Where security/privacy requirements are defined. * How they are tested/verified (functional tests, pen tests, privacy tests). * How changes are approved (CAB) and released. From the security policy (Confluence view): Security policy (from 365) * Systems Audit (annual)   checks: o Systems processing PHI/PII/PCI/CI against the 365 policy. o Non compliant items ? documented, tracked, remediated via change management. * Policy Audit (annual)   ensures: o Policy remains aligned with best practices and regulatory changes. * Jira: Compass Vendor Security Audit (ISEC 711) ISEC-711: Compass Vendor Security AuditDone Focus areas (typical large client audit expectations): * IT security policies, risk management, user privilege management. * Change management, secure configuration, malware protection, monitoring. * Incident management, business continuity & disaster recovery. * Data protection, privacy, and POS operations (including valid PCI DSS Attestations of Compliance, SOC reports, etc.). Use this as a reference for what enterprise customers expect you to demonstrate. Depending on what you re
+````
+
+## 151. Retail Standard-365Retail/Compliance/365 Retail Compliance, regulatory and Governance guidelines.txt #2
+
+Score: 1.000
+
+````text
+regulatory changes. * Jira: Compass Vendor Security Audit (ISEC 711) ISEC-711: Compass Vendor Security AuditDone Focus areas (typical large client audit expectations): * IT security policies, risk management, user privilege management. * Change management, secure configuration, malware protection, monitoring. * Incident management, business continuity & disaster recovery. * Data protection, privacy, and POS operations (including valid PCI DSS Attestations of Compliance, SOC reports, etc.). Use this as a reference for what enterprise customers expect you to demonstrate. Depending on what you re doing, here s how to use these guidelines: o Add a  Compliance & Governance  section with bullets like: *  Subject to 365 Information Security Policy and SDLC.  *  Check if change requires DPIA update under SOS 47951.  *  Ensure PCI/PII handling follows encryption and transmission requirements.  o Explicitly call out: * Data collected, stored, transmitted, and classification (PII, PCI, etc.). * Where encryption at rest/in transit applies. * Retention and access control model. o For any new integration or process, ensure: * There s a clear owner (Information Owner). * Auditability: logs, you re doing, here s how to use these guidelines: o Add a  Compliance & Governance  section with bullets like: *  Subject to 365 Information Security Policy and SDLC.  *  Check if change requires DPIA update under SOS 47951.  *  Ensure PCI/PII handling follows encryption and transmission requirements.  o Explicitly call out: * Data collected, stored, transmitted, and classification (PII, PCI, etc.). * Where encryption at rest/in transit applies. * Retention and access control model. o For any new integration or process, ensure: * There s a clear owner (Information Owner). * Auditability: logs, reports, and documentation kept at least 5 years. * Alignment with privacy governance (GDPR/US) if it touches end user data.
+````
+
+## 152. Retail Standard-365Retail/Compliance/365_Information_Security_Policy_02072025.md #0
+
+Score: 1.000
+
+````text
+> Converted from PDF to Markdown. - I. Policy - II. Scope - III. Information Security Responsibilities - IV. Information Classifications - A. Protected Health Information (PHI) - B. Personally Identifiable Information (PII) - C. PCI - D. Confidential Information (CI) - E. Internal Information - F. Public Information - V. Risk Management - A. Existing Systems - B. New Systems - C. Annual Risk Assessment - VI. Computer and Information Control - A. Ownership of Software - B. Installed Software - C. Patch Management - D. Malware Protection - E. Access Controls - 1. Authorization - 2. Identification/Authentication - 3. Password Policy - 4. Expiration - F. Remote Access Tool Policy - G. Data Integrity - H. Data Storage and Transmission - 1. Secure Transmission - 2. Storage Guidelines - I. Physical Access - 1. Building Security - J. Equipment and Media Controls - K. Removable Media - L. POS/Workstation Decommission and Reuse Policy - M. Other Media Controls - VII. Training and Awareness - VIII. Network Security Policy - IX. Communication Policy - X. Clean Desk Policy - XI. Vendor Management - XII. PCI Policy - XIII. PHI Policy - XIV. Change Management - A. Roles and Responsibilities - B. Change Management Steps - XV. Remote Employee Policy - XVI. Application Security Architecture Policy - XVII. Encryption Management - XVIII. Contingency Plan - XIX. IT Asset End of Life Disposal Policy - XX. Systems Audit - XXI. Policy Audit - XXII. Document Revisions - XXIII. Definitions and Acronyms --- It is the policy of 365 RETAIL MARKETS that information, in all its forms—written, spoken, recorded electronically or printed—will be protected from accidental or intentional unauthorized modification, destruction or disclosure throughout its life cycle. This protection includes an appropriate level of security over the equipment and software used to process, store, and transmit that information. All policies and procedures must be documented and made available to individuals responsible for their implementation and compliance. All activities identified by the policies and procedures must also be documented. All the documentation, which may be in electronic form, must be retained for at least **5 (five) years** after initial creation, or, pertaining to policies and procedures, after changes are made, unless otherwise required by law. All documentation must be periodically reviewed for appropriateness and currency, a period to be determined by each entity within 365 RETAIL MARKETS. At each entity and/or department level, additional policies, standards, and procedures will be developed detailing the implementation of this policy and addressing any additional information systems in such entity and/or department. All departmental policies must be consistent with this policy. All systems implemented after the effective date of these policies are expected to comply with the provisions of this policy where possible. Existing systems are expected to be brought into compliance where possible and as soon as practical. The scope of information security includes the protection of confidentiality, integrity and availability of information. The framework for managing information
+````
+
+## 153. Retail Standard-365Retail/Compliance/365_Information_Security_Policy_02072025.md #1
+
+Score: 1.000
+
+````text
+detailing the implementation of this policy and addressing any additional information systems in such entity and/or department. All departmental policies must be consistent with this policy. All systems implemented after the effective date of these policies are expected to comply with the provisions of this policy where possible. Existing systems are expected to be brought into compliance where possible and as soon as practical. The scope of information security includes the protection of confidentiality, integrity and availability of information. The framework for managing information detailing the implementation of this policy and addressing any additional information systems in such entity and/or department. All departmental policies must be consistent with this policy. All systems implemented after the effective date of these policies are expected to comply with the provisions of this policy where possible. Existing systems are expected to be brought into compliance where possible and as soon as practical. The scope of information security includes the protection of confidentiality, integrity and availability of information. The framework for managing information detailing the implementation of this policy and addressing any additional information systems in such entity and/or department. All departmental policies must be consistent with this policy. All systems implemented after the effective date of these policies are expected to comply with the provisions of this policy where possible. Existing systems are expected to be brought into compliance where possible and as soon as practical. The scope of information security includes the protection of confidentiality, integrity and availability of information. The framework for managing information detailing the implementation of this policy and addressing any additional information systems in such entity and/or department. All departmental policies must be consistent with this policy. All systems implemented after the effective date of these policies are expected to comply with the provisions of this policy where possible. Existing systems are expected to be brought into compliance where possible and as soon as practical. The scope of information security includes the protection of confidentiality, integrity and availability of information. The framework for managing information security in this policy applies to all 365 RETAIL MARKETS entities, subsidiaries, employees, contractors, and other involved persons, and all involved systems throughout 365 RETAIL MARKETS. This policy and all standards apply to all protected health information and other classes of protected information in any form as defined below in **Information Classification**. **Information Security Team (IST):** Responsible for policies, controls, education, audits, and compliance with applicable laws (e.g., **GDPR, CCPA, CPRA, FCRA, HIPAA, BIPA, GLBA**). Responsibilities include advising on classification, embedding controls from design to production, employee education, performing audits, and reporting to management. **Information Owner:** Manager responsible for creation/primary use of information. Sets retention, ensures
+````
+
+## 154. Retail Standard-365Retail/Compliance/365_Information_Security_Policy_02072025.md #2
+
+Score: 1.000
+
+````text
+to all protected health information and other classes of protected information in any form as defined below in **Information Classification**. **Information Security Team (IST):** Responsible for policies, controls, education, audits, and compliance with applicable laws (e.g., **GDPR, CCPA, CPRA, FCRA, HIPAA, BIPA, GLBA**). Responsibilities include advising on classification, embedding controls from design to production, employee education, performing audits, and reporting to management. **Information Owner:** Manager responsible for creation/primary use of information. Sets retention, ensures protection, authorizes access, specifies controls, reports loss/misuse, and initiates corrective actions. **Custodian:** Operates storage/processing of information and administers controls set by the owner. Provides safeguards, administers access, maintains policies, promotes awareness, reports incidents, and responds to them. **User Management:** Supervises users and oversees appropriate access, initiates changes, terminates/updates access on role changes, provides training, and reports incidents. **User:** Any authorized person accessing information. Must access only as needed, comply protection, authorizes access, specifies controls, reports loss/misuse, and initiates corrective actions. **Custodian:** Operates storage/processing of information and administers controls set by the owner. Provides safeguards, administers access, maintains policies, promotes awareness, reports incidents, and responds to them. **User Management:** Supervises users and oversees appropriate access, initiates changes, terminates/updates access on role changes, provides training, and reports incidents. **User:** Any authorized person accessing information. Must access only as needed, comply with policies and controls, protect authentication secrets, report incidents, and log off/secure systems when away. Information must be classified by sensitivity. The same classification applies across all formats. Definition aligns to healthcare data created/received by covered entities, relating to health condition, care, or payment, including identifiable demographics. Unauthorized disclosure may violate law and cause harm. Information that identifies or is linkable to a consumer/household (e.g., names, addresses, IDs, IPs, biometrics, geolocation, employment/education data, needed, comply with policies and controls, protect authentication secrets, report incidents, and log off/secure systems when away. Information must be classified by sensitivity. The same classification applies across all formats. Definition aligns to healthcare data created/received by covered entities, relating to health condition, care, or payment, including identifiable demographics. Unauthorized disclosure may violate law and cause harm. Information that identifies or is linkable to a consumer/household (e.g., names, addresses, IDs, IPs, biometrics, geolocation, employment/education data, profiles, etc.). Applies to organizations storing/processing/transmitting **cardholder data (CHD)** and/or **sensitive authentication data (SAD)**. Highly sensitive non‑PHI/PII/PCI information (e.g., ACH, bank numbers,
+````
+
+## 155. Retail Standard-365Retail/Compliance/365_Information_Security_Policy_02072025.md #3
+
+Score: 1.000
+
+````text
+formats. Definition aligns to healthcare data created/received by covered entities, relating to health condition, care, or payment, including identifiable demographics. Unauthorized disclosure may violate law and cause harm. Information that identifies or is linkable to a consumer/household (e.g., names, addresses, IDs, IPs, biometrics, geolocation, employment/education data, profiles, etc.). Applies to organizations storing/processing/transmitting **cardholder data (CHD)** and/or **sensitive authentication data (SAD)**. Highly sensitive non‑PHI/PII/PCI information (e.g., ACH, bank numbers, proprietary info, passwords, encryption keys). Unauthorized disclosure may violate laws and/or cause significant harm. Intended for unrestricted internal use; may be shared within 365 or partners. Examples include directories and internal policies. Default classification if not otherwise specified. Approved for public release by designated authority (e.g., marketing brochures, profiles, etc.). Applies to organizations storing/processing/transmitting **cardholder data (CHD)** and/or **sensitive authentication data (SAD)**. Highly sensitive non‑PHI/PII/PCI information (e.g., ACH, bank numbers, proprietary info, passwords, encryption keys). Unauthorized disclosure may violate laws and/or cause significant harm. Intended for unrestricted internal use; may be shared within 365 or partners. Examples include directories and internal policies. Default classification if not otherwise specified. Approved for public release by designated authority (e.g., marketing brochures, website content). Periodic analysis of threats, vulnerabilities, and asset values to determine risks to confidentiality, integrity, and availability. Subject to regular assessments (e.g., **ASV scans – quarterly; Pen Test – info, passwords, encryption keys). Unauthorized disclosure may violate laws and/or cause significant harm. Intended for unrestricted internal use; may be shared within 365 or partners. Examples include directories and internal policies. Default classification if not otherwise specified. Approved for public release by designated authority (e.g., marketing brochures, website content). Periodic analysis of threats, vulnerabilities, and asset values to determine risks to confidentiality, integrity, and availability. Subject to regular assessments (e.g., **ASV scans – quarterly; Pen Test – yearly; External/Internal vulnerability scans – quarterly**). Risks are rated (Critical, High, Medium, Low, Best Practice) and remediated via Change Management and SDLC. Evaluated through Change Management; secure configurations applied by default. Initiated by IST using 365’s baseline drawn from **PCI DSS, SOC 2, NIST CSF, ISO‑27001**. Risk register maintained with probability/likelihood. Systems and information are company assets and must be protected. Software developed/licensed for 365 remains 365 property and must respect licenses. Must comply with licenses and be formally approved by IST. Unapproved software handling PHI/PII/PCI/CI/Internal is prohibited. All systems storing Information must receive regular security patches. IST‑approved multi‑layered protection; users may not disable
+````
+
+## 156. Retail Standard-365Retail/Compliance/365_Information_Security_Policy_02072025.md #4
+
+Score: 1.000
+
+````text
+secure configurations applied by default. Initiated by IST using 365’s baseline drawn from **PCI DSS, SOC 2, NIST CSF, ISO‑27001**. Risk register maintained with probability/likelihood. Systems and information are company assets and must be protected. Software developed/licensed for 365 remains 365 property and must respect licenses. Must comply with licenses and be formally approved by IST. Unapproved software handling PHI/PII/PCI/CI/Internal is prohibited. All systems storing Information must receive regular security patches. IST‑approved multi‑layered protection; users may not disable protections; definitions auto‑update. Access to sensitive information is controlled. Need‑to‑know; context‑, role‑, or user‑based access models. Unique IDs; strong authentication (passwords/biometrics/tokens). **MFA** and **location‑based restrictions** where feasible; **SSO** recommended. Auto timeouts (≤15 min) and session security. - Minimum length: **9** - Require be formally approved by IST. Unapproved software handling PHI/PII/PCI/CI/Internal is prohibited. All systems storing Information must receive regular security patches. IST‑approved multi‑layered protection; users may not disable protections; definitions auto‑update. Access to sensitive information is controlled. Need‑to‑know; context‑, role‑, or user‑based access models. Unique IDs; strong authentication (passwords/biometrics/tokens). **MFA** and **location‑based restrictions** where feasible; **SSO** recommended. Auto timeouts (≤15 min) and session security. - Minimum length: **9** - Require symbols, numbers, upper & lower case - Expire after **90 days**; prevent reuse of **7** previous - Lockout after **5** failed attempts Quarterly audits; disable inactive accounts (>90 days). Least privilege, **MFA**, location restrictions, posture checks, logging, timeouts, and SSO are mandatory. Use audits, RAID, ECC, checksums, encryption, and digital signatures to ensure integrity. Use **TLS/SSL/IPsec**, encrypted email (PGP/S/MIME), SFTP, and secure file sharing. Avoid unencrypted channels (email/SMS/IM). Use encrypted links/password protected archives when sharing externally. Store sensitive data only in secure, encrypted, approved systems; protect backups; prohibit storage in email, personal devices, or unapproved cloud; follow retention and secure disposal. Restrict access to processing areas; secure workstations; posture checks, logging, timeouts, and SSO are mandatory. Use audits, RAID, ECC, checksums, encryption, and digital signatures to ensure integrity. Use **TLS/SSL/IPsec**, encrypted email (PGP/S/MIME), SFTP, and secure file sharing. Avoid unencrypted channels (email/SMS/IM). Use encrypted links/password protected archives when sharing externally. Store sensitive data only in secure, encrypted, approved systems; protect backups; prohibit storage in email, personal devices, or unapproved cloud; follow retention and secure disposal. Restrict access to processing areas; secure workstations; use auto‑logout; implement building security with badges, cameras (≥30‑day retention), visitor logs (≥1 year), and controlled server rooms. Maintain accountability records; back up before moves; define
+````
+
+## 157. Retail Standard-365Retail/Compliance/365_Information_Security_Policy_02072025.md #5
+
+Score: 1.000
+
+````text
+SFTP, and secure file sharing. Avoid unencrypted channels (email/SMS/IM). Use encrypted links/password protected archives when sharing externally. Store sensitive data only in secure, encrypted, approved systems; protect backups; prohibit storage in email, personal devices, or unapproved cloud; follow retention and secure disposal. Restrict access to processing areas; secure workstations; use auto‑logout; implement building security with badges, cameras (≥30‑day retention), visitor logs (≥1 year), and controlled server rooms. Maintain accountability records; back up before moves; define disposal & reuse procedures. Do not store sensitive data on removable media unless explicitly approved and controlled. Wipe and destroy or reimage appropriately; data only in secure, encrypted, approved systems; protect backups; prohibit storage in email, personal devices, or unapproved cloud; follow retention and secure disposal. Restrict access to processing areas; secure workstations; use auto‑logout; implement building security with badges, cameras (≥30‑day retention), visitor logs (≥1 year), and controlled server rooms. Maintain accountability records; back up before moves; define disposal & reuse procedures. Do not store sensitive data on removable media unless explicitly approved and controlled. Wipe and destroy or reimage appropriately; reformat alone is insufficient. Mobile devices must have passwords, auto‑lock, and encryption; never leave unattended; strictly control mass data transfers and printing; avoid discussing sensitive info in public. Provide regular (≥ quarterly) training and simulations; run activities during National Cyber Security Awareness month. Firewalls, segmentation, IDS/IPS with central logging, disable unnecessary services, patch network devices, prohibit internet/email on CHD systems, use strong Wi‑Fi encryption, and control third‑party/unauthorized devices on sensitive networks. Employees represent the company online; rules prohibit spam, harassment, forged headers, chain letters, newsgroup spam, PAN sharing via messaging, and forwarding to personal email. Lock workstations, shut down daily, secure in public. Provide regular (≥ quarterly) training and simulations; run activities during National Cyber Security Awareness month. Firewalls, segmentation, IDS/IPS with central logging, disable unnecessary services, patch network devices, prohibit internet/email on CHD systems, use strong Wi‑Fi encryption, and control third‑party/unauthorized devices on sensitive networks. Employees represent the company online; rules prohibit spam, harassment, forged headers, chain letters, newsgroup spam, PAN sharing via messaging, and forwarding to personal email. Lock workstations, shut down daily, secure cabinets/keys, avoid sticky‑note passwords, promptly pick printouts, shred/dispose securely, erase whiteboards, secure portable devices and media. All vendors must go through the Vendor Management Program with defined security controls. Never store internet/email on CHD systems, use strong Wi‑Fi encryption, and control third‑party/unauthorized devices on sensitive networks. Employees represent the company online; rules prohibit spam, harassment,
+````
+
+## 158. Retail Standard-365Retail/Compliance/365_Information_Security_Policy_02072025.md #6
+
+Score: 1.000
+
+````text
+forged headers, chain letters, newsgroup spam, PAN sharing via messaging, and forwarding to personal email. Lock workstations, shut down daily, secure cabinets/keys, avoid sticky‑note passwords, promptly pick printouts, shred/dispose securely, erase whiteboards, secure portable devices and media. All vendors must go through the Vendor Management Program with defined security controls. Never store internet/email on CHD systems, use strong Wi‑Fi encryption, and control third‑party/unauthorized devices on sensitive networks. Employees represent the company online; rules prohibit spam, harassment, forged headers, chain letters, newsgroup spam, PAN sharing via messaging, and forwarding to personal email. Lock workstations, shut down daily, secure cabinets/keys, avoid sticky‑note passwords, promptly pick printouts, shred/dispose securely, erase whiteboards, secure portable devices and media. All vendors must go through the Vendor Management Program with defined security controls. Never store **SAD**; never store full **PAN**. Use **E2EE/P2PE** for POS, tokenization for internet systems, and store only encrypted SAD for offline store‑and‑forward. Annual **PCI‑DSS** assessment by independent QSA. Individuals handling CHD must follow strict rules. Systems and individuals handling PHI must follow FullCount & 365 HIPAA Privacy/Security policies and procedures. Documented process with Change Manager, Initiator, CAB, Roadmap Committee, and Implementation Team. Steps include request, evaluation, planning, CAB approval, implementation via Impact Analysis & roadmap, and closure. Remote workers must use VPN with IP whitelisting and MFA to access Information systems. Applies to systems and individuals planning/designing/developing/testing/deploying. Covers security architecture, deployment, input validation, authN/Z, session & config management, crypto, parameter handling, exceptions, auditing, logging, frameworks, static/dynamic analysis, encryption in transit/at rest, patching, retiring deprecated services, secure APIs, and fraud prevention. Encrypt sensitive data at rest and in transit; separate key and data access; log key usage; use **AES‑256**; use **HSM/KMS** (FIPS 140‑2 validated); define key lifecycles based on sensitivity and exposure. Define and maintain data backup, disaster recovery, and emergency operations plans; periodically test and revise; assess application/data criticality. All IT assets (kiosks, POS, readers, workstations, servers, network gear, printers, etc.) must follow formal disposal policy. IST performs in transit/at rest, patching, retiring deprecated services, secure APIs, and fraud prevention. Encrypt sensitive data at rest and in transit; separate key and data access; log key usage; use **AES‑256**; use **HSM/KMS** (FIPS 140‑2 validated); define key lifecycles based on sensitivity and exposure. Define and maintain data backup, disaster recovery, and emergency operations plans; periodically test and revise; assess application/data criticality. All IT assets (kiosks, POS, readers, workstations, servers, network gear, printers, etc.) must follow formal disposal policy. IST performs yearly audits of systems that store/process
+````
+
+## 159. Retail Standard-365Retail/Compliance/365_Information_Security_Policy_02072025.md #7
+
+Score: 1.000
+
+````text
+deprecated services, secure APIs, and fraud prevention. Encrypt sensitive data at rest and in transit; separate key and data access; log key usage; use **AES‑256**; use **HSM/KMS** (FIPS 140‑2 validated); define key lifecycles based on sensitivity and exposure. Define and maintain data backup, disaster recovery, and emergency operations plans; periodically test and revise; assess application/data criticality. All IT assets (kiosks, POS, readers, workstations, servers, network gear, printers, etc.) must follow formal disposal policy. IST performs yearly audits of systems that store/process sensitive data; track remediation via Change Management. IST performs yearly review of this policy; changes tracked via Change Management and documented in **AES‑256**; use **HSM/KMS** (FIPS 140‑2 validated); define key lifecycles based on sensitivity and exposure. Define and maintain data backup, disaster recovery, and emergency operations plans; periodically test and revise; assess application/data criticality. All IT assets (kiosks, POS, readers, workstations, servers, network gear, printers, etc.) must follow formal disposal policy. IST performs yearly audits of systems that store/process sensitive data; track remediation via Change Management. IST performs yearly review of this policy; changes tracked via Change Management and documented in **AES‑256**; use **HSM/KMS** (FIPS 140‑2 validated); define key lifecycles based on sensitivity and exposure. Define and maintain data backup, disaster recovery, and emergency operations plans; periodically test and revise; assess application/data criticality. All IT assets (kiosks, POS, readers, workstations, servers, network gear, printers, etc.) must follow formal disposal policy. IST performs yearly audits of systems that store/process sensitive data; track remediation via Change Management. IST performs yearly review of this policy; changes tracked via Change Management and documented in Document Revisions.
+````
+
+## 160. Retail Standard-365Retail/Compliance/365_Information_Security_Policy_02072025.md #8
+
+Score: 1.000
+
+````text
+| Version | Change Log |
+|---|---|
+| 021016 | Original policy |
+| 072418 | Updates to Title Page and document footer |
+| 021419 | Updated: Risk Management, Information Classification, Information Security Definitions, Computer and Information Control, Scope. Added: ToC, Document Revisions, Remote Employee, Change Management, PCI, Network Security, Secure Coding, POS Decommission/Reuse, Systems Audit, Policy Audit |
+| 02032021 | Updated: Policy, Responsibilities, PII, Transmission Security, Equipment Media Controls, Network Security, PCI, Change Management. Added: Patch Management |
+| 10082021 | Added: Password Policy |
+| 11132021 | Renamed/updated: Application Security Architecture Policy |
+| 12202021 | Renamed/updated: Application Security Architecture Policy |
+| 09262022 | Minor grammar; Updated: VI. Controls; Added: Training & Awareness, Communication, Clean Desk, Vendor Management |
+| 10242023 | Minor grammar; Updated: V. Risk, VI. Controls, XV. AppSec Arch; Added: XII. PHI Policy, XVIII. IT Asset EoL |
+| 02072025 | Minor grammar; Updated: IV. Classification, V. Risk, VI. Controls, XVI. AppSec Arch; Added: ToC |
+````
+
+## 161. Retail Standard-365Retail/Compliance/365_Information_Security_Policy_02072025.md #9
+
+Score: 1.000
+
+````text
+IST, ASV, QSA, Pen (Penetration Test), CVSS, SDLC, CAB, PCI, PHI, PII, CI, CHD, SAD, PAN, PCI‑DSS, Epic, Affiliated Covered Entities, Availability, HIPAA, Entity, 365 Platforms.
+````
+
+## 162. Retail Standard-365Retail/Design/365 Retail use case and domain specific details.txt #0
+
+Score: 1.000
+
+````text
+Scenario:
+24/7 unattended micro market in a corporate breakroom using MM6 / NanoMarket devices.
+Flow highlights:
+* Employee authenticates (badge / phone / account lookup).
+* Scans multiple ambient + refrigerated items.
+* Pays via stored wallet, card, or mobile wallet.
+* ADM updates inventory, sales, and tax for that location.
+Why it matters:
+* Stresses Market APIs, CAPSVR APIs, Platform APIs for cart, pricing, and payment.
+* Key for peak hour performance (e.g., shift changes).
+Scenario:
+Guest user at a beverage cooler accesses a mobile checkout via QR.
+Flow highlights:
+* Guest scans payment QR printed on the cooler.
+* Browser opens a device specific checkout experience.
+* User selects quantity / confirms total and pays as guest (Apple Pay / Google Pay / card).
+* Transaction is attributed to the cooler s location and operator for settlement.
+Why it matters:
+* Domain specific to unattended retail + brand programs (e.g., PepsiCo).
+* Heavy use of GMA / Account APIs, Market APIs for guest vs. account logic and reporting.
+Scenario:
+Resident in a senior living facility buys snacks at a 365 micro market with FullCount integration.
+Flow highlights:
+* Resident identifies via card / ID; kiosk calls FullCount to fetch allowance.
+* Kiosk displays real time allowance and remaining balance.
+* Upon checkout, purchase debits allowance; any extra is charged to secondary tender.
+* FullCount remains system of record for allowance; ADM retains item level detail.
+Why it matters:
+* Domain specific to senior living / healthcare accounts.
+* Exercises cross system calls and error handling (allowance timeout, balance mismatch).
+Scenario:
+Hotel guest uses a 365 kiosk in the lobby pantry and posts purchase to room.
+Flow highlights:
+* Guest enters room number + last name, or taps room key.
+* Kiosk validates with PMS (via Hotel365 integration).
+* Items scanned and approved; total posted to guest folio.
+* Optional loyalty ID captured (brand specific).
+Why it matters:
+* Domain specific to hospitality / Hotel365.
+* Involves external PMS integration, along with fraud/risk rules (e.g., invalid rooms, over limit).
+Scenario:
+Global operator configures menus and promotions across hundreds of markets.
+Flow highlights:
+* Admin logs into ADM and bulk creates/edits 10k+ products.
+* Builds menus using Menu Self Service / Menu Builder and assigns them to many locations.
+* Sets time bound promotions (BOGO, discount by category, brand campaigns).
+* Monitors impact via sales and promotion analysis reports.
+Why it matters:
+* Domain specific to multi site operators (cafes, warehouses, campuses).
+* Stresses ADM web, Menu, Report, and Product flows described in the performance test plan.
+Scenario:
+Location loses connectivity; kiosks enter CC Local / store and forward mode.
+Flow highlights:
+* Kiosk continues taking card payments with limited or no online validation.
+* EFTBATCH processing later pushes transactions for settlement.
+* Risk configuration defines when to cut off card acceptance (amount thresholds, duration).
+* Operators receive exception reports for failed or risky transactions.
+Why it matters:
+* Very domain specific to unattended retail liability and operations.
+* Exercises EFTBATCH APIs, Store and Forward logic, ADM risk controls.
+If you tell me which section of the  365 Project Lifecycle  page you are editing (e.g.,  Business Scenarios ,  Performance Scope ,  Integration Examples ), I can rewrite 3 5 of these in the exact format and level of detail used on that page, with ready to paste bullets and links such as:
+* 365 Project Lifecycle: 365 Project LifecyclePreview
+* Performance Test Plan example: https://365retailmarkets.atlassian.net/wiki/pages/viewpageattachments.action?pageId=3567779893&preview=%2F3567779893%2F3567026430%2F365+Retail+Markets+_Performance_Test_Plan_V1.4+Update.docx
+````
+
+## 163. Retail Standard-365Retail/Design/Core domain Knowledge and business rules.txt #0
+
+Score: 1.000
+
+````text
+Core domain knowledge and business rules
+o Micro markets, dining kiosks, vending, coolers, hotel pantries, senior living, campus.
+o Mix of self service kiosks (V5, RT, MM6) and mobile/web (365Pay, MMA).
+o V5 / RT / MM6 / Nano / Pico / Dining / 365Pay etc. Each device type has a  main project  and multiple dependent services (CAPSVR, GMAv2, PAYAPI, KSKAPI, CAPADM, etc.).
+o Reference:  List of Projects consumed & to be considered while deployment for individual Devices 
+https://365retailmarkets.atlassian.net/wiki/spaces/PS/pages/2894069832/List+of+Projects+consumed+to+be+considered+while+deployment+for+individual+Devices
+o Central web portal for:
+* Markets, locations, devices
+* Products, menus, pricing, tax
+* Reporting, inventory, risk controls
+o CAPADM and related projects (ReportAPI, ReceiptAPI, EFTBATCHAPI, etc.) are core.
+o SOSDB   sales, devices, configs for V5/RT/ADM side.
+o KSKDB   sales & kiosk data for certain deployments.
+o Other platform specific DBs (DashDB, etc.) referenced in impact analysis pages.
+````
+
+## 164. Retail Standard-365Retail/Design/Core domain Knowledge and business rules.txt #1
+
+Score: 1.000
+
+````text
+From  ArchiveProject Lifecycle vs Release Lifecycle :
+https://365retailmarkets.atlassian.net/wiki/spaces/PS/pages/4036624846/ArchiveProject+Lifecycle+vs+Release+Lifecycle
+* Project Lifecycle (big Epics)
+o Impacts multiple departments (Ops, Support, Sales, Training, Finance, etc.).
+o Must include:
+* Intake, sizing, risk & dependency analysis
+* In House Alpha ? Field Trial ? GA
+* Internal documentation, training, SOP updates.
+* Release Lifecycle (smaller Epics / features)
+o Limited cross department impact.
+o Communicated primarily with Release Notes.
+o Shorter Alpha/Beta; lighter process overhead.
+You can treat this as a core rule when deciding whether a new Epic is a  Project  or just a  Release.
+````
+
+## 165. Retail Standard-365Retail/Design/Core domain Knowledge and business rules.txt #2
+
+Score: 1.000
+
+````text
+Common patterns across integrations (FullCount, CBORDDirect, etc.):
+o If a premium payment or account system is present:
+* Check external account first (full/partial coverage).
+* If active + sufficient balance ? approve and debit.
+* If active + insufficient balance ? decline or allow split to other tenders.
+* If disabled / invalid account ? do not allow; route to other tenders.
+o Example from CBORDDirect solution design:
+https://365retailmarkets.atlassian.net/wiki/spaces/PS/pages/4060151829/Solution+Design+CBORDDirect+Integration
+o Rule in multiple docs: external premium payment integrations must not break GMA (365 s own accounts & wallets).
+o When network is impaired:
+* Card transactions may be queued (store and forward) and later sent via EFTBATCH.
+* Risk thresholds (time, amount) define when to stop accepting offline cards.
+o EFT Disbursement must still pick up and categorize those payments correctly.
+o All payment types (card, mobile wallet, external accounts, PMS, etc.) must:
+* Appear in sales and disbursement reports.
+* Preserve payment type (e.g.,  CBOARDDirect ) for reconciliation and audit.
+````
+
+## 166. Retail Standard-365Retail/Design/Core domain Knowledge and business rules.txt #3
+
+Score: 1.000
+
+````text
+From FTI Audit & Privacy Governance items (ISEC 3025, SOS 47951):
+o Systems must support:
+* Transaction level history (header, detail, payment).
+* Access logs, configuration changes.
+o Audit requires architecture, access control, SDLC, IR, DR, and vulnerability mgmt.
+o For EU and other privacy regimes, core rules:
+* Data collection must be purpose limited and minimized.
+* New or high risk processing (e.g., new consumer data flows, cross border changes) should trigger a DPIA.
+o Product list in scope (V5, MM6, Pico, 365Pay, ADM) is defined in:
+https://365retailmarkets.atlassian.net/browse/SOS-47951
+o All initiatives should follow 365 SDLC phases: requirements, design, implementation, verification, release, response.
+o 365 Secure Development Lifecycle page:
+https://365retailmarkets.atlassian.net/wiki/spaces/3PP/pages/2929229838/365+Secure+Development+Lifecycle
+````
+
+## 167. Retail Standard-365Retail/Design/Core domain Knowledge and business rules.txt #4
+
+Score: 1.000
+
+````text
+From  Impact Analysis   ADM   Add OS version to Device Dashboard :
+https://365retailmarkets.atlassian.net/wiki/spaces/PS/pages/3271458817/Impact+Analysis+-+ADM+-+Add+OS+version+to+Device+Dashboard
+Core rules:
+* ADM must display OS version for devices where it is tracked (V5 kiosks, RT, etc.).
+* Devices where OS is not tracked (Nanomarket, Picomarket, Beacon) intentionally show no OS.
+* Operators use this view to:
+o Identify devices on EoS operating systems (e.g., CentOS7, Ubuntu 14.04).
+o Plan upgrades at scale (tens of thousands of kiosks).
+This is a good example of a domain rule: ADM is the operator facing truth for device OS status where data exists; lack of OS info is an explicit, known exception, not an error.
+````
+
+## 168. Retail Standard-365Retail/Design/Core domain Knowledge and business rules.txt #5
+
+Score: 1.000
+
+````text
+From  Impact Analysis   ADM > Dining > Self Service Redesign > Add settings :
+https://365retailmarkets.atlassian.net/wiki/spaces/PS/pages/3439853569/Impact+Analysis+-+ADM+Dining+Self-Service+Redesign+Add+settings
+Rules:
+* Operators can configure Pickup Locations as:
+o Text only, or
+o Text + image.
+* Settings in ADM control what appears on RT/MM6 Dining kiosks.
+* Dining flows run through CAPUI / KSKAPI / CAPJAVA / CAPSVR, with SOSDB & KSKDB as backend.
+Domain knowledge: Dining configurations are centrally owned by ADM and pushed to multiple kiosk types; consistency and backwards compatibility are critical.
+````
+
+## 169. Retail Standard-365Retail/Design/Core domain Knowledge and business rules.txt #6
+
+Score: 1.000
+
+````text
+Common rules (see CBORDDirect example):
+https://365retailmarkets.atlassian.net/wiki/spaces/PS/pages/4060151829/Solution+Design+CBORDDirect+Integration
+* Account status & balance drive the UX:
+o Active + sufficient balance ? allow purchase.
+o Active + insufficient ? clearly indicate and route to other tenders.
+o Disabled ? block and route to other tenders.
+* Sales records:
+o All salesheader / detail / payment tables in SOSDB/KSKDB must:
+* Store the correct tender type.
+* Preserve item and payment detail for downstream reports and EFT.
+* EFT Disbursement:
+o Must pick CBORDDirect (or FullCount, etc.) as distinct payment types.
+* Multiple media types:
+o Readers can be barcode, RFID, magstripe; Quick Pay may be disabled to prevent mis association when multiple media forms exist.
+This pattern repeats for almost every  premium payment  project.
+````
+
+## 170. Retail Standard-365Retail/Design/Core domain Knowledge and business rules.txt #7
+
+Score: 1.000
+
+````text
+From  Advana Skykit Internal User Guide :
+https://365retailmarkets.atlassian.net/wiki/spaces/PS/pages/4733468682/Advana+Skykit+Internal+User+Guide
+* For any new product/feature:
+o There should be an Internal User Guide explaining impacts on each department s standard operating processes.
+o Document revisions must be tracked as the project moves from Alpha ? Beta ? GA.
+* Even when a solution has no direct integration with ADM or kiosks (e.g., Skykit signage), internal processes (Sales, Finance, Support) still need:
+o SKUs and pricing (Sage line items),
+o Service model and responsibilities,
+o Basic troubleshooting and ownership.
+Domain rule: Every significant feature/project must have department facing process documentation, not just external docs.
+If you re building a  Core Domain Knowledge & Business Rules  section for the 365 Project Lifecycle page:
+https://365retailmarkets.atlassian.net/wiki/spaces/PS/pages/3364519940/365+Project+Lifecycle
+You can include:
+o Unattended retail (devices), ADM, databases, integrations.
+o When an Epic uses Project Lifecycle vs Release Lifecycle, with links to:
+* ArchiveProject Lifecycle vs Release Lifecycle:
+ArchiveProject Lifecycle vs Release Lifecycle
+* Secure Development Lifecycle:
+````
+
+## 171. Retail Standard-365Retail/Design/Core domain Knowledge and business rules.txt #8
+
+Score: 1.000
+
+````text
+o Standard behavior for external account checks, tender priority, EFT, and reporting.
+o SDLC, auditability, DPIA triggers, and which products fall under privacy assessments.
+o ADM as the system of record for markets, devices, menus, OS versions (where available), and Dining configuration.
+````
+
+## 172. Retail Standard-365Retail/Retail Standard-365Retail/Design/365_Retail_Architecture_with_mermaid.md #0
+
+Score: 1.000
+
+````text
+(Images from original PDF not embedded in text extraction.)
+- **ADM**: reportapi, backgroundapi, schedulerapi, compile-price-api, platformapi
+- **V5/RT**: kskapi, cafeapi, printapi, payapi, dashapi, g2api, msgapi, salesapi
+- **365Pay**: sssapi, platformapi
+- **MMA (nano, pico, micro)**: sssapi
+- **SOSLoad**: —
+- **Dining**: —
+- **365Pay**: Interface for global market account. Hosted in S3 & CloudFront.
+- **smtmail**: Email notification server for ADM.
+- **smtnotify**: Notification gateway for Slack, email, SMS.
+- **dashweb**: Kiosk monitoring web app.
+- **g2api**: Migrates data from Gen2 to sosdb.
+- **heatwave**: Filters barcode scanner events on V5 kiosk.
+- **g2convert**: Gen2 to sosdb conversion.
+- **capadm**: Operator admin portal.
+- **capsvr**: Processes sales, transactions & sync.
+- **sosload**: Tool for loading products & accounts.
+- **dashapi**: Backend for dashweb.
+- **sssapi**: Backend for nano tablets.
+- **receiptapi**: Sends receipts via email/SMS.
+- **eftbatchapi**: EFT & GMA reporting service.
+- **payapi**: Payment gateway.
+- **printapi**: Receipt printing.
+- **cafeapi**: CKDS ticket creation for dining.
+- **kskapi**: Backend for kiosks.
+- **scheduleapi**: Scheduling tasks.
+- **reportapi**: Reporting.
+- **backgroundapi**: Long-running tasks.
+- **vdiapi**: 3rd party product update integration.
+- **msgapi**: Messaging layer.
+- **aviapi**: AVI product sync.
+- **lsaapi**: Lightspeed Inventory API.
+- **difapi**: Multi-market sync.
+- **salesapi**: Order service backend.
+- **httpd**: Proxy server.
+- **AmazonMQ**: Broker endpoint.
+- **swarmcmd**: Async proxy to kiosks.
+- **compile-prices-api**: Pricing compilation.
+- **monnitapi**: —
+- **pricing-inquiry-api**: Real-time pricing search.
+- **alertapi**: Offline/no-sale alerts.
+- User schedules report in ADM.
+- capadm stores schedule → converts cron → CloudWatch rule.
+- CloudWatch triggers Lambda.
+- Lambda calls Report Builder microservice.
+- Used by Finance for operator payments.
+- Performs variance checks (>10% deviation).
+- UI: Super > Finance > EFT Disbursement.
+(Additional pages contained diagrams only.)
+---
+> These diagrams are written in [Mermaid](https://mermaid.js.org/). GitHub, Azure DevOps, and many docs sites render Mermaid blocks automatically.
+````
+
+## 173. Retail Standard-365Retail/Retail Standard-365Retail/Design/365_Retail_Architecture_with_mermaid.md #1
+
+Score: 1.000
+
+````text
+```mermaid
+flowchart LR
+  %% Subsystems
+  subgraph Devices
+    V5RT["V5/RT Kiosks"]
+    MM6["MM6 / Nano / Pico"]
+  end
+
+  subgraph Mobile
+    APP365["365Pay (Web/Mobile)"]
+  end
+
+  subgraph BackOffice["Back Office Services"]
+    ADM["capadm (ADM)"]
+    KSKAPI["kskapi"]
+    SSSAPI["sssapi"]
+    CAPSVR["capsvr"]
+    PAYAPI["payapi"]
+    CAFEAPI["cafeapi"]
+    PRINTAPI["printapi"]
+    DASHAPI["dashapi"]
+    REPORTAPI["reportapi"]
+    BKGAPI["backgroundapi"]
+    SCHEDAPI["schedulerapi"]
+    COMPILEPRICE["compile-prices-api"]
+    PRICEINQ["pricing-inquiry-api"]
+    RECEIPTAPI["receiptapi"]
+    EFTBATCH["eftbatchapi"]
+    MSGAPI["msgapi"]
+    SWARM["swarmcmd"]
+  end
+
+  subgraph Infra["Platform/Infra"]
+    MQ["AmazonMQ"]
+    CW["AWS CloudWatch Events"]
+    LAMBDA["Build Report Lambda"]
+  end
+
+  subgraph Data["Data Stores"]
+    SOSDB[("SOSDB")]
+    PRICINGREC[("pricingrec")]
+  end
+
+  %% Device flows
+  V5RT --> MSGAPI --> KSKAPI
+  MM6 --> SSSAPI
+  SWARM --> KSKAPI
+  SWARM --> SSSAPI
+  KSKAPI --> CAPSVR
+  SSSAPI --> CAPSVR
+  CAPSVR --> SOSDB
+  CAPSVR --> PAYAPI
+  CAPSVR --> RECEIPTAPI
+
+  %% ADM & reporting
+  ADM --> REPORTAPI
+  ADM --> SCHEDAPI --> BKGAPI
+  SCHEDAPI --> CW --> LAMBDA --> REPORTAPI
+  REPORTAPI --> SOSDB
+  BKGAPI --> SOSDB
+
+  %% Pricing
+  COMPILEPRICE --> PRICINGREC
+  PRICEINQ --> PRICINGREC
+
+  %% Finance/EFT
+  EFTBATCH --> SOSDB
+````
+
+## 174. Retail Standard-365Retail/Retail Standard-365Retail/Design/365_Retail_Architecture_with_mermaid.md #2
 
 Score: 1.000
 
@@ -172,74 +3622,58 @@ Score: 1.000
 ```
 ````
 
-## 17. README.md #12
+## 175. Retail Standard-365Retail/Retail Standard-365Retail/Design/365_Retail_Architecture_with_mermaid.md #3
 
 Score: 1.000
 
 ````text
-```powershell
-cd FastAPI_Backend
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-python -m spacy download en_core_web_sm
-uvicorn app.main:app --host 127.0.0.1 --port 8010 --reload
+```mermaid
+graph LR
+  subgraph Apps
+    ADM_APP[ADM]
+    V5RT_APP[V5/RT]
+    PAY_APP[365Pay]
+    MMA_APP[MMA (nano/pico/micro)]
+  end
+
+  REPORTAPI[reportapi]
+  BKG[backgroundapi]
+  SCHED[schedulerapi]
+  COMPILE[compile-price-api]
+  PLATFORM[platformapi]
+
+  KSK[kskapi]
+  CAFE[cafeapi]
+  PRINT[printapi]
+  PAY[payapi]
+  DASH[dashapi]
+  G2[g2api]
+  MSG[msgapi]
+  SALES[salesapi]
+  SSS[sssapi]
+
+  ADM_APP --> REPORTAPI
+  ADM_APP --> BKG
+  ADM_APP --> SCHED
+  ADM_APP --> COMPILE
+  ADM_APP --> PLATFORM
+
+  V5RT_APP --> KSK
+  V5RT_APP --> CAFE
+  V5RT_APP --> PRINT
+  V5RT_APP --> PAY
+  V5RT_APP --> DASH
+  V5RT_APP --> G2
+  V5RT_APP --> MSG
+  V5RT_APP --> SALES
+
+  PAY_APP --> SSS
+  PAY_APP --> PLATFORM
+
+  MMA_APP --> SSS
 ````
 
-## 18. README.md #13
-
-Score: 1.000
-
-````text
-```
-
-Alternative:
-````
-
-## 19. README.md #14
-
-Score: 1.000
-
-````text
-```powershell
-.\.venv\Scripts\python.exe app\main.py
-````
-
-## 20. README.md #15
-
-Score: 1.000
-
-````text
-```
-````
-
-## 21. README.md #16
-
-Score: 1.000
-
-````text
-```text
-http://127.0.0.1:8010/health
-````
-
-## 22. README.md #17
-
-Score: 1.000
-
-````text
-```
-````
-
-## 23. README.md #18
-
-Score: 1.000
-
-````text
-```powershell
-curl -X POST http://127.0.0.1:8010/api/scan -H "Content-Type: application/json" -d "{\"text\":\"Alice Johnson can be reached at alice@example.com and password=MySecretPassword123\"}"
-````
-
-## 24. README.md #19
+## 176. Retail Standard-365Retail/Retail Standard-365Retail/Design/365_Retail_Architecture_with_mermaid.md #4
 
 Score: 1.000
 
@@ -247,31 +3681,31 @@ Score: 1.000
 ```
 ````
 
-## 25. README.md #20
+## 177. Retail Standard-365Retail/Retail Standard-365Retail/Design/365_Retail_Architecture_with_mermaid.md #5
 
 Score: 1.000
 
 ````text
-```text
-FastAPI_Backend/
-|- app/
-|  |- main.py
-|  |- pipeline.py
-|  |- anonymizer.py
-|  |- normal_masker.py
-|  |- presidio_detector.py
-|  |- detectors.py
-|  |- chunking.py
-|  |- risk.py
-|  |- cache.py
-|  `- schemas.py
-|- tests/
-|  `- test_privacy_pipeline.py
-|- requirements.txt
-`- README.md
+```mermaid
+sequenceDiagram
+  actor User as Operator
+  participant ADM as ADM (capadm)
+  participant SCHED as schedulerapi
+  participant CW as AWS CloudWatch
+  participant L as Build Report Lambda
+  participant RB as Report Builder svc
+  participant RPT as reportapi
+
+  User->>ADM: Create & schedule report
+  ADM->>SCHED: Persist schedule & cron
+  SCHED->>CW: Create rule + target (input JSON)
+  CW-->>L: Trigger on schedule
+  L->>RB: Call with scheduleId + tz
+  RB->>RPT: Build/assemble report
+  RPT-->>User: Deliver/notify
 ````
 
-## 26. README.md #21
+## 178. Retail Standard-365Retail/Retail Standard-365Retail/Design/365_Retail_Architecture_with_mermaid.md #6
 
 Score: 1.000
 
@@ -279,17 +3713,29 @@ Score: 1.000
 ```
 ````
 
-## 27. README.md #22
+## 179. Retail Standard-365Retail/Retail Standard-365Retail/Design/365_Retail_Architecture_with_mermaid.md #7
 
 Score: 1.000
 
 ````text
-```powershell
-cd FastAPI_Backend
-python -m unittest discover -s tests
+```mermaid
+sequenceDiagram
+  participant Kiosk as V5/RT Kiosk
+  participant MSG as msgapi
+  participant KSK as kskapi
+  participant CAP as capsvr
+  database SOS as SOSDB
+  participant RCP as receiptapi
+
+  Kiosk->>MSG: Scan items / checkout
+  MSG->>KSK: Forward events/requests
+  KSK->>CAP: Submit order/payment
+  CAP->>CAP: Price/Tax/Validate
+  CAP->>SOS: Persist sale (hdr/detail/payment)
+  CAP->>RCP: Send receipt (email/SMS)
 ````
 
-## 28. README.md #23
+## 180. Retail Standard-365Retail/Retail Standard-365Retail/Design/365_Retail_Architecture_with_mermaid.md #8
 
 Score: 1.000
 
@@ -297,154 +3743,452 @@ Score: 1.000
 ```
 ````
 
-## 29. README.md #24
+## 181. Retail Standard-365Retail/Retail Standard-365Retail/Design/365_Retail_Architecture_with_mermaid.md #9
 
 Score: 1.000
 
 ````text
-If Presidio or the spaCy model cannot be loaded, the backend still starts and falls back to regex-based masking so the extension continues to work.
+```mermaid
+sequenceDiagram
+  actor Finance as Finance User
+  participant ADM as ADM (EFT UI)
+  participant EFT as eftbatchapi
+  database HIST as SOSDB (historical)
+
+  Finance->>ADM: Open Disbursement for Date D
+  ADM->>EFT: Request variance for D
+  EFT->>HIST: Fetch current batch D
+  EFT->>HIST: Fetch historical batches
+  EFT-->>ADM: Variance results (flag >10%)
+  ADM-->>Finance: Display variance table
 ````
 
-## 30. Vialto - Assignment Management BRD.txt #0
+## 182. Retail Standard-365Retail/Retail Standard-365Retail/Design/365_Retail_Architecture_with_mermaid.md #10
 
 Score: 1.000
 
 ````text
-Business Requirements Document Assignment Management (AM) — VIA Platform Vialto Partners Item Document Title Project / Product Name Business Owner Source Document RFP Reference RFP Issue Date BRD Version BRD Date Purpose Detail Business Requirements Document — Assignment Management (AM) Assignment Management — VIA Platform Vialto Partners — Assignment Management Programme Request for Proposal — Assignment Management — VIA Platform, v3.2 VIA-AM-RFP-v3.2 1.0 Establish the high-level business baseline for the Vialto Partners Assignment Management application and its MVP delivery on the VIA Platform. The BRD is derived primarily from the Assignment Management RFP and follows the requested business-focused structure. The source RFP identifies the programme, reference, issue date and Vialto ownership. Table of Contents Vialto Partners provides global-mobility tax, immigration and compensation services. VIA is Vialto’s shared platform for applications including Assignment Management, Business Travel, Immigration and Tax. Assignment Management (AM) is intended to provide the application-specific capabilities required to initiate, manage and support international assignments end-to-end. The programme is intended to deliver an operational AM MVP and bring real design partners into production during 2026. Delivery starts with a single Reference Corridor for one design partner, operated as AM Beta, followed by broader functionality and onboarding of all three named design partners for the December 2026 MVP cut-over. The commercial and delivery model is explicitly fixed-date and fixed-budget, with scope managed as the variable. AM will provide the assignment-specific experience and orchestration, including assignment initiation, workflows, task management, coordinator operations, assignee experience, balance-sheet and cost visibility, documents, payroll instructions, programme visibility, immigration compliance and AI-assisted support. Shared capabilities—including identity, master data, integrations, document services, notifications, Cost Projection Shell and AI/RAG framework—are intended to reside in VIA and be consumed by AM. The MVP business outcome is a production-ready Assignment Management capability supporting three design partners at pilot volume, while creating reusable VIA capabilities and maintaining human confirmation for AI-assisted decisions. Within the RFP context, Vialto Partners provides global-mobility tax, immigration and compensation services. International assignments therefore involve multiple interconnected business activities including employee information, assignment setup, mobility policy, cost projection, documentation, payroll and compliance. VIA is the shared foundation on which Vialto applications are built. It provides reusable capabilities so individual applications do not independently recreate common platform functionality. The RFP establishes the following fundamental boundary: VIA Platform = shared, reusable capabilities Assignment Management = assignment-specific application capabilities The platform/application diagram on page 2 reinforces this principle, using Workday integration as the worked example: the
+```
 ````
 
-## 31. Vialto - Assignment Management BRD.txt #1
+## 183. Retail Standard-365Retail/Retail Standard-365Retail/Design/Coding+Best+Practices.txt #0
 
 Score: 1.000
 
 ````text
-employee information, assignment setup, mobility policy, cost projection, documentation, payroll and compliance. VIA is the shared foundation on which Vialto applications are built. It provides reusable capabilities so individual applications do not independently recreate common platform functionality. The RFP establishes the following fundamental boundary: VIA Platform = shared, reusable capabilities Assignment Management = assignment-specific application capabilities The platform/application diagram on page 2 reinforces this principle, using Workday integration as the worked example: the integration is built once in VIA and reused rather than embedded within AM. AM is the VIA application responsible for assignment-specific user experiences, workflows, orchestration, data and business rules. It consumes VIA platform services rather than duplicating them. The opportunity is to establish a production Assignment Management capability around three real design partners rather than initially designing for a broad hypothetical market. A Reference Corridor provides early production value and learning before the solution is generalised across those partners. AM is intended to provide an integrated business capability for managing international assignments across their lifecycle. The solution addresses the need to coordinate:          assignment initiation and setup; policy and assignment-type selection; assignment workflow and approvals; assignee and coordinator activities; cost projections and balance sheets; assignment documentation and e-signature; payroll instructions; lifecycle tasks and milestones; immigration and right-to-work visibility;   programme-level visibility; and AI-assisted user support. The RFP establishes the required future-state capabilities but does not comprehensively document the existing operational processes, systems, pain points or quantitative baseline. Current-state detail not explicitly defined in the RFP. The programme shall pursue the following high-level business objectives: ID BO-01 BO-02 BO-03 BO-04 BO-05 BO-06 BO-07 BO-08 BO-09 BO-10 BO-11 BO-12 Business Objective Deliver a working Assignment Management MVP during 2026. Put the first design partner into production early through the Reference Corridor / AM Beta. Support all three named design partners by MVP cut-over. Provide an end-to-end assignmentmanagement capability covering setup, costing, documentation, payroll and lifecycle management. Provide purpose-built experiences for assignees and coordinators. Provide cost projection and assignment balance-sheet visibility. Enable assignment-document generation, management and e-signature. Enable generation and delivery of payroll instructions through VIA integration capabilities. Provide programme-level and immigrationcompliance visibility. Introduce AI assistance under measurable governance controls and human oversight. Maximise reuse of common capabilities through VIA rather than duplicating shared functions in AM. Deliver maximum design-partner value ID Business Objective within the fixed-date, fixed-budget envelope. The first production corridor is intended to precede the December MVP and to validate
+Coding Best Practices What is consider refactoring that need to move to Tech Debts card? * Making changes to existing code base significantly (more that a few hours of work) What is not consider refactoring that need a new Tech Debuts card? * Changing newly written code to follow the Coding Best Practices below is not consider refactoring. * PR review will include refactor request for new code written so that the new code written are readable and maintainable (understandable and produce less bugs when modified in the future) High Level Coding Best Practices * Ensures the code change is comprehensible to other engineers o Check whether a given change is understandable to a broader audience o Code that you write will be depended on, and eventually maintained, by someone else. Code might be written only once, but it will be read dozens, hundreds, or even thousands of times. * Enforces consistency across the codebase * It is best to create separate branch for each feature or fix. o This way, the changes related to a topic can be reviewed and discussed in specific the pull request. * Checking for code correctness generally ensures that a change works, but more importance is attached to ensuring that a code change is understandable and makes sense over time and as the codebase itself scales. Also see: GitHub: Pull Request & Code Review Best Practices ADM Specific Coding Best Practices These are some of the best practices based on the PR reviews done in the past. These are general good software design and development practices. We will add more under this section as we find points that would be helpful to developers in writing code. Make use of IntelliJ IDEA features * Check for warnings (yellow bar on the right side scrollbar of editor) as well beside errors in the IntelliJ IDEA editor and fix them intelligently o Fix all the warnings that are safe to change o Some warnings can be ignored (ask other developers if you are not sure) * Install SonarLint plugin in IntelliJ IDEA and enable it * Commit using IntelliJ IDEA so that SonarLint can analyze your Java code and give your warnings and errors and fix them intelligently sosio s domaincontext * No new groovy services or business logic code in capadm and they should go under sosio s domaincontext package * Top level package is domaincontext/<domain> o Similar to package by component described here. o Item 13 - Minimize the accessibility of classes and members o All classes go under the <domain> package except for public model classes o Repository class need to be package-default  visibility * Don t expose Repository classes as public. Design the Service and ServiceImpl classes and expose the Service classes as public under a <domain> package. * We don't need to create interface for Repository and it's RepositoryImpl because they are not exposed as public interface and usually we only have one implementation of talking to one kind of Database. * It is easier to refactor later because Repository classes are not exposed as public if we need to support multiple implementation classes of Repository interface. * Annotate with @NotNull and @Nullalbe for all parameters and return value of the public
 ````
 
-## 32. Vialto - Assignment Management BRD.txt #2
+## 184. Retail Standard-365Retail/Retail Standard-365Retail/Design/Coding+Best+Practices.txt #1
 
 Score: 1.000
 
 ````text
-Enable assignment-document generation, management and e-signature. Enable generation and delivery of payroll instructions through VIA integration capabilities. Provide programme-level and immigrationcompliance visibility. Introduce AI assistance under measurable governance controls and human oversight. Maximise reuse of common capabilities through VIA rather than duplicating shared functions in AM. Deliver maximum design-partner value ID Business Objective within the fixed-date, fixed-budget envelope. The first production corridor is intended to precede the December MVP and to validate real value early. The engagement includes the business capabilities necessary to establish AM for the three design partners, including:                 assignment setup and initiation; assignment workflows and approvals; assignee task management; coordinator operational capabilities; assignee portal; cost projections and balance-sheet views; document generation, wallet interaction and signing; payroll instructions; Programme Command Centre; immigration compliance; notifications and milestones; delegated access; Google Drive integration; AI Assistant; integrations through VIA; and the reusable VIA capabilities required to support AM where included in vendor delivery. The December 2026 MVP is expected to include:      all three design partners onboarded; Reference Corridor and subsequent corridor capability; production assignee portal; coordinator/HR operational experience; Programme Command Centre;       immigration compliance tracking; AI Assistant with human-in-the-loop controls; production integrations; pilot-volume hardening; MVP cut-over; and entry into hyper-care. The RFP explicitly distinguishes December MVP pilot volumes from the smaller Phase 1 Reference Corridor. Phase 1 delivers one corridor for one design partner end-to-end in production. The business thread comprises: Workday → Assignment Setup → Cost Projection → LOU Generation & Signing → Payroll Instruction → Coordinator View Phase 1 includes the coordinator work queue but not the assignee-facing portal. Phase 2 adds:       purpose-built assignee portal; broader coordinator capability; Programme Command Centre capability; purpose-built HR exception dashboard; second corridor; and support for the business dimension on which the design partners differ. The RFP gives a second payroll provider or policy set as examples of that differing dimension, subject to confirmation. Phase 3 adds or completes:        AI Assistant; Programme Command Centre; immigration compliance tracking; onboarding design partners 2 and 3; hardening to pilot volumes; December MVP cut-over; and hyper-care. V1.5 — Q1 2027      end-of-assignment / repatriation initiation trigger; repatriation checklist; associated document set; payroll close-down; expanded agentic AI, including cost narratives, approval-queue summaries and policy-exception proposals. V2 — 2027 onward    full Business Travel programme management; Remote Work management; shadow payroll. These items are explicitly outside the December MVP. Stakeholder / User Assignee Coordinator HR Users Programme / Portfolio Users
+Repository classes as public. Design the Service and ServiceImpl classes and expose the Service classes as public under a <domain> package. * We don't need to create interface for Repository and it's RepositoryImpl because they are not exposed as public interface and usually we only have one implementation of talking to one kind of Database. * It is easier to refactor later because Repository classes are not exposed as public if we need to support multiple implementation classes of Repository interface. * Annotate with @NotNull and @Nullalbe for all parameters and return value of the public Repository classes as public. Design the Service and ServiceImpl classes and expose the Service classes as public under a <domain> package. * We don't need to create interface for Repository and it's RepositoryImpl because they are not exposed as public interface and usually we only have one implementation of talking to one kind of Database. * It is easier to refactor later because Repository classes are not exposed as public if we need to support multiple implementation classes of Repository interface. * Annotate with @NotNull and @Nullalbe for all parameters and return value of the public Repository classes as public. Design the Service and ServiceImpl classes and expose the Service classes as public under a <domain> package. * We don't need to create interface for Repository and it's RepositoryImpl because they are not exposed as public interface and usually we only have one implementation of talking to one kind of Database. * It is easier to refactor later because Repository classes are not exposed as public if we need to support multiple implementation classes of Repository interface. * Annotate with @NotNull and @Nullalbe for all parameters and return value of the public Repository classes as public. Design the Service and ServiceImpl classes and expose the Service classes as public under a <domain> package. * We don't need to create interface for Repository and it's RepositoryImpl because they are not exposed as public interface and usually we only have one implementation of talking to one kind of Database. * It is easier to refactor later because Repository classes are not exposed as public if we need to support multiple implementation classes of Repository interface. * Annotate with @NotNull and @Nullalbe for all parameters and return value of the public interface's methods * Must have integration test for all public methods * Public Model/DTO/POJO/Enum Classes o Only put public Model/DTO/POJO/Enum classes go under domaincontext/<domain>/model package o Some model/DTO classes used internal within the package should be package-private level and should go under domaincontext/<domain> package o Consider a builder when faced with many constructor parameters * Don t need to create builder-pattern model class with only one or two instance variables unless it improve code readability by using a model class name that are meaningful or describe the intent better than just passing in one or two arguments to method. * Make use of ServiceResponse class for return value of public methods of Service interface and ServiceImpl class when the methods are
 ````
 
-## 33. Vialto - Assignment Management BRD.txt #3
+## 185. Retail Standard-365Retail/Retail Standard-365Retail/Design/Coding+Best+Practices.txt #2
 
 Score: 1.000
 
 ````text
-tracking; onboarding design partners 2 and 3; hardening to pilot volumes; December MVP cut-over; and hyper-care. V1.5 — Q1 2027      end-of-assignment / repatriation initiation trigger; repatriation checklist; associated document set; payroll close-down; expanded agentic AI, including cost narratives, approval-queue summaries and policy-exception proposals. V2 — 2027 onward    full Business Travel programme management; Remote Work management; shadow payroll. These items are explicitly outside the December MVP. Stakeholder / User Assignee Coordinator HR Users Programme / Portfolio Users Vialto SMEs Design Partners Payroll Stakeholders Vialto Administrators / Platform Stakeholders Role / High-Level Needs Access assignment status, tasks, dates, milestones, documents, costs, compliance information and actions. Manage assignment cases, queues, SLAs, tasks, reassignment and assignee support. Access relevant assignment and exception information, including the Phase 2 HR exception dashboard. Monitor assignment population, costs, locations, timelines and compliance at programme level. Supply domain knowledge and golden-set evaluation/acceptance. Use and validate AM against real assignment requirements and partnerspecific variation. Receive and validate payroll instructions generated through AM/VIA. Support shared platform capabilities, access, integrations and operational governance. Stakeholder / User Vialto Integration Stakeholders Role / High-Level Needs Support cross-system seams and integration dependencies. The target Assignment Management business flow is: Assignment Initiation ↓ Assignment Setup ↓ Policy & Assignment Type Selection ↓ Task Plan Generation ↓ Cost Projection / Balance Sheet ↓ Documentation ↓ Approval / Signing ↓ Payroll Instruction ↓ Assignee Lifecycle Management ↓ Compliance & Milestones ↓ Assignment / Programme Monitoring For the Reference Corridor, Appendix A formalises this as steps A-1 through A-6: source worker/organisation/assignment information, create the assignment and task plan, obtain the cost projection, generate and sign the LOU, generate the payroll instruction, and surface live status to the coordinator. Stage Business Purpose Establish the assignment Major Activities / Information Confirm worker data, create assignment, select policy/type, Primary Users Coordinator, HR Stage Business Purpose Prepare the assignee and assignment Manage active assignment obligations Complete/repatriate the assignment Major Activities / Information generate task plan Cost projection, documents, approvals, signing, payroll instruction, passport/visa/workauthorisation, housing/dependant activities Tasks, recurring tax and immigration milestones, status monitoring, costs and compliance Lifecycle tasks are referenced by the assignee requirements; full repatriation trigger, checklist, document set and payroll close-down are deferred to V1.5 Primary Users Assignee, Coordinator Assignee, Coordinator, Programme users Assignee, Coordinator The RFP expressly describes the task lifecycle as initiation → pre-departure → inassignment → end-of-assignment. Important scope qualification: although the assignee task model references
+o Some model/DTO classes used internal within the package should be package-private level and should go under domaincontext/<domain> package o Consider a builder when faced with many constructor parameters * Don t need to create builder-pattern model class with only one or two instance variables unless it improve code readability by using a model class name that are meaningful or describe the intent better than just passing in one or two arguments to method. * Make use of ServiceResponse class for return value of public methods of Service interface and ServiceImpl class when the methods are implemented to talk to 365-api-client in general. Variables and Methods Naming * Item 56 - Adhere to generally accepted naming conventions * Variable and method names should be name correctly o Should use plural noun for list or array object * e.g. getAccount should not return List<Account> (the method name should be getAccounts) o boolean variable and method name should start with is, should or has etc. (follow standard Java Code Naming Convention) * Use primitive boolean, int, long etc. instead of Boolean, Integer, Long etc. object when null is not necessary o Sometime, 365-api-client method will to talk to 365-api-client in general. Variables and Methods Naming * Item 56 - Adhere to generally accepted naming conventions * Variable and method names should be name correctly o Should use plural noun for list or array object * e.g. getAccount should not return List<Account> (the method name should be getAccounts) o boolean variable and method name should start with is, should or has etc. (follow standard Java Code Naming Convention) * Use primitive boolean, int, long etc. instead of Boolean, Integer, Long etc. object when null is not necessary o Sometime, 365-api-client method will return Boolean when it is not necessary. In that case, we can convert null to false when null is not a valid use case or when null is not expected o Because Boolean and Integer will cause null pointer exception * Boolean isOk; * * if (isOk) { // will throw null pointer exception here because of isOk is casted to `boolean` * // do something * } Read Effective Java Book Read the whole book Effective Java (3rd Edition).pd to become a better Java Developer. Some of the chapters from the books that are useful for ADM development: * Item 01 - Consider static factory methods instead of constructors return Boolean when it is not necessary. In that case, we can convert null to false when null is not a valid use case or when null is not expected o Because Boolean and Integer will cause null pointer exception * Boolean isOk; * * if (isOk) { // will throw null pointer exception here because of isOk is casted to `boolean` * // do something * } Read Effective Java Book Read the whole book Effective Java (3rd Edition).pd to become a better Java Developer. Some of the chapters from the books that are useful for ADM development: * Item 01 - Consider static factory methods instead of constructors * Item 02 - Consider a builder when faced with many constructor parameters * Item 13 - Minimize the accessibility of classes and members * Item 15 - Minimize mutability * Item 16 - Favor composition over
 ````
 
-## 34. Vialto - Assignment Management BRD.txt #4
+## 186. Retail Standard-365Retail/Retail Standard-365Retail/Design/Coding+Best+Practices.txt #3
 
 Score: 1.000
 
 ````text
-passport/visa/workauthorisation, housing/dependant activities Tasks, recurring tax and immigration milestones, status monitoring, costs and compliance Lifecycle tasks are referenced by the assignee requirements; full repatriation trigger, checklist, document set and payroll close-down are deferred to V1.5 Primary Users Assignee, Coordinator Assignee, Coordinator, Programme users Assignee, Coordinator The RFP expressly describes the task lifecycle as initiation → pre-departure → inassignment → end-of-assignment. Important scope qualification: although the assignee task model references end-ofassignment, the full end-of-assignment/repatriation capability is explicitly deferred to V1.5. ID AM-FR-001 Business Capability Assignment Initiation Requirement Priority / Phase Phase 1 / MVP AM shall allow an assignment to be initiated using worker, organisation and assignment information Business Outcome Reliable assignment initiation ID AM-FR-002 AM-FR-003 AM-FR-004 AM-FR-005 AM-FR-006 AM-FR-007 Business Capability Requirement sourced through VIA/Workday. Assignment AM shall Setup support policy and assignmenttype selection and generation of an assignment task plan. Workflow AM shall route assignment approvals and tasks for supported design-partner corridors. Workflow AM shall maintain durable workflow state and an immutable audit trail. Assignee Tasks AM shall manage assignee tasks throughout the assignment lifecycle. Assignee Portal AM shall provide a purpose-built, mobileresponsive assignee experience. Coordinator AM shall Queue provide a work queue with SLA tracking, case Priority / Phase Business Outcome Phase 1 / MVP Consistent assignment setup MVP Coordinated processing MVP / Mandatory Traceability and control Phase 2 / MVP Guided assignee experience Phase 2 / MVP Accessible selfservice Phase 1 / MVP Operational control ID Business Capability AM-FR-008 Assignment Hub AM-FR-009 Cost Projection AM-FR-010 Balance Sheet AM-FR-011 Document Management AM-FR-012 Document Generation Requirement detail, bulk actions and reassignment. AM shall display assignment status/stage, dates, milestones, counters, costs, actions and point of contact. AM shall request and display cost projections through the Cost Projection Shell. AM shall display assignment balance-sheet information and support scenario comparison and export. AM shall surface assignmentrelated documents through VIA’s Document Wallet. AM shall generate LOU and assignment documents from templates using VIA document Priority / Phase Business Outcome Phase 2 / MVP Single assignment view Phase 1 / MVP Assignment cost visibility MVP Financial visibility MVP Central document access Phase 1 / MVP Controlled documentation ID Business Capability AM-FR-013 Document Control AM-FR-014 E-Signature AM-FR-015 Templates AM-FR-016 Payroll AM-FR-017 Notifications Requirement services. AM shall apply a missinginformation gate before applicable document generation. AM shall support esignature of applicable assignment documents through VIA document services. AM shall support reusable clientconfigurable document templates as stated in the RFP. AM shall generate payroll instructions/file s and deliver them through the
+* Boolean isOk; * * if (isOk) { // will throw null pointer exception here because of isOk is casted to `boolean` * // do something * } Read Effective Java Book Read the whole book Effective Java (3rd Edition).pd to become a better Java Developer. Some of the chapters from the books that are useful for ADM development: * Item 01 - Consider static factory methods instead of constructors * Item 02 - Consider a builder when faced with many constructor parameters * Item 13 - Minimize the accessibility of classes and members * Item 15 - Minimize mutability * Item 16 - Favor composition over inheritance * Item 22 - Favor static member classes over nonstatic * Item 24 - Eliminate unchecked warnings * Item 30 - Use enums instead of int constants * Item 38 - Check parameters for validity * Item 39 - Make defensive copies when needed * Item 40 - Design method signatures carefully * Item 45 - Minimize the scope of local variables * Item 47 - Know and use the libraries * Item 48 - * Item 02 - Consider a builder when faced with many constructor parameters * Item 13 - Minimize the accessibility of classes and members * Item 15 - Minimize mutability * Item 16 - Favor composition over inheritance * Item 22 - Favor static member classes over nonstatic * Item 24 - Eliminate unchecked warnings * Item 30 - Use enums instead of int constants * Item 38 - Check parameters for validity * Item 39 - Make defensive copies when needed * Item 40 - Design method signatures carefully * Item 45 - Minimize the scope of local variables * Item 47 - Know and use the libraries * Item 48 - Avoid float and double if exact answers are required * Item 49 - Prefer primitive types to boxed primitives * Item 50 - Avoid strings where other types are more appropriate * Item 51 - Beware the performance of string * Item 22 - Favor static member classes over nonstatic * Item 24 - Eliminate unchecked warnings * Item 30 - Use enums instead of int constants * Item 38 - Check parameters for validity * Item 39 - Make defensive copies when needed * Item 40 - Design method signatures carefully * Item 45 - Minimize the scope of local variables * Item 47 - Know and use the libraries * Item 48 - Avoid float and double if exact answers are required * Item 49 - Prefer primitive types to boxed primitives * Item 50 - Avoid strings where other types are more appropriate * Item 51 - Beware the performance of string concatenation * Item 56 - Adhere to generally accepted naming conventions * Item 60 - Favor the use of standard exceptions Above notes are based on: https://thefinestartist.com/effective-java Read the book Effective Java (3rd Edition).pd from more details explanation Unit Test Code Coverage * Tests should NOT be written for the sake of writing the tests to complete the checklist or to get the code coverage. * The main business logic (methods, classes) need to have unit test cases for all scenarios include the edge cases with various input parameters Related: ADM Java Repo: Source Code Structure & Unit/Integration Tests Integration Tests Integration tests are for testing classes that make use of API backends, Database. They are also different from unit tests in that they not part of gradle build
 ````
 
-## 35. Vialto - Assignment Management BRD.txt #5
+## 187. Retail Standard-365Retail/Retail Standard-365Retail/Design/Coding+Best+Practices.txt #4
 
 Score: 1.000
 
 ````text
-cost visibility MVP Financial visibility MVP Central document access Phase 1 / MVP Controlled documentation ID Business Capability AM-FR-013 Document Control AM-FR-014 E-Signature AM-FR-015 Templates AM-FR-016 Payroll AM-FR-017 Notifications Requirement services. AM shall apply a missinginformation gate before applicable document generation. AM shall support esignature of applicable assignment documents through VIA document services. AM shall support reusable clientconfigurable document templates as stated in the RFP. AM shall generate payroll instructions/file s and deliver them through the VIA/Workato integration capability. AM shall provide assignees with notifications for tasks, approvals and milestones through VIA Priority / Phase Business Outcome Phase 1 / MVP Document completeness Phase 1 / MVP Digital completion MVP Partner document variation Phase 1 / MVP Payroll enablement Phase 2 / MVP Timely action ID Business Capability AM-FR-018 Milestones AM-FR-019 Programme Command Centre AM-FR-020 Programme Costs AM-FR-021 Immigration AM-FR-022 Delegated Access AM-FR-023 Google Drive Requirement notification services. AM shall track assignment, tax and immigration milestones. AM shall provide portfolio-level assignment visibility. Programme users shall be able to view cost roll-ups by region, business unit and assignment type. AM shall track workauthorisation expiry, right-towork status and configurable lead-time alerts. Coordinators shall have logged “act on behalf of” access where supported. Clients shall be able to connect secure file exchange with a shared Google Drive without manual download/reupload. Priority / Phase Business Outcome MVP Lifecycle control Phase 2–3 / MVP Programme oversight Phase 3 / MVP Portfolio cost visibility Phase 3 / MVP Compliance visibility Phase 2 / MVP Assisted servicing MVP — exact phase unclear Simplified document exchange ID AM-FR-024 Business Capability AI Assistant AM-FR-025 AI HITL AM-FR-026 AI Governance Requirement AM shall provide an AI Assistant built on VIA’s AI/RAG framework. Every AIassisted decision shall require human confirmation at MVP. AI answers shall be evaluated and monitored using the specified governance measures. Priority / Phase Phase 3 / MVP Business Outcome AI-assisted support MVP / Mandatory Controlled AI use Phase 3 / MVP Measurable AI quality The core functional requirements—including assignment setup, direct pilot routing, durable workflow state, costs, documents, Programme Command Centre, immigration and Google Drive—are stated in RFP §4.5. The assignee experience shall be purpose-built for Assignment Management. Business Travel may provide reference patterns but is neither a codebase to fork nor a dependency. The experience shall provide, at a high level:         onboarding and Workday-sourced profile confirmation; passport, visa and work-authorisation capture; assignment status and lifecycle stage; key dates and milestones; tax-residency-day counters; immigration-validity counters; balance-sheet/cost summary; action-required items;          point-of-contact information; dynamic lifecycle tasks; recurring tax and immigration milestones; dependant and
+Effective Java (3rd Edition).pd from more details explanation Unit Test Code Coverage * Tests should NOT be written for the sake of writing the tests to complete the checklist or to get the code coverage. * The main business logic (methods, classes) need to have unit test cases for all scenarios include the edge cases with various input parameters Related: ADM Java Repo: Source Code Structure & Unit/Integration Tests Integration Tests Integration tests are for testing classes that make use of API backends, Database. They are also different from unit tests in that they not part of gradle build or they don t get run during the build process. Currently they are run manually against local/test3 database server or local/test3 api services during the development. * All public methods of Service Impl classes need to have integration tests * And the test cases need to include all the edge cases for input parameters and return values o That should help to minimize doing end to end Structure & Unit/Integration Tests Integration Tests Integration tests are for testing classes that make use of API backends, Database. They are also different from unit tests in that they not part of gradle build or they don t get run during the build process. Currently they are run manually against local/test3 database server or local/test3 api services during the development. * All public methods of Service Impl classes need to have integration tests * And the test cases need to include all the edge cases for input parameters and return values o That should help to minimize doing end to end or manual testing * Manual testing take time and hard to redo the test consistently because of clicking through he UI for all scenario again and again take times and hard to get it right for other developers. * Note: Manual testing is still needed for end to end verification and minimize the integration issues. Java Development * Java DateTimeFormatter Notes * Logging with SLF4J * Using Java @Deprecated annotation and @deprecated Javadoc tag * JavaDoc Basics * Log levels and SOPs -> (WIP) * Reading: Java classes/code organization
 ````
 
-## 36. Vialto - Assignment Management BRD.txt #6
+## 188. sdlc-project-overview-vision.md #0
 
 Score: 1.000
 
 ````text
-for Assignment Management. Business Travel may provide reference patterns but is neither a codebase to fork nor a dependency. The experience shall provide, at a high level:         onboarding and Workday-sourced profile confirmation; passport, visa and work-authorisation capture; assignment status and lifecycle stage; key dates and milestones; tax-residency-day counters; immigration-validity counters; balance-sheet/cost summary; action-required items;          point-of-contact information; dynamic lifecycle tasks; recurring tax and immigration milestones; dependant and housing-related tasks; assignment documents; document upload; e-signature; notifications; and delegated coordinator access. Appendix D confirms these as AM-specific requirements built on VIA platform services. The coordinator capability shall support operational management of assignments over their lifecycle. At minimum it shall provide:           work queue; SLA tracking; case detail; bulk actions; reassignment; live assignment status; tasks; documents; operational visibility; and delegated “act on behalf of” capability. For AM, a case is an assignment spanning months, rather than a short-duration transaction. The coordinator view is required from Phase 1 for the Reference Corridor, with breadth added subsequently. The Programme Command Centre shall provide portfolio-level visibility across the assignment population, including:         assignment population; assignment timeline; where-in-the-world visibility; work-permit expiry tracking; real-time cost roll-up; regional views; business-unit views; and assignment-type views. The RFP positions these capabilities as portfolio views built on data held by the platform. The AI Assistant shall operate within AM using the shared VIA AI/RAG framework. Its business purpose is to provide AI-assisted support using grounded knowledge and platform capabilities while maintaining human control over decisions at MVP. The RFP expects reuse of the VIA Intelligence demo where appropriate rather than independently rebuilding validated AI behaviour. Requirement Human-in-the-loop Golden set Groundedness Citation accuracy Answer rate Deflection rate Per-answer audit logging Cost ceilings Circuit breaker Human escalation MVP Expectation Required for every AI-assisted decision Provided by Vialto SMEs and used as an objective evaluation/acceptance mechanism Measured per answer Measured per answer Measured Measured Required Required Required Required Appendix E provides reference targets of ≥95% groundedness, ≥98% citation accuracy, ≥80% answer rate and ≤20% deflection rate. These are measured and reported at MVP rather than binding launch gates; binding targets are to be set from pilot usage before automation. System / Platform Workday Payroll Systems / Provider Workato User Core / VIA Identity Document Wallet Document / E-Sign Service Cost Projection Shell Calculations Engine Notifications / Events Google Drive AI/RAG Business Purpose Supply worker, organisation and assignment data; support required export/write-back Receive assignment payroll instructions Shared integration layer for HRIS/payroll Login, SSO, claims,
+> Source: [https://jiratest26.atlassian.net/wiki/spaces/INTERN1/pages/1769473](https://jiratest26.atlassian.net/wiki/spaces/INTERN1/pages/1769473) The SDLC Project establishes the initial delivery and governance foundation for the DemoTest commerce website initiative. Based on the approved BRD context, the project’s immediate purpose is twofold: deliver a web-based commerce website capability and maintain a documented, traceable business requirements baseline that can support stakeholder validation, solution design, implementation planning, and controlled delivery. The current source material confirms the need for a commerce website platform, a web-based application architecture, and separate non-production and production environments, while also identifying that many operational and business specifics remain undefined. The project addresses a common early-stage delivery challenge: moving from a minimally defined business concept to a governed, executable product initiative without introducing unsupported assumptions. In this case, the BRD explicitly requires the program to remain source-grounded and to clearly surface missing information for stakeholder review. As a result, the SDLC Project is not only a product delivery effort, but also a requirements-governance effort designed to create clarity, traceability, and implementation readiness for the DemoTest commerce website. Expected impact includes establishing a validated baseline for the commerce website, enabling structured progression into architecture, backlog definition, and environment setup. By combining delivery planning with disciplined requirements management, the project will reduce ambiguity, improve stakeholder alignment, and create the minimum viable foundation necessary to move the DemoTest initiative from draft concept into controlled execution. **Project Timeline:** Estimated 16-20 weeks for requirements validation, architecture definition, environment setup, core platform delivery planning, and initial release readiness **Project Status:** Planning **Project Owner:** [To be assigned] **Development Team:** [To be determined] The long-term vision for the SDLC Project is to establish DemoTest as a governed, scalable commerce website platform delivered through a disciplined software development lifecycle. The initiative is intended to provide a reliable web-based foundation for commerce operations while ensuring that all business and technical decisions remain traceable to validated stakeholder input and approved requirements. Strategically, the project aims to create more than a single website implementation. It is intended to create the enterprise delivery structure, environment model, and requirements baseline necessary to support future enhancement, integration expansion, and controlled release management. This approach ensures that DemoTest can evolve from an initially limited specification into a sustainable commerce capability with clear governance, deployment discipline, and auditability. - The current project definition is limited to a high-level statement that DemoTest is a commerce website, with key business details such as target users, workflows, product model,
 ````
 
-## 37. Vialto - Assignment Management BRD.txt #7
+## 189. sdlc-project-overview-vision.md #1
 
 Score: 1.000
 
 ````text
-≥80% answer rate and ≤20% deflection rate. These are measured and reported at MVP rather than binding launch gates; binding targets are to be set from pilot usage before automation. System / Platform Workday Payroll Systems / Provider Workato User Core / VIA Identity Document Wallet Document / E-Sign Service Cost Projection Shell Calculations Engine Notifications / Events Google Drive AI/RAG Business Purpose Supply worker, organisation and assignment data; support required export/write-back Receive assignment payroll instructions Shared integration layer for HRIS/payroll Login, SSO, claims, engagement context, delegated access Secure assignmentdocument storage/retrieval Generate and sign LOU/assignment documents Provide controlled interface to Calculations Engine Produce underlying calculations Tasks, approvals and milestone notifications Secure file exchange with client shared drive Shared AI assistant runtime and Direction / Interaction VIA ↔ Workday; AM consumes VIA capability AM → VIA/Workato → payroll provider Shared integration orchestration Ownership VIA VIA integration; AM generates assignment instruction VIA VIA → AM VIA AM ↔ VIA document capability VIA AM ↔ VIA VIA AM ↔ VIA Shell ↔ Calculations Engine Shell: VIA/vendor scope; engine: Vialto Vialto internal Via Cost Projection Shell VIA → AM/users VIA AM/VIA ↔ Google Drive Ownership detail requires clarification VIA → AM VIA System / Platform Framework Business Purpose retrieval/evaluation capabilities Direction / Interaction Ownership The RFP mandates Workato as the shared integration layer rather than point-to-point HRIS/payroll integrations. Appendix C also defines the key platform/application seams for Cost Projection, User Core, payroll, documents, Workday and notifications. Boundary Capability Identity / User Core Login / SSO Master data VIA Platform Owns Owns Owns Workday integration Workato integration layer Document Wallet Owns Owns Owns OCR Owns Document generation / esignature Notifications / events Owns shared service Cost Projection Shell Platform capability Calculations Engine Vialto internal system behind contract Owns — — — AI/RAG framework Assignment setup Assignment workflow Assignment-specific orchestration Assignee task experience Owns — Assignment Management Consumes Consumes Uses assignment-specific context Consumes Consumes Surfaces assignment documents Uses for assignee onboarding Initiates assignmentspecific documents Defines AM-specific triggers/content needs Consumes/rendering boundary described in RFP Does not own Uses for AM Assistant Owns Owns Owns Owns Capability Assignment-specific data/rules Balance-sheet/cost views AM user interface VIA Platform — Assignment Management Owns Shared calculation capability underneath — Owns AM view/experience Owns This boundary is a fundamental RFP requirement: shared capability belongs in VIA and AM owns only its application-specific layer. ID BR-01 BR-02 BR-03 BR-04 BR-05 BR-06 BR-07 BR-08 BR-09 BR-10 BR-11 BR-12 Business Rule At MVP, every AI-assisted decision requires human confirmation. Pilot workflow routing shall be implemented directly for the design partners rather than through a general configurable workflow
+website implementation. It is intended to create the enterprise delivery structure, environment model, and requirements baseline necessary to support future enhancement, integration expansion, and controlled release management. This approach ensures that DemoTest can evolve from an initially limited specification into a sustainable commerce capability with clear governance, deployment discipline, and auditability. - The current project definition is limited to a high-level statement that DemoTest is a commerce website, with key business details such as target users, workflows, product model, and operational processes not yet specified, creating significant delivery ambiguity. - Requirements maturity is currently low, with only a small number of source-grounded requirements available; this creates a high risk of rework, scope misunderstanding, and planning inefficiency during downstream design and implementation activities. - Governance roles, approval authorities, and stakeholder ownership are not yet formally assigned, affecting requirements validation, decision-making speed, and the project’s ability to transition from draft BRD status into an executable delivery plan. The project provides an opportunity to convert a minimally defined business concept into a structured, traceable, and execution-ready commerce initiative. By formalizing the requirements baseline, defining the web-based platform scope, planning for separate non-production and production environments, and identifying integration dependencies early, the SDLC Project can create a controlled foundation for delivery while reducing uncertainty and improving stakeholder alignment. - **Establish a validated requirements baseline:** Produce and maintain a source-grounded business requirements baseline for the DemoTest commerce website that is ready for stakeholder review and delivery planning. - Success Metric: Percentage of identified BRD requirements documented with source traceability and validation status - Target: 100% of baseline requirements documented and 90% validated by designated stakeholders before implementation start - **Prepare the commerce website for controlled delivery:** Define and initiate the core web-based commerce solution architecture and delivery plan, including non-production and production deployment readiness. - Success Metric: Completion of architecture, deployment model, and release readiness checkpoints - Target: 100% of core delivery planning artifacts approved and both environment paths defined before build execution - **Reduce ambiguity through structured gap identification:** Explicitly identify and govern missing business and technical information so unresolved items are tracked rather than assumed. - Success Metric: Percentage of major requirement gaps logged, categorized, and assigned for stakeholder resolution - Target: 100% of known information gaps captured in the project backlog or decision log within the planning phase
 ````
 
-## 38. Vialto - Assignment Management BRD.txt #8
+## 190. sdlc-project-overview-vision.md #2
 
 Score: 1.000
 
 ````text
-Assignment-specific data/rules Balance-sheet/cost views AM user interface VIA Platform — Assignment Management Owns Shared calculation capability underneath — Owns AM view/experience Owns This boundary is a fundamental RFP requirement: shared capability belongs in VIA and AM owns only its application-specific layer. ID BR-01 BR-02 BR-03 BR-04 BR-05 BR-06 BR-07 BR-08 BR-09 BR-10 BR-11 BR-12 Business Rule At MVP, every AI-assisted decision requires human confirmation. Pilot workflow routing shall be implemented directly for the design partners rather than through a general configurable workflow engine. Configuration shall be extracted where real variation emerges across design partners. Workflow state must be durable. Assignment activity must maintain an immutable audit trail where specified. A missing-information gate applies before applicable document generation. Shared capability shall be implemented in VIA rather than duplicated inside AM. Cross-team seams shall be governed by versioned contracts. The engagement operates to a fixed date and fixed budget, with scope managed as the variable. Business Travel is a reference for patterns only and is not an AM dependency or codebase to fork. The first corridor shall be productioncapable rather than a non-production prototype. AI quality thresholds are measured at MVP and are not launch gates; human ID Business Rule confirmation remains mandatory. Measure MVP Pilot 12-Month Design Assignees ~1,500 ~25,000 Concurrent users ~120 ~2,000 Assignments initiated/day ~24 ~400 Interaction p95 Target Assignment save ≤1.5 seconds Calculation round-trip ≤4.0 seconds Programme Command Centre load ≤3.5 seconds AI Assistant first token ≤1.0 second    Availability: 99.9% (24x5) and 99.5% (24x7). Tier-1 RTO: 2 hours. Tier-1 RPO: 15 minutes. At design scale, the solution is expected to support:      distributed tracing; structured logging; metrics; performance dashboards; and AI-governance dashboards. The RFP explicitly states that these performance, availability and full observability figures are 12-month design targets rather than Phase 1/MVP acceptance gates, while the MVP deployment is sized for pilot volumes. Business-level security expectations include:  protection of PII;       encryption in transit and at rest; SOC 2 Type II posture/path; ISO 27001 posture/path; SAST/SCA controls; data-residency controls; and two third-party penetration tests before cut-over. The principal business-data domains include:                 worker; organisation; client/entity; assignment; assignment type; policy; tasks; milestones; cost projection; assignment balance sheet; documents; payroll instructions; immigration/work-authorisation information; notifications; user/access information; and audit information. AM shall maintain assignment-specific data and business rules, while shared master data is a VIA responsibility. No detailed database model is defined or required by this BRD. The solution shall provide business visibility appropriate to the relevant user group, including:   assignment status and stage; assignment population;             coordinator SLA status; task/action
+| Role | Name | Responsibility | Contact |
+| --- | --- | --- | --- |
+| Project Sponsor | TBD | Overall project approval and funding | TBD |
+| Product Owner | TBD | Requirements and prioritization | TBD |
+| Technical Lead | TBD | Technical architecture and implementation | TBD |
+| Business Analyst | TBD | Requirements gathering and documentation | TBD |
 ````
 
-## 39. Vialto - Assignment Management BRD.txt #9
+## 191. sdlc-project-overview-vision.md #3
 
 Score: 1.000
 
 ````text
-policy; tasks; milestones; cost projection; assignment balance sheet; documents; payroll instructions; immigration/work-authorisation information; notifications; user/access information; and audit information. AM shall maintain assignment-specific data and business rules, while shared master data is a VIA responsibility. No detailed database model is defined or required by this BRD. The solution shall provide business visibility appropriate to the relevant user group, including:   assignment status and stage; assignment population;             coordinator SLA status; task/action status; cost projection; balance-sheet summary; programme timeline; where-in-the-world views; regional cost roll-ups; business-unit cost roll-ups; assignment-type cost roll-ups; work-permit expiry; immigration/right-to-work status; and AI-governance metrics. AM and its supporting VIA capabilities shall address: PII protection: assignment and assignee information must be handled as sensitive personal information. Encryption: relevant information must be protected in transit and at rest. Data residency: delivery and operations must respect real-tenant UAT data-residency requirements. Access control: identity and delegated access are provided through VIA User Core, including logged “act on behalf of” access. Auditability: durable workflow state, immutable audit trail and AI per-answer logging are required where specified. Security assurance: SOC 2 Type II and ISO 27001 certification or a credible milestone-based path to compliance is required of bidders. Security testing: SAST/SCA and two third-party penetration tests before cut-over are required. Offshore delivery/UAT: offshore development and QA must be reconciled with realtenant data-residency requirements, with synthetic or masked data identified by the RFP as an example approach. ID AS-01 AS-02 AS-03 AS-04 AS-05 Assumption Three named design partners provide the initial business population around which AM is developed. Phase 1 operates alongside the first partner’s existing systems as AM Beta. Scope can be reprioritised to protect the fixed December cut-over and budget. Partner-specific configuration is introduced when demonstrated by real variation rather than designed generically in advance. MVP is sized for pilot volumes while the solution is designed so stated 12-month targets remain achievable. ID DP-01 DP-02 Dependency Versioned calculations contract and working mock Workday sandbox/access DP-03 Payroll sandbox/access DP-04 Identity / User Core DP-05 SME golden set DP-06 VIA Intelligence demo DP-07 DP-08 Business Travel reference access Vialto SMEs DP-09 Vialto integration lead DP-10 Decision-latency SLA DP-11 VIA shared capabilities Business Relevance Required for Cost Projection Shell integration Required for assignment source data Required for payroll integration and acceptance Required for access and delegated mode Required for calculation and AI evaluation Reuse/reference for specified AM surfaces Reference patterns only Required for evaluation and domain decisions Supports integration delivery Required to prevent criticalpath delays Required for AM application ID Dependency DP-12
+- [ ] A source-grounded BRD baseline is completed, traceable, and aligned to the DemoTest commerce website scope with 100% documented requirement references.
+- [ ] Separate non-production and production environment planning is defined and approved prior to implementation, with deployment responsibilities and readiness criteria documented.
+- [ ] All known information gaps affecting scope, integrations, and delivery planning are explicitly logged and reviewed with stakeholders during the planning phase.
+- Commerce Website Core Platform
+- Multi-Environment Deployment Architecture
+- Integration Framework and External System Connectivity
+- Requirements Baseline Repository
+- Source Validation Engine
+- Detailed commerce sub-capabilities such as catalog management, shopping cart, checkout, pricing, and account management, because these functions are not specified in the current BRD source and require stakeholder definition.
+- Advanced operational and enterprise capabilities such as analytics, marketing automation, fulfillment orchestration, and compliance-specific controls, because these require validated business drivers and integration decisions not yet present in the approved source material.
 ````
 
-## 40. Vialto - Assignment Management BRD.txt #10
+## 192. sdlc-project-overview-vision.md #4
 
 Score: 1.000
 
 ````text
-DP-08 Business Travel reference access Vialto SMEs DP-09 Vialto integration lead DP-10 Decision-latency SLA DP-11 VIA shared capabilities Business Relevance Required for Cost Projection Shell integration Required for assignment source data Required for payroll integration and acceptance Required for access and delegated mode Required for calculation and AI evaluation Reuse/reference for specified AM surfaces Reference patterns only Required for evaluation and domain decisions Supports integration delivery Required to prevent criticalpath delays Required for AM application ID Dependency DP-12 Document/e-sign services DP-13 Workato Business Relevance functions Required for LOU/document lifecycle Required integration layer for HRIS/payroll The RFP states that Vialto will provide the calculations contract/mock, sandbox credentials and sample payloads for Workday, SAP, Mercer and User Core, the golden set, integration leadership, decision-latency arrangements and reference-asset access at award. ID RK-01 RK-02 RK-03 RK-04 RK-05 RK-06 RK-07 RK-08 Risk / Consideration Business Impact Fixed date and fixed budget Requires active scope prioritisation to protect cutover. Early production Integration or businessrequirement process issues become critical early in delivery. Cross-team dependencies Delays in VIA/platform capabilities may affect AM slices. Integration dependencies Workday, payroll, Workato, identity, documents and calculations are critical to end-to-end outcomes. Partner variation Differences among design partners may increase scope during generalisation. AI quality/governance AI usefulness must be balanced with groundedness, auditability and human confirmation. Data residency May constrain development, testing and real-tenant UAT approaches. Security compliance Certification posture and penetration-test completion ID Risk / Consideration RK-09 Multi-tenant foundation RK-10 Decision latency RK-11 Design-partner onboarding RK-12 RFP inconsistencies Business Impact affect production readiness. The vendor is responsible for establishing the foundation while delivering early production value. Slow business or technical decisions could affect the critical path. MVP depends on successful onboarding of partners 2 and 3. Contradictory provider and timing information requires formal clarification. Phase 1 succeeds when:        first design partner is live on the Reference Corridor / AM Beta; A-1 through A-6 are in use; calculations pass the required golden-set evaluation; payroll file passes required acceptance; LOU matches the approved template; coordinator view reflects live assignment state; and real assignments are transacting in production. Appendix A defines these end-to-end acceptance conditions. Appendix B additionally states that Phase 1 performance budgets are to be met for the corridor. Phase 2 succeeds when:     assignee portal is live; coordinator views are live; Programme Command Centre is in production; second corridor is live;   the partner-differing dimension is supported; and HR exception dashboard is in use. MVP success includes:         AI Assistant live with human-in-the-loop; AI governance measures
+| Risk | Impact | Probability | Mitigation Strategy |
+| --- | --- | --- | --- |
+| Incomplete business requirements lead to scope ambiguity and rework during solution design | High | High | Establish a formal requirements validation workshop series, maintain a gap log, and require stakeholder sign-off on baseline scope before implementation begins |
+| Undefined integration dependencies delay architecture and release planning | High | Medium | Create an integration assumption register, identify required external interfaces early, and schedule technical discovery sessions before finalizing solution design |
 ````
 
-## 41. Vialto - Assignment Management BRD.txt #11
+## 193. ui-ux-design-specifications.md #0
 
 Score: 1.000
 
 ````text
-coordinator view reflects live assignment state; and real assignments are transacting in production. Appendix A defines these end-to-end acceptance conditions. Appendix B additionally states that Phase 1 performance budgets are to be met for the corridor. Phase 2 succeeds when:     assignee portal is live; coordinator views are live; Programme Command Centre is in production; second corridor is live;   the partner-differing dimension is supported; and HR exception dashboard is in use. MVP success includes:         AI Assistant live with human-in-the-loop; AI governance measures operational; Programme Command Centre in production; immigration compliance tracking in production; design partners 2 and 3 onboarded; solution hardened to pilot volume; MVP cut-over completed; and hyper-care entered. The 12-month performance, availability, recovery and observability targets are architectural/design-scale objectives and shall not be treated as December MVP acceptance criteria except where separately stated by phase acceptance. BRD Requirement Area VIA / AM boundary Reference Corridor Coordinator Queue Assignee Portal Assignment Setup / Workflow Cost Projection / Balance Sheet Documents / E-Sign Payroll Instruction Programme Command Centre Immigration Compliance RFP Source §3.1–3.3 §4.2; Appendix A §4.2.2; Appendix D §4.3.1; Appendix D §4.5 Phase All Phase 1 Phase 1+ Phase 2 Phase 1+ MVP / Deferred MVP MVP foundation MVP MVP MVP §4.5–4.6; Appendix A §4.5; Appendix A §4.2.1; Appendix A/C §4.3–4.5 Phase 1+ MVP Phase 1+ Phase 1+ MVP MVP Phase 2/3 MVP §4.4–4.5 Phase 3 MVP BRD Requirement Area AI Assistant / Governance Integrations Security / Privacy NFR Design Targets End-of-assignment / Repatriation Expanded Agentic AI Business Travel Programme Management Remote Work Shadow Payroll RFP Source §4.7; Appendix E Phase Phase 3 MVP / Deferred MVP §3.1; §6; Appendix C §9 §8 All MVP All All MVP 12-month design §4.8 V1.5 Deferred §4.8 V1.5 Deferred §4.8 V2 Deferred §4.8 §4.8 V2 V2 Deferred Deferred MVP — December 2026 Includes the production AM capability required across the three design partners, including:             assignment initiation and lifecycle; Reference Corridor and second corridor; coordinator experience; assignee portal; cost and balance-sheet capability; documents and payroll instructions; Programme Command Centre; immigration compliance; AI Assistant with HITL; required integrations; pilot-volume hardening; and hyper-care entry. V1.5 — Q1 2027 Planned after MVP:        full end-of-assignment / repatriation initiation; repatriation checklist; end-of-assignment document set; payroll close-down; AI-generated cost narratives; approval-queue summaries; and policy-exception proposals. V2 — 2027+ Explicitly deferred:    full Business Travel programme management; Remote Work management; and shadow payroll. The RFP contains several items requiring clarification. These are intentionally preserved rather than resolved by assumption. ID OQ-01 Topic Reference Corridor payroll provider OQ-02 Additional payroll systems RFP References §4.2.1 vs Appendix A §11.1 Issue / Question §4.2.1 identifies SAP as the payroll provider,
+> Source: [https://jiratest26.atlassian.net/wiki/spaces/INTERN1/pages/6750244](https://jiratest26.atlassian.net/wiki/spaces/INTERN1/pages/6750244)
 ````
 
-## 42. Vialto - Assignment Management BRD.txt #12
+## 194. ui-ux-design-specifications.md #1
 
 Score: 1.000
 
 ````text
-checklist; end-of-assignment document set; payroll close-down; AI-generated cost narratives; approval-queue summaries; and policy-exception proposals. V2 — 2027+ Explicitly deferred:    full Business Travel programme management; Remote Work management; and shadow payroll. The RFP contains several items requiring clarification. These are intentionally preserved rather than resolved by assumption. ID OQ-01 Topic Reference Corridor payroll provider OQ-02 Additional payroll systems RFP References §4.2.1 vs Appendix A §11.1 Issue / Question §4.2.1 identifies SAP as the payroll provider, while Appendix A identifies ADP. Confirm the required Reference Corridor payroll provider. Vialto states sandbox access will be provided for SAP and Mercer, while Impact Phase 1 integration and acceptance Integration scope / phasing ID Topic RFP References OQ-03 Delivery dates §4.1 vs §12.2 OQ-04 Phase 1 performance §8 vs Appendix B Issue / Question Appendix A references ADP. Clarify the role of Mercer and the intended payroll-provider sequence. §4.1 states Reference Corridor production in August and MVP in December 2026, while the formal process/timelin e table lists Phase 1 and MVP dates as TBC. Confirm contractual milestone dates. §8 says performance budgets are 12month design targets and not Phase 1/MVP gates, while Appendix B says Phase 1 exit requires “performance budgets met for the corridor.” Clarify which Phase 1 performance criteria are binding. Impact Programme planning / acceptance Phase 1 acceptance RFP References §4.3, §4.4, §4.5 ID OQ-05 Topic Programme Command Centre phasing OQ-06 End-ofassignment lifecycle §4.3.1 / Appendix D vs §4.8 OQ-07 Google Drive phase §4.5 Issue / Question Phase 2 says it extends the Programme Command Centre, while Phase 3 says it adds the Programme Command Centre and §4.5 labels specified portfolio functionality Phase 3. Clarify Phase 2 vs Phase 3 capability split. Assignee lifecycle/tasks explicitly span end-ofassignment, but full end-ofassignment/rep atriation is deferred to V1.5. Clarify the exact MVP boundary. Google Drive integration is listed as a functional requirement but no explicit phase or acceptance criterion is assigned. Confirm whether it is mandatory for December MVP Impact Scope / acceptance Assignee tasks / MVP scope Scope prioritisation RFP References ID Topic OQ-08 HR exception dashboard detail OQ-09 Second corridor §4.3 OQ-10 Design partner identities/config urations OQ-11 Cost Projection §§3.1, 4.6 Shell ownership wording §4.3 / Appendix B §§1–4 Issue / Question and in which phase. The dashboard is required for Phase 2 exit but its highlevel business content and exception categories are not specified. Confirm required scope. The second corridor and partner-differing dimension are to be confirmed before award. Confirm corridor, assignment type, policy and payroll implications. Three named design partners are referenced, but their identities and detailed variations are not contained in the RFP text. Confirm partner profiles and variations. The Shell is classified as a VIA platform capability while §4.6 states the vendor owns its Impact Phase 2 requirements Phase 2 scope Generalisation / onboarding
+| Item | Value |
+| --- | --- |
+| Project | SDLC Project |
+| Document Title | UI/UX Design Specifications |
+| Intended Repository | Azure DevOps Wiki |
+| Domain | General |
+| Key Entities | Order, Transaction |
+| Primary Platform | Modern web application stack |
+| Source Inputs | BRD-Hilti-BRD-Dec2025_V2, feature list, 13 user stories |
+| Design Status | Draft for product, engineering, and QA alignment |
 ````
 
-## 43. Vialto - Assignment Management BRD.txt #13
+## 195. ui-ux-design-specifications.md #2
 
 Score: 1.000
 
 ````text
-for Phase 2 exit but its highlevel business content and exception categories are not specified. Confirm required scope. The second corridor and partner-differing dimension are to be confirmed before award. Confirm corridor, assignment type, policy and payroll implications. Three named design partners are referenced, but their identities and detailed variations are not contained in the RFP text. Confirm partner profiles and variations. The Shell is classified as a VIA platform capability while §4.6 states the vendor owns its Impact Phase 2 requirements Phase 2 scope Generalisation / onboarding Platform/applic ation governance RFP References ID Topic OQ-12 Google Drive ownership §4.5 OQ-13 Notifications §3.1 / Appendix D OQ-14 Availability targets §8.3 OQ-15 Business Cover / Issue / Question orchestration/re ndering. Confirm product/platfor m operational ownership after delivery. The requirement is stated without explicitly establishing whether the integration belongs to VIA or AM. Confirm platform/applica tion boundary. VIA owns notification capability, but detailed business rules for channels, triggers, preferences and escalation are not specified. Confirm MVP notification rules. Both 99.9% (24x5) and 99.5% (24x7) are stated without mapping them to service classes. Confirm applicability. The RFP Impact Architecture boundary / pricing Assignee experience NFR interpretation Governance ID Topic Owner RFP References programme references OQ-16 AI use cases §4.4 / §4.7 OQ-17 Data residency jurisdictions §9 OQ-18 Payroll acceptance Appendix A/E Issue / Question identifies the Assignment Management programme and an enquiry contact but does not explicitly designate a named BRD Business Owner. Confirm accountable business owner. Governance requirements are explicit, but detailed MVP AI Assistant user intents/use cases are not comprehensivel y enumerated. Confirm MVP use-case catalogue. Residency controls are required, but specific jurisdictions and partnerspecific residency requirements are not stated. Confirm required residency locations. Appendix A says A-5 Impact Phase 3 scope Hosting/UAT/se curity Phase 1 acceptance ID Topic scope RFP References Issue / Impact Question payroll file passes the golden set, while Appendix E describes the golden set primarily as calculations/AI evaluation. Confirm payrollfile golden-set mechanism and criteria. The most material source contradiction is the Reference Corridor payroll provider: the main scope identifies SAP, while Appendix A specifies ADP. Business Goal Deliver an operational Assignment Management capability on VIA that supports international assignments end-to-end for three real design partners, starting with an early-production Reference Corridor and culminating in the December 2026 MVP. Target Users       Assignees Coordinators HR users Programme/portfolio users Vialto SMEs and operational stakeholders Design-partner stakeholders Core Capabilities       Assignment initiation and setup Policy/assignment-type selection Workflow and approvals Task and milestone management Coordinator work queue Assignee portal         Cost projection and balance sheet Documents and e-signature Payroll
+This document defines the production-ready UI/UX specifications for the SDLC Project administrative and operational interfaces. Although the domain is marked as general, the available feature and story set clearly centers on procurement platform integration, workflow orchestration, platform governance, and cross-cutting administration capabilities. Therefore, the proposed experience is a responsive web application optimized for operational users such as Integration Engineers, Procurement Managers, Security Specialists, Developers, DevOps Engineers, Data Engineers, System Administrators, Product Managers, Platform Engineers, and Business Analysts.
+The BRD context provided references a broader product emphasis on intuitive workflows, minimal clicks, customizable dashboards, secure authentication, offline/multilingual readiness, and integration-heavy operations. While the BRD originates from a separate mobile transformation initiative, the relevant design principles are directly applicable here:
+- minimal-click user flows
+- secure-by-design interactions
+- visibility of status and background processing
+- support for complex integrations without overwhelming the user
+- dashboard-first monitoring and actionability
+- scalable architecture administration features
+- consistent experiences across platforms and devices
+The UI/UX must enable users to:
+- Configure and validate secure procurement platform connections.
+- Monitor synchronization of orders and transactions in real time.
+- Manage authentication, authorization, and compliance controls.
+- Observe and intervene in event-driven procurement workflows.
+- Define system capabilities and their mappings.
+- Govern API versioning and compatibility lifecycles.
+- Execute and monitor data migrations safely.
+- Manage tenants, tenant-level configuration, and isolation.
+- Configure feature flags for controlled rollout.
+- Ensure consistent use across browsers, devices, and operating systems.
+Primary navigation is organized into the following top-level modules:
+- **Dashboard**
+- **Platform Connections**
+- **Synchronization**
+- **Workflow Orchestration**
+- **Security & Compliance**
+- **Capabilities**
+- **API Versioning**
+- **Data Migration**
+- **Tenant Management**
+- **Feature Flags**
+- **Platform Health**
+- **Audit Logs**
+- **Settings**
+This architecture supports both task execution and governance. Operational tasks surface in work-oriented pages, while control, reporting, and compliance are available through dedicated administration modules.
+Because the requirement summary is sparse, the following assumptions shape the design:
+- users are authenticated through enterprise identity
+- the application supports role-based navigation and access
+- the UI must expose operational telemetry, status, and auditability
+- all critical actions require confirmation, logging, and recoverability where possible
+- responsive support is required for desktop, tablet, and mobile web
+- procurement platform configuration must be manageable via UI without code changes
+The design system is intended to support a technical, enterprise-grade web application with strong readability, high data density, and clear state communication.
+The palette should balance neutrality for data-heavy screens with high-contrast semantic states.
 ````
 
-## 44. Vialto - Assignment Management BRD.txt #14
+## 196. ui-ux-design-specifications.md #3
 
 Score: 1.000
 
 ````text
-that supports international assignments end-to-end for three real design partners, starting with an early-production Reference Corridor and culminating in the December 2026 MVP. Target Users       Assignees Coordinators HR users Programme/portfolio users Vialto SMEs and operational stakeholders Design-partner stakeholders Core Capabilities       Assignment initiation and setup Policy/assignment-type selection Workflow and approvals Task and milestone management Coordinator work queue Assignee portal         Cost projection and balance sheet Documents and e-signature Payroll instructions Programme Command Centre Immigration compliance Delegated access Notifications AI-assisted support MVP Scope The MVP establishes production capability across all three design partners, including the assignee and coordinator experiences, programme visibility, immigration compliance, AI Assistant with HITL, production integrations and pilot-volume readiness. Key Integrations         Workday Workato payroll provider(s) User Core Calculations Engine through Cost Projection Shell document/e-sign services notifications/events Google Drive AI Capabilities AI is delivered through the shared VIA AI/RAG framework and evaluated through a Vialto SME golden set. Groundedness, citation accuracy, answer rate and deflection rate are measured. Every AI-assisted decision requires human confirmation at MVP. Key Controls         human-in-the-loop AI; immutable audit trail; durable workflow state; missing-information document gate; versioned platform/application contracts; AI audit logging and cost controls; security/privacy controls; and fixed-date/fixed-budget scope governance. Major Dependencies         VIA platform capabilities; Workday/payroll access; calculations contract and mock; User Core; Vialto SME golden set; reference assets; Vialto integration leadership; timely business decisions. Major Risks         aggressive early-production commitment; fixed delivery envelope; integration dependencies; partner-specific variation; platform/application cross-team dependencies; AI quality and governance; security/data residency; unresolved RFP inconsistencies. Success Measures Success progresses from: Phase 1: a real Reference Corridor operating in production; to: Phase 2: production assignee/coordinator experiences and a second corridor; to: MVP: three partners onboarded, AI/HITL and compliance capabilities operational, solution hardened for pilot volume and cut-over completed. Future Roadmap V1.5 / Q1 2027: full repatriation/end-of-assignment capability and expanded agentic AI. V2 / 2027+: full Business Travel programme management, Remote Work and shadow payroll. The BRD has been checked against the RFP’s core sections and Appendices A–E. The RFP establishes:              the VIA/AM platform boundary; three-design-partner delivery model; early Reference Corridor; three delivery phases; December MVP; functional AM capabilities; calculations boundary; AI/HITL governance; integration contracts; NFR targets; security/privacy requirements; delivery dependencies; and Appendix-level acceptance criteria. The Appendices were
+| Token | Use | Hex |
+| --- | --- | --- |
+| Primary-700 | Primary actions, active nav, key links | #0F4C81 |
+| Primary-500 | Secondary emphasis, chart accents | #2F6EA6 |
+| Primary-100 | Selected row/background tint | #DCEAF7 |
+| Neutral-900 | Primary text | #1F2937 |
+| Neutral-700 | Secondary text | #4B5563 |
+| Neutral-500 | Disabled text, placeholders | #6B7280 |
+| Neutral-300 | Borders/dividers | #D1D5DB |
+| Neutral-100 | Page background sections | #F3F4F6 |
+| Neutral-0 | Cards/surfaces | #FFFFFF |
+| Success-600 | Healthy connection, completed sync | #0F9D58 |
+| Warning-600 | Retry, partial issues, deprecation | #D97706 |
+| Error-600 | Failure, access denied, invalid config | #DC2626 |
+| Info-600 | Informational alerts, guidance | #2563EB |
 ````
 
-## 45. Vialto - Assignment Management BRD.txt #15
+## 197. ui-ux-design-specifications.md #4
 
 Score: 1.000
 
 ````text
-capability and expanded agentic AI. V2 / 2027+: full Business Travel programme management, Remote Work and shadow payroll. The BRD has been checked against the RFP’s core sections and Appendices A–E. The RFP establishes:              the VIA/AM platform boundary; three-design-partner delivery model; early Reference Corridor; three delivery phases; December MVP; functional AM capabilities; calculations boundary; AI/HITL governance; integration contracts; NFR targets; security/privacy requirements; delivery dependencies; and Appendix-level acceptance criteria. The Appendices were specifically incorporated for:      Appendix A: Reference Corridor A-1–A-6 and acceptance; Appendix B: phase exit criteria; Appendix C: contract/interface seams; Appendix D: purpose-built assignee/coordinator experience; Appendix E: AI evaluation harness and measured thresholds. No unsupported detailed workflow, architecture, database design, API design or UI specification has been added. Material contradictions and underspecified requirements have been retained as Open Questions / Clarifications Required rather than resolved through assumption. BRD baseline conclusion: the business requirement is to establish Assignment Management as a purpose-built VIA application for real international-assignment operations, while deliberately placing reusable capabilities in VIA, validating value through early production use, and expanding from one Reference Corridor to a controlled three-design-partner MVP.
+- Destructive actions always use Error-600 with explicit labels such as “Delete Tenant” or “Retire Version”.
+- Health status chips use semantic colors paired with text and icons; color alone cannot carry meaning.
+- Dashboard cards must maintain a contrast ratio compliant with WCAG 2.1 AA.
+- Warning states should be used for deprecation, pending migrations, expiring credentials, and retry queues.
+A modern sans-serif such as Inter, Segoe UI, or system UI stack is recommended for consistency across enterprise environments.
 ````
 
-## 46. Vialto_Partners_Public_Golden_Repository_AI.txt #0
+## 198. ui-ux-design-specifications.md #5
 
 Score: 1.000
 
 ````text
-Vialto Partners - Public-Source Golden Repository AI Knowledge Base | Public information only Version 1.0 | August 2026 This repository is designed as a foundational knowledge base. It uses only information publicly available from Vialto Partners' official website and publicly accessible Vialto materials reviewed in August 2026. Vialto Partners positions itself as a global professional services organization focused on helping organizations and people manage work across borders. Its public service model brings together immigration, tax, rewards, advisory and private-client support through connected technology. Publicly stated scale: 150+ countries and territories | 90+ languages | 24 time zones | 6,500+ global experts. citeturn0search7 Vialto Tax Tax and social-security advisory and compliance across borders; international/local tax; cross-border employment tax; risk assessment; tax planning; workforce tax planning; technology, automation and digitization. Vialto Immigration Global immigration services and advice including scenario planning, work eligibility, visas, work permits, residency permits, immigration compliance and reporting. Vialto Rewards Payroll services, compensation design, employment tax, equity, cross-border reporting and compliance, compensation collection and related global rewards capabilities. Vialto Advisory Global work strategy and cross-border operations covering mobility, business travel and remote work, plus managed services, operating-model transformation, governance and continuous improvement. Vialto Private Tax, immigration and advisory services for individuals, executives, entrepreneurs and families, including domestic/cross-border tax, estate/gift/legacy planning and complex personal matters. Sources: Vialto Partners public practice pages. citeturn0search1turn0search9turn0search6turn0search2turn0search8 Vialto describes the Global Work Cloud as a connected platform integrating expert services, data and technology across tax, immigration, rewards and advisory workflows. * Integrates systems, teams, countries and workflows. * Provides a single source of truth for cross-border workforce data. * Uses connected data and AI to support earlier issue detection and decision-making. * Provides a secure, role-based digital experience. * Connects data, AI, analytics and third-party partner capabilities. * Supports global-work solutions through one connected platform and experience. * Vialto states that independently audited controls, including SOC 2 Type II, support security, privacy and user authorization. Source: Vialto Global Work Cloud. citeturn0search0 VialtoComp: Unifies compensation collection, equity management and global payroll compliance; integrates with existing systems to support payroll workflows. Contingent Work: Knowledge hub and automated tool for assessing global employment-tax risks associated with contingent workers. myMobility suite: Connects management and employees to information, data, tracking and status through an intuitive platform. VialtoGuide: A technology-enabled relocation experience referenced by Vialto Advisory; Vialto describes it as modernizing lump-sum and self-managed Global Work Cloud. citeturn0search0 VialtoComp: Unifies compensation collection, equity management and global payroll compliance; integrates with existing systems to support payroll workflows. Contingent Work: Knowledge hub and automated tool for assessing global employment-tax risks associated with contingent workers. myMobility suite: Connects management and employees to information, data, tracking and status through an intuitive platform. VialtoGuide: A technology-enabled relocation experience referenced by Vialto Advisory; Vialto describes it as modernizing lump-sum and self-managed relocations. Vialto Global Work Cloud: The connected platform underpinning Vialto's global-work solutions. Sources: Vialto Products, Rewards and Advisory pages. citeturn0search3turn0search5turn0search2 * Global risk and compliance: international/local tax, risk assessment, cross-border employment tax optimization and social security. * Tax strategy and planning: cross-border employment taxes, workforce tax planning, technology, automation and digitization. * Executive services: cross-border tax planning, social/wealth equity tax, risk/compliance assessment and proactive guidance. * Optimization: tax strategy, planning and implementation with a cross-border workforce perspective. Source: Vialto Tax. citeturn0search9 * Visa and work-permit facilitation * Residency and employment work visas * Work eligibility and scenario assessment * Immigration compliance and reporting * Integration of immigration with tax and social-security considerations * Technology-supported planning, compliance and employee access Source: Vialto Immigration and public service terms. citeturn0search6turn0search13 * Payroll services and workflows * Compensation design and management * Employment tax * Equity compensation * Cross-border reporting and compliance * Compensation collection and data management * Shadow payroll and host-country reporting concepts where included in an engagement Sources: Vialto Rewards and public service terms. citeturn0search5turn0search14 * Business travel: policy, governance and technology; risk insight; cross-border compliance; integrated data, alerts and analytics. * Managed services: day-to-day program management and operational support spanning tax, immigration, travel, compensation and rewards. * Remote work: risk assessment, profiling, strategy, policies, guardrails, governance, implementation, operations, program management, compliance insight, data and reporting. * Workforce transformation: connected policy, operations, technology and data supporting global-work operating models. Sources: Vialto Advisory, Managed Services and Remote Work. citeturn0search2turn0search10turn0search11 * US domestic tax advisory and compliance * International tax planning and compliance * Tax residency and foreign asset reporting * Tax treaty analysis * Equity and major-event planning * Estate, gift and succession planning * Immigration advisory and support * Offshore compliance and voluntary disclosure Source: Vialto Private. citeturn0search8 Public Vialto material shows that global-work events can involve multiple connected disciplines. The AI global-work operating models. Sources: Vialto Advisory, Managed Services and Remote Work. citeturn0search2turn0search10turn0search11 * US domestic tax advisory and compliance * International tax planning and compliance * Tax residency and foreign asset reporting * Tax treaty analysis * Equity and major-event planning * Estate, gift and succession planning * Immigration advisory and support * Offshore compliance and voluntary disclosure Source: Vialto Private. citeturn0search8 Public Vialto material shows that global-work events can involve multiple connected disciplines. The AI should therefore reason across services rather than treating tax, immigration, rewards and advisory as isolated domains. * Cross-border work → immigration/work eligibility considerations * Cross-border work → tax and social-security considerations * Cross-border work → compensation/payroll/rewards considerations * Business travel → risk, immigration, tax and compliance considerations * Remote work → tax, immigration, policy and compliance considerations * Global-work programs → data, analytics, reporting, workflow and governance This section deliberately uses only public Vialto terminology and does not describe any specific internal Assignment Management application. * Global mobility / global work * Employee working outside the home jurisdiction * Home and host country considerations * Immigration and work authorization * Tax and social security * Compensation and payroll * Business travel * Remote work * Compliance and reporting * Data, tracking, status and employee/management visibility * Managed services and ongoing program operations * Answer from this repository when the question concerns Vialto's publicly described business, practices, products or platform. * Distinguish publicly confirmed Vialto capabilities from generic industry assumptions. * Never invent internal application names, screens, fields, workflows, APIs, databases, roles, SLAs or business rules. * Never use prior conversation context as a source for Vialto facts. * For jurisdiction-sensitive tax, immigration or compliance questions, identify the jurisdiction and recommend expert validation. * When information is unavailable publicly, state that the repository does not contain sufficient public information. * When describing products, use the capability language published by Vialto rather than extending functionality by inference. * Keep human expert review in the loop for AI-enabled professional outputs, consistent with Vialto's public description. Vialto states that where appropriate its products use AI, while human experts remain in the loop to vet, validate and verify AI-enabled outputs. citeturn0search3 * Company Overview * Service Identification * Tax * Immigration * Rewards / Payroll / Compensation * Advisory * Business Travel * Remote Work * Managed Services * Private Client * Global Work Cloud * Products and Technology * Cross-Service / Global Mobility * Compliance and Risk * Glossary / Terminology * Service / Product Name * Business Purpose * Target Users / Stakeholders * Capabilities * Inputs / Data * Outputs * Dependencies * Related Vialto Practices * Compliance / Risk use AI, while human experts remain in the loop to vet, validate and verify AI-enabled outputs. citeturn0search3 * Company Overview * Service Identification * Tax * Immigration * Rewards / Payroll / Compensation * Advisory * Business Travel * Remote Work * Managed Services * Private Client * Global Work Cloud * Products and Technology * Cross-Service / Global Mobility * Compliance and Risk * Glossary /
+| Style | Size | Weight | Use |
+| --- | --- | --- | --- |
+| Display | 32px | 700 | Page hero or major dashboards |
+| H1 | 28px | 700 | Module titles |
+| H2 | 22px | 600 | Section headings |
+| H3 | 18px | 600 | Card and modal headings |
+| Body-L | 16px | 400 | Main body text |
+| Body-M | 14px | 400 | Forms, tables, helper text |
+| Body-S | 12px | 400 | Metadata, chips, timestamps |
+| Label | 14px | 600 | Field labels, tab labels |
+| Mono | 13px | 500 | IDs, API versions, logs, payload previews |
 ````
 
-## 47. Vialto_Partners_Public_Golden_Repository_AI.txt #1
+## 199. ui-ux-design-specifications.md #6
 
 Score: 1.000
 
 ````text
-by inference. * Keep human expert review in the loop for AI-enabled professional outputs, consistent with Vialto's public description. Vialto states that where appropriate its products use AI, while human experts remain in the loop to vet, validate and verify AI-enabled outputs. citeturn0search3 * Company Overview * Service Identification * Tax * Immigration * Rewards / Payroll / Compensation * Advisory * Business Travel * Remote Work * Managed Services * Private Client * Global Work Cloud * Products and Technology * Cross-Service / Global Mobility * Compliance and Risk * Glossary / Terminology * Service / Product Name * Business Purpose * Target Users / Stakeholders * Capabilities * Inputs / Data * Outputs * Dependencies * Related Vialto Practices * Compliance / Risk use AI, while human experts remain in the loop to vet, validate and verify AI-enabled outputs. citeturn0search3 * Company Overview * Service Identification * Tax * Immigration * Rewards / Payroll / Compensation * Advisory * Business Travel * Remote Work * Managed Services * Private Client * Global Work Cloud * Products and Technology * Cross-Service / Global Mobility * Compliance and Risk * Glossary / Terminology * Service / Product Name * Business Purpose * Target Users / Stakeholders * Capabilities * Inputs / Data * Outputs * Dependencies * Related Vialto Practices * Compliance / Risk Considerations * Technology / Platform Relationship * Source URL / Source Document * Effective / Review Date * Confidence / Validation Status * Vialto Partners - Global Mobility Solutions * Vialto Partners - Our Company * Vialto Partners - Practices * Vialto Partners - Global Work Cloud * Vialto Partners - Products * Vialto Partners - Tax * Vialto Partners - Immigration * Vialto Partners - Rewards * Vialto Partners - Advisory * Vialto Partners - Managed Services * Vialto Partners - Remote Work * Vialto Partners - Private All sources are official Vialto Partners web pages referenced in the cited sections above. * Review quarterly or whenever Vialto materially changes its public service or product portfolio. * Maintain source references for every externally sourced knowledge object. * Do not mix internal project information into this public-source repository. * Create a separate controlled repository for client/project-specific knowledge if required. * Mark newly added facts with source, date reviewed and validation status.
+Typography must support dense operational screens without reducing readability. Monospace is reserved for version strings, migration IDs, endpoint values, and raw event references. An 8px spacing system is used: - 4px for tight icon-to-label spacing - 8px for related inline controls - 16px for card internal spacing - 24px for section spacing - 32px for page-level spacing - 48px for larger dashboard separation Elevation should be subtle: - Level 0: flat surfaces - Level 1: standard card - Level 2: dropdowns and sticky utility bars - Level 3: modals and critical overlays Use a consistent outline icon set. Icons must always be paired with labels for high-risk actions. Motion should be purposeful: - loading skeletons for tables and dashboards - progress bars for migrations and synchronization batches - subtle slide/fade for drawer transitions - no decorative animation on critical workflows **Design System applies to all stories:** story-1 through story-13. **BRD mapping:** user-centric design, minimal clicks, secure interactions, smart dashboard, market/platform readiness, integration support. **Features covered:** all six features. **Status:** Foundational. This section defines reusable UI components and their behavioral rules. Button hierarchy: - **Primary Button** Used for Save, Test Connection, Run Migration, Create Tenant, Enable Flag. - **Secondary Button** Used for Cancel, View Details, Export Logs. - **Tertiary/Text Button** Used for inline actions such as Retry, Expand Payload, View History. - **Destructive Button** Used for Delete, Retire Version, Disable Connection. - **Icon Button** Used sparingly for refresh, filter, and copy actions. Always requires tooltip and accessible label. - Default - Hover - Focus-visible - Pressed - Disabled - Loading - Long-running actions must convert to loading state with spinner and text, e.g. “Testing…” - Destructive buttons require confirmation modal. - Buttons in forms should remain disabled until minimum valid state is reached, except “Save Draft”. **Traceability:** - story-1, story-5, story-8: Test Connection, Save Integration - story-10: Run Migration, Rollback - story-12: Enable/Disable Flag - story-11: Create Tenant - story-9: Retire Version - BRD: minimal clicks, intuitive interaction, workflow support Core form controls: - text input - password/secret input - searchable dropdown - multi-select - toggle switch - checkbox - radio group - date/time picker - code/JSON editor input - file upload for migration bundles/schema templates - segmented control for mode selection - Labels above fields for scanability - Required fields marked with text, not only color - Inline validation under field - Section-level validation summary at top on submit failure - Secrets masked by default with reveal control - Auto-save only on low-risk configuration forms; critical forms use explicit save - synchronous validation for required fields, formats, ranges - asynchronous validation for endpoint reachability, token validity, schema checks - validation results must be preserved after page refresh in draft mode when possible **Traceability:** - story-1, story-5: endpoint URL, credentials, certificates - story-2,
+````
+
+## 200. ui-ux-design-specifications.md #7
+
+Score: 1.000
+
+````text
+- Required fields marked with text, not only color - Inline validation under field - Section-level validation summary at top on submit failure - Secrets masked by default with reveal control - Auto-save only on low-risk configuration forms; critical forms use explicit save - synchronous validation for required fields, formats, ranges - asynchronous validation for endpoint reachability, token validity, schema checks - validation results must be preserved after page refresh in draft mode when possible **Traceability:** - story-1, story-5: endpoint URL, credentials, certificates - story-2, story-8: mapping rules, sync triggers - story-3: auth provider, RBAC assignment - story-10: migration script input and rollback config - story-11: tenant config form - story-12: targeting rules - story-6: capability definition forms Cards are used extensively on dashboards and detail pages. Card types: - **Metric Card**: total active connections, failed syncs, pending workflows - **Status Card**: tenant health, API deprecation countdown, migration result - **Action Card**: setup checklist, recommended next step - **Entity Card**: platform card, tenant card, feature flag card Each card contains: - title - primary value or status - optional trend/meta - primary action - secondary link Cards should avoid overcrowding; if more than three actions exist, move to overflow menu. **Traceability:** - story-1 to story-4 operational monitoring - story-7 to story-13 governance visibility - BRD: smart dashboard, tailored reminders, minimal-click actionability Data grids are the core component for integrations, logs, versions, migrations, and tenants. Required capabilities: - sorting - filtering - saved views - column customization - row selection - bulk actions - pagination or virtualized infinite scroll for logs - row expansion for event details - sticky header - export to CSV/JSON where appropriate Standard tables: - Platform Connections Table - Synchronization Events Table - Workflow Instances Table - Audit Log Table - API Versions Table - Migration Runs Table - Tenants Table - Feature Flags Table - Capability Mapping Table - Platform Test Matrix Table Rows must display semantic chips for status: Active, Failed, Retrying, Deprecated, Scheduled, Draft, Completed. **Traceability:** - story-1, story-2, story-4, story-7, story-9, story-10, story-11, story-12, story-13 - BRD: visibility, operational support, auditability Use interaction containers based on complexity: - **Modal** for confirmations or short forms - **Drawer** for edit-in-context without losing surrounding page - **Full Page** for complex workflows such as migrations or tenant creation wizard Examples: - Confirm retire API version - Test connection results drawer - Event payload details side panel - Migration rollback confirmation modal Rules: - never chain more than one modal deep - preserve unsaved changes with warning prompt - allow keyboard dismissal except for destructive confirmations requiring explicit choice **Traceability:** - story-1 test results - story-2 payload validation errors - story-10 rollback confirmation - story-12 flag edit panel - story-9 retire version warning Notification taxonomy: -
+````
+
+## 201. ui-ux-design-specifications.md #8
+
+Score: 1.000
+
+````text
+Page** for complex workflows such as migrations or tenant creation wizard Examples: - Confirm retire API version - Test connection results drawer - Event payload details side panel - Migration rollback confirmation modal Rules: - never chain more than one modal deep - preserve unsaved changes with warning prompt - allow keyboard dismissal except for destructive confirmations requiring explicit choice **Traceability:** - story-1 test results - story-2 payload validation errors - story-10 rollback confirmation - story-12 flag edit panel - story-9 retire version warning Notification taxonomy: - **Toast** for transient success/info - **Inline Alert** for contextual warnings/errors - **Banner** for system-wide issues - **Persistent Notification Center** for background job results and escalations Examples: - “Connection to SAP Ariba succeeded.” - “3 synchronization jobs failed validation.” - “API v1 sunset in 23 days.” - “Tenant isolation alert requires review.” Notifications must support: - severity - timestamp - source module - deep link to relevant entity - dismiss/snooze where appropriate - audit record for admin-impacting actions **Traceability:** - story-1 persistent connection failure alerts - story-2 sync retry and invalid data alerts - story-4 workflow escalations - story-7/story-9 deprecation notices - story-12 rollout monitoring alerts Use a 12-column responsive grid for desktop and 8/4-column simplifications for tablet/mobile. - Top app bar: logo, environment, global search, notifications, profile - Left navigation rail/sidebar: modules based on permissions - Page header: title, breadcrumbs, primary action, status summary - Main content area: cards, filters, forms, tables - Secondary utility panel: contextual activity, audit snippets, help - Footer: version, legal, support links
+````
+
+## 202. ui-ux-design-specifications.md #9
+
+Score: 1.000
+
+````text
+| Breakpoint | Width | Behavior |
+| --- | --- | --- |
+| Mobile | 0-767px | single column, collapsible nav, stacked filters |
+| Tablet | 768-1023px | 8-column, reduced side panels |
+| Desktop | 1024-1439px | full nav and 12-column content |
+| Wide | 1440px+ | max-width content with optional secondary panels |
+````
+
+## 203. ui-ux-design-specifications.md #10
+
+Score: 1.000
+
+````text
+Used for home, security overview, platform health. - hero summary row - KPI cards - alert queue - prioritized task list - recent activity tables Used for connections, tenants, versions, flags. - filter bar - primary table/list - side detail panel on selection - bulk action bar Used for tenant creation, platform onboarding, migration setup. - progress stepper - sticky validation summary - review-and-confirm page Used for sync events, workflows, audit logs. - filter chips - stream/table view toggle - status timeline - payload drawer Used for security policies, capability definitions, defaults. - category tabs - section cards - sticky save bar - navigation items are role-filtered - breadcrumbs appear on all non-dashboard pages - critical alerts can deep-link to exact affected records - recent items and saved views are surfaced in module headers **Traceability:** - all 13 stories benefit from common page templates and role-based layout - BRD: simple interface, minimal clicks, customizable dashboard, secure enterprise operation The workflows below are grouped by major user story clusters. Each includes screen intent, interaction notes, Mermaid flow, and explicit traceability. Users must configure secure external procurement platform connections, test them, observe health, and receive persistent failure alerts. - **Connections List** - columns: platform, environment, auth type, status, last tested, owner, error count - primary actions: Add Connection, Test Selected, View Logs - **Create/Edit Connection** - platform metadata - endpoint URL - authentication method - client ID / secret / certificate references - encryption settings - retry policy - webhook callback settings - **Test Result Drawer** - DNS/connectivity result - auth result - schema handshake result - latency - recommended fixes - **Connection Detail** - health timeline - audit history - linked sync jobs - alert subscriptions - Test Connection is available before save and after save. - Failure states distinguish transient network failures from persistent credential or schema failures. - Logs are visible at both connection and global audit level. - Persistent failures trigger both inline warning and notification center entry. - **User stories:** - story-1: establish secure connections - story-5: configure and test procurement platform connections via UI - story-8: connect and integrate targeted procurement platforms - **BRD requirements mapped:** secure integration, intuitive interface, minimal clicks, workflow support, dashboard visibility - **Epic/Feature:** Procurement Platform Integration / Procurement Platform Connectivity - **Acceptance criteria covered:** secure connection establishment, retries, logging, encryption in transit, alerting, UI configuration/testing Users need transparent and resilient synchronization of order data and procurement statuses, with validation, logging, retries, and visibility into outcomes. - **Synchronization Dashboard** - total sync volume - success/failure trends - queue depth - platform-by-platform status - **Order Sync Events Table** - order ID - tenant - source/target platform - event type - status - timestamp - retry count - **Sync Event Detail
+````
+
+## 204. ui-ux-design-specifications.md #11
+
+Score: 1.000
+
+````text
+Platform Connectivity - **Acceptance criteria covered:** secure connection establishment, retries, logging, encryption in transit, alerting, UI configuration/testing Users need transparent and resilient synchronization of order data and procurement statuses, with validation, logging, retries, and visibility into outcomes. - **Synchronization Dashboard** - total sync volume - success/failure trends - queue depth - platform-by-platform status - **Order Sync Events Table** - order ID - tenant - source/target platform - event type - status - timestamp - retry count - **Sync Event Detail Panel** - request payload preview - response payload - validation messages - retry timeline - **Data Mapping & Validation Rules** - schema mappings - required fields - transformation rules - reject conditions - Invalid data should never disappear into logs only; it must be visible in UI with exact field errors. - Filters include order ID, date range, platform, tenant, status, retry state. - Status chips must include Synced, Pending, Retrying, Rejected, Failed, Partial. - **User stories:** - story-2: synchronize order data - story-8: real-time procurement status synchronization - **BRD requirements mapped:** integration requirements, operational efficiency, status visibility, secure background processing - **Epic/Feature:** Procurement Platform Integration / Data Synchronization and Exchange - **Acceptance criteria covered:** send on create/update, receive status updates, log sync events, retry failures, validate and reject invalid data Security specialists and administrators must control authentication, authorization, encryption posture, and auditability. - **Security Overview** - token health - failed auth attempts - expiring secrets/certificates - RBAC exceptions - **Authentication Policy Page** - token issuer settings - cert/key management references - allowed protocols - session policies - **Role & Access Matrix** - role-to-module mapping - tenant-scoped permissions - inherited vs direct access - **Compliance Audit Logs** - actor - action - object - outcome - timestamp - tenant - Access denied messages should be actionable: “You need Integration Admin role for this environment.” - Audit logs must support export and immutable retention indicators. - Sensitive secrets are never shown in raw form after initial entry. - **User stories:** - story-3: authentication and authorization enforcement - story-11: RBAC within tenant boundaries - **BRD requirements mapped:** MFA/security, regulatory/compliance requirements, secure interactions, enterprise readiness - **Epic/Feature:** Procurement Platform Integration / Integration Security and Compliance; Platform Architecture & Cross-Cutting Concerns / Architecture Compatibility Layer - **Acceptance criteria covered:** valid auth tokens, RBAC, encryption, audit logs, compliance, tenant-scoped access Integration events must trigger downstream workflows automatically, with real-time status, escalation, and transactional integrity visibility. - **Workflow Instances Console** - workflow name - trigger event - current step - status - SLA breach flag - **Workflow Detail Timeline** - received event - action steps - external calls
+````
+
+## 205. ui-ux-design-specifications.md #12
+
+Score: 1.000
+
+````text
+Procurement Platform Integration / Integration Security and Compliance; Platform Architecture & Cross-Cutting Concerns / Architecture Compatibility Layer - **Acceptance criteria covered:** valid auth tokens, RBAC, encryption, audit logs, compliance, tenant-scoped access Integration events must trigger downstream workflows automatically, with real-time status, escalation, and transactional integrity visibility. - **Workflow Instances Console** - workflow name - trigger event - current step - status - SLA breach flag - **Workflow Detail Timeline** - received event - action steps - external calls - rollback or compensation actions - **Escalation Rules Configuration** - thresholds - owner assignment - notification channels - **User stories:** story-4 - **BRD requirements mapped:** workflow support, status visibility, efficient processing, low-friction operations - **Epic/Feature:** Procurement Platform Integration / Procurement Workflow Orchestration - **Acceptance criteria covered:** automatic triggers, real-time statuses, escalations, visibility, transactional integrity Business analysts and architecture stakeholders need to define capabilities and map them to system components in a maintained, versioned structure. - **Capabilities Catalog** - **Capability Detail with Mapped Components** - **Quarterly Review Planner** - **Version History and Approval Log** - **User stories:** story-6 - **BRD requirements mapped:** business alignment, architecture clarity, documented governance - **Epic/Feature:** N/A / Capability-Driven Modeling - **Acceptance criteria covered:** documented/approved models, component mapping, version control, quarterly reviews, architecture reflection This final cluster groups platform administration workflows because they share governance patterns and admin-oriented UI structures. **Traceability** - **User stories:** story-7, story-9 - **BRD requirements mapped:** compatibility, stable updates, communication of changes - **Epic/Feature:** Platform Architecture & Cross-Cutting Concerns / Architecture Compatibility Layer; Capability-Driven Modeling for policy documentation - **Acceptance criteria covered:** policy docs, two or three concurrent versions, routing, backward compatibility, notices, usage logs, retirement controls **Traceability** - **User stories:** story-10 - **BRD requirements mapped:** low-disruption upgrades, operational resilience, visibility - **Epic/Feature:** Platform Architecture & Cross-Cutting Concerns / Architecture Compatibility Layer - **Acceptance criteria covered:** define/execute scripts, automatic rollback, visible progress, post-migration integrity verification, downtime control **Traceability** - **User stories:** story-11 - **BRD requirements mapped:** secure sharing, role-based access, configurable environments - **Epic/Feature:** Platform Architecture & Cross-Cutting Concerns / Architecture Compatibility Layer - **Acceptance criteria covered:** create/manage tenants, data isolation, tenant RBAC, tenant-specific configs/flags, resource reporting **Traceability** - **User stories:** story-12 - **BRD requirements mapped:** safe rollout, iterative improvement, operational control -
+````
+
+## 206. ui-ux-design-specifications.md #13
+
+Score: 1.000
+
+````text
+rollback, visible progress, post-migration integrity verification, downtime control **Traceability** - **User stories:** story-11 - **BRD requirements mapped:** secure sharing, role-based access, configurable environments - **Epic/Feature:** Platform Architecture & Cross-Cutting Concerns / Architecture Compatibility Layer - **Acceptance criteria covered:** create/manage tenants, data isolation, tenant RBAC, tenant-specific configs/flags, resource reporting **Traceability** - **User stories:** story-12 - **BRD requirements mapped:** safe rollout, iterative improvement, operational control - **Epic/Feature:** Platform Architecture & Cross-Cutting Concerns / Architecture Compatibility Layer - **Acceptance criteria covered:** UI creation/configuration, targeting, no redeploy, audit logs, dynamic monitoring/adjustment **Traceability** - **User stories:** story-13 - **BRD requirements mapped:** market/platform readiness, consistent multi-device experience, usability - **Epic/Feature:** Platform Architecture & Cross-Cutting Concerns / Architecture Compatibility Layer - **Acceptance criteria covered:** consistent UI/features, platform detection, automated coverage visibility, bug tracking, performance benchmarks Accessibility is mandatory across all modules, especially because this system contains dense admin workflows, large data tables, and frequent alerts. - Contrast ratio minimum 4.5:1 for body text and 3:1 for large text. - Keyboard accessibility for all navigation, filters, tables, modals, and action menus. - Visible focus ring on buttons, links, rows, chips, and tabs. - All icons require accessible names. - Form controls must have programmatic labels, helper text, and error associations. - Toasts and alerts should use ARIA live regions. - Modals must trap focus and restore focus on close. - Tables require proper header associations and support keyboard row navigation. - Avoid color-only indicators; pair statuses with text and iconography. - **Connection Status** Instead of only a green dot, show “Connected” plus icon and timestamp. - **Sync Validation Errors** Error summary at top: “3 fields require attention,” with links to each invalid field. - **Workflow Timeline** Each step exposes text labels such as Completed, Failed, Waiting, Retried. - **API Version Deprecation** Warning banners include readable countdown text and action link. - **Feature Flag Targeting** Multi-select targeting controls must support keyboard tagging and screen reader announcements. - **Audit Logs and Data Tables** Column sort state must be announced, e.g. “Timestamp sorted descending.” - support zoom to 200% without loss of functionality - ensure responsive reflow on smaller devices - use plain language for operational errors - preserve context during background auto-refresh so users are not disoriented **Traceability:** all 13 stories. **BRD mapping:** user-centric design, multilingual/platform readiness, intuitive and efficient interaction. Operational systems are judged by how well they handle failure. This product requires explicit state patterns. - headline: “Connection test failed” - show cause category: network, auth, schema, certificate, timeout - show
+````
+
+## 207. ui-ux-design-specifications.md #14
+
+Score: 1.000
+
+````text
+descending.” - support zoom to 200% without loss of functionality - ensure responsive reflow on smaller devices - use plain language for operational errors - preserve context during background auto-refresh so users are not disoriented **Traceability:** all 13 stories. **BRD mapping:** user-centric design, multilingual/platform readiness, intuitive and efficient interaction. Operational systems are judged by how well they handle failure. This product requires explicit state patterns. - headline: “Connection test failed” - show cause category: network, auth, schema, certificate, timeout - show remediation CTA: Edit Settings, Retry Test, View Logs - display row-level error chip plus side panel detail - show retry count and next retry schedule - allow manual requeue if permitted - no generic “Forbidden” - include required role, tenant scope, and support link - pin banner at top of run detail - show rollback state separately from original failure - preserve logs for export - detect contradictory targeting rules - show warning before save - illustration/icon - copy: “No procurement platforms connected yet.” - CTA: “Add Connection” - secondary link: “View setup guide” - suggest broadened filters - show quick reset filter action - explain trigger dependency on incoming integration events - explain single-tenant default if applicable - CTA to create first tenant - positive reassurance: “All active versions are within support window.” - duplicate endpoint configuration across tenants - expired credentials during active sync - partially successful batch synchronization - orphaned workflow event with missing upstream order - migration interrupted by browser refresh - conflicting feature flags across environment and tenant scopes - version retirement attempted while active clients exceed threshold - platform-specific rendering differences on legacy browsers or low-resolution tablets - always preserve user-entered data where safe - distinguish user-actionable issues from system-owned issues - provide a next step, not just an error - log all system-generated failures to audit/event trails **Traceability:** - story-1, story-2, story-3, story-4, story-9, story-10, story-11, story-12, story-13 - BRD mapping: operational reliability, secure background processes, intuitive user experience The matrix below provides explicit coverage from UI elements and workflows to user stories, BRD requirements, epics/features, and implementation status. All 13 stories are mapped.
+````
+
+## 208. ui-ux-design-specifications.md #15
+
+Score: 1.000
+
+````text
+| UI Component / Workflow | User Story ID(s) | BRD Requirement Reference | Epic | Feature | Status |
+| --- | --- | --- | --- | --- | --- |
+| Global design system | story-1, story-2, story-3, story-4, story-5, story-6, story-7, story-8, story-9, story-10, story-11, story-12, story-13 | User-centric design, minimal clicks, platform readiness | Cross-cutting | All features | Proposed |
+| Dashboard template | story-1, story-2, story-4, story-8, story-10, story-12, story-13 | Smart dashboard, reminders, operational visibility | Cross-cutting | Multiple | Proposed |
+| Connections List page | story-1, story-5, story-8 | Integration requirements, secure setup | Procurement Platform Integration | Procurement Platform Connectivity | Proposed |
+| Create/Edit Connection form | story-1, story-5 | Secure connections, configurable integrations | Procurement Platform Integration | Procurement Platform Connectivity | Proposed |
+| Test Connection drawer | story-1, story-5 | Reliability, minimal-click validation | Procurement Platform Integration | Procurement Platform Connectivity | Proposed |
+| Connection alert notifications | story-1, story-5, story-8 | Alerting, operational continuity | Procurement Platform Integration | Procurement Platform Connectivity | Proposed |
+| Synchronization Dashboard | story-2, story-8 | Automated exchange, status visibility | Procurement Platform Integration | Data Synchronization and Exchange | Proposed |
+| Order Sync Events table | story-2, story-8 | Logging, real-time statuses | Procurement Platform Integration | Data Synchronization and Exchange | Proposed |
+| Validation Rules editor | story-2 | Data integrity, invalid data handling | Procurement Platform Integration | Data Synchronization and Exchange | Proposed |
+| Security Overview page | story-3, story-11 | Security, compliance, MFA-aligned controls | Procurement Platform Integration / Platform Architecture | Integration Security and Compliance / Architecture Compatibility Layer | Proposed |
+| Role & Access Matrix | story-3, story-11 | RBAC, tenant-bound authorization | Procurement Platform Integration / Platform Architecture | Integration Security and Compliance / Architecture Compatibility Layer | Proposed |
+| Compliance Audit Log table | story-3, story-12 | Auditability, regulatory compliance | Procurement Platform Integration / Platform Architecture | Integration Security and Compliance / Architecture Compatibility Layer | Proposed |
+| Workflow Instances Console | story-4 | Workflow visibility, process support | Procurement Platform Integration | Procurement Workflow Orchestration | Proposed |
+| Workflow Timeline detail | story-4 | Real-time progress, error escalation | Procurement Platform Integration | Procurement Workflow Orchestration | Proposed |
+| Escalation Rules configuration | story-4 | Error handling and governance | Procurement Platform Integration | Procurement Workflow Orchestration | Proposed |
+| Capabilities Catalog | story-6 | Business alignment, documented capabilities | N/A | Capability-Driven Modeling | Proposed |
+| Capability mapping table | story-6 | Capability-to-component mapping | N/A | Capability-Driven Modeling | Proposed |
+| Quarterly review planner | story-6 | Stakeholder review cycle | N/A | Capability-Driven Modeling | Proposed |
+| API Versions list | story-7, story-9 | Stable updates, compatibility management | Platform Architecture & Cross-Cutting Concerns | Architecture Compatibility Layer | Proposed |
+| Version policy editor | story-7, story-9 | Versioning policy documentation and routing | Platform Architecture & Cross-Cutting Concerns | Architecture Compatibility Layer | Proposed |
+| Deprecation banner/notifications | story-7, story-9 | 90-day notice, consumer communication | Platform Architecture & Cross-Cutting Concerns | Architecture Compatibility Layer | Proposed |
+| Version usage analytics | story-9 | Usage stats and safe retirement | Platform Architecture & Cross-Cutting Concerns | Architecture Compatibility Layer | Proposed |
+| Migration Runs page | story-10 | Upgrade support, downtime control | Platform Architecture & Cross-Cutting Concerns | Architecture Compatibility Layer | Proposed |
+| Migration setup wizard | story-10 | Define and execute migration scripts | Platform Architecture & Cross-Cutting Concerns | Architecture Compatibility Layer | Proposed |
+| Rollback status modal | story-10 | Automatic rollback visibility | Platform Architecture & Cross-Cutting Concerns | Architecture Compatibility Layer | Proposed |
+| Data integrity results panel | story-10 | Post-migration verification | Platform Architecture & Cross-Cutting Concerns | Architecture Compatibility Layer | Proposed |
+| Tenants List page | story-11 | Multi-tenant support and management | Platform Architecture & Cross-Cutting Concerns | Architecture Compatibility Layer | Proposed |
+| Tenant creation wizard | story-11 | Tenant-specific configuration | Platform Architecture & Cross-Cutting Concerns | Architecture Compatibility Layer | Proposed |
+| Tenant usage reporting cards | story-11 | Resource usage tracking | Platform Architecture & Cross-Cutting Concerns | Architecture Compatibility Layer | Proposed |
+| Feature Flags table | story-12, story-11 | Selective rollout, tenant targeting | Platform Architecture & Cross-Cutting Concerns | Architecture Compatibility Layer | Proposed |
+| Feature Flag editor drawer | story-12 | UI-based create/configure | Platform Architecture & Cross-Cutting Concerns | Architecture Compatibility Layer | Proposed |
+| Rollout monitoring dashboard | story-12 | Dynamic monitoring and adjustment | Platform Architecture & Cross-Cutting Concerns | Architecture Compatibility Layer | Proposed |
+| Cross-platform compatibility test matrix | story-13 | Consistent features across platforms | Platform Architecture & Cross-Cutting Concerns | Architecture Compatibility Layer | Proposed |
+| Platform detection banner/health widget | story-13 | Platform-specific handling and performance visibility | Platform Architecture & Cross-Cutting Concerns | Architecture Compatibility Layer | Proposed |
+| Responsive layout framework | story-13 | Cross-device consistency | Cross-cutting | Architecture Compatibility Layer | Proposed |
+| Notification center | story-1, story-2, story-4, story-7, story-8, story-10, story-12 | Alerts, status updates, actionability | Cross-cutting | Multiple | Proposed |
+| Error/empty state patterns | story-1, story-2, story-3, story-4, story-9, story-10, story-11, story-12, story-13 | Reliability, intuitive guidance | Cross-cutting | Multiple | Proposed |
+| Accessibility framework | story-1 through story-13 | User-centric design, platform readiness | Cross-cutting | All features | Proposed |
+````
+
+## 209. ui-ux-design-specifications.md #16
+
+Score: 1.000
+
+````text
+- **Prioritize dashboard-first administration.** Users in this product monitor high-volume technical operations; surfacing critical actions early reduces time to resolution.
+- **Expose system intelligence clearly.** Retries, rollbacks, deprecations, and feature rollouts must be visible as first-class states, not hidden in logs.
+- **Treat traceability as a product feature.** Capability mapping, audit logs, and workflow provenance should be easy to inspect from every major page.
+- **Design for confidence in risky actions.** Migration execution, version retirement, and destructive tenant actions need previews, impact analysis, and confirmations.
+- **Keep advanced complexity progressive.** Default views should be simple; technical depth should expand through drawers, tabs, and detail panels.
+- **Use consistent state language.** Standardize statuses across modules: Draft, Active, Pending, Retrying, Failed, Completed, Deprecated, Retired.
+- **Build accessibility into data-heavy screens early.** Tables, filters, alerts, and forms will otherwise become expensive to remediate later.
+- **Ensure every module is role-aware.** Since personas are not formally defined, permissions become the primary personalization mechanism.
+This specification provides a complete UI/UX foundation with direct traceability to every provided user story and to the available BRD principles. It is suitable for use in Azure DevOps Wiki as the baseline design reference for product, engineering, QA, and architecture teams.
+*[diagram: ui-ux-design-specifications-diagram-1.svg]*
+*[diagram: ui-ux-design-specifications-diagram-2.svg]*
+*[diagram: ui-ux-design-specifications-diagram-3.svg]*
+````
+
+## 210. US.md #0
+
+Score: 1.000
+
+````text
+---
+name: United States
+description: Test
+isActive: true
+---
+country: India
+country_code: IN
+currency: INR
+currency_symbol: ₹
+locale: en-IN
+timezone: Asia/Kolkata (IST, UTC+05:30)
+date_format: DD/MM/YYYY
+standard_user_email: qa.india.user@example.com
+standard_user_password: Test@1234
+admin_user_email: qa.india.admin@example.com
+admin_user_password: Admin@1234
+mobile_number: +91 98765 43210
+otp_test_value: 123456
+billing_name: Aarav Sharma
+billing_line1: 12, MG Road
+billing_line2: Near Metro Station
+billing_city: Bengaluru
+billing_state: Karnataka
+billing_pincode: 560001
+shipping_name: Priya Nair
+shipping_line1: 45, Sector 18
+shipping_city: Noida
+shipping_state: Uttar Pradesh
+shipping_pincode: 201301
+gst_number: 29ABCDE1234F1Z5
+pan_number: ABCDE1234F
+gst_rate_standard: 18%
+gst_rate_essential: 5%
+upi_id: qatest@okhdfcbank
+test_card_visa: 4111 1111 1111 1111
+test_card_expiry: 12/30
+test_card_cvv: 123
+netbanking_bank: HDFC Bank
+cod_available: true
+sku_1: IN-ELEC-1001 | Wireless Earbuds | ₹2,499
+sku_2: IN-APRL-2002 | Cotton Kurta (M) | ₹899
+sku_3: IN-HOME-3003 | Stainless Steel Bottle | ₹549
+low_stock_sku: IN-ELEC-1001 (qty: 2)
+out_of_stock_sku: IN-APRL-2099
+min_order_free_shipping: ₹499
+promo_code: INDIA10 (10% off, max ₹200)
+gift_wrap_charge: ₹49
 ````

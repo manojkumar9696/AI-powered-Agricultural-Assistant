@@ -1,8 +1,16 @@
-# Architecture — AABC
+# Architecture — test12
 
 > Auto-generated architecture overview. Update this file as the system evolves.
 
 ## Feature Map
+
+### Secure and Compliant Order Access
+- 3 user stories
+- Stories: As a Compliance Auditor, I want immutable audit records for order actions so that online food order activity can be reviewed and reconciled, As a Platform Security Administrator, I want authenticated access enforced on order APIs so that online food orders are placed only by trusted consumers, As a Platform Security Administrator, I want object-level authorization on order resources so that consumers can access only their own food orders
+
+### Order Placement and Processing
+- 3 user stories
+- Stories: As a Customer, I want to view the current status of my food order so that I can know when to expect delivery or pickup, As a Restaurant Manager, I want to track the processing state of orders so that I can manage kitchen workflow efficiently, As a Customer, I want to place an online food order so that I can conveniently purchase meals from the app
 
 ## Guidelines
 

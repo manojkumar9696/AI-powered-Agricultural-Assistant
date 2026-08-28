@@ -1,17 +1,32 @@
 {
   "version": "1.0",
-  "projectName": "AABC",
-  "generatedAt": "2026-08-28T06:19:31.107Z",
+  "projectName": "test12",
+  "generatedAt": "2026-08-28T08:13:34.981Z",
   "source": "golden-repo-guidance",
   "options": {
-    "ui": [],
-    "backend": [
-      "python"
+    "ui": [
+      "react",
+      "angular"
     ],
-    "database": [],
+    "backend": [
+      "node",
+      "python",
+      "dotnet"
+    ],
+    "database": [
+      "postgres"
+    ],
     "ai": [],
-    "uiCustom": [],
-    "backendCustom": [],
+    "uiCustom": [
+      "nextjs",
+      "flutter",
+      "react-native",
+      "android"
+    ],
+    "backendCustom": [
+      "spring",
+      "django"
+    ],
     "databaseCustom": []
   }
 }

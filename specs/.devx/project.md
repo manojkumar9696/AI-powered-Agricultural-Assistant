@@ -1,9 +1,9 @@
-# AABC
+# test12
 
 > Auto-generated project context for AI-assisted development.
 > Last updated: 2026-08-28
 
-**Organization:** https://nousteamdevx.atlassian.net
+**Organization:** AstraTest
 
 ## Development Methodology
 
@@ -14,8 +14,10 @@ Every feature has:
 - `requirements.md` — Implementation acceptance checklist
 - `prompt.md` — Ready-to-use implementation prompt
 
-## Features (0)
+## Features (2)
 
+- **Secure and Compliant Order Access** (3 user stories)
+- **Order Placement and Processing** (3 user stories)
 
 ## Getting Started
 
