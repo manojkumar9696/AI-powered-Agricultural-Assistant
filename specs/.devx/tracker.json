@@ -1,13 +1,5 @@
 {
   "trackerVersion": 1,
-  "updatedAt": "2026-08-28T19:30:13.216Z",
-  "tasks": {
-    "FEATURE-14455": {
-      "status": "NEEDS_CLARIFICATION",
-      "title": "What are archived ideas?",
-      "featureId": 14455,
-      "slug": "what-are-archived-ideas",
-      "updatedAt": "2026-08-28T19:30:13.216Z"
-    }
-  }
+  "updatedAt": "2026-08-28T20:16:04.764Z",
+  "tasks": {}
 }

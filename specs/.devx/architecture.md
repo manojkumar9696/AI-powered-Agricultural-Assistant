@@ -4,9 +4,7 @@
 
 ## Feature Map
 
-### What are archived ideas?
-- 1 user stories
-- Stories: What are archived ideas?
+
 
 ## Guidelines
 
