@@ -1,13 +1,5 @@
 {
   "trackerVersion": 1,
-  "updatedAt": "2026-08-28T06:19:31.125Z",
-  "tasks": {
-    "FEATURE-1710768500": {
-      "status": "PENDING",
-      "title": "What are archived ideas?; New rewards program; Express checkout (+41 more)",
-      "featureId": 1710768500,
-      "slug": "waiting-list-experience-improvements",
-      "updatedAt": "2026-08-28T06:19:31.125Z"
-    }
-  }
+  "updatedAt": "2026-08-28T06:31:06.876Z",
+  "tasks": {}
 }

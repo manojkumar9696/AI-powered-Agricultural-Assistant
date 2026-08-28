@@ -14,9 +14,8 @@ Every feature has:
 - `requirements.md` — Implementation acceptance checklist
 - `prompt.md` — Ready-to-use implementation prompt
 
-## Features (1)
+## Features (0)
 
-- **What are archived ideas?; New rewards program; Express checkout (+41 more)** (44 user stories)
 
 ## Getting Started
 
