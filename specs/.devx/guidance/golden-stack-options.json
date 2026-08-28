@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "projectName": "AABC",
+  "generatedAt": "2026-08-28T06:19:31.107Z",
+  "source": "golden-repo-guidance",
+  "options": {
+    "ui": [],
+    "backend": [
+      "python"
+    ],
+    "database": [],
+    "ai": [],
+    "uiCustom": [],
+    "backendCustom": [],
+    "databaseCustom": []
+  }
+}

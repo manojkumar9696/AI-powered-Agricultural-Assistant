@@ -1,0 +1,304 @@
+{
+  "version": "1.0",
+  "generatedAt": "2026-08-28T06:19:31.107Z",
+  "repoId": "456093df-1c12-4b7b-bc5d-c3182486db1f",
+  "repoName": "AgentFactory",
+  "provider": "ado",
+  "repoUrl": "https://dev.azure.com/shashwathik/45d917f4-fc53-443c-9ef0-4abe70d0814a/_apis/git/repositories/456093df-1c12-4b7b-bc5d-c3182486db1f",
+  "defaultBranch": "main",
+  "allFilesMode": true,
+  "requestedFilePaths": [],
+  "includedFilePaths": [
+    "Assignment_Management_User_Story_Coding_Standards.txt",
+    "Equus_Assignment_Management_Public_Basics.txt",
+    "README.md",
+    "Vialto - Assignment Management BRD.txt",
+    "Vialto_Partners_Public_Golden_Repository_AI.txt"
+  ],
+  "missingFilePaths": [],
+  "sourceFiles": [
+    {
+      "path": "Assignment_Management_User_Story_Coding_Standards.txt",
+      "chunkIndex": 0,
+      "score": 1,
+      "size": 9999
+    },
+    {
+      "path": "Assignment_Management_User_Story_Coding_Standards.txt",
+      "chunkIndex": 1,
+      "score": 1,
+      "size": 2035
+    },
+    {
+      "path": "Equus_Assignment_Management_Public_Basics.txt",
+      "chunkIndex": 0,
+      "score": 1,
+      "size": 9995
+    },
+    {
+      "path": "Equus_Assignment_Management_Public_Basics.txt",
+      "chunkIndex": 1,
+      "score": 1,
+      "size": 5278
+    },
+    {
+      "path": "README.md",
+      "chunkIndex": 0,
+      "score": 1,
+      "size": 210
+    },
+    {
+      "path": "README.md",
+      "chunkIndex": 1,
+      "score": 1,
+      "size": 312
+    },
+    {
+      "path": "README.md",
+      "chunkIndex": 2,
+      "score": 1,
+      "size": 32
+    },
+    {
+      "path": "README.md",
+      "chunkIndex": 3,
+      "score": 1,
+      "size": 23
+    },
+    {
+      "path": "README.md",
+      "chunkIndex": 4,
+      "score": 1,
+      "size": 3
+    },
+    {
+      "path": "README.md",
+      "chunkIndex": 5,
+      "score": 1,
+      "size": 13
+    },
+    {
+      "path": "README.md",
+      "chunkIndex": 6,
+      "score": 1,
+      "size": 83
+    },
+    {
+      "path": "README.md",
+      "chunkIndex": 7,
+      "score": 1,
+      "size": 121
+    },
+    {
+      "path": "README.md",
+      "chunkIndex": 8,
+      "score": 1,
+      "size": 227
+    },
+    {
+      "path": "README.md",
+      "chunkIndex": 9,
+      "score": 1,
+      "size": 144
+    },
+    {
+      "path": "README.md",
+      "chunkIndex": 10,
+      "score": 1,
+      "size": 22
+    },
+    {
+      "path": "README.md",
+      "chunkIndex": 11,
+      "score": 1,
+      "size": 3
+    },
+    {
+      "path": "README.md",
+      "chunkIndex": 12,
+      "score": 1,
+      "size": 213
+    },
+    {
+      "path": "README.md",
+      "chunkIndex": 13,
+      "score": 1,
+      "size": 17
+    },
+    {
+      "path": "README.md",
+      "chunkIndex": 14,
+      "score": 1,
+      "size": 52
+    },
+    {
+      "path": "README.md",
+      "chunkIndex": 15,
+      "score": 1,
+      "size": 3
+    },
+    {
+      "path": "README.md",
+      "chunkIndex": 16,
+      "score": 1,
+      "size": 36
+    },
+    {
+      "path": "README.md",
+      "chunkIndex": 17,
+      "score": 1,
+      "size": 3
+    },
+    {
+      "path": "README.md",
+      "chunkIndex": 18,
+      "score": 1,
+      "size": 196
+    },
+    {
+      "path": "README.md",
+      "chunkIndex": 19,
+      "score": 1,
+      "size": 3
+    },
+    {
+      "path": "README.md",
+      "chunkIndex": 20,
+      "score": 1,
+      "size": 291
+    },
+    {
+      "path": "README.md",
+      "chunkIndex": 21,
+      "score": 1,
+      "size": 3
+    },
+    {
+      "path": "README.md",
+      "chunkIndex": 22,
+      "score": 1,
+      "size": 69
+    },
+    {
+      "path": "README.md",
+      "chunkIndex": 23,
+      "score": 1,
+      "size": 3
+    },
+    {
+      "path": "README.md",
+      "chunkIndex": 24,
+      "score": 1,
+      "size": 147
+    },
+    {
+      "path": "Vialto - Assignment Management BRD.txt",
+      "chunkIndex": 0,
+      "score": 1,
+      "size": 3190
+    },
+    {
+      "path": "Vialto - Assignment Management BRD.txt",
+      "chunkIndex": 1,
+      "score": 1,
+      "size": 3198
+    },
+    {
+      "path": "Vialto - Assignment Management BRD.txt",
+      "chunkIndex": 2,
+      "score": 1,
+      "size": 3195
+    },
+    {
+      "path": "Vialto - Assignment Management BRD.txt",
+      "chunkIndex": 3,
+      "score": 1,
+      "size": 3189
+    },
+    {
+      "path": "Vialto - Assignment Management BRD.txt",
+      "chunkIndex": 4,
+      "score": 1,
+      "size": 3196
+    },
+    {
+      "path": "Vialto - Assignment Management BRD.txt",
+      "chunkIndex": 5,
+      "score": 1,
+      "size": 3189
+    },
+    {
+      "path": "Vialto - Assignment Management BRD.txt",
+      "chunkIndex": 6,
+      "score": 1,
+      "size": 3199
+    },
+    {
+      "path": "Vialto - Assignment Management BRD.txt",
+      "chunkIndex": 7,
+      "score": 1,
+      "size": 3198
+    },
+    {
+      "path": "Vialto - Assignment Management BRD.txt",
+      "chunkIndex": 8,
+      "score": 1,
+      "size": 3195
+    },
+    {
+      "path": "Vialto - Assignment Management BRD.txt",
+      "chunkIndex": 9,
+      "score": 1,
+      "size": 3189
+    },
+    {
+      "path": "Vialto - Assignment Management BRD.txt",
+      "chunkIndex": 10,
+      "score": 1,
+      "size": 3190
+    },
+    {
+      "path": "Vialto - Assignment Management BRD.txt",
+      "chunkIndex": 11,
+      "score": 1,
+      "size": 3196
+    },
+    {
+      "path": "Vialto - Assignment Management BRD.txt",
+      "chunkIndex": 12,
+      "score": 1,
+      "size": 3195
+    },
+    {
+      "path": "Vialto - Assignment Management BRD.txt",
+      "chunkIndex": 13,
+      "score": 1,
+      "size": 3199
+    },
+    {
+      "path": "Vialto - Assignment Management BRD.txt",
+      "chunkIndex": 14,
+      "score": 1,
+      "size": 3200
+    },
+    {
+      "path": "Vialto - Assignment Management BRD.txt",
+      "chunkIndex": 15,
+      "score": 1,
+      "size": 1511
+    },
+    {
+      "path": "Vialto_Partners_Public_Golden_Repository_AI.txt",
+      "chunkIndex": 0,
+      "score": 1,
+      "size": 9992
+    },
+    {
+      "path": "Vialto_Partners_Public_Golden_Repository_AI.txt",
+      "chunkIndex": 1,
+      "score": 1,
+      "size": 2416
+    }
+  ],
+  "warnings": []
+}
