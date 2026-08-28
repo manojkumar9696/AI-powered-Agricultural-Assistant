@@ -5,7 +5,7 @@
 
 ## Project
 
-- Name: test12
+- Name: AABC
 - Architecture mode: monolith
 - Context status: Pending workspace discovery
 

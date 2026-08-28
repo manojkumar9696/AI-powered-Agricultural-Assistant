@@ -1,7 +1,7 @@
 {
-  "name": "test12-mcp-server",
+  "name": "aabc-mcp-server",
   "version": "1.0.0",
-  "description": "Astra MCP server for test12 specs",
+  "description": "Astra MCP server for AABC specs",
   "type": "module",
   "main": "server.js",
   "scripts": {

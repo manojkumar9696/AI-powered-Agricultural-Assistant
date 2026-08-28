@@ -1,300 +1,131 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-08-28T08:13:35.009Z",
+  "generatedAt": "2026-08-28T19:30:13.216Z",
   "enableTdd": false,
-  "totalFeatures": 2,
+  "totalFeatures": 1,
   "features": [
     {
-      "id": 71742,
-      "taskId": "FEATURE-71742",
-      "title": "Secure and Compliant Order Access",
-      "slug": "secure-auditable-order-access",
+      "id": 14455,
+      "taskId": "FEATURE-14455",
+      "title": "What are archived ideas?",
+      "slug": "what-are-archived-ideas",
       "state": "planned",
       "status": "needs-clarification",
       "openQuestions": [
         {
           "id": "oq-1",
-          "text": "What exact order API endpoints and operations are in scope beyond the named operations (placement, retrieval, read, update, delete)?",
-          "blocking": true
-        },
-        {
-          "id": "oq-2",
-          "text": "What are the exact standardized unauthorized response format and status/body requirements?",
-          "blocking": false
-        },
-        {
-          "id": "oq-3",
-          "text": "What status code and response body should be returned for authorization denials?",
-          "blocking": true
-        },
-        {
-          "id": "oq-4",
-          "text": "Which specific roles are authorized to access audit logs?",
-          "blocking": true
-        },
-        {
-          "id": "oq-5",
-          "text": "Is there an existing audit API and/or audit UI, or must one be built as part of this feature?",
-          "blocking": false
-        },
-        {
-          "id": "oq-6",
-          "text": "Are audit records required for order delete actions in addition to create, update, and read?",
-          "blocking": true
-        },
-        {
-          "id": "oq-7",
-          "text": "What exact authentication attempt details must be logged for every API request?",
-          "blocking": true
-        },
-        {
-          "id": "oq-8",
-          "text": "What exact performance threshold defines \"acceptable performance\" for audit-log filtering? Is the success metric of under 1 second for large logs contractual?",
-          "blocking": false
-        },
-        {
-          "id": "oq-9",
-          "text": "What exact date-range format and timezone handling rules apply to audit-log filtering?",
-          "blocking": false
-        },
-        {
-          "id": "oq-10",
-          "text": "What exact output shape is required for audit-log retrieval responses?",
-          "blocking": false
-        },
-        {
-          "id": "oq-11",
-          "text": "Is secure export of audit records in scope for this feature, and if so, what formats are required?",
-          "blocking": true
-        },
-        {
-          "id": "oq-12",
-          "text": "What is the required retention period for audit log records themselves?",
-          "blocking": false
-        },
-        {
-          "id": "oq-13",
-          "text": "Which order-related sensitive fields, besides payment credentials, must be masked or omitted from logs?",
-          "blocking": true
-        },
-        {
-          "id": "oq-14",
-          "text": "Does this feature require support for token revocation and refresh behavior at validation time, or is that outside scope?",
-          "blocking": true
-        },
-        {
-          "id": "oq-15",
-          "text": "Which service within the monolith owns the audit-log storage and access policy as Information Owner/Custodian?",
-          "blocking": true
-        },
-        {
-          "id": "oq-16",
-          "text": "Does this feature trigger DPIA review/update under SOS-47951 for affected in-scope products and data flows?",
-          "blocking": true
-        }
-      ],
-      "storyCount": 3,
-      "totalStoryPoints": 13,
-      "files": {
-        "specs": "specs/secure-auditable-order-access/specs.md",
-        "requirements": "specs/secure-auditable-order-access/requirements.md",
-        "prompt": "specs/secure-auditable-order-access/prompt.md"
-      },
-      "userStories": [
-        {
-          "id": 71771,
-          "title": "As a Compliance Auditor, I want immutable audit records for order actions so that online food order activity can be reviewed and reconciled",
-          "state": "New",
-          "storyPoints": 3
-        },
-        {
-          "id": 71775,
-          "title": "As a Platform Security Administrator, I want authenticated access enforced on order APIs so that online food orders are placed only by trusted consumers",
-          "state": "New",
-          "storyPoints": 5
-        },
-        {
-          "id": 71780,
-          "title": "As a Platform Security Administrator, I want object-level authorization on order resources so that consumers can access only their own food orders",
-          "state": "New",
-          "storyPoints": 5
-        }
-      ]
-    },
-    {
-      "id": 71741,
-      "taskId": "FEATURE-71741",
-      "title": "Order Placement and Processing",
-      "slug": "online-food-order-tracking",
-      "state": "planned",
-      "status": "needs-clarification",
-      "openQuestions": [
-        {
-          "id": "oq-1",
-          "text": "What are the exact API endpoint paths, HTTP methods, request schemas, response schemas, and status codes for:",
+          "text": "Which application platform(s) must support this feature?",
           "blocking": false
         },
         {
           "id": "oq-2",
-          "text": "order submission,",
-          "blocking": false
+          "text": "Which user roles are allowed to archive ideas?",
+          "blocking": true
         },
         {
           "id": "oq-3",
-          "text": "manager status retrieval,",
-          "blocking": false
+          "text": "Which user roles are allowed to restore archived ideas?",
+          "blocking": true
         },
         {
           "id": "oq-4",
-          "text": "customer status retrieval,",
-          "blocking": false
+          "text": "Which user roles are allowed to perform merge actions?",
+          "blocking": true
         },
         {
           "id": "oq-5",
-          "text": "status update?",
+          "text": "How are \"multiple and similar ideas\" identified for merge purposes?",
           "blocking": false
         },
         {
           "id": "oq-6",
-          "text": "What exact order fields make up “customer info”?",
+          "text": "Is similarity determined by users, by system logic, or both?",
           "blocking": false
         },
         {
           "id": "oq-7",
-          "text": "What exact item identifiers and menu/inventory reference fields are required for order submission?",
+          "text": "What UI surfaces expose archive, restore, and merge actions?",
           "blocking": false
         },
         {
           "id": "oq-8",
-          "text": "What are the complete allowed order status values and exact transition matrix?",
+          "text": "How are archived ideas displayed or identified to users?",
           "blocking": false
         },
         {
           "id": "oq-9",
-          "text": "Are `received`, `preparing`, `ready`, and `delivered` the full status set or examples only?",
+          "text": "Can users browse or filter archived ideas?",
           "blocking": false
         },
         {
           "id": "oq-10",
-          "text": "Is there a cancellation status or failure status in scope?",
-          "blocking": true
+          "text": "Are confirmation steps required before archive, restore, or merge?",
+          "blocking": false
         },
         {
           "id": "oq-11",
-          "text": "What exact authentication mechanism is required for customers and managers?",
-          "blocking": true
+          "text": "Is an API required for archive, restore, and merge operations?",
+          "blocking": false
         },
         {
           "id": "oq-12",
-          "text": "What exact authorization model determines manager permissions and scope boundaries?",
-          "blocking": true
+          "text": "If APIs are required, what are the endpoint, method, request, response, and error contracts?",
+          "blocking": false
         },
         {
           "id": "oq-13",
-          "text": "Can managers update any order in the system or only orders for a restaurant/location they manage?",
+          "text": "How is archived state represented in the data model?",
           "blocking": true
         },
         {
           "id": "oq-14",
-          "text": "What exact idempotency contract is required for repeated submissions?",
+          "text": "Must the system record merge relationships between the kept idea and archived ideas?",
           "blocking": false
         },
         {
           "id": "oq-15",
-          "text": "How should the system behave if menu API or inventory API is unavailable at submission time?",
+          "text": "Must the system record who archived or restored an idea and when?",
           "blocking": false
         },
         {
           "id": "oq-16",
-          "text": "If menu and inventory systems return conflicting availability information, which system is authoritative?",
+          "text": "Are there any conditions under which an archived idea cannot be restored?",
           "blocking": false
         },
         {
           "id": "oq-17",
-          "text": "Is estimated delivery or pickup time mandatory for every customer status response, or only when available?",
+          "text": "What state does an idea return to after restore?",
           "blocking": false
         },
         {
           "id": "oq-18",
-          "text": "What format makes status information “clear” for response consumers?",
-          "blocking": false
+          "text": "Are archived ideas retained indefinitely, or is there any retention/purge policy?",
+          "blocking": true
         },
         {
           "id": "oq-19",
-          "text": "What are the exact error response shapes and standard error codes/messages?",
+          "text": "Are there accessibility or copy standards for the UI supporting this feature?",
           "blocking": false
         },
         {
           "id": "oq-20",
-          "text": "What rate limits apply to status APIs?",
-          "blocking": false
-        },
-        {
-          "id": "oq-21",
-          "text": "What notification channels are in scope for “relevant staff” notifications?",
+          "text": "Are there any non-functional requirements for performance, security, reliability, or observability?",
           "blocking": true
-        },
-        {
-          "id": "oq-22",
-          "text": "Who qualifies as “relevant staff” for each status change?",
-          "blocking": false
-        },
-        {
-          "id": "oq-23",
-          "text": "What is the required behavior if notification dispatch fails after a successful status update?",
-          "blocking": false
-        },
-        {
-          "id": "oq-24",
-          "text": "Are notification delivery attempts required to be persisted or only dispatched?",
-          "blocking": false
-        },
-        {
-          "id": "oq-25",
-          "text": "What is the required retention period for order records, audit logs, and notification logs beyond the 30-day retrievability success metric and 5-year policy documentation requirement?",
-          "blocking": false
-        },
-        {
-          "id": "oq-26",
-          "text": "Does this feature require DPIA review under SOS-47951 due to customer data flow changes?",
-          "blocking": false
-        },
-        {
-          "id": "oq-27",
-          "text": "What data classification level applies to each order/customer field?",
-          "blocking": false
-        },
-        {
-          "id": "oq-28",
-          "text": "Are there specific response format standards, versioning rules, or API compatibility conventions for this monolith service?",
-          "blocking": false
         }
       ],
-      "storyCount": 3,
-      "totalStoryPoints": 21,
+      "storyCount": 1,
+      "totalStoryPoints": 0,
       "files": {
-        "specs": "specs/online-food-order-tracking/specs.md",
-        "requirements": "specs/online-food-order-tracking/requirements.md",
-        "prompt": "specs/online-food-order-tracking/prompt.md"
+        "specs": "specs/what-are-archived-ideas/specs.md",
+        "requirements": "specs/what-are-archived-ideas/requirements.md",
+        "prompt": "specs/what-are-archived-ideas/prompt.md"
       },
       "userStories": [
         {
-          "id": 71810,
-          "title": "As a Customer, I want to view the current status of my food order so that I can know when to expect delivery or pickup",
-          "state": "New",
-          "storyPoints": 5
-        },
-        {
-          "id": 71806,
-          "title": "As a Restaurant Manager, I want to track the processing state of orders so that I can manage kitchen workflow efficiently",
-          "state": "New",
-          "storyPoints": 8
-        },
-        {
-          "id": 71802,
-          "title": "As a Customer, I want to place an online food order so that I can conveniently purchase meals from the app",
-          "state": "New",
-          "storyPoints": 8
+          "id": 14455,
+          "title": "What are archived ideas?",
+          "state": "Parking lot",
+          "storyPoints": null
         }
       ]
     }
