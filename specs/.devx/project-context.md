@@ -5,7 +5,7 @@
 
 ## Project
 
-- Name: AABC
+- Name: specstest
 - Architecture mode: monolith
 - Context status: Pending workspace discovery
 

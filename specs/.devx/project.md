@@ -1,9 +1,9 @@
-# AABC
+# specstest
 
 > Auto-generated project context for AI-assisted development.
-> Last updated: 2026-08-28
+> Last updated: 2026-09-07
 
-**Organization:** https://nousteamdevx.atlassian.net
+**Organization:** https://dev.azure.com/qs001
 
 ## Development Methodology
 
@@ -14,9 +14,9 @@ Every feature has:
 - `requirements.md` — Implementation acceptance checklist
 - `prompt.md` — Ready-to-use implementation prompt
 
-## Features (0)
+## Features (1)
 
-
+- **Windows Application Baseline for specstest** (24 user stories)
 
 ## Getting Started
 
