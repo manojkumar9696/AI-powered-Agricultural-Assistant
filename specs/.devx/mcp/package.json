@@ -1,7 +1,7 @@
 {
-  "name": "specstest-mcp-server",
+  "name": "testingnat-mcp-server",
   "version": "1.0.0",
-  "description": "Astra MCP server for specstest specs",
+  "description": "Astra MCP server for testingnat specs",
   "type": "module",
   "main": "server.js",
   "scripts": {

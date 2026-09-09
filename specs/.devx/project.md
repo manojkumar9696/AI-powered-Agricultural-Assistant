@@ -1,9 +1,9 @@
-# specstest
+# testingnat
 
 > Auto-generated project context for AI-assisted development.
-> Last updated: 2026-09-07
+> Last updated: 2026-09-09
 
-**Organization:** https://dev.azure.com/qs001
+**Organization:** test27112025
 
 ## Development Methodology
 
@@ -16,7 +16,7 @@ Every feature has:
 
 ## Features (1)
 
-- **Windows Application Baseline for specstest** (24 user stories)
+- **Shopping Website User Interaction** (18 user stories)
 
 ## Getting Started
 

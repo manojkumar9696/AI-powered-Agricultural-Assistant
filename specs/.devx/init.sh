@@ -198,11 +198,14 @@ read_menu_key() {
       case "$rest" in
         *A) MENU_ACTION='up' ;;
         *B) MENU_ACTION='down' ;;
-        *) MENU_ACTION='escape' ;;
+        *H|*OH|*[1|*[7) MENU_ACTION='home' ;;
+        *F|*OF|*[4|*[8) MENU_ACTION='end' ;;
+        *) MENU_ACTION='cancel' ;;
       esac
       ;;
     k|K|w|W) MENU_ACTION='up' ;;
     j|J|s|S) MENU_ACTION='down' ;;
+    q|Q) MENU_ACTION='cancel' ;;
     [0-9]) MENU_ACTION="number:$key" ;;
     *) MENU_ACTION='other' ;;
   esac
@@ -237,7 +240,7 @@ choose_menu() {
   shift 2
   local options=("$@")
   local count="${#options[@]}"
-  local action key starts_at_zero=0
+  local action key starts_at_zero=0 rendered_lines=0
   MENU_CHOICE_INDEX="$default_index"
   [ "$MENU_CHOICE_INDEX" -lt 0 ] && MENU_CHOICE_INDEX=0
   [ "$MENU_CHOICE_INDEX" -ge "$count" ] && MENU_CHOICE_INDEX=$((count - 1))
@@ -251,7 +254,9 @@ choose_menu() {
       printf '  %s\n' "${options[$i]}" >&2
     done
     printf 'Choice: ' >&2
-    read -r typed
+    if ! read -r typed; then
+      typed=""
+    fi
     if [ "$starts_at_zero" = "1" ] && [[ "$typed" =~ ^[0-9]+$ ]] && [ "$typed" -ge 0 ] && [ "$typed" -lt "$count" ]; then
       MENU_CHOICE_INDEX="$typed"
     elif [[ "$typed" =~ ^[0-9]+$ ]] && [ "$typed" -ge 1 ] && [ "$typed" -le "$count" ]; then
@@ -260,7 +265,7 @@ choose_menu() {
     return 0
   fi
 
-  printf '%sUse Up/Down arrows, j/k, w/s, and Enter/Space, or press a number.%s\n' "$C_DIM" "$C_RESET" >&2
+  printf '%sUse Up/Down arrows, j/k, w/s, Home/End, Enter/Space, or press a number. Esc/q cancels.%s\n' "$C_DIM" "$C_RESET" >&2
   MENU_TTY_STATE="$(stty -g 2>/dev/null || true)"
   if [ -n "$MENU_TTY_STATE" ]; then
     MENU_PREV_EXIT_TRAP="$(trap -p EXIT)"
@@ -270,6 +275,7 @@ choose_menu() {
     trap restore_menu_tty EXIT
     trap abort_menu INT TERM
   fi
+  rendered_lines=$count
   while true; do
     local i
     for i in "${!options[@]}"; do
@@ -286,6 +292,12 @@ choose_menu() {
       enter) break ;;
       up) MENU_CHOICE_INDEX=$(( (MENU_CHOICE_INDEX + count - 1) % count )) ;;
       down) MENU_CHOICE_INDEX=$(( (MENU_CHOICE_INDEX + 1) % count )) ;;
+      home) MENU_CHOICE_INDEX=0 ;;
+      end) MENU_CHOICE_INDEX=$((count - 1)) ;;
+      cancel)
+        MENU_CHOICE_INDEX=-1
+        break
+        ;;
       number:*)
         key="${action#number:}"
         if [ "$starts_at_zero" = "1" ] && [ "$key" -ge 0 ] && [ "$key" -lt "$count" ]; then
@@ -297,11 +309,16 @@ choose_menu() {
         fi
         ;;
     esac
-    printf '\033[%sA\033[J' "$count" >&2
+    printf '\033[%sA\033[J' "$rendered_lines" >&2
   done
   restore_menu_tty
   restore_menu_traps
-  printf '\033[%sA\033[J' "$count" >&2
+  printf '\033[%sA\033[J' "$rendered_lines" >&2
+  if [ "$MENU_CHOICE_INDEX" -lt 0 ]; then
+    printf '  %sCancelled%s\n' "$C_YELLOW" "$C_RESET" >&2
+    warn "Selection cancelled."
+    exit 130
+  fi
   printf '  %s> %s%s\n' "$C_GREEN$C_BOLD" "${options[$MENU_CHOICE_INDEX]}" "$C_RESET" >&2
 }
 

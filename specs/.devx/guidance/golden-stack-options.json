@@ -1,32 +1,15 @@
 {
   "version": "1.0",
-  "projectName": "test12",
-  "generatedAt": "2026-08-28T08:13:34.981Z",
+  "projectName": "testingnat",
+  "generatedAt": "2026-09-09T04:49:26.473Z",
   "source": "golden-repo-guidance",
   "options": {
-    "ui": [
-      "react",
-      "angular"
-    ],
-    "backend": [
-      "node",
-      "python",
-      "dotnet"
-    ],
-    "database": [
-      "postgres"
-    ],
+    "ui": [],
+    "backend": [],
+    "database": [],
     "ai": [],
-    "uiCustom": [
-      "nextjs",
-      "flutter",
-      "react-native",
-      "android"
-    ],
-    "backendCustom": [
-      "spring",
-      "django"
-    ],
+    "uiCustom": [],
+    "backendCustom": [],
     "databaseCustom": []
   }
 }

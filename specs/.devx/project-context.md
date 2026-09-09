@@ -5,7 +5,7 @@
 
 ## Project
 
-- Name: specstest
+- Name: testingnat
 - Architecture mode: monolith
 - Context status: Pending workspace discovery
 

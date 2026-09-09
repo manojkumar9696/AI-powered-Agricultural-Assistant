@@ -1,269 +1,143 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-09-07T11:34:39.634Z",
+  "generatedAt": "2026-09-09T04:49:26.497Z",
   "enableTdd": false,
   "totalFeatures": 1,
   "features": [
     {
-      "id": 56807,
-      "taskId": "FEATURE-56807",
-      "title": "Windows Application Baseline for specstest",
-      "slug": "windows-brd-governance-baseline",
+      "id": 77599,
+      "taskId": "FEATURE-77599",
+      "title": "Shopping Website User Interaction",
+      "slug": "shopping-catalog-cart-checkout",
       "state": "planned",
       "status": "needs-clarification",
       "openQuestions": [
         {
           "id": "oq-1",
-          "text": "What is the exact project identifier value or canonical project context identifier for specstest across all APIs and records?",
-          "blocking": false
+          "text": "Whether authenticated users are in scope for this feature’s cart behavior is not explicitly defined; current selected cart stories primarily define active browser session behavior.",
+          "blocking": true
         },
         {
           "id": "oq-2",
-          "text": "What is the exact API endpoint for creating, updating, and retrieving individual BRD requirement records?",
+          "text": "Whether guest and authenticated cart merging behavior is needed is not defined.",
           "blocking": false
-        },
-        {
-          "id": "oq-3",
-          "text": "What is the exact API endpoint for retrieving BRD requirement history?",
-          "blocking": false
-        },
-        {
-          "id": "oq-4",
-          "text": "What are the exact request/response schemas for architecture baseline, packaging, deployment, BRD baseline, BRD requirement, prerequisite, readiness, and audit APIs?",
-          "blocking": false
-        },
-        {
-          "id": "oq-5",
-          "text": "What are the exact allowed `approvalStatus` values for packaging and deployment records?",
-          "blocking": false
-        },
-        {
-          "id": "oq-6",
-          "text": "What are the exact mandatory metadata fields described as “any required project-linked metadata” for packaging?",
-          "blocking": false
-        },
-        {
-          "id": "oq-7",
-          "text": "What are the exact fields that define “architecture scope” for build-finalization gate evaluation?",
-          "blocking": true
-        },
-        {
-          "id": "oq-8",
-          "text": "What are the exact fields required to document “support-relevant deployment considerations for installation, update, and recovery scenarios”?",
-          "blocking": false
-        },
-        {
-          "id": "oq-9",
-          "text": "What are the exact BRD lifecycle states and transition rules beyond the examples `draft`, `under review`, `approved`, and `superseded`? Is `rejected` a formal BRD document status or only a review/approval outcome?",
-          "blocking": false
-        },
-        {
-          "id": "oq-10",
-          "text": "What are the exact architecture baseline approval workflow roles and assignment rules, since some stories refer to reviewers generically?",
-          "blocking": true
-        },
-        {
-          "id": "oq-11",
-          "text": "What are the exact permissions for read access to BRD, architecture, deployment, prerequisite, and audit data by each actor?",
-          "blocking": true
-        },
-        {
-          "id": "oq-12",
-          "text": "What are the exact payload requirements for change request approval details and integration proposal metadata?",
-          "blocking": false
-        },
-        {
-          "id": "oq-13",
-          "text": "What is the required retention period for audit logs and immutable history beyond the stated ability to retrieve 12 months of BRD history?",
-          "blocking": false
-        },
-        {
-          "id": "oq-14",
-          "text": "What is the exact definition of “complete” for BRD baseline and architecture baseline outside the explicitly listed required fields?",
-          "blocking": false
-        },
-        {
-          "id": "oq-15",
-          "text": "What is the exact endpoint or transaction contract for build finalization and final build approval?",
-          "blocking": false
-        },
-        {
-          "id": "oq-16",
-          "text": "What is the exact representation of runtime dependency entries: name only, name/version pairs, or structured objects in all cases?",
-          "blocking": false
-        },
-        {
-          "id": "oq-17",
-          "text": "What are the exact normalization rules for BRD version values?",
-          "blocking": false
-        },
-        {
-          "id": "oq-18",
-          "text": "What is the exact notification payload and delivery mechanism for document owner notifications after BRD review actions?",
-          "blocking": true
-        },
-        {
-          "id": "oq-19",
-          "text": "Are view actions on controlled records required to be audit logged universally, or only included in audit reports where captured by the repository/security controls?",
-          "blocking": true
-        },
-        {
-          "id": "oq-20",
-          "text": "What are the specific enterprise-approved encryption standards referenced for data in transit and at rest?",
-          "blocking": true
         }
       ],
-      "storyCount": 24,
-      "totalStoryPoints": 65,
+      "storyCount": 18,
+      "totalStoryPoints": 49,
       "files": {
-        "specs": "specs/windows-brd-governance-baseline/specs.md",
-        "requirements": "specs/windows-brd-governance-baseline/requirements.md",
-        "prompt": "specs/windows-brd-governance-baseline/prompt.md"
+        "specs": "specs/shopping-catalog-cart-checkout/specs.md",
+        "requirements": "specs/shopping-catalog-cart-checkout/requirements.md",
+        "prompt": "specs/shopping-catalog-cart-checkout/prompt.md"
       },
       "userStories": [
         {
-          "id": 56810,
-          "title": "Windows Application Foundation",
+          "id": 77600,
+          "title": "Product Catalog Presentation",
           "state": "New",
           "storyPoints": null
         },
         {
-          "id": 56843,
-          "title": "As a Desktop Engineer, I want to document the Windows packaging approach so that the specstest application can be built and distributed consistently",
-          "state": "New",
-          "storyPoints": 3
-        },
-        {
-          "id": 56851,
-          "title": "As a Deployment Manager, I want to define the Windows deployment method so that the specstest application can be released through an approved enterprise path",
-          "state": "New",
-          "storyPoints": 3
-        },
-        {
-          "id": 56859,
-          "title": "As a Business Analyst, I want to maintain the BRD as the authoritative requirement baseline so that the Windows application scope remains clear and reviewable",
-          "state": "New",
-          "storyPoints": 3
-        },
-        {
-          "id": 56867,
-          "title": "As a Project Manager, I want to control scope additions and integration changes so that the Windows application is delivered without unapproved requirements",
-          "state": "New",
-          "storyPoints": 3
-        },
-        {
-          "id": 56932,
-          "title": "As a Business Analyst, I want to link each BRD requirement to its source requirement identifier so that scope decisions remain traceable",
-          "state": "New",
-          "storyPoints": 3
-        },
-        {
-          "id": 56940,
-          "title": "As an Audit Manager, I want to view change history for BRD requirement records so that document lineage remains verifiable",
-          "state": "New",
-          "storyPoints": 3
-        },
-        {
-          "id": 56875,
-          "title": "As a Security Administrator, I want to enforce role-based access and audit logging for the Windows application baseline so that controlled project records remain protected and reviewable",
-          "state": "New",
-          "storyPoints": 3
-        },
-        {
-          "id": 56883,
-          "title": "As a Requirements Manager, I want to manage BRD version and status transitions so that document control remains compliant and traceable",
-          "state": "New",
-          "storyPoints": 3
-        },
-        {
-          "id": 56891,
-          "title": "As a Stakeholder Reviewer, I want to review requirement entries in a formal approval workflow so that the BRD can progress through controlled governance gates",
-          "state": "New",
-          "storyPoints": 3
-        },
-        {
-          "id": 56899,
-          "title": "As an Approval Manager, I want to finalize BRD approval outcomes so that only reviewed requirements become the active project baseline",
-          "state": "New",
-          "storyPoints": 3
-        },
-        {
-          "id": 56948,
-          "title": "As a Project Manager, I want build readiness to depend on BRD and architecture approval status so that build finalization does not bypass governance gates",
-          "state": "New",
-          "storyPoints": 3
-        },
-        {
-          "id": 56907,
-          "title": "As a Release Manager, I want to enforce the architecture readiness gate before build finalization so that incomplete baseline decisions do not block deployment preparation",
-          "state": "New",
-          "storyPoints": 3
-        },
-        {
-          "id": 56956,
-          "title": "As a Security Architect, I want the BRD and architecture baseline repository to enforce secure access and audit reporting so that governance evidence is available for enterprise review",
+          "id": 77613,
+          "title": "As a Shopping website user, I want to open a product detail page so that I can review a purchasable item before selecting it",
           "state": "New",
           "storyPoints": 5
         },
         {
-          "id": 56998,
-          "title": "As a Governance Lead, I want build finalization blocked until the architecture baseline is approved so that the Windows application follows formal stage-gate controls",
+          "id": 77622,
+          "title": "As a Shopping website user, I want to add a product to my shopping cart so that I can select items for purchase",
           "state": "New",
-          "storyPoints": 3
+          "storyPoints": 8
         },
         {
-          "id": 57006,
-          "title": "As a Solution Reviewer, I want unapproved integration assumptions flagged during baseline review so that the Windows application scope stays aligned to approved source requirements",
+          "id": 77631,
+          "title": "As a Shopping website user, I want to review and update my shopping cart so that my selected items remain accurate before purchase",
           "state": "New",
-          "storyPoints": 2
+          "storyPoints": 8
         },
         {
-          "id": 56916,
-          "title": "As an Enterprise Architect, I want to block unsupported external integration assumptions so that the specstest Windows application remains within approved scope",
-          "state": "New",
-          "storyPoints": 3
+          "id": 77645,
+          "title": "Prevent silent overwrite during concurrent draft edits",
+          "state": "Design",
+          "storyPoints": null
         },
         {
-          "id": 56924,
-          "title": "As a Stakeholder Reviewer, I want to review BRD entries in a standardized format so that I can assess requirements for the specstest Windows application efficiently",
-          "state": "New",
-          "storyPoints": 2
+          "id": 77646,
+          "title": "Save draft plan with complete interaction coverage metadata",
+          "state": "Design",
+          "storyPoints": null
         },
         {
-          "id": 56965,
-          "title": "As a Project Manager, I want to track architecture baseline review status so that build planning reflects approved documentation gates",
-          "state": "New",
-          "storyPoints": 2
+          "id": 77647,
+          "title": "Block publish when browser matrix and requirement mappings are missing",
+          "state": "Design",
+          "storyPoints": null
         },
         {
-          "id": 56973,
-          "title": "As an Information Security Analyst, I want to review runtime prerequisites against enterprise desktop security standards so that the Windows application baseline aligns with controlled Windows environments",
-          "state": "New",
-          "storyPoints": 2
+          "id": 77653,
+          "title": "Reject duplicate suite scope under the same parent plan",
+          "state": "Design",
+          "storyPoints": null
         },
         {
-          "id": 56981,
-          "title": "As a Release Manager, I want to confirm prerequisite readiness before final build approval so that packaging and deployment are based on supported client conditions",
-          "state": "New",
-          "storyPoints": 2
+          "id": 77654,
+          "title": "Create distinct capability suites under one shopping test plan",
+          "state": "Design",
+          "storyPoints": null
         },
         {
-          "id": 56989,
-          "title": "As a Support Lead, I want packaging and deployment decisions documented together so that operational teams can support installation and rollout issues consistently",
-          "state": "New",
-          "storyPoints": 2
+          "id": 77655,
+          "title": "Assign test cases to suite and verify audit history is written",
+          "state": "Design",
+          "storyPoints": null
         },
         {
-          "id": 56827,
-          "title": "As a Solution Architect, I want to define the specstest desktop application as a Windows application so that the project is implemented on the correct client platform",
-          "state": "New",
-          "storyPoints": 3
+          "id": 77661,
+          "title": "Reject closure when resolution summary is missing",
+          "state": "Design",
+          "storyPoints": null
         },
         {
-          "id": 56835,
-          "title": "As a Release Manager, I want to record supported Windows client prerequisites so that the specstest application can be deployed to compliant desktop environments",
+          "id": 77662,
+          "title": "Create unresolved scope issue with required metadata",
+          "state": "Design",
+          "storyPoints": null
+        },
+        {
+          "id": 77663,
+          "title": "Capture field updates and comments in history",
+          "state": "Design",
+          "storyPoints": null
+        },
+        {
+          "id": 77664,
+          "title": "As a shopper, I want to review my cart and begin checkout so that I can confirm my items before purchasing",
           "state": "New",
-          "storyPoints": 3
+          "storyPoints": 5
+        },
+        {
+          "id": 77673,
+          "title": "As a shopper, I want to enter shipping and billing information during checkout so that my order can be fulfilled correctly",
+          "state": "New",
+          "storyPoints": 5
+        },
+        {
+          "id": 77682,
+          "title": "As a shopper, I want to complete payment securely so that I can place my order with confidence",
+          "state": "New",
+          "storyPoints": 8
+        },
+        {
+          "id": 77691,
+          "title": "As a shopper, I want to see an order confirmation after purchase so that I know my order was placed successfully",
+          "state": "New",
+          "storyPoints": 5
+        },
+        {
+          "id": 77604,
+          "title": "As a Shopping website user, I want to browse purchasable products in the catalog so that I can discover items available for shopping",
+          "state": "New",
+          "storyPoints": 5
         }
       ]
     }
