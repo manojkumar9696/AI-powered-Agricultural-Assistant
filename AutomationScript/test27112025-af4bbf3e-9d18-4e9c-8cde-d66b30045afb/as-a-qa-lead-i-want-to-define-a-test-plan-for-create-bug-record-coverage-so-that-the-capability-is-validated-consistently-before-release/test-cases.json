@@ -1,0 +1,589 @@
+{
+  "storyId": "ado-78413",
+  "storyTitle": "As a QA Lead, I want to define a test plan for create bug record coverage so that the capability is validated consistently before release",
+  "testCases": [],
+  "functional": [
+    {
+      "id": "TC-FUNC-001",
+      "title": "Create and save an approved test plan that includes all required in-scope POST /api/v1/bugs coverage items",
+      "category": "Functional",
+      "priority": "High",
+      "preconditions": [
+        "QA Lead user account is authenticated to the test management repository with permission to create and edit test plan documents.",
+        "Source references are available to the tester: POST /api/v1/bugs API contract, requirement references c8f316b6-c0b1-474d-a953-38e5677ed6b8 and FR-1, and the Bug Record Creation and Traceability epic details.",
+        "A draft or new test plan record can be created in the repository section used for API validation planning.",
+        "The repository supports plan sections for scope, coverage items, prerequisites, governance, and traceability."
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "action": "Open the test management repository and create a new test plan named \"POST /api/v1/bugs Create Bug Record Test Plan - Pre-release Validation\".",
+          "expectedResult": "A new editable test plan record is created and displayed with sections or fields available for plan content entry."
+        },
+        {
+          "step": 2,
+          "action": "In the Scope or In-Scope Coverage section, enter planned coverage items for: successful create request, payload validation failure, unauthenticated access, forbidden access for insufficient roles, audit verification, and response-time checks.",
+          "expectedResult": "All six required coverage areas are recorded as explicit in-scope items with no missing category from the acceptance criteria."
+        },
+        {
+          "step": 3,
+          "action": "For each listed coverage item, add a brief objective that references POST /api/v1/bugs behavior, such as expected success and failure handling, audit evidence, and service timing expectations.",
+          "expectedResult": "Each coverage item contains a meaningful validation objective tied to the create bug record API behavior rather than generic text."
+        },
+        {
+          "step": 4,
+          "action": "Save the test plan draft and reopen it from the repository list.",
+          "expectedResult": "The plan persists successfully, and all entered in-scope coverage items remain present after reload."
+        },
+        {
+          "step": 5,
+          "action": "Review the saved plan content against the story acceptance criteria for required in-scope coverage.",
+          "expectedResult": "The saved plan explicitly covers successful creation, payload validation failure, unauthenticated access, forbidden access, audit verification, and response-time checks exactly as required."
+        },
+        {
+          "step": 6,
+          "action": "Submit or mark the test plan for approval according to repository workflow.",
+          "expectedResult": "The test plan status changes to the appropriate review or approval state, indicating it is ready for QA reviewer approval."
+        }
+      ],
+      "postconditions": [
+        "A persisted test plan exists in the repository for POST /api/v1/bugs create bug record validation.",
+        "The plan contains all required in-scope coverage items defined by the story and acceptance criteria.",
+        "The plan is available for reviewer approval and later use as the standard pre-release validation reference."
+      ]
+    },
+    {
+      "id": "TC-FUNC-002",
+      "title": "Document execution prerequisites and entry criteria required before create bug record validation can begin",
+      "category": "Functional",
+      "priority": "High",
+      "preconditions": [
+        "An editable test plan for POST /api/v1/bugs already exists in the test management repository.",
+        "QA Lead has access to environment configuration records for the deployed API build, endpoint URL, authentication setup, seeded roles, persistence verification source, and audit log access details.",
+        "The API contract for POST /api/v1/bugs is available for reference."
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "action": "Open the existing POST /api/v1/bugs test plan and navigate to the Preconditions or Prerequisites section.",
+          "expectedResult": "The plan opens in edit mode with the prerequisites section available for update."
+        },
+        {
+          "step": 2,
+          "action": "Add execution prerequisites for a deployed build, reachable POST /api/v1/bugs endpoint, configured authentication, seeded QA and non-privileged roles, required sample payload data, persistence visibility, and audit log access.",
+          "expectedResult": "All required execution prerequisites from the acceptance criteria are explicitly listed in the plan."
+        },
+        {
+          "step": 3,
+          "action": "Navigate to the Entry Criteria section and enter criteria requiring environment readiness, availability of the POST /api/v1/bugs contract, confirmed access to required authentication and logging dependencies, and an identified evidence storage location before execution starts.",
+          "expectedResult": "The entry criteria section contains each mandatory gate needed before test execution is allowed to begin."
+        },
+        {
+          "step": 4,
+          "action": "Add specific repository references or identifiers for where evidence will be stored, such as the designated test evidence folder or release-cycle evidence location.",
+          "expectedResult": "The plan includes a concrete evidence storage location that can be used consistently by the QA team."
+        },
+        {
+          "step": 5,
+          "action": "Save the plan and reopen the prerequisites and entry criteria sections for verification.",
+          "expectedResult": "All prerequisites and entry criteria persist exactly as entered and remain associated with the create bug record test plan."
+        },
+        {
+          "step": 6,
+          "action": "Review the saved content against acceptance criteria 2 and 3.",
+          "expectedResult": "The plan fully documents required execution prerequisites and entry criteria with no missing dependency or readiness condition."
+        }
+      ],
+      "postconditions": [
+        "The approved test plan draft contains complete prerequisite documentation for executing POST /api/v1/bugs validation.",
+        "The plan contains explicit entry criteria that must be satisfied before QA execution begins.",
+        "Evidence storage expectations are documented for consistent pre-release validation."
+      ]
+    },
+    {
+      "id": "TC-FUNC-003",
+      "title": "Define measurable exit criteria, evidence requirements, and blocking rules for unresolved high-severity defects",
+      "category": "Functional",
+      "priority": "High",
+      "preconditions": [
+        "An editable create bug record test plan exists in the repository.",
+        "QA Lead has authority to define QA governance rules for plan completion, pass thresholds, and evidence capture.",
+        "Repository template or plan section supports governance fields such as exit criteria, pass threshold, and defect handling rules."
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "action": "Open the create bug record test plan and navigate to the Exit Criteria or Governance section.",
+          "expectedResult": "The governance section is available for entering measurable completion rules."
+        },
+        {
+          "step": 2,
+          "action": "Enter a measurable pass threshold for in-scope coverage completion, such as requiring all planned coverage items to be executed and pass unless an approved exception is documented.",
+          "expectedResult": "A measurable pass threshold is recorded in the plan rather than a vague completion statement."
+        },
+        {
+          "step": 3,
+          "action": "Add a rule that mandatory evidence must be captured for every in-scope coverage item, including API response evidence, persistence verification evidence, and audit verification evidence where applicable.",
+          "expectedResult": "Evidence expectations are explicit and apply to every planned coverage item."
+        },
+        {
+          "step": 4,
+          "action": "Add a blocking rule stating that unresolved high-severity defects prevent completion of create bug record validation.",
+          "expectedResult": "The plan clearly states that unresolved high-severity defects block completion or sign-off."
+        },
+        {
+          "step": 5,
+          "action": "Save the updated plan and reopen the governance section.",
+          "expectedResult": "The measurable pass threshold, mandatory evidence requirements, and defect blocking rule persist successfully."
+        },
+        {
+          "step": 6,
+          "action": "Review the final governance content against the story acceptance criteria for exit control requirements.",
+          "expectedResult": "The plan satisfies the required exit criteria, evidence capture expectation, and unresolved high-severity defect handling rule."
+        }
+      ],
+      "postconditions": [
+        "The test plan contains measurable exit criteria for release-readiness assessment.",
+        "Mandatory evidence capture is documented for all in-scope coverage items.",
+        "A blocking governance rule exists preventing completion when high-severity defects remain unresolved."
+      ]
+    },
+    {
+      "id": "TC-FUNC-004",
+      "title": "Complete traceability matrix mapping every planned coverage item to c8f316b6-c0b1-474d-a953-38e5677ed6b8 and FR-1 without gaps",
+      "category": "Functional",
+      "priority": "High",
+      "preconditions": [
+        "The create bug record test plan already contains the planned coverage items for success, validation failure, unauthenticated access, forbidden access, audit verification, and response-time checks.",
+        "Requirement references c8f316b6-c0b1-474d-a953-38e5677ed6b8 and FR-1 are available and accessible to the QA Lead.",
+        "The test management repository supports a traceability matrix, linked requirement field, or equivalent mapping mechanism."
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "action": "Open the create bug record test plan and navigate to the Traceability Matrix or Requirements Mapping section.",
+          "expectedResult": "The plan displays an editable area for linking coverage items to requirements."
+        },
+        {
+          "step": 2,
+          "action": "Create one traceability row for each planned coverage item: successful creation, payload validation failure, unauthenticated access, forbidden access, audit verification, and response-time checks.",
+          "expectedResult": "Each in-scope coverage item has a distinct row or mapping entry in the traceability matrix."
+        },
+        {
+          "step": 3,
+          "action": "Map every traceability row to requirement references c8f316b6-c0b1-474d-a953-38e5677ed6b8 and FR-1 using the repository linkage method.",
+          "expectedResult": "Each coverage item is linked to both required references, and the matrix shows no blank requirement cells."
+        },
+        {
+          "step": 4,
+          "action": "Review the matrix for unmapped items, duplicate rows, or coverage items present elsewhere in the plan but absent from the matrix.",
+          "expectedResult": "No planned coverage item remains unmapped, and the matrix accurately reflects all in-scope validation areas."
+        },
+        {
+          "step": 5,
+          "action": "Save the traceability matrix and reopen the plan from the repository list.",
+          "expectedResult": "The traceability mappings persist and remain visible after reload."
+        },
+        {
+          "step": 6,
+          "action": "Perform a final comparison between the plan's in-scope coverage section and the saved traceability matrix.",
+          "expectedResult": "There is a one-to-one correspondence between planned coverage items and traceability entries, with zero unmapped scenarios."
+        }
+      ],
+      "postconditions": [
+        "The test plan contains a complete traceability matrix for every planned create bug record coverage item.",
+        "All planned coverage items are mapped to c8f316b6-c0b1-474d-a953-38e5677ed6b8 and FR-1.",
+        "The repository contains a release-ready test plan with complete requirement traceability and no gaps."
+      ]
+    }
+  ],
+  "negative": [
+    {
+      "id": "TC-NEGA-001",
+      "title": "Attempt to finalize the test plan when required in-scope coverage items are missing",
+      "category": "Negative",
+      "priority": "High",
+      "preconditions": [
+        "QA Lead is logged in to the test management repository and can edit a draft create bug record test plan.",
+        "A draft plan exists for POST /api/v1/bugs but currently omits at least one required coverage item, such as audit verification or response-time checks.",
+        "Repository workflow includes save validation, review submission validation, or approval readiness checks."
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "action": "Open the draft create bug record test plan and go to the In-Scope Coverage section.",
+          "expectedResult": "The existing coverage list is visible and editable."
+        },
+        {
+          "step": 2,
+          "action": "Verify that one or more mandatory coverage items are intentionally absent from the plan, for example removing \"forbidden access\" and \"audit verification\" if they are present.",
+          "expectedResult": "The plan is now incomplete relative to the acceptance criteria for required coverage areas."
+        },
+        {
+          "step": 3,
+          "action": "Save the incomplete plan and attempt to submit it for approval or mark it as final.",
+          "expectedResult": "The system either prevents finalization or the QA review process identifies the document as incomplete for mandatory in-scope coverage."
+        },
+        {
+          "step": 4,
+          "action": "Review the validation message, checklist result, or review comments returned by the repository workflow.",
+          "expectedResult": "The missing required coverage items are clearly identified, such as absent payload validation failure, forbidden access, audit verification, or response-time checks."
+        },
+        {
+          "step": 5,
+          "action": "Reopen the plan summary or validation panel.",
+          "expectedResult": "The plan remains in draft or rejected status and is not considered approved or complete."
+        },
+        {
+          "step": 6,
+          "action": "Confirm that no approved version of the plan was created from the incomplete submission.",
+          "expectedResult": "Repository status and revision history show that approval/finalization did not occur while mandatory coverage was missing."
+        }
+      ],
+      "postconditions": [
+        "The incomplete test plan is not approved as the standard validation reference.",
+        "The repository retains the plan in a non-final state until required in-scope coverage is added.",
+        "No release-ready plan exists with missing mandatory create bug record coverage areas."
+      ]
+    },
+    {
+      "id": "TC-NEGA-002",
+      "title": "Attempt to finalize the test plan with missing prerequisites, entry controls, or evidence and defect governance details",
+      "category": "Negative",
+      "priority": "High",
+      "preconditions": [
+        "QA Lead is authenticated to the test management repository with edit permissions.",
+        "A draft POST /api/v1/bugs test plan exists and can be modified.",
+        "The draft plan is missing one or more required governance elements, such as evidence storage location, pass threshold, or unresolved high-severity defect blocking rule."
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "action": "Open the draft test plan and navigate to the Prerequisites, Entry Criteria, and Exit Criteria sections.",
+          "expectedResult": "All three governance-related sections are available for review and editing."
+        },
+        {
+          "step": 2,
+          "action": "Remove or leave blank required items such as audit log access prerequisite, identified evidence storage location, measurable pass threshold, and the rule that unresolved high-severity defects block completion.",
+          "expectedResult": "The plan now lacks mandatory execution control and governance information required by the acceptance criteria."
+        },
+        {
+          "step": 3,
+          "action": "Save the draft and attempt to submit the plan for approval or mark it ready for pre-release use.",
+          "expectedResult": "The system or review workflow does not accept the plan as complete because mandatory prerequisites, entry criteria, or exit criteria details are missing."
+        },
+        {
+          "step": 4,
+          "action": "Inspect any validation message, checklist output, or reviewer rejection note produced by the workflow.",
+          "expectedResult": "The missing prerequisite or governance items are specifically identified, such as absent evidence storage location, missing pass threshold, or no high-severity defect blocking rule."
+        },
+        {
+          "step": 5,
+          "action": "Open the plan status or approval history after the failed submission.",
+          "expectedResult": "The plan remains in draft, requires changes, or rejected state and is not marked approved."
+        },
+        {
+          "step": 6,
+          "action": "Confirm that the plan cannot be used as the formal reference for create bug record validation until the missing controls are restored.",
+          "expectedResult": "No approved reference plan is available from this incomplete draft, preserving governance compliance."
+        }
+      ],
+      "postconditions": [
+        "The plan is prevented from being finalized when required prerequisites, entry criteria, or exit criteria are incomplete.",
+        "Governance gaps are visible to the QA Lead for correction before approval.",
+        "The repository does not contain an approved create bug record test plan lacking mandatory evidence or defect handling controls."
+      ]
+    },
+    {
+      "id": "TC-NEGA-003",
+      "title": "Detect and reject a traceability matrix that contains unmapped or partially mapped planned coverage items",
+      "category": "Negative",
+      "priority": "High",
+      "preconditions": [
+        "A draft create bug record test plan exists with all planned coverage items already listed.",
+        "QA Lead has edit access to the traceability matrix within the repository.",
+        "The repository or review process allows inspection of requirement mappings before approval."
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "action": "Open the test plan and navigate to the Traceability Matrix section.",
+          "expectedResult": "The matrix is displayed with editable rows for coverage-to-requirement mapping."
+        },
+        {
+          "step": 2,
+          "action": "Leave one planned coverage item unmapped, or map one item only to c8f316b6-c0b1-474d-a953-38e5677ed6b8 while omitting FR-1.",
+          "expectedResult": "The matrix now contains an intentional traceability gap or partial mapping."
+        },
+        {
+          "step": 3,
+          "action": "Save the traceability matrix and attempt to submit the overall test plan for approval.",
+          "expectedResult": "The approval or readiness check identifies that the plan contains unmapped or incompletely mapped scenarios."
+        },
+        {
+          "step": 4,
+          "action": "Review the validation output or reviewer feedback for the traceability section.",
+          "expectedResult": "The specific unmapped coverage item is called out, and the missing requirement reference is identified."
+        },
+        {
+          "step": 5,
+          "action": "Compare the in-scope coverage list against the traceability matrix rows.",
+          "expectedResult": "The mismatch is reproducible and visible: at least one planned scenario is not fully mapped to both c8f316b6-c0b1-474d-a953-38e5677ed6b8 and FR-1."
+        },
+        {
+          "step": 6,
+          "action": "Check plan status after the failed traceability review.",
+          "expectedResult": "The plan is not approved or finalized until all planned coverage items are fully mapped with no gaps."
+        }
+      ],
+      "postconditions": [
+        "The repository does not allow an incomplete traceability matrix to stand as an approved release reference.",
+        "The QA Lead is required to complete all mappings before the plan can be finalized.",
+        "No approved version exists with unmapped or partially mapped create bug record coverage items."
+      ]
+    }
+  ],
+  "edgeCases": [
+    {
+      "id": "TC-EDGE-001",
+      "title": "Verify the approved test plan remains complete and traceable when one planned coverage item has no mapped requirement reference",
+      "category": "Edge Cases",
+      "priority": "High",
+      "preconditions": [
+        "QA Lead is logged into the test management repository with permission to edit and submit the create bug record test plan.",
+        "A draft test plan exists for POST /api/v1/bugs with coverage sections for successful creation, payload validation failure, unauthenticated access, forbidden access, audit verification, and response-time checks.",
+        "Requirement references c8f316b6-c0b1-474d-a953-38e5677ed6b8 and FR-1 are available for selection or linking in the repository.",
+        "Repository approval workflow is enabled so validation or reviewer feedback can be observed."
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "action": "Open the draft test plan for create bug record coverage and navigate to the traceability matrix section.",
+          "expectedResult": "The traceability matrix displays each planned coverage item and its mapped requirement references for POST /api/v1/bugs."
+        },
+        {
+          "step": 2,
+          "action": "Review the listed coverage items and confirm that all six in-scope areas are present: successful creation, payload validation failure, unauthenticated access, forbidden access for insufficient roles, audit verification, and response-time checks.",
+          "expectedResult": "All required in-scope coverage items are present in the plan, matching the acceptance criteria for planned coverage."
+        },
+        {
+          "step": 3,
+          "action": "Edit the traceability mapping for the \"response-time checks\" coverage item and remove both requirement references so that the row is left unmapped, then save the draft.",
+          "expectedResult": "The draft saves with the response-time coverage item visibly unmapped or flagged as missing required traceability."
+        },
+        {
+          "step": 4,
+          "action": "Run the repository validation action or submit the test plan for approval with the unmapped coverage item still present.",
+          "expectedResult": "The system blocks approval or raises a validation/reviewer finding indicating that every planned coverage item must map to c8f316b6-c0b1-474d-a953-38e5677ed6b8 and FR-1, and that unmapped scenarios are not permitted."
+        },
+        {
+          "step": 5,
+          "action": "Update the same traceability row by linking the response-time checks coverage item back to c8f316b6-c0b1-474d-a953-38e5677ed6b8 and FR-1, then save the plan.",
+          "expectedResult": "The traceability matrix shows the response-time checks item mapped to both required references with no unmapped warning remaining."
+        },
+        {
+          "step": 6,
+          "action": "Re-run validation or resubmit the plan for approval.",
+          "expectedResult": "Validation passes for traceability completeness, or reviewer-facing errors for unmapped coverage are no longer shown."
+        },
+        {
+          "step": 7,
+          "action": "Perform a final review of the matrix to confirm every planned coverage item has requirement links and none are blank.",
+          "expectedResult": "The test plan contains a complete traceability matrix with no unmapped coverage items, satisfying the story's mapping requirement."
+        }
+      ],
+      "postconditions": [
+        "The create bug record test plan traceability matrix maps every planned coverage item to c8f316b6-c0b1-474d-a953-38e5677ed6b8 and FR-1.",
+        "No draft or approved version remains with an unmapped in-scope POST /api/v1/bugs scenario.",
+        "The test plan remains available in the repository for approval or continued review."
+      ]
+    },
+    {
+      "id": "TC-EDGE-002",
+      "title": "Verify entry and exit criteria handle the boundary condition where all prerequisites are met but a single required dependency or evidence rule is missing",
+      "category": "Edge Cases",
+      "priority": "High",
+      "preconditions": [
+        "QA Lead is logged into the test management repository with edit access to the create bug record test plan.",
+        "A draft test plan includes sections for prerequisites, entry criteria, exit criteria, pass threshold, evidence expectations, and unresolved defect handling.",
+        "Documented prerequisites for deployed build, reachable POST /api/v1/bugs endpoint, authentication setup, seeded roles, sample payloads, persistence visibility, audit log access, and evidence storage location are available as source inputs.",
+        "Approval or validation workflow can be triggered from the repository."
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "action": "Open the draft plan and navigate to the entry criteria section.",
+          "expectedResult": "The entry criteria section is visible and editable for the POST /api/v1/bugs validation plan."
+        },
+        {
+          "step": 2,
+          "action": "Populate the entry criteria with environment readiness, available API contract, confirmed authentication access, confirmed logging dependency access, but intentionally remove the identified evidence storage location requirement, then save the draft.",
+          "expectedResult": "The entry criteria save reflects that one required prerequisite for starting execution, the evidence storage location, is missing."
+        },
+        {
+          "step": 3,
+          "action": "Trigger plan validation or submit the plan for approval.",
+          "expectedResult": "The plan is rejected or flagged because execution cannot start without all required entry criteria, specifically the identified evidence storage location."
+        },
+        {
+          "step": 4,
+          "action": "Add the missing evidence storage location detail back into the entry criteria, then review the exit criteria and intentionally remove the rule that unresolved high-severity defects block completion while leaving the pass threshold and evidence capture statements in place.",
+          "expectedResult": "The entry criteria become complete, while the exit criteria now omit one mandatory blocking rule."
+        },
+        {
+          "step": 5,
+          "action": "Run validation or resubmit the plan with the incomplete exit criteria.",
+          "expectedResult": "The system or reviewer feedback flags the exit criteria as incomplete because unresolved high-severity defects must block completion of create bug record validation."
+        },
+        {
+          "step": 6,
+          "action": "Restore the missing high-severity defect blocking rule and verify the exit criteria also contain a measurable pass threshold and mandatory evidence capture for every in-scope coverage item.",
+          "expectedResult": "The exit criteria section now includes all required governance controls: measurable pass threshold, mandatory evidence capture, and high-severity defect blocking."
+        },
+        {
+          "step": 7,
+          "action": "Perform a final validation or submit for approval again.",
+          "expectedResult": "The plan passes checks for entry and exit criteria completeness because all mandatory readiness and completion conditions are documented."
+        }
+      ],
+      "postconditions": [
+        "The approved or approval-ready draft contains complete entry criteria including evidence storage location before execution can start.",
+        "The plan contains complete exit criteria including pass threshold, evidence requirement for every in-scope item, and blocking of unresolved high-severity defects.",
+        "The repository record reflects the latest corrected governance rules for repeatable pre-release validation."
+      ]
+    }
+  ],
+  "accessibility": [
+    {
+      "id": "TC-ACCE-001",
+      "title": "Verify keyboard-only navigation supports creating, reviewing, and submitting the create bug record test plan without mouse interaction",
+      "category": "Accessibility",
+      "priority": "High",
+      "preconditions": [
+        "QA Lead user account has access to the test management repository and can create or edit the POST /api/v1/bugs test plan.",
+        "The create bug record test plan editor page is available in a supported desktop browser.",
+        "A draft plan exists or the repository allows creation of a new plan template for this story.",
+        "No browser extensions that alter focus behavior are enabled during testing."
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "action": "Open the test management repository page for the create bug record plan and place the mouse aside; use only the keyboard from this point forward.",
+          "expectedResult": "Visible keyboard focus appears on the first interactive element on the page and remains clearly discernible."
+        },
+        {
+          "step": 2,
+          "action": "Use Tab, Shift+Tab, Enter, Space, and arrow keys as applicable to move through the page header, plan title field, section navigation, and action buttons such as \"Edit\", \"Save Draft\", and \"Submit for Approval\".",
+          "expectedResult": "Focus moves in a logical order, no interactive control is skipped, and each control can be activated from the keyboard."
+        },
+        {
+          "step": 3,
+          "action": "Navigate to the in-scope coverage section and enter or edit text for the listed POST /api/v1/bugs coverage items using the keyboard only.",
+          "expectedResult": "Text fields, rich text areas, or list entries accept keyboard input correctly and retain entered values without requiring a mouse click."
+        },
+        {
+          "step": 4,
+          "action": "Continue by keyboard to the prerequisites, entry criteria, exit criteria, and traceability matrix sections and interact with any dropdowns, checkboxes, or link selectors needed to complete the plan.",
+          "expectedResult": "All form controls are operable by keyboard, expanded controls receive focus appropriately, and focus does not become trapped in any component."
+        },
+        {
+          "step": 5,
+          "action": "Use the keyboard to activate \"Save Draft\" and wait for the save confirmation.",
+          "expectedResult": "The draft is saved successfully, a visible confirmation appears, and keyboard focus remains on a sensible element such as the confirmation area or the triggering button."
+        },
+        {
+          "step": 6,
+          "action": "Use the keyboard to activate \"Submit for Approval\" or equivalent workflow action.",
+          "expectedResult": "The submission action is reachable and executable by keyboard, and any confirmation dialog or status update can also be completed without mouse use."
+        },
+        {
+          "step": 7,
+          "action": "Verify the final submitted or saved state by navigating to the status area and reviewing the plan state using keyboard navigation.",
+          "expectedResult": "The user can confirm the final plan status and all key workflow actions for this feature are keyboard accessible."
+        }
+      ],
+      "postconditions": [
+        "The create bug record test plan draft or submission is completed without mouse interaction.",
+        "Keyboard focus behavior remains logical and visible throughout the plan creation and approval-submission flow.",
+        "No inaccessible control prevents a keyboard-only user from documenting scope, prerequisites, governance, or traceability."
+      ]
+    },
+    {
+      "id": "TC-ACCE-002",
+      "title": "Verify screen reader labeling and status announcements make the test plan sections, validation errors, and save or submit outcomes understandable",
+      "category": "Accessibility",
+      "priority": "High",
+      "preconditions": [
+        "A supported screen reader such as NVDA or JAWS is installed and running on the test workstation.",
+        "QA Lead is logged into the test management repository and can open the create bug record test plan editor.",
+        "The editor contains labeled sections for coverage, prerequisites, entry criteria, exit criteria, evidence expectations, and traceability matrix.",
+        "A draft plan is available for editing so both successful and validation-error states can be observed."
+      ],
+      "steps": [
+        {
+          "step": 1,
+          "action": "Open the create bug record test plan editor with the screen reader enabled and navigate through the page by headings, landmarks, and form fields.",
+          "expectedResult": "The screen reader announces a meaningful page title and distinct section headings or landmarks for the major plan areas."
+        },
+        {
+          "step": 2,
+          "action": "Move to key input fields such as plan title, coverage section, entry criteria, exit criteria, and traceability mappings and listen to the announced labels, roles, and required-state information.",
+          "expectedResult": "Each input has an accessible name that matches the visible label, announces its control type, and communicates required status where applicable."
+        },
+        {
+          "step": 3,
+          "action": "Intentionally remove a required item from the plan, such as deleting the evidence storage location from entry criteria or clearing requirement mappings for one coverage row, then activate \"Save Draft\" or validation.",
+          "expectedResult": "Validation errors are announced by the screen reader with clear text identifying what is missing and, where supported, focus moves to or is associated with the affected field or section."
+        },
+        {
+          "step": 4,
+          "action": "Correct the missing information using the keyboard and screen reader only, then save the draft again.",
+          "expectedResult": "The corrected fields are announced properly during editing, and the previous validation error is no longer announced after successful correction."
+        },
+        {
+          "step": 5,
+          "action": "Submit the plan for approval or trigger final validation and listen for the resulting status message.",
+          "expectedResult": "The success or submission status is exposed to assistive technology, announced clearly, and identifies the resulting plan state such as saved, submitted, or approved-pending-review."
+        },
+        {
+          "step": 6,
+          "action": "Review the traceability matrix and any status indicators row by row using screen reader table navigation or equivalent commands.",
+          "expectedResult": "Row and column context is understandable, and mapped requirement references for each coverage item can be identified without relying on visual position alone."
+        }
+      ],
+      "postconditions": [
+        "The test plan editor exposes meaningful labels, headings, and control roles to assistive technologies.",
+        "Validation and workflow status messages for save or submit actions are understandable to screen reader users.",
+        "A screen reader user can verify completion of required plan content, including traceability, without depending solely on visual cues."
+      ]
+    }
+  ],
+  "selectedTypes": {
+    "functional": true,
+    "edgeCases": true,
+    "negative": true,
+    "accessibility": true,
+    "performance": false,
+    "security": false,
+    "usability": false,
+    "reliability": false
+  },
+  "userStoryObject": {
+    "id": "ado-78413",
+    "title": "As a QA Lead, I want to define a test plan for create bug record coverage so that the capability is validated consistently before release",
+    "description": "<div><strong>CONTEXT &amp; BACKGROUND:</strong><br><br>Within the Bug Record Creation and Traceability epic, create bug record behavior for POST /api/v1/bugs must be validated in a controlled and repeatable way before release. This story supports feature-3, Bug Record Quality and Test Governance, by defining a formal test plan that covers the API contract, access control expectations, and audit traceability dependencies tied to create bug record processing.<br><br><strong>CURRENT STATE:</strong><br><br>There is no approved test plan that standardizes how QA validates POST /api/v1/bugs across environments and release cycles. Coverage gaps may occur around invalid payloads, missing authentication, insufficient permissions, audit log verification, and response-time checks, and traceability back to c8f316b6-c0b1-474d-a953-38e5677ed6b8 and FR-1 is not consistently documented.<br><br><strong>DESIRED STATE:</strong><br><br>An approved test plan exists in the test management repository for create bug record coverage. The plan defines scope, prerequisites, test data, role setup, evidence expectations, entry and exit criteria, and traceability mappings so the QA team can execute the same validation set for POST /api/v1/bugs and assess release readiness using objective criteria.<br><br><strong>KEY FUNCTIONALITY:</strong><br><br><div>• Define planned coverage for successful POST /api/v1/bugs requests, request validation failures, authorization rejection, audit verification, and response-time checks </div><br/><div>• Document execution prerequisites including deployed build, reachable endpoint, authentication setup, seeded QA and non-privileged roles, and audit log access </div><br/><div>• Establish governance rules for entry criteria, exit criteria, pass thresholds, evidence capture, and blocking high-severity defects </div><br/><div>• Map each planned coverage item to requirement references c8f316b6-c0b1-474d-a953-38e5677ed6b8 and FR-1 </div><br><br><strong>USER INTERACTION FLOW:</strong><br><br><div>1. QA Lead reviews the create bug record scope, POST /api/v1/bugs contract, and linked requirement references c8f316b6-c0b1-474d-a953-38e5677ed6b8 and FR-1. </div><br/><div>2. QA Lead defines the planned validation areas for successful creation, malformed or incomplete payload handling, missing or invalid authentication, forbidden role behavior, audit evidence, and timing expectations. </div><br/><div>3. QA Lead documents required environment inputs including deployed API build, auth configuration, seeded roles, available sample payloads, persistence visibility, and audit log access. </div><br/><div>4. QA Lead sets execution controls including entry criteria, exit criteria, pass threshold, evidence requirements, and unresolved defect handling rules. </div><br/><div>5. QA Lead records traceability between each test plan section and the related create bug record requirements in the test management repository. </div><br/><div>6. QA reviewers approve the test plan and the QA team uses it as the reference for pre-release validation of POST /api/v1/bugs. </div><br><br><strong>TECHNICAL CONSIDERATIONS:</strong><br><br><div>• Data sources include the API contract for POST /api/v1/bugs, requirement catalog entries c8f316b6-c0b1-474d-a953-38e5677ed6b8 and FR-1, environment configuration records, seeded authorization roles, persistence verification sources, and audit log stores. </div><br/><div>• Validation planning must reference required request payload fields for bug creation, expected HTTP status codes for success and failure, malformed JSON handling, missing authentication tokens, and insufficient-role behavior. </div><br/><div>• Security planning must require least-privilege test accounts, controlled handling of auth tokens, and masking of any sensitive values included in captured evidence or exported logs. </div><br/><div>• Observability planning must state how QA confirms outcomes through API responses, persistence checks for created bug records, and corresponding audit entries for create attempts. </div><br/><div>• Performance planning is limited to defining service-level expectations for the create path, including response-time targets and any small-scale concurrency checks without expanding into platform-wide load testing. </div><br><br><strong>OUT OF SCOPE:</strong><br><br><div>• Authoring automated tests, API test scripts, or framework code for POST /api/v1/bugs </div><br/><div>• Running the full execution cycle or managing downstream defect triage activities </div><br/><div>• Defining test plans for bug record update, delete, search, or reporting operations </div><br/><div>• Release approval workflows beyond the documented exit criteria and evidence expectations </div><br><br><strong>SUCCESS METRICS:</strong><br><br><div>• 100% of planned create bug record coverage items are mapped to c8f316b6-c0b1-474d-a953-38e5677ed6b8 and FR-1 </div><br/><div>• 100% of pre-release validation cycles for POST /api/v1/bugs reference the approved entry and exit criteria </div><br/><div>• At least 90% of collected evidence for create bug record validation is generated from the approved plan without untracked ad hoc scenarios </div> </div><br><div><strong>Persona:</strong> QA Lead (QA Lead) </div>",
+    "acceptanceCriteria": "<div>1. The approved test plan lists in-scope coverage for POST /api/v1/bugs across successful creation, payload validation failure, unauthenticated access, forbidden access for insufficient roles, audit verification, and response-time checks. </div><br/><div>2. The test plan documents execution prerequisites for create bug record validation, including a deployed build, reachable POST /api/v1/bugs endpoint, configured authentication, seeded authorization roles, required sample payload data, persistence visibility, and audit log access. </div><br/><div>3. The test plan defines entry criteria that require environment readiness, availability of the POST /api/v1/bugs contract, confirmed access to required auth and logging dependencies, and identified evidence storage location before execution can start. </div><br/><div>4. The test plan defines exit criteria with a measurable pass threshold, mandatory evidence capture for every in-scope coverage item, and a rule that unresolved high-severity defects block completion of create bug record validation. </div><br/><div>5. The test plan contains a traceability matrix that maps each planned create bug record coverage item to c8f316b6-c0b1-474d-a953-38e5677ed6b8 and FR-1 without unmapped scenarios. </div>",
+    "adoWorkItemId": 78413,
+    "state": "New",
+    "assignedTo": "Unassigned",
+    "createdDate": "2026-09-09T07:11:27.823Z",
+    "priority": 2,
+    "storyPoints": 3,
+    "tags": "",
+    "brdId": null,
+    "epicId": "epic-78393",
+    "featureId": "feature-78396",
+    "source": "ado",
+    "adoUrl": "https://dev.azure.com/test27112025/af4bbf3e-9d18-4e9c-8cde-d66b30045afb/_workitems/edit/78413"
+  }
+}
