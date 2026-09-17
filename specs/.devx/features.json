@@ -1,145 +1,61 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-09-09T04:49:26.497Z",
+  "generatedAt": "2026-09-17T07:17:54.257Z",
   "enableTdd": false,
   "totalFeatures": 1,
   "features": [
     {
-      "id": 77599,
-      "taskId": "FEATURE-77599",
-      "title": "Shopping Website User Interaction",
-      "slug": "shopping-catalog-cart-checkout",
+      "id": 1415626817,
+      "taskId": "FEATURE-1415626817",
+      "title": "Plain HTML Sentence Rendering; As a Consumer of HTML output, I want the HTML sentence to appear on one line so that the format matches the approved requirement; As a Business Analyst, I want to verify one-line HTML formatting so that requirement acceptance can be confirmed against FR-01 (+7 more)",
+      "slug": "plain-html-one-line",
       "state": "planned",
-      "status": "needs-clarification",
+      "status": "not-started",
       "openQuestions": [
         {
           "id": "oq-1",
-          "text": "Whether authenticated users are in scope for this feature’s cart behavior is not explicitly defined; current selected cart stories primarily define active browser session behavior.",
-          "blocking": true
+          "text": "Does “appear on one line” refer to:",
+          "blocking": false
         },
         {
           "id": "oq-2",
-          "text": "Whether guest and authenticated cart merging behavior is needed is not defined.",
+          "text": "rendered visual presentation,",
+          "blocking": false
+        },
+        {
+          "id": "oq-3",
+          "text": "raw HTML source output,",
+          "blocking": false
+        },
+        {
+          "id": "oq-4",
+          "text": "both rendered output and source markup,",
+          "blocking": false
+        },
+        {
+          "id": "oq-5",
+          "text": "or a downstream consumed payload?",
+          "blocking": false
+        },
+        {
+          "id": "oq-6",
+          "text": "Are there any approved UI designs or requirement documents defining where this output is displayed?",
+          "blocking": false
+        },
+        {
+          "id": "oq-7",
+          "text": "Are there accessibility or readability expectations for long single-line output?",
           "blocking": false
         }
       ],
-      "storyCount": 18,
-      "totalStoryPoints": 49,
+      "storyCount": 0,
+      "totalStoryPoints": 0,
       "files": {
-        "specs": "specs/shopping-catalog-cart-checkout/specs.md",
-        "requirements": "specs/shopping-catalog-cart-checkout/requirements.md",
-        "prompt": "specs/shopping-catalog-cart-checkout/prompt.md"
+        "specs": "specs/plain-html-one-line/specs.md",
+        "requirements": "specs/plain-html-one-line/requirements.md",
+        "prompt": "specs/plain-html-one-line/prompt.md"
       },
-      "userStories": [
-        {
-          "id": 77600,
-          "title": "Product Catalog Presentation",
-          "state": "New",
-          "storyPoints": null
-        },
-        {
-          "id": 77613,
-          "title": "As a Shopping website user, I want to open a product detail page so that I can review a purchasable item before selecting it",
-          "state": "New",
-          "storyPoints": 5
-        },
-        {
-          "id": 77622,
-          "title": "As a Shopping website user, I want to add a product to my shopping cart so that I can select items for purchase",
-          "state": "New",
-          "storyPoints": 8
-        },
-        {
-          "id": 77631,
-          "title": "As a Shopping website user, I want to review and update my shopping cart so that my selected items remain accurate before purchase",
-          "state": "New",
-          "storyPoints": 8
-        },
-        {
-          "id": 77645,
-          "title": "Prevent silent overwrite during concurrent draft edits",
-          "state": "Design",
-          "storyPoints": null
-        },
-        {
-          "id": 77646,
-          "title": "Save draft plan with complete interaction coverage metadata",
-          "state": "Design",
-          "storyPoints": null
-        },
-        {
-          "id": 77647,
-          "title": "Block publish when browser matrix and requirement mappings are missing",
-          "state": "Design",
-          "storyPoints": null
-        },
-        {
-          "id": 77653,
-          "title": "Reject duplicate suite scope under the same parent plan",
-          "state": "Design",
-          "storyPoints": null
-        },
-        {
-          "id": 77654,
-          "title": "Create distinct capability suites under one shopping test plan",
-          "state": "Design",
-          "storyPoints": null
-        },
-        {
-          "id": 77655,
-          "title": "Assign test cases to suite and verify audit history is written",
-          "state": "Design",
-          "storyPoints": null
-        },
-        {
-          "id": 77661,
-          "title": "Reject closure when resolution summary is missing",
-          "state": "Design",
-          "storyPoints": null
-        },
-        {
-          "id": 77662,
-          "title": "Create unresolved scope issue with required metadata",
-          "state": "Design",
-          "storyPoints": null
-        },
-        {
-          "id": 77663,
-          "title": "Capture field updates and comments in history",
-          "state": "Design",
-          "storyPoints": null
-        },
-        {
-          "id": 77664,
-          "title": "As a shopper, I want to review my cart and begin checkout so that I can confirm my items before purchasing",
-          "state": "New",
-          "storyPoints": 5
-        },
-        {
-          "id": 77673,
-          "title": "As a shopper, I want to enter shipping and billing information during checkout so that my order can be fulfilled correctly",
-          "state": "New",
-          "storyPoints": 5
-        },
-        {
-          "id": 77682,
-          "title": "As a shopper, I want to complete payment securely so that I can place my order with confidence",
-          "state": "New",
-          "storyPoints": 8
-        },
-        {
-          "id": 77691,
-          "title": "As a shopper, I want to see an order confirmation after purchase so that I know my order was placed successfully",
-          "state": "New",
-          "storyPoints": 5
-        },
-        {
-          "id": 77604,
-          "title": "As a Shopping website user, I want to browse purchasable products in the catalog so that I can discover items available for shopping",
-          "state": "New",
-          "storyPoints": 5
-        }
-      ]
+      "userStories": []
     }
   ]
 }

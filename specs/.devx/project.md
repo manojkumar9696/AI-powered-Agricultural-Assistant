@@ -1,9 +1,13 @@
-# testingnat
+# ABCProject
 
 > Auto-generated project context for AI-assisted development.
-> Last updated: 2026-09-09
+> Last updated: 2026-09-17
 
-**Organization:** test27112025
+**Organization:** Test27112025
+
+## Overview
+
+This is an Azure Project
 
 ## Development Methodology
 
@@ -16,7 +20,7 @@ Every feature has:
 
 ## Features (1)
 
-- **Shopping Website User Interaction** (18 user stories)
+- **Plain HTML Sentence Rendering; As a Consumer of HTML output, I want the HTML sentence to appear on one line so that the format matches the approved requirement; As a Business Analyst, I want to verify one-line HTML formatting so that requirement acceptance can be confirmed against FR-01 (+7 more)** (0 user stories)
 
 ## Getting Started
 

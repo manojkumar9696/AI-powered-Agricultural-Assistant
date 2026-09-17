@@ -1,12 +1,12 @@
-# Architecture — testingnat
+# Architecture — ABCProject
 
 > Auto-generated architecture overview. Update this file as the system evolves.
 
 ## Feature Map
 
-### Shopping Website User Interaction
-- 18 user stories
-- Stories: Product Catalog Presentation, As a Shopping website user, I want to open a product detail page so that I can review a purchasable item before selecting it, As a Shopping website user, I want to add a product to my shopping cart so that I can select items for purchase, As a Shopping website user, I want to review and update my shopping cart so that my selected items remain accurate before purchase, Prevent silent overwrite during concurrent draft edits, Save draft plan with complete interaction coverage metadata, Block publish when browser matrix and requirement mappings are missing, Reject duplicate suite scope under the same parent plan, Create distinct capability suites under one shopping test plan, Assign test cases to suite and verify audit history is written, Reject closure when resolution summary is missing, Create unresolved scope issue with required metadata, Capture field updates and comments in history, As a shopper, I want to review my cart and begin checkout so that I can confirm my items before purchasing, As a shopper, I want to enter shipping and billing information during checkout so that my order can be fulfilled correctly, As a shopper, I want to complete payment securely so that I can place my order with confidence, As a shopper, I want to see an order confirmation after purchase so that I know my order was placed successfully, As a Shopping website user, I want to browse purchasable products in the catalog so that I can discover items available for shopping
+### Plain HTML Sentence Rendering; As a Consumer of HTML output, I want the HTML sentence to appear on one line so that the format matches the approved requirement; As a Business Analyst, I want to verify one-line HTML formatting so that requirement acceptance can be confirmed against FR-01 (+7 more)
+- 0 user stories
+- Stories: 
 
 ## Guidelines
 
