@@ -1,7 +1,7 @@
 {
-  "name": "abcproject-mcp-server",
+  "name": "interndemo-mcp-server",
   "version": "1.0.0",
-  "description": "Astra MCP server for ABCProject specs",
+  "description": "Astra MCP server for InternDemo specs",
   "type": "module",
   "main": "server.js",
   "scripts": {

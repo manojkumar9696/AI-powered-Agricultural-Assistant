@@ -1,13 +1,9 @@
-# ABCProject
+# InternDemo
 
 > Auto-generated project context for AI-assisted development.
-> Last updated: 2026-09-17
+> Last updated: 2026-10-29
 
-**Organization:** Test27112025
-
-## Overview
-
-This is an Azure Project
+**Organization:** https://archanajira.atlassian.net/
 
 ## Development Methodology
 
@@ -20,7 +16,7 @@ Every feature has:
 
 ## Features (1)
 
-- **Plain HTML Sentence Rendering; As a Consumer of HTML output, I want the HTML sentence to appear on one line so that the format matches the approved requirement; As a Business Analyst, I want to verify one-line HTML formatting so that requirement acceptance can be confirmed against FR-01 (+7 more)** (0 user stories)
+- **As an administrator, I want to design workflow templates with configurable steps to achieve tailored processes** (1 user stories)
 
 ## Getting Started
 

@@ -1,61 +1,33 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-09-17T07:17:54.257Z",
+  "generatedAt": "2026-10-29T09:55:36.342Z",
   "enableTdd": false,
   "totalFeatures": 1,
   "features": [
     {
-      "id": 1415626817,
-      "taskId": "FEATURE-1415626817",
-      "title": "Plain HTML Sentence Rendering; As a Consumer of HTML output, I want the HTML sentence to appear on one line so that the format matches the approved requirement; As a Business Analyst, I want to verify one-line HTML formatting so that requirement acceptance can be confirmed against FR-01 (+7 more)",
-      "slug": "plain-html-one-line",
+      "id": 12009,
+      "taskId": "FEATURE-12009",
+      "title": "As an administrator, I want to design workflow templates with configurable steps to achieve tailored processes",
+      "slug": "workflow-template-step-design",
       "state": "planned",
       "status": "not-started",
-      "openQuestions": [
-        {
-          "id": "oq-1",
-          "text": "Does “appear on one line” refer to:",
-          "blocking": false
-        },
-        {
-          "id": "oq-2",
-          "text": "rendered visual presentation,",
-          "blocking": false
-        },
-        {
-          "id": "oq-3",
-          "text": "raw HTML source output,",
-          "blocking": false
-        },
-        {
-          "id": "oq-4",
-          "text": "both rendered output and source markup,",
-          "blocking": false
-        },
-        {
-          "id": "oq-5",
-          "text": "or a downstream consumed payload?",
-          "blocking": false
-        },
-        {
-          "id": "oq-6",
-          "text": "Are there any approved UI designs or requirement documents defining where this output is displayed?",
-          "blocking": false
-        },
-        {
-          "id": "oq-7",
-          "text": "Are there accessibility or readability expectations for long single-line output?",
-          "blocking": false
-        }
-      ],
-      "storyCount": 0,
+      "openQuestions": [],
+      "storyCount": 1,
       "totalStoryPoints": 0,
       "files": {
-        "specs": "specs/plain-html-one-line/specs.md",
-        "requirements": "specs/plain-html-one-line/requirements.md",
-        "prompt": "specs/plain-html-one-line/prompt.md"
+        "specs": "specs/workflow-template-step-design/specs.md",
+        "requirements": "specs/workflow-template-step-design/requirements.md",
+        "tasks": "specs/workflow-template-step-design/tasks.md",
+        "prompt": "specs/workflow-template-step-design/prompt.md"
       },
-      "userStories": []
+      "userStories": [
+        {
+          "id": 12009,
+          "title": "As an administrator, I want to design workflow templates with configurable steps to achieve tailored processes",
+          "state": "New",
+          "storyPoints": null
+        }
+      ]
     }
   ]
 }

@@ -568,7 +568,7 @@ cat <<'DEVX_CURRENT_STATE_TAIL'
 
 - Use `specs/.devx/workspace-repos.json` for machine-readable repo inventory.
 - Use `specs/.devx/change-maps/<feature-slug>.md` for feature-specific candidate areas.
-- Use `specs/.devx/guidance/golden-repo-guidelines.md` when present, but prefer verified local code patterns on conflict.
+- Use the Golden Repo Guidelines file listed in this feature's `prompt.md` (under `specs/.devx/guidance/versions/`) when present, but prefer verified local code patterns on conflict.
 DEVX_CURRENT_STATE_TAIL
 } > "$CURRENT_STATE_FILE"
 
@@ -608,16 +608,20 @@ if [ "$FEATURE_DIR_COUNT" -eq 0 ]; then
 fi
 
 GUIDANCE_DIR="$DEVX_DIR/guidance"
-if [ -d "$GUIDANCE_DIR" ] || [ -f "$GUIDANCE_DIR/golden-repo-guidelines.md" ] || [ -f "$GUIDANCE_DIR/golden-repo-sources.md" ] || [ -f "$GUIDANCE_DIR/golden-repo-manifest.json" ]; then
-  if [ ! -s "$GUIDANCE_DIR/golden-repo-guidelines.md" ]; then
-    append_finding "$TEMP_FAILINGS_FILE" "Missing Golden Repo guidance file: specs/.devx/guidance/golden-repo-guidelines.md"
+# Golden guidance is stored as immutable content-hash versions under
+# guidance/versions/<hash>/ (each feature's [G#] ids point at its version).
+# There are no flat copies directly under guidance/.
+HAS_VERSIONED_GUIDANCE=0
+for VERSIONED_GUIDELINES in "$GUIDANCE_DIR"/versions/*/golden-repo-guidelines.md; do
+  if [ -s "$VERSIONED_GUIDELINES" ]; then
+    HAS_VERSIONED_GUIDANCE=1
+    break
   fi
-  if [ ! -s "$GUIDANCE_DIR/golden-repo-sources.md" ]; then
-    append_finding "$TEMP_FAILINGS_FILE" "Missing Golden Repo source excerpts file: specs/.devx/guidance/golden-repo-sources.md"
-  fi
-  if [ ! -s "$GUIDANCE_DIR/golden-repo-manifest.json" ]; then
-    append_finding "$TEMP_FAILINGS_FILE" "Missing Golden Repo manifest file: specs/.devx/guidance/golden-repo-manifest.json"
-  fi
+done
+if [ "$HAS_VERSIONED_GUIDANCE" -eq 1 ]; then
+  : # Versioned guidance present; per-feature [G#] ids resolve against it.
+elif [ -d "$GUIDANCE_DIR/versions" ]; then
+  append_finding "$TEMP_FAILINGS_FILE" "Missing Golden Repo guidance: no non-empty golden-repo-guidelines.md under specs/.devx/guidance/versions/<hash>/"
 else
   append_finding "$TEMP_WARNINGS_FILE" "No local Golden Repo guidance package was found. Continue only if this project has no linked Golden Repo guidance."
 fi

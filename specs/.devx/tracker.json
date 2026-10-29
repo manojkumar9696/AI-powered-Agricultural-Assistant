@@ -1,13 +1,13 @@
 {
   "trackerVersion": 1,
-  "updatedAt": "2026-09-17T07:17:54.257Z",
+  "updatedAt": "2026-10-29T09:55:36.342Z",
   "tasks": {
-    "FEATURE-1415626817": {
+    "FEATURE-12009": {
       "status": "PENDING",
-      "title": "Plain HTML Sentence Rendering; As a Consumer of HTML output, I want the HTML sentence to appear on one line so that the format matches the approved requirement; As a Business Analyst, I want to verify one-line HTML formatting so that requirement acceptance can be confirmed against FR-01 (+7 more)",
-      "featureId": 1415626817,
-      "slug": "plain-html-one-line",
-      "updatedAt": "2026-09-17T07:17:54.257Z"
+      "title": "As an administrator, I want to design workflow templates with configurable steps to achieve tailored processes",
+      "featureId": 12009,
+      "slug": "workflow-template-step-design",
+      "updatedAt": "2026-10-29T09:55:36.342Z"
     }
   }
 }

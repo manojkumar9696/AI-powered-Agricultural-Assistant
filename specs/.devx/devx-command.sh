@@ -124,7 +124,7 @@ Read AGENTS.md and the local handoff files first:
 - specs/.devx/current-state.md
 - specs/.devx/implementation-check.md
 - specs/.devx/change-maps/$slug.md
-- specs/.devx/guidance/golden-repo-guidelines.md when present
+- the Golden Repo Guidelines file listed in this feature's prompt.md (under specs/.devx/guidance/versions/) when present
 
 Selected feature slug: $slug
 Selected feature title: $title
@@ -182,7 +182,7 @@ Read AGENTS.md and the local handoff files first:
 - specs/.devx/current-state.md
 - specs/.devx/implementation-check.md
 - specs/.devx/change-maps/$slug.md
-- specs/.devx/guidance/golden-repo-guidelines.md when present
+- the Golden Repo Guidelines file listed in this feature's prompt.md (under specs/.devx/guidance/versions/) when present
 
 Validate this selected feature only:
 - Slug: $slug
@@ -209,7 +209,7 @@ Read AGENTS.md and local handoff files before each feature:
 - specs/.devx/current-state.md
 - specs/.devx/implementation-check.md
 - specs/.devx/change-maps/<slug>.md
-- specs/.devx/guidance/golden-repo-guidelines.md when present
+- the Golden Repo Guidelines file listed in this feature's prompt.md (under specs/.devx/guidance/versions/) when present
 
 Run DevX autopilot code generation.
 

@@ -1,12 +1,12 @@
-# Architecture — ABCProject
+# Architecture — InternDemo
 
 > Auto-generated architecture overview. Update this file as the system evolves.
 
 ## Feature Map
 
-### Plain HTML Sentence Rendering; As a Consumer of HTML output, I want the HTML sentence to appear on one line so that the format matches the approved requirement; As a Business Analyst, I want to verify one-line HTML formatting so that requirement acceptance can be confirmed against FR-01 (+7 more)
-- 0 user stories
-- Stories: 
+### As an administrator, I want to design workflow templates with configurable steps to achieve tailored processes
+- 1 user stories
+- Stories: As an administrator, I want to design workflow templates with configurable steps to achieve tailored processes
 
 ## Guidelines
 
