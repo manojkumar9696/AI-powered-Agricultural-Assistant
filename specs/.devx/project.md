@@ -14,9 +14,8 @@ Every feature has:
 - `requirements.md` — Implementation acceptance checklist
 - `prompt.md` — Ready-to-use implementation prompt
 
-## Features (1)
+## Features (0)
 
-- **As an administrator, I want to design workflow templates with configurable steps to achieve tailored processes** (1 user stories)
 
 ## Getting Started
 
