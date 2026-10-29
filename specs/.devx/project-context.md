@@ -5,7 +5,7 @@
 
 ## Project
 
-- Name: InternDemo
+- Name: adv030826
 - Architecture mode: monolith
 - Context status: Pending workspace discovery
 

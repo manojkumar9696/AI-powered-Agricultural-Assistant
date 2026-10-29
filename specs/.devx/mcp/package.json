@@ -1,7 +1,7 @@
 {
-  "name": "interndemo-mcp-server",
+  "name": "adv030826-mcp-server",
   "version": "1.0.0",
-  "description": "Astra MCP server for InternDemo specs",
+  "description": "Astra MCP server for adv030826 specs",
   "type": "module",
   "main": "server.js",
   "scripts": {

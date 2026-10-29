@@ -1,13 +1,13 @@
 {
   "trackerVersion": 1,
-  "updatedAt": "2026-10-29T10:08:53.841Z",
+  "updatedAt": "2026-10-29T13:20:53.001Z",
   "tasks": {
-    "FEATURE-12009": {
-      "status": "PENDING",
-      "title": "As an administrator, I want to design workflow templates with configurable steps to achieve tailored processes",
-      "featureId": 12009,
-      "slug": "workflow-template-step-design",
-      "updatedAt": "2026-10-29T10:08:53.840Z"
+    "FEATURE-64917": {
+      "status": "NEEDS_CLARIFICATION",
+      "title": "ABCD Shampoo Regulatory Composition Assessment",
+      "featureId": 64917,
+      "slug": "shampoo-composition-compliance-record",
+      "updatedAt": "2026-10-29T13:20:53.001Z"
     }
   }
 }

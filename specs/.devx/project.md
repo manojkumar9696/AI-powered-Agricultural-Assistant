@@ -1,9 +1,9 @@
-# InternDemo
+# adv030826
 
 > Auto-generated project context for AI-assisted development.
 > Last updated: 2026-10-29
 
-**Organization:** https://archanajira.atlassian.net/
+**Organization:** Test27112025
 
 ## Development Methodology
 
@@ -16,7 +16,7 @@ Every feature has:
 
 ## Features (1)
 
-- **As an administrator, I want to design workflow templates with configurable steps to achieve tailored processes** (1 user stories)
+- **ABCD Shampoo Regulatory Composition Assessment** (15 user stories)
 
 ## Getting Started
 
