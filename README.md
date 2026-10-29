@@ -119,7 +119,7 @@ API endpoints are also available for programmatic access:
 - `POST /api/recommend-fertilizer`
 - `POST /api/predict-weather`
 
-Refer to the `app.py` file for the exact request payload and response structure for each API endpoint.
+Refer to the `app.py` file for the exact request payload and response structure .
 
 ## Technologies Used
 
