@@ -1,5 +1,13 @@
 {
   "trackerVersion": 1,
-  "updatedAt": "2026-10-29T10:08:36.869Z",
-  "tasks": {}
+  "updatedAt": "2026-10-29T10:08:53.841Z",
+  "tasks": {
+    "FEATURE-12009": {
+      "status": "PENDING",
+      "title": "As an administrator, I want to design workflow templates with configurable steps to achieve tailored processes",
+      "featureId": 12009,
+      "slug": "workflow-template-step-design",
+      "updatedAt": "2026-10-29T10:08:53.840Z"
+    }
+  }
 }

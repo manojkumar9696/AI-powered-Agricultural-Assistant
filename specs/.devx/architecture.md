@@ -4,6 +4,10 @@
 
 ## Feature Map
 
+### As an administrator, I want to design workflow templates with configurable steps to achieve tailored processes
+- 1 user stories
+- Stories: As an administrator, I want to design workflow templates with configurable steps to achieve tailored processes
+
 ## Guidelines
 
 - Follow the specs in each feature folder for implementation details

@@ -1,7 +1,33 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-10-29T10:08:36.869Z",
+  "generatedAt": "2026-10-29T10:08:53.840Z",
   "enableTdd": false,
-  "totalFeatures": 0,
-  "features": []
+  "totalFeatures": 1,
+  "features": [
+    {
+      "id": 12009,
+      "taskId": "FEATURE-12009",
+      "title": "As an administrator, I want to design workflow templates with configurable steps to achieve tailored processes",
+      "slug": "workflow-template-step-design",
+      "state": "planned",
+      "status": "not-started",
+      "openQuestions": [],
+      "storyCount": 1,
+      "totalStoryPoints": 0,
+      "files": {
+        "specs": "specs/workflow-template-step-design/specs.md",
+        "requirements": "specs/workflow-template-step-design/requirements.md",
+        "tasks": "specs/workflow-template-step-design/tasks.md",
+        "prompt": "specs/workflow-template-step-design/prompt.md"
+      },
+      "userStories": [
+        {
+          "id": 12009,
+          "title": "As an administrator, I want to design workflow templates with configurable steps to achieve tailored processes",
+          "state": "New",
+          "storyPoints": null
+        }
+      ]
+    }
+  ]
 }
