@@ -1,0 +1,49 @@
+pipeline:
+  name: "Harness CI new"
+  identifier: "Harn"
+  projectIdentifier: "default_project"
+  orgIdentifier: "default"
+  tags: {}
+  stages:
+    - stage:
+        name: "Build"
+        identifier: "build"
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: "Install dependencies"
+                  identifier: "install_dependencies"
+                  spec:
+                    shell: Sh
+                    command: |-
+                      cd specs/.devx/mcp
+                      npm install
+              - step:
+                  type: Run
+                  name: "Build application"
+                  identifier: "build_application"
+                  spec:
+                    shell: Sh
+                    command: |-
+                      cd specs/.devx/mcp
+                      npm run build
+  properties:
+    ci:
+      codebase:
+        connectorRef: "org.connector_Github_b75d"
+        repoName: "manojkumar9696/AI-powered-Agricultural-Assistant"
+        build:
+          type: branch
+          spec:
+            branch: "main"
