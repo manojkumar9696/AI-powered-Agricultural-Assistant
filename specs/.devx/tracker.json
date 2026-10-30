@@ -1,5 +1,13 @@
 {
   "trackerVersion": 1,
-  "updatedAt": "2026-08-20T10:59:57.558Z",
-  "tasks": {}
+  "updatedAt": "2026-10-30T06:18:52.698Z",
+  "tasks": {
+    "FEATURE-95669": {
+      "status": "NEEDS_CLARIFICATION",
+      "title": "[EDG] Verify duplicate `clientSubmissionId` replay does not create a second accepted update or duplicate synchronization handoff",
+      "featureId": 95669,
+      "slug": "verify-duplicate-submission-replay",
+      "updatedAt": "2026-10-30T06:18:52.698Z"
+    }
+  }
 }

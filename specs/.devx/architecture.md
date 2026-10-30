@@ -1,8 +1,12 @@
-# Architecture — hhaaa
+# Architecture — demotest
 
 > Auto-generated architecture overview. Update this file as the system evolves.
 
 ## Feature Map
+
+### [EDG] Verify duplicate `clientSubmissionId` replay does not create a second accepted update or duplicate synchronization handoff
+- 1 user stories
+- Stories: [EDG] Verify duplicate `clientSubmissionId` replay does not create a second accepted update or duplicate synchronization handoff
 
 ## Guidelines
 

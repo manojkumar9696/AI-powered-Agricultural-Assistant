@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "projectName": "demotest",
+  "generatedAt": "2026-10-30T06:18:52.681Z",
+  "source": "golden-repo-guidance",
+  "options": {
+    "ui": [],
+    "backend": [],
+    "database": [],
+    "ai": [],
+    "uiCustom": [],
+    "backendCustom": [],
+    "databaseCustom": []
+  }
+}

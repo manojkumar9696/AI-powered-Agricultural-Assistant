@@ -12,7 +12,7 @@ allowed-tools: Read, Grep, Glob, Edit, Write
 
 ## Golden Repo Guidance (read and reconcile)
 
-- When Golden Repo artifacts exist (`specs/.devx/guidance/golden-repo-guidelines.md`, `specs/.devx/guidance/golden-repo-sources.md`, or `specs/.devx/skills/ui-design/golden-ui-design-system.md`, `specs/.devx/skills/ui-design/golden-ui-design-sources.md`), you MUST read them before implementing. This is REQUIRED, not optional.
+- When Golden Repo artifacts exist (the Golden Repo Guidelines and Sources files listed in each feature's `prompt.md` under `specs/.devx/guidance/versions/`, or `specs/.devx/skills/ui-design/golden-ui-design-system.md`, `specs/.devx/skills/ui-design/golden-ui-design-sources.md`), you MUST read them before implementing. This is REQUIRED, not optional.
 - The Golden Repo may describe a different stack than this app; do NOT apply it blindly. For each cross-cutting convention it defines (for example security/CSRF synchronizer tokens, internationalization/resource files, and the prescribed UI design system/tokens), EITHER apply it OR record it as not-applicable-to-this-stack with a one-line rationale.
 - Produce a short "Golden Repo Reconciliation" note in your output: for each convention, list Applied or Not-applicable with the rationale.
 - Verified local workspace patterns override Golden Repo guidance when they conflict.
@@ -28,8 +28,8 @@ allowed-tools: Read, Grep, Glob, Edit, Write
 - Required: `specs/.devx/current-state.md`
 - Required: `specs/.devx/implementation-check.md`
 - Required: `specs/.devx/change-maps/<slug>.md`
-- Required when present: `specs/.devx/guidance/golden-repo-guidelines.md`
-- Required when present: `specs/.devx/guidance/golden-repo-sources.md`
+- Required when present: the Golden Repo Guidelines file listed in this feature's `prompt.md` (under `specs/.devx/guidance/versions/`)
+- Required when present: the Golden Repo Sources file listed in this feature's `prompt.md` (under `specs/.devx/guidance/versions/`)
 - Required when present: `specs/.devx/skills/ui-design/golden-ui-design-system.md` (the Golden Repo UI design system/tokens)
 - Required when present: `specs/.devx/skills/ui-design/golden-ui-design-sources.md` for exact Golden Repo source excerpts
 
@@ -57,8 +57,8 @@ allowed-tools: Read, Grep, Glob, Edit, Write
   - Map each requirement to concrete UI sections/components
 
 3. Read and reconcile local Golden Repo UI guidance when present (REQUIRED, not optional):
-  - Read `specs/.devx/guidance/golden-repo-guidelines.md` for cross-cutting implementation conventions
-  - Use `specs/.devx/guidance/golden-repo-sources.md` for exact source excerpts and file-path attribution
+  - Read the Golden Repo Guidelines file listed in this feature's `prompt.md` (under `specs/.devx/guidance/versions/`) for cross-cutting implementation conventions
+  - Use the Golden Repo Sources file listed in this feature's `prompt.md` (under `specs/.devx/guidance/versions/`) for exact source excerpts and file-path attribution
   - Read `specs/.devx/skills/ui-design/golden-ui-design-system.md` first (the prescribed UI design system/tokens)
   - Use `specs/.devx/skills/ui-design/golden-ui-design-sources.md` for exact source excerpts and file-path attribution
   - The Golden Repo may target a different stack: for each convention, EITHER apply it OR record it not-applicable-to-this-stack with a one-line rationale, and include a short "Golden Repo Reconciliation" note in your output. Verified local UI patterns override golden guidance on conflict

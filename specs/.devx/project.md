@@ -1,9 +1,9 @@
-# hhaaa
+# demotest
 
 > Auto-generated project context for AI-assisted development.
-> Last updated: 2026-08-20
+> Last updated: 2026-10-30
 
-**Organization:** few
+**Organization:** Test27112025
 
 ## Development Methodology
 
@@ -14,8 +14,9 @@ Every feature has:
 - `requirements.md` — Implementation acceptance checklist
 - `prompt.md` — Ready-to-use implementation prompt
 
-## Features (0)
+## Features (1)
 
+- **[EDG] Verify duplicate `clientSubmissionId` replay does not create a second accepted update or duplicate synchronization handoff** (1 user stories)
 
 ## Getting Started
 

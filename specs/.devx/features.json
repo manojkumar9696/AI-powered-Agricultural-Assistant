@@ -1,7 +1,109 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-08-20T10:59:57.558Z",
+  "generatedAt": "2026-10-30T06:18:52.698Z",
   "enableTdd": false,
-  "totalFeatures": 0,
-  "features": []
+  "totalFeatures": 1,
+  "features": [
+    {
+      "id": 95669,
+      "taskId": "FEATURE-95669",
+      "title": "[EDG] Verify duplicate `clientSubmissionId` replay does not create a second accepted update or duplicate synchronization handoff",
+      "slug": "verify-duplicate-submission-replay",
+      "state": "planned",
+      "status": "needs-clarification",
+      "openQuestions": [
+        {
+          "id": "oq-1",
+          "text": "What application/platform surface hosts this feature: API/service, web, mobile, desktop, or mixed?",
+          "blocking": false
+        },
+        {
+          "id": "oq-2",
+          "text": "What is the exact manga update operation covered by this feature?",
+          "blocking": false
+        },
+        {
+          "id": "oq-3",
+          "text": "What request fields other than optional `clientSubmissionId` are part of the manga update request?",
+          "blocking": false
+        },
+        {
+          "id": "oq-4",
+          "text": "What is the exact response contract for the initial request and for a duplicate replay?",
+          "blocking": false
+        },
+        {
+          "id": "oq-5",
+          "text": "Should a duplicate replay return the original success result, a duplicate/no-op result, or another response?",
+          "blocking": false
+        },
+        {
+          "id": "oq-6",
+          "text": "How is `clientSubmissionId` validated for presence, format, size, and uniqueness scope?",
+          "blocking": true
+        },
+        {
+          "id": "oq-7",
+          "text": "How is duplicate detection keyed: same actor plus `clientSubmissionId` only, or additional request/resource attributes?",
+          "blocking": false
+        },
+        {
+          "id": "oq-8",
+          "text": "What should happen if the same authenticated Manga Creator reuses the same `clientSubmissionId` with a different payload?",
+          "blocking": false
+        },
+        {
+          "id": "oq-9",
+          "text": "What should happen when `clientSubmissionId` is omitted?",
+          "blocking": false
+        },
+        {
+          "id": "oq-10",
+          "text": "Does duplicate suppression apply only after the first request is fully accepted, or also during concurrent/in-flight duplicate submissions?",
+          "blocking": false
+        },
+        {
+          "id": "oq-11",
+          "text": "What exactly constitutes a synchronization handoff for contract and test purposes?",
+          "blocking": false
+        },
+        {
+          "id": "oq-12",
+          "text": "How should the system persist or track idempotency state to prove only one accepted update and one handoff occurred?",
+          "blocking": false
+        },
+        {
+          "id": "oq-13",
+          "text": "Are there audit, retention, or observability requirements for duplicate replay attempts?",
+          "blocking": false
+        },
+        {
+          "id": "oq-14",
+          "text": "Are there authorization rules beyond simple authentication for which Manga Creator can update which manga?",
+          "blocking": true
+        },
+        {
+          "id": "oq-15",
+          "text": "Are there concurrency, timing window, or expiration rules for idempotency records?",
+          "blocking": false
+        }
+      ],
+      "storyCount": 1,
+      "totalStoryPoints": 0,
+      "files": {
+        "specs": "specs/verify-duplicate-submission-replay/specs.md",
+        "requirements": "specs/verify-duplicate-submission-replay/requirements.md",
+        "tasks": "specs/verify-duplicate-submission-replay/tasks.md",
+        "prompt": "specs/verify-duplicate-submission-replay/prompt.md"
+      },
+      "userStories": [
+        {
+          "id": 95669,
+          "title": "[EDG] Verify duplicate `clientSubmissionId` replay does not create a second accepted update or duplicate synchronization handoff",
+          "state": "Design",
+          "storyPoints": null
+        }
+      ]
+    }
+  ]
 }
