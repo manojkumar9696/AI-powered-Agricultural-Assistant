@@ -4,9 +4,7 @@
 
 ## Feature Map
 
-### Save rinse-off classification successfully at the maximum allowed contact time boundary of 20 minutes; Handle product registry search returning no matching products without blocking classification workflow
-- 2 user stories
-- Stories: Save rinse-off classification successfully at the maximum allowed contact time boundary of 20 minutes, Handle product registry search returning no matching products without blocking classification workflow
+
 
 ## Guidelines
 

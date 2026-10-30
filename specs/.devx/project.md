@@ -14,9 +14,9 @@ Every feature has:
 - `requirements.md` — Implementation acceptance checklist
 - `prompt.md` — Ready-to-use implementation prompt
 
-## Features (1)
+## Features (0)
 
-- **Save rinse-off classification successfully at the maximum allowed contact time boundary of 20 minutes; Handle product registry search returning no matching products without blocking classification workflow** (2 user stories)
+
 
 ## Getting Started
 

@@ -1,39 +1,7 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-10-30T13:10:06.822Z",
+  "generatedAt": "2026-10-30T13:17:28.681Z",
   "enableTdd": false,
-  "totalFeatures": 1,
-  "features": [
-    {
-      "id": 1187483449,
-      "taskId": "FEATURE-1187483449",
-      "title": "Save rinse-off classification successfully at the maximum allowed contact time boundary of 20 minutes; Handle product registry search returning no matching products without blocking classification workflow",
-      "slug": "rinseoff-classification-edge-cases",
-      "state": "planned",
-      "status": "not-started",
-      "openQuestions": [],
-      "storyCount": 2,
-      "totalStoryPoints": 0,
-      "files": {
-        "specs": "specs/rinseoff-classification-edge-cases/specs.md",
-        "requirements": "specs/rinseoff-classification-edge-cases/requirements.md",
-        "tasks": "specs/rinseoff-classification-edge-cases/tasks.md",
-        "prompt": "specs/rinseoff-classification-edge-cases/prompt.md"
-      },
-      "userStories": [
-        {
-          "id": 14286,
-          "title": "Save rinse-off classification successfully at the maximum allowed contact time boundary of 20 minutes",
-          "state": "New",
-          "storyPoints": null
-        },
-        {
-          "id": 14287,
-          "title": "Handle product registry search returning no matching products without blocking classification workflow",
-          "state": "New",
-          "storyPoints": null
-        }
-      ]
-    }
-  ]
+  "totalFeatures": 0,
+  "features": []
 }

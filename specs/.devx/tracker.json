@@ -1,13 +1,5 @@
 {
   "trackerVersion": 1,
-  "updatedAt": "2026-10-30T13:10:06.822Z",
-  "tasks": {
-    "FEATURE-1187483449": {
-      "status": "PENDING",
-      "title": "Save rinse-off classification successfully at the maximum allowed contact time boundary of 20 minutes; Handle product registry search returning no matching products without blocking classification workflow",
-      "featureId": 1187483449,
-      "slug": "rinseoff-classification-edge-cases",
-      "updatedAt": "2026-10-30T13:10:06.822Z"
-    }
-  }
+  "updatedAt": "2026-10-30T13:17:28.681Z",
+  "tasks": {}
 }
