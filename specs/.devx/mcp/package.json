@@ -1,7 +1,7 @@
 {
-  "name": "adv030826-mcp-server",
+  "name": "adotodevx-mcp-server",
   "version": "1.0.0",
-  "description": "Astra MCP server for adv030826 specs",
+  "description": "Astra MCP server for ADOtoDEVx specs",
   "type": "module",
   "main": "server.js",
   "scripts": {

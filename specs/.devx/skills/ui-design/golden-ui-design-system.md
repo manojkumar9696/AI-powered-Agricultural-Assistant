@@ -1,12 +1,15 @@
 # Golden Repository UI/UX Design System
 
-Generated for: testingnat
-Repository: DEVXADO
-Generated at: 2026-09-09T04:49:26.473Z
+Generated for: ADOtoDEVx
+Repository: mridul227/testingastra
+Generated at: 2026-10-16T09:31:25.190Z
 
 ## Warnings
 
-- None
+- Golden Repo mapped file could not be auto-vectorized: brownfield/jira/ed001-a8f03c91/_source-manifest.json (Automatic Golden Repo chunking during generation currently supports ADO sources only.)
+- Golden Repo mapped file could not be auto-vectorized: brownfield/jira/ed001-a8f03c91/functional-modules.md (Automatic Golden Repo chunking during generation currently supports ADO sources only.)
+- Golden Repo mapped file could not be auto-vectorized: brownfield/jira/ed001-a8f03c91/PROJECT_SUMMARY.md (Automatic Golden Repo chunking during generation currently supports ADO sources only.)
+- Golden Repo mapped file(s) are not vectorized or have no cached chunks: brownfield/jira/ed001-a8f03c91/_source-manifest.json, brownfield/jira/ed001-a8f03c91/functional-modules.md, brownfield/jira/ed001-a8f03c91/PROJECT_SUMMARY.md
 
 ## How To Use
 

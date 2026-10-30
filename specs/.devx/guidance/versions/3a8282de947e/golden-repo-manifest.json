@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "generatedAt": "2026-10-16T09:31:25.189Z",
+  "repoId": "84884765",
+  "repoName": "mridul227/testingastra",
+  "provider": "gitlab",
+  "repoUrl": "https://gitlab.com/mridul227/testingastra",
+  "defaultBranch": "main",
+  "allFilesMode": false,
+  "requestedFilePaths": [
+    "brownfield/jira/ed001-a8f03c91/_source-manifest.json",
+    "brownfield/jira/ed001-a8f03c91/functional-modules.md",
+    "brownfield/jira/ed001-a8f03c91/PROJECT_SUMMARY.md"
+  ],
+  "includedFilePaths": [],
+  "missingFilePaths": [
+    "brownfield/jira/ed001-a8f03c91/_source-manifest.json",
+    "brownfield/jira/ed001-a8f03c91/functional-modules.md",
+    "brownfield/jira/ed001-a8f03c91/PROJECT_SUMMARY.md"
+  ],
+  "sourceFiles": [],
+  "warnings": [
+    "Golden Repo mapped file could not be auto-vectorized: brownfield/jira/ed001-a8f03c91/_source-manifest.json (Automatic Golden Repo chunking during generation currently supports ADO sources only.)",
+    "Golden Repo mapped file could not be auto-vectorized: brownfield/jira/ed001-a8f03c91/functional-modules.md (Automatic Golden Repo chunking during generation currently supports ADO sources only.)",
+    "Golden Repo mapped file could not be auto-vectorized: brownfield/jira/ed001-a8f03c91/PROJECT_SUMMARY.md (Automatic Golden Repo chunking during generation currently supports ADO sources only.)",
+    "Golden Repo mapped file(s) are not vectorized or have no cached chunks: brownfield/jira/ed001-a8f03c91/_source-manifest.json, brownfield/jira/ed001-a8f03c91/functional-modules.md, brownfield/jira/ed001-a8f03c91/PROJECT_SUMMARY.md"
+  ]
+}

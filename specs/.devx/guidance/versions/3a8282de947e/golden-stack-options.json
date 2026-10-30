@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "projectName": "ADOtoDEVx",
+  "generatedAt": "2026-10-16T09:31:25.189Z",
+  "source": "golden-repo-guidance",
+  "options": {
+    "ui": [],
+    "backend": [],
+    "database": [],
+    "ai": [],
+    "uiCustom": [],
+    "backendCustom": [],
+    "databaseCustom": []
+  }
+}

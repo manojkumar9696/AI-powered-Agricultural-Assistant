@@ -1,9 +1,13 @@
-# adv030826
+# ADOtoDEVx
 
 > Auto-generated project context for AI-assisted development.
-> Last updated: 2026-10-29
+> Last updated: 2026-10-16
 
-**Organization:** Test27112025
+**Organization:** Test27
+
+## Overview
+
+Test
 
 ## Development Methodology
 
@@ -16,7 +20,7 @@ Every feature has:
 
 ## Features (1)
 
-- **ABCD Shampoo Regulatory Composition Assessment** (15 user stories)
+- **Chakra Core Integration for Financial Applications** (15 user stories)
 
 ## Getting Started
 

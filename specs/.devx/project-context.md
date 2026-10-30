@@ -5,7 +5,7 @@
 
 ## Project
 
-- Name: adv030826
+- Name: ADOtoDEVx
 - Architecture mode: monolith
 - Context status: Pending workspace discovery
 

@@ -1,239 +1,164 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-10-29T13:20:53.001Z",
+  "generatedAt": "2026-10-16T09:31:25.209Z",
   "enableTdd": false,
   "totalFeatures": 1,
   "features": [
     {
-      "id": 64917,
-      "taskId": "FEATURE-64917",
-      "title": "ABCD Shampoo Regulatory Composition Assessment",
-      "slug": "shampoo-composition-compliance-record",
+      "id": 48842,
+      "taskId": "FEATURE-48842",
+      "title": "Chakra Core Integration for Financial Applications",
+      "slug": "chakra-core-scripting-engine",
       "state": "planned",
       "status": "needs-clarification",
       "openQuestions": [
         {
           "id": "oq-1",
-          "text": "What exact API endpoints, methods, payload schemas, response schemas, and error payload formats should be used?",
-          "blocking": false
+          "text": "US 48958, US 48967, and US 48976 describe cosmetic product regulatory classification, compositional data upload, and IFRA compliance assessment — these appear unrelated to Chakra Core engine integration. Confirm whether these stories belong to Feature 48842 or were misattributed; they are excluded from this spec's functional scope pending clarification.",
+          "blocking": true
         },
         {
           "id": "oq-2",
-          "text": "What is the authoritative list of:",
+          "text": "What is the specific time limit (SLA) for engine initialization referenced in US 48850, Criteria 2?",
           "blocking": false
         },
         {
           "id": "oq-3",
-          "text": "supported market codes",
+          "text": "What are the specific performance benchmarks and resource utilization thresholds referenced in US 48877?",
           "blocking": false
         },
         {
           "id": "oq-4",
-          "text": "supported product type / mixture classification codes beyond those named here",
-          "blocking": false
+          "text": "What UI screens, layouts, or interaction designs (if any) are required for developers/security officers/compliance managers to configure, debug, or review script-related functionality?",
+          "blocking": true
         },
         {
           "id": "oq-5",
-          "text": "configured EC number format",
-          "blocking": false
+          "text": "What are the exact API endpoint definitions, request/response schemas, authentication mechanism, and error code taxonomy for the exposed financial APIs referenced in US 48868 and US 48859?",
+          "blocking": true
         },
         {
           "id": "oq-6",
-          "text": "What exact CAS validation pattern should be enforced?",
+          "text": "What is the data retention period for audit logs and anomaly monitoring data?",
           "blocking": false
         },
         {
           "id": "oq-7",
-          "text": "Is substance function a free-text field or controlled vocabulary?",
-          "blocking": false
+          "text": "What specific fields comprise script execution log records, API usage log records, and permission set records?",
+          "blocking": true
         },
         {
           "id": "oq-8",
-          "text": "For substance origin, should API accept display values, canonical uppercase enum values, or both?",
-          "blocking": false
+          "text": "What is the granular permission model distinguishing access rights among Developer, Security Officer, Compliance Manager, and QA Engineer roles?",
+          "blocking": true
         },
         {
           "id": "oq-9",
-          "text": "Are finished product classification, rinse-off cosmetic classification, and formulation indicator separate fields, separate facets, or part of one normalized classification model?",
+          "text": "What rules define \"anomalous behavior\" for script execution monitoring (US 48949)?",
           "blocking": false
         },
         {
           "id": "oq-10",
-          "text": "What exact assessment lifecycle states correspond to:",
+          "text": "What sandbox policy configuration options and default restrictions are required beyond \"restricted files or network resources\" (US 48922)?",
           "blocking": false
-        },
-        {
-          "id": "oq-11",
-          "text": "setup completion",
-          "blocking": false
-        },
-        {
-          "id": "oq-12",
-          "text": "section complete",
-          "blocking": false
-        },
-        {
-          "id": "oq-13",
-          "text": "finalization of a substance entry",
-          "blocking": false
-        },
-        {
-          "id": "oq-14",
-          "text": "final assessment submission",
-          "blocking": false
-        },
-        {
-          "id": "oq-15",
-          "text": "What exact UI should be used for:",
-          "blocking": false
-        },
-        {
-          "id": "oq-16",
-          "text": "import summary display",
-          "blocking": false
-        },
-        {
-          "id": "oq-17",
-          "text": "compositional breakdown expansion",
-          "blocking": false
-        },
-        {
-          "id": "oq-18",
-          "text": "targeted incomplete raw material error messaging",
-          "blocking": false
-        },
-        {
-          "id": "oq-19",
-          "text": "Should duplicate impurity records for the same product/identity be rejected, merged, or versioned?",
-          "blocking": false
-        },
-        {
-          "id": "oq-20",
-          "text": "Is nano-material presence stored at assessment level, product composition level, or both with mapping?",
-          "blocking": false
-        },
-        {
-          "id": "oq-21",
-          "text": "Are concentration ranges editable anywhere, or only displayed when present in imported data?",
-          "blocking": false
-        },
-        {
-          "id": "oq-22",
-          "text": "For import, what file types/content types/size limits are supported?",
-          "blocking": false
-        },
-        {
-          "id": "oq-23",
-          "text": "Are non-blocking import warnings required in the first release, and if so, what warning categories exist?",
-          "blocking": false
-        },
-        {
-          "id": "oq-24",
-          "text": "What retention/history rules apply to audit metadata and import traceability records?",
-          "blocking": false
-        },
-        {
-          "id": "oq-25",
-          "text": "What role matrix governs read access across the actors beyond the explicitly stated write permissions?",
-          "blocking": true
         }
       ],
       "storyCount": 15,
-      "totalStoryPoints": 61,
+      "totalStoryPoints": 92,
       "files": {
-        "specs": "specs/shampoo-composition-compliance-record/specs.md",
-        "requirements": "specs/shampoo-composition-compliance-record/requirements.md",
-        "tasks": "specs/shampoo-composition-compliance-record/tasks.md",
-        "prompt": "specs/shampoo-composition-compliance-record/prompt.md"
+        "specs": "specs/chakra-core-scripting-engine/specs.md",
+        "requirements": "specs/chakra-core-scripting-engine/requirements.md",
+        "tasks": "specs/chakra-core-scripting-engine/tasks.md",
+        "prompt": "specs/chakra-core-scripting-engine/prompt.md"
       },
       "userStories": [
         {
-          "id": 64951,
-          "title": "As a Regulatory Assessor, I want to classify ABCD Shampoo as a rinse-off cosmetic product so that cosmetic regulatory evaluation uses the correct product type",
-          "state": "New",
-          "storyPoints": 3
-        },
-        {
-          "id": 64957,
-          "title": "As a Regulatory Assessor, I want to classify ABCD Shampoo as a chemical mixture so that mixture-based regulatory evaluation is supported",
-          "state": "New",
-          "storyPoints": 3
-        },
-        {
-          "id": 64963,
-          "title": "As a Global Compliance Manager, I want to record ABCD Shampoo as a finished consumer product placed on multiple global markets so that market-specific compliance evaluation can be performed",
+          "id": 48850,
+          "title": "As Developer, I want to embed Chakra Core engine into the financial application to achieve enhanced scripting capabilities",
           "state": "New",
           "storyPoints": 5
         },
         {
-          "id": 64969,
-          "title": "As a Formulation Specialist, I want to define ABCD Shampoo as a formulation composed of multiple raw materials and substances so that compositional assessment can trace all contributing components",
-          "state": "New",
-          "storyPoints": 5
-        },
-        {
-          "id": 64975,
-          "title": "As a Regulatory Data Steward, I want to document the complete ingredient list using INCI names so that the finished product record uses the required ingredient naming standard",
-          "state": "New",
-          "storyPoints": 5
-        },
-        {
-          "id": 64981,
-          "title": "As a Regulatory Data Steward, I want to document the CAS number for each substance so that each substance in the finished product can be uniquely identified",
+          "id": 48859,
+          "title": "As Developer, I want to initialize Chakra Core engine with financial context to achieve correct environment setup",
           "state": "New",
           "storyPoints": 3
         },
         {
-          "id": 64987,
-          "title": "As a Regulatory Data Steward, I want to document the EC number where applicable so that each substance record includes applicable regulatory identifiers",
-          "state": "New",
-          "storyPoints": 3
-        },
-        {
-          "id": 64993,
-          "title": "As a Regulatory Assessor, I want to document the function of each substance so that the regulatory assessment record explains the role of every substance in the finished product",
-          "state": "New",
-          "storyPoints": 3
-        },
-        {
-          "id": 64999,
-          "title": "As a Formulation Specialist, I want to document the concentration percentage of each substance so that the final product composition is quantitatively defined",
+          "id": 48868,
+          "title": "As Developer, I want to expose custom financial APIs to scripts to achieve extensible scripting capabilities",
           "state": "New",
           "storyPoints": 5
         },
         {
-          "id": 65005,
-          "title": "As a Regulatory Assessor, I want to document impurities at or above 0.1% so that reportable impurity presence is available for compliance evaluation",
+          "id": 48877,
+          "title": "As Developer, I want to optimize Chakra Core engine performance to achieve efficient financial computation",
+          "state": "New",
+          "storyPoints": 8
+        },
+        {
+          "id": 48958,
+          "title": "As a Regulatory Specialist, I want to classify ABCD Shampoo as a rinse-off product so that it is correctly categorized for compliance",
+          "state": "New",
+          "storyPoints": 8
+        },
+        {
+          "id": 48967,
+          "title": "As a Regulatory Analyst, I want to upload detailed compositional data of all substances in the product so that regulatory assessments can be performed accurately",
+          "state": "New",
+          "storyPoints": 8
+        },
+        {
+          "id": 48976,
+          "title": "As a Compliance Officer, I want the system to assess product compliance with IFRA standards so that we ensure ingredient safety",
+          "state": "New",
+          "storyPoints": 8
+        },
+        {
+          "id": 48886,
+          "title": "As QA Engineer, I want to verify script execution correctness to achieve reliable financial calculations",
           "state": "New",
           "storyPoints": 5
         },
         {
-          "id": 65011,
-          "title": "As a Regulatory Assessor, I want to document nano-material presence so that the finished product record reflects whether nano-materials are present",
+          "id": 48895,
+          "title": "As Developer, I want to implement debugging tools for scripts to achieve faster issue resolution",
+          "state": "New",
+          "storyPoints": 8
+        },
+        {
+          "id": 48904,
+          "title": "As Developer, I want to handle script exceptions gracefully to achieve robust financial application behavior",
           "state": "New",
           "storyPoints": 3
         },
         {
-          "id": 65017,
-          "title": "As a Regulatory Data Steward, I want to document the origin of each substance as synthetic, natural, or botanical so that substance sourcing classification is available for assessment",
+          "id": 48913,
+          "title": "As Developer, I want to support asynchronous script execution to achieve non-blocking financial workflows",
           "state": "New",
-          "storyPoints": 3
+          "storyPoints": 8
         },
         {
-          "id": 65023,
-          "title": "As a Compliance Analyst, I want to import product composition data into a single regulatory assessment record so that all required composition fields are available for compliance evaluation",
+          "id": 48922,
+          "title": "As Security Officer, I want scripts sandboxed to prevent unauthorized access to sensitive financial data",
+          "state": "New",
+          "storyPoints": 8
+        },
+        {
+          "id": 48931,
+          "title": "As Compliance Manager, I want audit logging of script executions to achieve traceability for financial regulations",
           "state": "New",
           "storyPoints": 5
         },
         {
-          "id": 65029,
-          "title": "As a Compliance Analyst, I want the imported record to include all required substance attributes so that the regulatory assessment can be completed without missing composition fields",
+          "id": 48940,
+          "title": "As Security Officer, I want to configure script execution permissions to achieve controlled and safe script operations",
           "state": "New",
           "storyPoints": 5
         },
         {
-          "id": 65035,
-          "title": "As a Regulatory Assessor, I want the full compositional breakdown of all substances to be available for regulatory assessment so that compliance evaluation can review complete product composition evidence",
+          "id": 48949,
+          "title": "As Security Officer, I want to monitor script execution for anomalous behavior to achieve proactive risk mitigation",
           "state": "New",
           "storyPoints": 5
         }
