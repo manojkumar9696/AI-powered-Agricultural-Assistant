@@ -5,7 +5,7 @@
 
 ## Project
 
-- Name: ADOtoDEVx
+- Name: AutoProject11
 - Architecture mode: monolith
 - Context status: Pending workspace discovery
 

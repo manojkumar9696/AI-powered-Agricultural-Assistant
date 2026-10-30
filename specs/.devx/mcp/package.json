@@ -1,7 +1,7 @@
 {
-  "name": "adotodevx-mcp-server",
+  "name": "autoproject11-mcp-server",
   "version": "1.0.0",
-  "description": "Astra MCP server for ADOtoDEVx specs",
+  "description": "Astra MCP server for AutoProject11 specs",
   "type": "module",
   "main": "server.js",
   "scripts": {

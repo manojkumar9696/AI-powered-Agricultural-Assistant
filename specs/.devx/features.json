@@ -1,166 +1,37 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-10-16T09:31:25.209Z",
+  "generatedAt": "2026-10-30T13:10:06.822Z",
   "enableTdd": false,
   "totalFeatures": 1,
   "features": [
     {
-      "id": 48842,
-      "taskId": "FEATURE-48842",
-      "title": "Chakra Core Integration for Financial Applications",
-      "slug": "chakra-core-scripting-engine",
+      "id": 1187483449,
+      "taskId": "FEATURE-1187483449",
+      "title": "Save rinse-off classification successfully at the maximum allowed contact time boundary of 20 minutes; Handle product registry search returning no matching products without blocking classification workflow",
+      "slug": "rinseoff-classification-edge-cases",
       "state": "planned",
-      "status": "needs-clarification",
-      "openQuestions": [
-        {
-          "id": "oq-1",
-          "text": "US 48958, US 48967, and US 48976 describe cosmetic product regulatory classification, compositional data upload, and IFRA compliance assessment — these appear unrelated to Chakra Core engine integration. Confirm whether these stories belong to Feature 48842 or were misattributed; they are excluded from this spec's functional scope pending clarification.",
-          "blocking": true
-        },
-        {
-          "id": "oq-2",
-          "text": "What is the specific time limit (SLA) for engine initialization referenced in US 48850, Criteria 2?",
-          "blocking": false
-        },
-        {
-          "id": "oq-3",
-          "text": "What are the specific performance benchmarks and resource utilization thresholds referenced in US 48877?",
-          "blocking": false
-        },
-        {
-          "id": "oq-4",
-          "text": "What UI screens, layouts, or interaction designs (if any) are required for developers/security officers/compliance managers to configure, debug, or review script-related functionality?",
-          "blocking": true
-        },
-        {
-          "id": "oq-5",
-          "text": "What are the exact API endpoint definitions, request/response schemas, authentication mechanism, and error code taxonomy for the exposed financial APIs referenced in US 48868 and US 48859?",
-          "blocking": true
-        },
-        {
-          "id": "oq-6",
-          "text": "What is the data retention period for audit logs and anomaly monitoring data?",
-          "blocking": false
-        },
-        {
-          "id": "oq-7",
-          "text": "What specific fields comprise script execution log records, API usage log records, and permission set records?",
-          "blocking": true
-        },
-        {
-          "id": "oq-8",
-          "text": "What is the granular permission model distinguishing access rights among Developer, Security Officer, Compliance Manager, and QA Engineer roles?",
-          "blocking": true
-        },
-        {
-          "id": "oq-9",
-          "text": "What rules define \"anomalous behavior\" for script execution monitoring (US 48949)?",
-          "blocking": false
-        },
-        {
-          "id": "oq-10",
-          "text": "What sandbox policy configuration options and default restrictions are required beyond \"restricted files or network resources\" (US 48922)?",
-          "blocking": false
-        }
-      ],
-      "storyCount": 15,
-      "totalStoryPoints": 92,
+      "status": "not-started",
+      "openQuestions": [],
+      "storyCount": 2,
+      "totalStoryPoints": 0,
       "files": {
-        "specs": "specs/chakra-core-scripting-engine/specs.md",
-        "requirements": "specs/chakra-core-scripting-engine/requirements.md",
-        "tasks": "specs/chakra-core-scripting-engine/tasks.md",
-        "prompt": "specs/chakra-core-scripting-engine/prompt.md"
+        "specs": "specs/rinseoff-classification-edge-cases/specs.md",
+        "requirements": "specs/rinseoff-classification-edge-cases/requirements.md",
+        "tasks": "specs/rinseoff-classification-edge-cases/tasks.md",
+        "prompt": "specs/rinseoff-classification-edge-cases/prompt.md"
       },
       "userStories": [
         {
-          "id": 48850,
-          "title": "As Developer, I want to embed Chakra Core engine into the financial application to achieve enhanced scripting capabilities",
+          "id": 14286,
+          "title": "Save rinse-off classification successfully at the maximum allowed contact time boundary of 20 minutes",
           "state": "New",
-          "storyPoints": 5
+          "storyPoints": null
         },
         {
-          "id": 48859,
-          "title": "As Developer, I want to initialize Chakra Core engine with financial context to achieve correct environment setup",
+          "id": 14287,
+          "title": "Handle product registry search returning no matching products without blocking classification workflow",
           "state": "New",
-          "storyPoints": 3
-        },
-        {
-          "id": 48868,
-          "title": "As Developer, I want to expose custom financial APIs to scripts to achieve extensible scripting capabilities",
-          "state": "New",
-          "storyPoints": 5
-        },
-        {
-          "id": 48877,
-          "title": "As Developer, I want to optimize Chakra Core engine performance to achieve efficient financial computation",
-          "state": "New",
-          "storyPoints": 8
-        },
-        {
-          "id": 48958,
-          "title": "As a Regulatory Specialist, I want to classify ABCD Shampoo as a rinse-off product so that it is correctly categorized for compliance",
-          "state": "New",
-          "storyPoints": 8
-        },
-        {
-          "id": 48967,
-          "title": "As a Regulatory Analyst, I want to upload detailed compositional data of all substances in the product so that regulatory assessments can be performed accurately",
-          "state": "New",
-          "storyPoints": 8
-        },
-        {
-          "id": 48976,
-          "title": "As a Compliance Officer, I want the system to assess product compliance with IFRA standards so that we ensure ingredient safety",
-          "state": "New",
-          "storyPoints": 8
-        },
-        {
-          "id": 48886,
-          "title": "As QA Engineer, I want to verify script execution correctness to achieve reliable financial calculations",
-          "state": "New",
-          "storyPoints": 5
-        },
-        {
-          "id": 48895,
-          "title": "As Developer, I want to implement debugging tools for scripts to achieve faster issue resolution",
-          "state": "New",
-          "storyPoints": 8
-        },
-        {
-          "id": 48904,
-          "title": "As Developer, I want to handle script exceptions gracefully to achieve robust financial application behavior",
-          "state": "New",
-          "storyPoints": 3
-        },
-        {
-          "id": 48913,
-          "title": "As Developer, I want to support asynchronous script execution to achieve non-blocking financial workflows",
-          "state": "New",
-          "storyPoints": 8
-        },
-        {
-          "id": 48922,
-          "title": "As Security Officer, I want scripts sandboxed to prevent unauthorized access to sensitive financial data",
-          "state": "New",
-          "storyPoints": 8
-        },
-        {
-          "id": 48931,
-          "title": "As Compliance Manager, I want audit logging of script executions to achieve traceability for financial regulations",
-          "state": "New",
-          "storyPoints": 5
-        },
-        {
-          "id": 48940,
-          "title": "As Security Officer, I want to configure script execution permissions to achieve controlled and safe script operations",
-          "state": "New",
-          "storyPoints": 5
-        },
-        {
-          "id": 48949,
-          "title": "As Security Officer, I want to monitor script execution for anomalous behavior to achieve proactive risk mitigation",
-          "state": "New",
-          "storyPoints": 5
+          "storyPoints": null
         }
       ]
     }

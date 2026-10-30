@@ -1,13 +1,9 @@
-# ADOtoDEVx
+# AutoProject11
 
 > Auto-generated project context for AI-assisted development.
-> Last updated: 2026-10-16
+> Last updated: 2026-10-30
 
-**Organization:** Test27
-
-## Overview
-
-Test
+**Organization:** https://archanajira.atlassian.net/
 
 ## Development Methodology
 
@@ -20,7 +16,7 @@ Every feature has:
 
 ## Features (1)
 
-- **Chakra Core Integration for Financial Applications** (15 user stories)
+- **Save rinse-off classification successfully at the maximum allowed contact time boundary of 20 minutes; Handle product registry search returning no matching products without blocking classification workflow** (2 user stories)
 
 ## Getting Started
 
