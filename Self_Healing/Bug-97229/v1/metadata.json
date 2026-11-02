@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "specificationId": "a318a76b-2d4a-4561-8560-14ccd33de275",
+  "contentHash": "5cd9c5c203d302d24e0870a14fc021ca042e65c1e28c0e72769e280840876825",
+  "packageHash": "0a9021d474ce7ca44ce5da91e460b6b3989f4c29ac42ca7ff5576b243cfe652a",
+  "storedAt": "2026-11-02T12:25:17.214Z",
+  "storedBy": {
+    "userId": "6a031cd8-c61d-4380-b7ae-b5fc71346bba",
+    "name": "Sunil Hareshlal Hotchandani"
+  },
+  "projectId": "7d8a5af1-42e4-40c6-94f7-16c42c8a8744",
+  "provider": "ado",
+  "workItemRef": "97229",
+  "approvedByName": "Sunil Hareshlal Hotchandani",
+  "approvedAt": "2026-11-02T12:00:35.000Z"
+}

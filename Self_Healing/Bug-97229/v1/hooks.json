@@ -1,0 +1,9 @@
+{
+  "description": "Quality gates to run before considering this self-healing fix complete.",
+  "hooks": {
+    "lint": null,
+    "test": "python -m pytest",
+    "build": "python -m compileall .",
+    "typeCheck": null
+  }
+}
