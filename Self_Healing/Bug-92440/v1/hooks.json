@@ -1,0 +1,9 @@
+{
+  "description": "Quality gates to run before considering this self-healing fix complete.",
+  "hooks": {
+    "lint": "python -m json.tool AutomationScript/test27112025-af4bbf3e-9d18-4e9c-8cde-d66b30045afb/as-a-qa-lead-i-want-to-define-a-test-plan-for-create-bug-record-coverage-so-that-the-capability-is-validated-consistently-before-release/test-cases.json > /dev/null",
+    "test": "python -m json.tool AutomationScript/test27112025-af4bbf3e-9d18-4e9c-8cde-d66b30045afb/as-a-qa-lead-i-want-to-define-a-test-plan-for-create-bug-record-coverage-so-that-the-capability-is-validated-consistently-before-release/test-cases.json > /dev/null",
+    "build": null,
+    "typeCheck": null
+  }
+}
